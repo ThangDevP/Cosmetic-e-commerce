@@ -1,0 +1,30 @@
+{
+  "name": "ecommercedevplus",
+  "version": "1.0.0",
+  "description": "This project is a cosmetics e-commerce platform implemented by Exactly Team during an internship at DevPlus in winter 2023.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh: https://github.com/ThangDevP/EEW.git"
+  },
+  "keywords": [
+    "e-commerce"
+  ],
+  "author": "Exactly Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThangDevP/EEW.git/issues"
+  },
+  "homepage": "https://github.com/ThangDevP/EEW.git#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
