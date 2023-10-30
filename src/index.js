@@ -18,6 +18,11 @@ router.get('/',function(req,res){
   res.sendFile(path.join(__dirname + '/public/views/html/home.html'));
   //__dirname : It will resolve to your project folder.
 });
+
+router.get('/login',function(req,res){
+  res.sendFile(path.join(__dirname + '/public/views/html/login.html'));
+  //__dirname : It will resolve to your project folder.
+});
 app.use('/', router);
 // Local host --- Hosting
 // Action ---> Dispatcher ---> Function handler
