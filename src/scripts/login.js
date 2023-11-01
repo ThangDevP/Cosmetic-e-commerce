@@ -9,6 +9,7 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
 // Event listener for the login form
 // Event listener for the login form
 document.getElementById('login-form').addEventListener('submit', function (e) {
@@ -22,7 +23,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
       .then((data) => {
         if (data.length === 1) {
           alert('Login successful');
-          window.location.href = '/home'; // Redirect to the home page
+          window.location.href = '/'; // Redirect to the home page
         } else {
           alert('Login failed. Check your username and password.');
         }

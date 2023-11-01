@@ -5,25 +5,23 @@ const cors = require('cors');
 const jsonServer = require('json-server');
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
-const publicPath = path.join(__dirname, 'public');
 const app = express();
-
 const port = 3000;
-
 // Set up CORS for your Express app
 app.use(cors());
-
 // Show request, HTTP logger
 app.use(morgan('combined'));
-
 // Use static file
-app.use(express.static(publicPath));
+app.use(express.static(path.join(__dirname, 'styles')));
+app.use(express.static(path.join(__dirname, 'scripts')));
+app.use(express.static(path.join(__dirname, 'components')));
+app.use(express.static(path.join(__dirname, 'pages')));
+app.use(express.static(path.join(__dirname, 'assets/img')));
 
 // JSON Server setup
 const server = jsonServer.create();
 // const adapter = new FileSync('db.json');
 // const db = low(adapter);
-
 server.use(middlewares);
 server.use(
   jsonServer.rewriter({
@@ -31,6 +29,7 @@ server.use(
   })
 );
 server.use(jsonServer.bodyParser);
+
 
 server.use((req, res, next) => {
   if (req.method === "POST") {
@@ -42,11 +41,8 @@ server.use((req, res, next) => {
   next();
 });
 
-
-// Define a custom route for user registration
 server.post('/register', (req, res) => {
   const { username, password } = req.body;
-
   // Check if the user already exists
   const existingUser = router.db.get('users').find({ username }).value();
   if (existingUser) {
@@ -63,19 +59,17 @@ server.post('/register', (req, res) => {
 app.use('/api', server);
 
 // Serve your routes
-app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname + '/public/views/html/home.html'));
-  // __dirname: It will resolve to your project folder.
+app.get('/about-us', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/about-us.html'));
 });
-
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/public/views/html/login.html'));
-  // __dirname: It will resolve to your project folder.
+  res.sendFile(path.join(__dirname + '/pages/main.html'));
 });
-
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/login.html'));
+});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
   console.log(`Ecommerce website listening on http://localhost:${port}`);
 });
-
