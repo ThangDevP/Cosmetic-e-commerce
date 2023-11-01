@@ -1,3 +1,16 @@
 /* Viet cac variable chung tai day */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
+:root {
+    --white: white;
+    --outerSpace: #414a4c;
+    --anti-flashWhite: #f2f3f4;
+    --silverChalice: #acacac;
+    --darkCharcoal: #333;
+    --blueBerry: #4f86f7;
+    --darkGray: #a9a9a9;
+    --azure: #007fff;
+    --cornflowerblue: #6495ED;
+    --cocoon: #ede0cc;
+    --black : #000
+}
