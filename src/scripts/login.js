@@ -53,7 +53,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
         if (data.message === 'Registration successful.') {
           // Registration successful
           alert('Registration successful. You can now login.');
-          window.location.href = '/'; // Redirect to the login page
+          window.location.href = '/login'; // Redirect to the login page
         } else if (data.message === 'Username already exists.') {
           // Username already exists
           alert('Registration failed. Username already exists.');
