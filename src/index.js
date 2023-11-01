@@ -14,8 +14,9 @@ app.use(morgan('combined'));
 // Use static file
 app.use(express.static(path.join(__dirname, 'styles')));
 app.use(express.static(path.join(__dirname, 'scripts')));
-app.use(express.static(path.join(__dirname, 'public/components')));
+app.use(express.static(path.join(__dirname, 'components')));
 app.use(express.static(path.join(__dirname, 'pages')));
+app.use(express.static(path.join(__dirname, 'assets/img')));
 
 // JSON Server setup
 const server = jsonServer.create();
@@ -28,6 +29,8 @@ server.use(
   })
 );
 server.use(jsonServer.bodyParser);
+
+
 server.use((req, res, next) => {
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
@@ -62,7 +65,10 @@ app.get('/about-us', function (req, res) {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/main.html'));
 });
-
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/login.html'));
+});
+server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
   console.log(`Ecommerce website listening on http://localhost:${port}`);

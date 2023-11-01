@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start-dev": "nodemon --inspect src/index.js",
-    "start-json-server": "json-server --watchs db.json",
+    "start-json-server": "json-server --watch db.json --port 3000",
     "start": "concurrently \"npm:start-dev\" \"npm:start-json-server\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "test-server": "nodemon src/index.js"
   },
   "repository": {
