@@ -8,7 +8,7 @@ const middlewares = jsonServer.defaults();
 const publicPath = path.join(__dirname, 'public');
 const app = express();
 
-const port = 8000;
+const port = 3000;
 
 // Set up CORS for your Express app
 app.use(cors());
@@ -43,23 +43,6 @@ server.use((req, res, next) => {
 });
 
 
-// Define a custom route for user registration
-// server.post('/register', (req, res) => {
-//   const { username, password } = req.body;
-
-//   const user = router.db.get('users').find({username}).value();
-//   console.log(user)
-//   // Check if the user already exists
-//   const existingUser = router.db.get('users').find({ username }).value();
-//   if (existingUser) {
-//     return res.status(400).json({ message: 'Username already exists.' });
-//   }
-//   // If the user doesn't exist, add them to the database
-//   const id = Date.now();
-//   const newUser = { id, username, password };
-//   router.db.get('users').push(newUser).write();
-//   return res.status(200).json({ message: 'Registration successful.' });
-// });
 // Define a custom route for user registration
 server.post('/register', (req, res) => {
   const { username, password } = req.body;

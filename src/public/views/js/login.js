@@ -17,7 +17,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     const password = document.getElementById('login-password').value;
 
     // Send a request to your JSON Server to check if the user exists.
-    fetch(`http://localhost:8000/api/users?username=${username}&password=${password}`)
+    fetch(`http://localhost:3000/api/users?username=${username}&password=${password}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 1) {
@@ -40,7 +40,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
 
     // Send a POST request to add the user to the JSON Server.
     // Use the appropriate URL for registration.
-    fetch('http://localhost:8000/api/register', {
+    fetch('http://localhost:3000/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
