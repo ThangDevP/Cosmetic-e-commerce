@@ -1,11 +1,11 @@
-const container = document.getElementById('container');
-const overlayCon = document.getElementById('overlayCon');
-const overlayBtn = document.getElementById('overlayBtn');
-overlayBtn.addEventListener('click', () => {
-    container.classList.toggle('right-panel-active');
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
 
-    overlayBtn.classList.remove('btnScaled');
-    window.requestAnimationFrame( () => {
-        overlayBtn.classList.add('btnScaled');
-    })
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
 });
