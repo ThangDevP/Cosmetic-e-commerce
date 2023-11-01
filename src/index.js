@@ -1,26 +1,69 @@
-const express = require('express')
-const morgan = require('morgan')
-// const hbs = require('express-handlebars');
-// var app = express.createServer();
-const router = express.Router();
+const express = require('express');
+const morgan = require('morgan');
 const path = require('path');
-const app = express()
-const port = 8000
-
+const cors = require('cors');
+const jsonServer = require('json-server');
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const app = express();
+const port = 3000;
+// Set up CORS for your Express app
+app.use(cors());
 // Show request, HTTP logger
-app.use(morgan('combined'))
-
+app.use(morgan('combined'));
 // Use static file
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'styles')));
+app.use(express.static(path.join(__dirname, 'scripts')));
+app.use(express.static(path.join(__dirname, 'public/components')));
+app.use(express.static(path.join(__dirname, 'pages')));
 
-// 
-router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname + '/public/views/html/home.html'));
-  //__dirname : It will resolve to your project folder.
+// JSON Server setup
+const server = jsonServer.create();
+// const adapter = new FileSync('db.json');
+// const db = low(adapter);
+server.use(middlewares);
+server.use(
+  jsonServer.rewriter({
+    "/api/*": "/$1",
+  })
+);
+server.use(jsonServer.bodyParser);
+server.use((req, res, next) => {
+  if (req.method === "POST") {
+    req.body.createdAt = Date.now();
+    req.body.updatedAt = Date.now();
+  } else if (req.method === "PATCH" || req.method === "PUT") {
+    req.body.updatedAt = Date.now();
+  }
+  next();
 });
-app.use('/', router);
+
+server.post('/register', (req, res) => {
+  const { username, password } = req.body;
+  // Check if the user already exists
+  const existingUser = router.db.get('users').find({ username }).value();
+  if (existingUser) {
+    return res.status(400).json({ message: 'Username already exists.' });
+  }
+  // If the user doesn't exist, add them to the database
+  const id = Date.now();
+  const newUser = { id, username, password };
+  router.db.get('users').push(newUser).write();
+  return res.status(200).json({ message: 'Registration successful.' });
+});
+
+// Mount the JSON Server on the '/api' path
+app.use('/api', server);
+
+// Serve your routes
+app.get('/about-us', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/about-us.html'));
+});
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/main.html'));
+});
+
 // Local host --- Hosting
-// Action ---> Dispatcher ---> Function handler
 app.listen(port, () => {
-  console.log(`Ecommerce website listening on http://localhost:${port}`)
-})
+  console.log(`Ecommerce website listening on http://localhost:${port}`);
+});
