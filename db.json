@@ -15,5 +15,18 @@
       "username": "admin@gmail.com",
       "password": "123456"
     }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "img": "1.jpg",
+      "name": "PS5 Controller",
+      "price": 50,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "abcabc",
+      "discount": 10
+    }
   ]
 }
