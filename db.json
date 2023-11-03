@@ -27,6 +27,16 @@
       "brand-id": 1,
       "description": "abcabc",
       "discount": 10
+    },
+    {
+      "id": 2,
+      "img": "1.jpg",
+      "name": "PS6 Controller",
+      "price": 100,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "xyzxyz",
+      "discount": 40
     }
   ]
 }

@@ -1,5 +1,9 @@
-// Assuming you have a product ID (e.g., 1) you want to display
-const productId = 1; // Update this with the desired product ID
+const currentURL = window.location.href;
+
+const segments = currentURL.split('/');
+const productId = segments[segments.length - 1];
+
+
 
 fetch(`/api/products/${productId}`) // Fetch the product data by its ID
   .then((response) => response.json())
@@ -7,12 +11,13 @@ fetch(`/api/products/${productId}`) // Fetch the product data by its ID
     // Update the HTML elements with the product details
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-price").textContent = product.price;
-    document.getElementById("product-price-discount").textContent =
-      (product.price * (100 - product.discount)) / 100;
+    const finalPrice = (document.getElementById(
+      "product-price-discount"
+    ).textContent = (product.price * (100 - product.discount)) / 100);
     document.getElementById("product-description").textContent =
       product.description;
     document.getElementById("product-category").textContent = product.category;
-    document.getElementById("product-image").src = product.img;
+    document.getElementById("product-image").src = "/" + product.img;
 
     // Calculate the total price based on the quantity and update it
     const decrementButton = document.querySelector(".decrement");
@@ -22,7 +27,7 @@ fetch(`/api/products/${productId}`) // Fetch the product data by its ID
 
     function updateTotalPrice() {
       const quantity = parseInt(quantityLabel.textContent, 10);
-      const total = product.price * quantity;
+      const total = finalPrice * quantity;
       totalPriceLabel.textContent = total;
     }
 
