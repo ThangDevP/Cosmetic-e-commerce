@@ -1,4 +1,5 @@
 function loadPage(slug) {
+
     const bodyElement = document.getElementById('body');
     const headerElement = document.getElementById('header');
     const footerElement = document.getElementById('footer');
@@ -25,12 +26,12 @@ function loadPage(slug) {
 }
 // Function to handle routing based on the URL path
 function handleRouting() {
-    const path = window.location.pathname;
-    const slug = path.replace('/', '');
-    // Load the appropriate content based on the slug
-    loadPage(slug || 'home');
+  const path = window.location.pathname;
+  const slug = path.replace("/", "");
+  // Load the appropriate content based on the slug
+  loadPage(slug || "home");
 }
 // Listen for changes in the URL (page navigation)
-window.addEventListener('popstate', handleRouting);
+window.addEventListener("popstate", handleRouting);
 // Initial page load
 handleRouting();
