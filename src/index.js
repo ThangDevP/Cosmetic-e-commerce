@@ -76,6 +76,9 @@ app.get("/product/:id", function (req, res) {
     .then((data) => {
       if (data.length === 1) {
         res.sendFile(path.join(__dirname + "/pages/product.html"));
+      }
+    });
+  });
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
   fetch(`http://localhost:3000/api/users?id=${userId}`)
