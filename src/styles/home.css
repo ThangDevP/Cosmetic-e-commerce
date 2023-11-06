@@ -1,7 +1,246 @@
-@import url("style.css");
-h1 {
-    background-color: red;
+@import url("home.css");
+*{
+    padding: 0;
+    margin: 0;
 }
-h2 {
-    color: blue;
+
+.mySlides {
+    display: none;
+}
+
+.img {
+    vertical-align:middle;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+  /* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(192, 192, 192, 0.615);
+}
+
+  /* Caption text */
+.slide-text h4{
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 23px;
+    font-family: Barlow Condensed;
+    padding-top: 150px;
+    padding-left: 50px;
+}
+.slide-text h1{
+    font-family: Vollkorn; 
+    font-size: 50px; 
+    font-weight: 600;
+    padding-bottom: 20px;
+    width: 500px;
+    padding-left: 50px;
+}
+.slide-text p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    word-wrap: break-word;
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+.press-btn{
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+.press-btn a{
+    width: 400px; 
+    height: 70px;
+    text-align: left;
+    line-height: 50px;
+}
+.press-btn .btn i {
+    margin-left: 200px; /* Tạo khoảng cách giữa nút và biểu tượng */
+}
+.press-btn .btn i {
+    transition: all 0.3s; /* Tạo hiệu ứng chuyển động màu và vị trí */
+}
+.press-btn .btn:hover i {
+    color: rgba(0, 0, 0, 0.137); /* Thay đổi màu của biểu tượng khi hover */
+    transform: translateX(5px); /* Dịch chuyển biểu tượng sang phải khi hover */
+}
+video::-webkit-media-controls {
+    display: none;
+}
+
+
+.marquee-container {
+    width: 100%;
+    height: 150px;
+    background-color: #fbfaf1;
+    color: #1e1e1b;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    font-size: 70px; 
+    font-weight: bold;
+    /* font-family: Nunito; */
+    padding-top: 15px;
+}
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-right: 100%; /* Điều này đẩy các phần tử chữ đến phía bên phải */
+    animation: marquee 20s linear infinite; /* Thời gian và kiểu animation tùy ý */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.bg-brand{
+    position: relative; /* Để có thể định vị các phần tử con dựa trên phần tử này */
+}
+.brand-box {
+    position: absolute; /* Để đặt nội dung lên trên hình */
+    background-color: #fbfbf3;
+    top: 100px;
+    left: 600px;
+    width: 600px; /* Đặt kích thước của hộp */
+    height: 430px; /* Đặt kích thước của hộp */
+    color: #1e1d16; /* Màu chữ trong hộp */
+    text-align: center;
+    padding: 20px; /* Đặt khoảng cách trong hộp */
+    border-radius: 10px;
+}
+.brand-box h1{
+    font-family: Vollkorn; 
+    font-size: 50px; 
+    font-weight: 600;
+    padding-bottom: 20px;
+    width: 500px;
+    padding-left: 50px;
+    padding-top: 10px;
+    font-style: italic;
+}
+.brand-box p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    word-wrap: break-word;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    color: #aeada9;
+}
+.brand-box .press-btn{
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+  /* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+@media only screen and (max-width: 820px) {
+    .main-menu-left{
+        display: none;
+    }
+    .toggle_btn{
+        display: block;
+        margin-right: 200px;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    .main-menu-center img{
+        width: 80%;
+        height: 80%;
+        margin-top: 5px;
+    }
+    .main-menu-right{
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+    .slide-text h4{
+        padding-top: 70px;
+        padding-left: 50px;
+    }
+    .slide-text h1{
+        padding-bottom: 20px;
+        width: 500px;
+        padding-left: 50px;
+    }
+    .slide-text p{
+        word-wrap: break-word;
+        padding-bottom: 20px;
+        padding-left: 50px;
+    }
+}
+
+/* Điện thoại di động */
+@media only screen and (max-width: 760px) {
+    .main-menu-left{
+        display: none;
+    }
+    .toggle_btn{
+        display: block;
+        margin-right: 200px;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    .main-menu-center img{
+        width: 100%;
+        height: 100%;
+        margin-top: 10px;
+    }
+    .main-menu-right{
+        margin-top: 20px;
+        font-size: 0.5rem;
+    }
+    .slide-text h4{
+        padding-top: 70px;
+        padding-left: 50px;
+    }
+    .slide-text h1{
+        padding-bottom: 20px;
+        width: 500px;
+        padding-left: 50px;
+    }
+    .slide-text p{
+        word-wrap: break-word;
+        padding-bottom: 20px;
+        padding-left: 50px;
+    }
 }
