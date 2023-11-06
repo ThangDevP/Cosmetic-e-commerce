@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn" />
 <link href="https://fonts.cdnfonts.com/css/barlow-condensed" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
-<script src="./header.js"></script>
+<script src="/header.js"></script>
 <header>
     <div class="navbar p-md-0">
         <div class="announcement">
@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-5 d-flex align-items-center justify-content-center">
-                        <div class="toggle_btn">
+                        <div class="toggle_btn" onclick="dropdownFunc()">
                             <i class="fa fa-bars"></i>
                         </div>
                         <ul class="main-menu-left">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="dropdown_menu">
+        <div id="dropdown_menu">
                 <li><a class="active" href="product.html">Sản Phẩm</a></li>
                 <li><a class="active" href="sale.html">Khuyến Mãi</a></li>
                 <li><a class="active" href="cocoon.html">Cocoon</a></li>

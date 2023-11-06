@@ -136,7 +136,7 @@ video::-webkit-media-controls {
     position: absolute; /* Để đặt nội dung lên trên hình */
     background-color: #fbfbf3;
     top: 100px;
-    left: 600px;
+    left: 450px;
     width: 600px; /* Đặt kích thước của hộp */
     height: 430px; /* Đặt kích thước của hộp */
     color: #1e1d16; /* Màu chữ trong hộp */

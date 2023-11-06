@@ -14,7 +14,7 @@ function loadPage(slug) {
             footerElement.innerHTML = data;
         });
     // Load dynamic content based on the slug
-    fetch(`/${slug}.html`)
+    fetch(`/home.html`)
         .then(response => response.text())
         .then(data => {
             bodyElement.innerHTML = data;
