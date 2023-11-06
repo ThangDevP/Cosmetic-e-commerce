@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Vollkorn&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    line-height: 1.5;
+
+}
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.footer--container {
+    display: flex;
+    max-height: 70vh;
+}
+.footer--picture img {
+    max-height: 100%;
+}
+.footer--picture {
+    flex: 6;
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    line-height: 24px;
+    align-self: flex-start;
+}
+.footer--picture img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer--content {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer--row {
+    flex: 7;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 50px;
+}
+
+.footer--copy {
+    flex: 3;
+    margin: 0 0 0 30px;
+}
+.footer--col {
+    width: 50%;
+    padding: 0 15px;
+}
+.footer--col ul {
+    list-style: none;
+}
+.footer--col h4 {
+    font-size: 18px;
+    color: #000;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+.footer--col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer--col  ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.footer--col  ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #bbbbbb;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer--col  ul li a:hover {
+    color: #000;
+    padding-left: 10px;
+}
+.footer .social-links {
+    display: flex;
+    flex-direction: column;
+}
+.footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+    color: #ccc;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+.footer .social-links a i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+.footer .social-links a:hover {
+    color: #000;
+}
+.footer .social-links p {
+    margin: 0 5px;
+    font-size: 14px;
+}
+.footer--copy h1 {
+    color: #000;
+    background: none;
+    font-size: 44.4px;
+    font-family: 'Vollkorn', serif;
+    margin: 0 0 30px;
+    line-height: 52.8px;
+    font-weight: 400;
+}
+.footer--intro {
+    display: flex;
+    flex-direction: column;
+    color: #c5a25d;
+    margin-bottom: 20px;
+}
+
+.footer--intro #email-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none; /* Xóa border */
+    border-bottom: 1px solid #c5a25d; /* Thêm border dưới cùng */
+    outline: none;
+    margin-bottom: 5px;
+}
+.intro--regis {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.footer--intro label {
+    margin-top: 10px;
+}
+.footer--intro .intro--email{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer--address {
+    bottom: 0;
+    width: 100%;
+    color: #c5a25d;
+}
+.store--address .intro--address{
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+.store--address .intro--company {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .footer--container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 740px) {
+    .footer--container{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer--row {
+        display: flex;
+        flex-direction: column;
+    }
+}
