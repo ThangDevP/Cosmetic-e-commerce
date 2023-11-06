@@ -1,8 +1,9 @@
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-const cors = require('cors');
-const jsonServer = require('json-server');
+const express = require("express");
+const morgan = require("morgan");
+const path = require("path");
+const cors = require("cors");
+const jsonServer = require("json-server");
+const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
@@ -29,7 +30,6 @@ server.use(
   })
 );
 server.use(jsonServer.bodyParser);
-
 server.use((req, res, next) => {
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
