@@ -68,6 +68,14 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
+app.get("/product/:id", function (req, res) {
+  const productId = Number(req.params.id); // Use req.params.id to access the route parameter
+  console.log(productId);
+  fetch(`http://localhost:3000/api/products?id=${productId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length === 1) {
+        res.sendFile(path.join(__dirname + "/pages/product.html"));
 
 app.get("/history", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/history.html"));
@@ -87,6 +95,11 @@ app.get("/user/:id", function (req, res) {
       // You may want to send an error response here
     });
 });
+app.get('/home', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/home.html'));
+});
+
+
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
