@@ -3,13 +3,13 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
-const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
 const cart = [];
 
+// Set up CORS for your Express app
 app.use(cors());
 app.use(morgan("combined"));
 app.use(express.static(path.join(__dirname, "styles")));
@@ -52,9 +52,9 @@ server.post("/register", (req, res) => {
   const dob = "2001-12-21";
   const gender = "male";
   // Check if the user already exists
-  const existingUser = router.db.get("users").find({ email }).value();
+  const existingUser = router.db.get('users').find({ username }).value();
   if (existingUser) {
-    return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
+    return res.status(400).json({ message: 'Username already exists.' });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
