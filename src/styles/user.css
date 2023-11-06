@@ -169,3 +169,77 @@ body {
   footer a:hover {
     color: #7d7d7d;
   }
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .edit-form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .edit-form button {
+    padding: 10px;
+    width: 30%;
+    background-color: #7ed386;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .edit-form button:hover {
+    background-color: #3fb6a8;
+  }
+  #edit-form {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  #edit-form input {
+    display: block;
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  button {
+    display: block;
+    width: 100px;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+          /* CSS cho bảng */
+          #history-table {
+            width: 50%;
+            margin: 0 auto; /* Để căn giữa bảng */
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-left: 6px; /* Di chuyển bảng sang bên trái 6px */
+            margin-top: 2px;
+        }
+
+        #history-table th, #history-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #history-table th {
+            background-color: #f2f2f2;
+        }

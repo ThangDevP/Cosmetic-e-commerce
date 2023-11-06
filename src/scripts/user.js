@@ -17,3 +17,33 @@ fetch(`http://localhost:3000/api/users/${userId}`)
   .catch((error) => {
     console.error("Error fetching user data:", error);
   });
+
+function editUserInfo() {
+  const editForm = document.getElementById("edit-form");
+  editForm.style.display = "block";
+}
+
+function saveUserInfo() {
+  const newName = document.getElementById("new-full-name").value;
+  const newEmail = document.getElementById("new-email").value;
+  const newPassword = document.getElementById("new-password").value;
+
+  const data = { username: newEmail, password: newPassword };
+
+  fetch(`http://localhost:3000/api/users/${userId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log("Success:", result);
+      // Reload the page to reflect the changes
+      location.reload();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
