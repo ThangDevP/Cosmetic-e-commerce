@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/cart.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h2>Cart Shoping</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Delete Product</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            
+          </tbody>
+        </table>
+        <div class="total">
+          <h3>Total: <span id="total-quantity">0</span></h3>
+          <h3>Total value: $<span id="total-price">0</span></h3>
+        </div>
+        <tr class="checkoutrow">
+          <td colspan="5" class="checkout"><button id="submitbtn">Checkout</button></td>
+        </tr>
+      </div>
+    </section>
+    <script type="text/javascript" src="/cart.js"></script>
+  </body>
+</html>

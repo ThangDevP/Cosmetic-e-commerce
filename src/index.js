@@ -8,11 +8,10 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
-// Set up CORS for your Express app
+const cart = [];
+
 app.use(cors());
-// Show request, HTTP logger
 app.use(morgan("combined"));
-// Use static file
 app.use(express.static(path.join(__dirname, "styles")));
 app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "components")));
@@ -38,6 +37,160 @@ server.use((req, res, next) => {
   }
   next();
 });
+
+// router.post("/api/cart", (req, res) => {
+//   try {
+//     const productData = req.body;
+//     /// Kiểm tra xem sản phẩm có tồn tại trong giỏ hàng chưa
+//   const existingProductIndex = cart.findIndex((item) => item.id === productData.id);
+
+//   if (existingProductIndex !== -1) {
+//     // Nếu sản phẩm đã tồn tại, cập nhật số lượng
+//     cart[existingProductIndex].quantity += productData.quantity;
+//   } else {
+//     // Nếu sản phẩm chưa tồn tại, thêm mới vào giỏ hàng
+//     cart.push(productData);
+//   }
+//     res.status(200).json({ message: "Product added to cart successfully." });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   }
+// });
+router.post("/api/cart", (req, res) => {
+  try {
+    const productData = req.body;
+    // Check if the product already exists in the cart
+    const existingProductIndex = cart.findIndex((item) => item.id === productData.id);
+
+    if (existingProductIndex !== -1) {
+      // If the product already exists, update the quantity
+      cart[existingProductIndex].quantity += productData.quantity;
+      res.status(200).json({ message: "Product quantity updated in the cart successfully." });
+    } else {
+      // If the product doesn't exist, add it to the cart
+      cart.push(productData);
+      res.status(200).json({ message: "Product added to the cart successfully." });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+const fs = require('fs');
+
+const cartDataFile = 'db.json'; 
+
+// API thêm sản phẩm vào giỏ hàng
+router.post('/cart', (req, res) => {
+
+  // Đọc dữ liệu giỏ hàng hiện tại
+  fs.readFile(cartDataFile, (err, data) => {
+    if (err) throw err;
+    
+    let cart = JSON.parse(data);
+
+    const newProduct = req.body; // sản phẩm cần thêm mới
+    
+    // Kiểm tra sản phẩm đã tồn tại chưa
+    const existingProduct = cart.find(p => p.id == newProduct.id);
+
+    if (existingProduct) {
+      // Nếu sp đã có, cộng dồn số lượng
+      existingProduct.quantity += newProduct.quantity;
+    } else {
+      // Nếu sp chưa có, thêm mới vào mảng
+      cart.push(newProduct); 
+    }
+
+    // Ghi đè giỏ hàng vào file
+    fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
+      if (err) throw err;
+      res.json({message: 'Thêm sản phẩm thành công!'});
+    });
+
+  });
+
+});
+
+
+// API cập nhật số lượng sản phẩm trong giỏ
+router.patch('/cart/:productId', (req, res) => {
+  
+  const productId = req.params.productId;
+  const newQuantity = req.body.quantity;
+
+  fs.readFile(cartDataFile, (err, data) => {
+    if (err) throw err;
+
+    let cart = JSON.parse(data);
+
+    // Tìm sản phẩm cần update
+    const product = cart.find(p => p.id == productId);
+
+    if (product) {
+      product.quantity = newQuantity; // Cập nhật số lượng
+      
+      fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
+        if (err) throw err;
+        res.json({message: 'Cập nhật số lượng thành công!'})  
+      });
+
+    } else {
+      res.status(404).json({message: 'Không tìm thấy sản phẩm!'});
+    }
+
+  });
+
+});
+
+
+// API xóa sản phẩm khỏi giỏ hàng
+router.delete('/cart/:productId', (req, res) => {
+
+  const productId = req.params.productId;
+
+  fs.readFile(cartDataFile, (err, data) => {
+    if (err) throw err;
+
+    let cart = JSON.parse(data);
+
+    // Tìm và xóa sản phẩm khỏi mảng
+    const productIndex = cart.findIndex(p => p.id == productId);
+    if (productIndex >= 0) {
+      cart.splice(productIndex, 1); 
+    }
+
+    fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
+      if (err) throw err;  
+      res.json({message: 'Đã xóa sản phẩm khỏi giỏ hàng!'}) ;
+    });
+
+  });
+
+
+});
+
+
+app.get("/cart/:id", (req, res) => {
+  const productId = req.params.id;
+
+  // Tìm sản phẩm trong giỏ hàng dựa trên productId (hoặc product-id, tùy vào cấu trúc của dữ liệu cart)
+  // Ví dụ: sử dụng productId để tìm sản phẩm trong dữ liệu cart
+  const productInCart = cart.find((item) => item["product-id"] === productId);
+
+  if (productInCart) {
+    // Nếu tìm thấy sản phẩm trong giỏ hàng, bạn có thể hiển thị thông tin sản phẩm
+    res.send(`Product Name: ${productInCart.name}, Quantity: ${productInCart.quantity}`);
+  } else {
+    // Nếu không tìm thấy sản phẩm, bạn có thể trả về một trang hoặc thông báo lỗi
+    res.send("Product not found in the cart.");
+  }
+});
+
+
 server.post("/register", (req, res) => {
   const { username, password } = req.body;
   // Check if the user already exists
@@ -74,6 +227,10 @@ app.get("/product/:id", function (req, res) {
       }
     });
   });
+app.get("/history", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/history.html"));
+});
+
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
   fetch(`http://localhost:3000/api/users?id=${userId}`)
