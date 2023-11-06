@@ -13,6 +13,7 @@ function loadPage(slug) {
     .then((data) => {
       footerElement.innerHTML = data;
     });
+ 
 
   function plusSlides(n) {
     showSlides((slideIndex += n));
