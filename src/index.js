@@ -7,7 +7,7 @@ const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
-const port = 3000;
+const port = 4000;
 // Set up CORS for your Express app
 app.use(cors());
 // Show request, HTTP logger
@@ -68,6 +68,11 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
+
+app.get("/history", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/history.html"));
+});
+
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
   fetch(`http://localhost:3000/api/users?id=${userId}`)
