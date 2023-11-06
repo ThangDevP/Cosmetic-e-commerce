@@ -68,6 +68,9 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/login.html'));
 });
+app.get('/home', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/home.html'));
+});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
