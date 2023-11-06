@@ -15,7 +15,6 @@ function loadPage(slug) {
             footerElement.innerHTML = data;
         });
     // Load dynamic content based on the slug
-    if (slug === 'history') {
         fetch('/api/history')
             .then(response => response.json())
             .then(data => {
@@ -39,17 +38,7 @@ function loadPage(slug) {
             .catch(() => {
                 bodyElement.innerHTML = 'No purchase history found.';
             });
-    } else {
-        fetch(`/${slug}.html`)
-            .then(response => response.text())
-            .then(data => {
-                bodyElement.innerHTML = data;
-            })
-            .catch(() => {
-                bodyElement.innerHTML = 'Page not found';
-            });
-    }
-}
+
 
     fetch(`/home.html`)
         .then(response => response.text())
@@ -59,7 +48,7 @@ function loadPage(slug) {
         .catch(() => {
             bodyElement.innerHTML = 'Page not found';
         });
-
+    }
 // Function to handle routing based on the URL path
 function handleRouting() {
   const path = window.location.pathname;
