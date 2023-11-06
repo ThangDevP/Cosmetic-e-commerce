@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
-
 // JSON Server setup
 const server = jsonServer.create();
 // const adapter = new FileSync('db.json');
@@ -30,7 +29,6 @@ server.use(
   })
 );
 server.use(jsonServer.bodyParser);
-
 server.use((req, res, next) => {
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
@@ -40,7 +38,6 @@ server.use((req, res, next) => {
   }
   next();
 });
-
 server.post("/register", (req, res) => {
   const { username, password } = req.body;
   // Check if the user already exists
@@ -54,10 +51,8 @@ server.post("/register", (req, res) => {
   router.db.get("users").push(newUser).write();
   return res.status(200).json({ message: "Registration successful." });
 });
-
 // Mount the JSON Server on the '/api' path
 app.use("/api", server);
-
 // Serve your routes
 app.get("/about-us", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/about-us.html"));
@@ -76,6 +71,9 @@ app.get("/product/:id", function (req, res) {
     .then((data) => {
       if (data.length === 1) {
         res.sendFile(path.join(__dirname + "/pages/product.html"));
+      }
+    });
+  });
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
   fetch(`http://localhost:3000/api/users?id=${userId}`)
@@ -93,8 +91,6 @@ app.get("/user/:id", function (req, res) {
 app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/home.html'));
 });
-
-
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
