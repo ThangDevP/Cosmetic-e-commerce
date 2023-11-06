@@ -206,6 +206,38 @@ video::-webkit-media-controls {
         padding-bottom: 20px;
         padding-left: 50px;
     }
+    .brand-box {
+        position: absolute; /* Để đặt nội dung lên trên hình */
+        background-color: #FBFBF3;
+        top: 50px;
+        left: 200px;
+        width: 400px; /* Đặt kích thước của hộp */
+        height: 230px; /* Đặt kích thước của hộp */
+        color: #1E1D16; /* Màu chữ trong hộp */
+        text-align: center;
+        padding: 20px; /* Đặt khoảng cách trong hộp */
+        border-radius: 10px;
+    }
+    .brand-box h1{
+        width: 300px;
+        height: 50px;
+        padding: 0;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 20px;
+        padding-top: 10px;
+    }
+    .brand-box p{
+        width: 330px;
+        height: 250px;
+        font-size: 10px;
+        font-weight: 400;
+        padding: 0;
+        padding-bottom: 20px;
+        margin: 0 auto;
+        color: #AEADA9;
+    }
 }
 
 /* Điện thoại di động */
