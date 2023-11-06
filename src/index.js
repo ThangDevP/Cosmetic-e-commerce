@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
+const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
@@ -213,16 +214,12 @@ app.use("/api", server);
 app.get("/about-us", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/about-us.html"));
 });
-app.get("/main", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/main.html"));
 });
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
-app.get("/cart", function (req, res) {
-  res.sendFile(path.join(__dirname + "/pages/cart.html"));
-});
-
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
@@ -232,14 +229,31 @@ app.get("/product/:id", function (req, res) {
       if (data.length === 1) {
         res.sendFile(path.join(__dirname + "/pages/product.html"));
       }
+    });
+  });
+app.get("/history", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/history.html"));
+});
+
+app.get("/user/:id", function (req, res) {
+  const userId = Number(req.params.id);
+  fetch(`http://localhost:3000/api/users?id=${userId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length === 1) {
+        res.sendFile(path.join(__dirname + "/pages/user.html"));
+      }
     })
     .catch((error) => {
       console.error("Error fetching product data: ", error);
       // You may want to send an error response here
     });
 });
+app.get('/home', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/home.html'));
+});
 
-module.exports = router;
+
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
