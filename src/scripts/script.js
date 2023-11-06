@@ -15,6 +15,31 @@ function loadPage(slug) {
             footerElement.innerHTML = data;
         });
     // Load dynamic content based on the slug
+        fetch('/api/history')
+            .then(response => response.json())
+            .then(data => {
+                const historyElement = document.createElement('div');
+                historyElement.classList.add('history-container');
+
+                data.history.forEach(item => {
+                    const historyItemElement = document.createElement('div');
+                    historyItemElement.classList.add('history-item');
+                    historyItemElement.innerHTML = `
+                        <p>Purchase Date: ${item.purchaseDate}</p>
+                        <p>Purchase Details: ${item.purchaseDetails}</p>
+                        <p>Purchase Amount: ${item.purchaseAmount}</p>
+                    `;
+                    historyElement.appendChild(historyItemElement);
+                });
+
+                bodyElement.innerHTML = '';
+                bodyElement.appendChild(historyElement);
+            })
+            .catch(() => {
+                bodyElement.innerHTML = 'No purchase history found.';
+            });
+
+
     fetch(`/home.html`)
         .then(response => response.text())
         .then(data => {
@@ -23,7 +48,7 @@ function loadPage(slug) {
         .catch(() => {
             bodyElement.innerHTML = 'Page not found';
         });
-}
+    }
 // Function to handle routing based on the URL path
 function handleRouting() {
   const path = window.location.pathname;

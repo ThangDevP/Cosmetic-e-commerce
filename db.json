@@ -6,9 +6,10 @@
       "password": "123456"
     },
     {
-      "id": 2,
-      "username": "user2",
-      "password": "password2"
+      "username": "",
+      "password": "",
+      "updatedAt": 1699240688597,
+      "id": 2
     },
     {
       "id": 1698834900621,
@@ -38,5 +39,25 @@
       "description": "xyzxyz",
       "discount": 40
     }
-  ]
-}
+  ],
+
+"history": [
+  {
+      "id": 1,
+      "purchaseDate": "2023-11-01",
+      "purchaseDetails": "Item 1",
+      "purchaseAmount": 100
+  },
+  {
+      "id": 2,
+      "purchaseDate": "2023-10-28",
+      "purchaseDetails": "Item 3",
+      "purchaseAmount": 150
+  },
+  {
+      "id": 3,
+      "purchaseDate": "2023-10-25",
+      "purchaseDetails": "Item 5",
+      "purchaseAmount": 50
+  }
+]}
