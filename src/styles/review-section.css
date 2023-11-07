@@ -1,4 +1,3 @@
-@import url("style.css");
 *{
     margin: 0px;
     padding: 0px;
@@ -11,7 +10,6 @@ body {
 
 a{
     text-decoration: none;
-
 }
 
 p{
@@ -19,6 +17,7 @@ p{
 }
 
 #testimonials{
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +29,7 @@ p{
     letter-spacing: 1px;
     margin: 0px;
     padding: 0px;
-    background-color: #f7efe2;
+    background-image: url("/bg_brand_cf39014_2_9e67c4813e.jpg");
     width: 100%;
 }
 
@@ -53,7 +52,17 @@ p{
     font-family: 'Oswald', sans-serif;
 }
 
-.body-review-section .header-section {
+.body-review-section .header-section-top {
+    font-size: 80px;
+    color: #1f1c17;
+    font-family: 'Vollkorn', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 400;
+    height: 90px;
+}
+
+.body-review-section .header-section-bot {
     font-size: 80px;
     color: #1f1c17;
     font-family: 'Oswald', sans-serif;
@@ -95,7 +104,7 @@ p{
     align-items: center;
     flex-wrap: wrap;
     width:100%;
-    margin: 60px 0 60px 0;
+    margin: 60px 0 20px 0;
 }
 
 .testimonial-box{
@@ -139,7 +148,7 @@ p{
     font-family: 'Nunito', sans-serif;
 }
 .reviews{
-    color: #f9d71c;
+    color: #ccb48f;
 }
 .box-top{
     display: flex;
@@ -156,6 +165,9 @@ p{
     transition: all ease 0.3s;
 }
 
+.banner-add-review{
+    margin: 30px 20px;
+}
 
 .banner-add-review-body{
     display: flex;
@@ -178,6 +190,7 @@ p{
     font-size: 20px;
     padding-bottom: 10px;
     font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
 }
 
 .review-input::placeholder {
@@ -201,17 +214,19 @@ p{
 }
 
 .button-review-section:hover {
-    background-color: #42403c; /* Màu nền khi hover */
+    background-color: #42403c;
   }  
- 
-@media(max-width:1060px){
-    .testimonial-box{
-        max-width: 45%;
-        padding: 10px;
+
+
+/* ------------------------------------------- */
+/* ipad air */
+@media(max-width:1024px){
+    .body-review-section .header-section-top{
+        max-width: 100%;
+        font-size: 70px;
+        height: 70px;
     }
-}
-@media(max-width:769px){
-    .body-review-section .header-section{
+    .body-review-section .header-section-bot{
         max-width: 100%;
         font-size: 70px;
         height: 70px;
@@ -228,22 +243,43 @@ p{
         margin-top: 10px;
     }
     .banner-add-review{
-        margin: 0 15px;
+        margin: 30px 20px;
+    }
+    .review-input{
+        max-width: 500px;
+        margin-bottom: 10px;
+    }
+    .banner-add-review-body .button-review-section{
+        max-width: 300px;
+    }
+}
+
+/* ipad mini */
+@media(max-width:769px){
+    .banner-add-review{
+        margin: 30px 20px;
     }
     .banner-add-review-body{
         display: block !important;
     }
     .review-input{
-        max-width: 728px;
+        max-width: 669px;
         margin-bottom: 10px;
         margin-right: 0;
     }
     .banner-add-review-body .button-review-section{
-        max-width: 728px;
+        max-width: 669px;
     }
 }
-@media screen and (max-width:415px){
-    .body-review-section .header-section{
+
+/* iphone 7/7/8 plus */
+@media(max-width:415px){
+    .body-review-section .header-section-top{
+        max-width: 100%;
+        font-size: 60px;
+        height: 60px;
+    }
+    .body-review-section .header-section-bot{
         max-width: 100%;
         font-size: 60px;
         height: 60px;
@@ -256,7 +292,7 @@ p{
         margin-top: 10px;
     }
     .banner-add-review{
-        margin: 0 15px;
+        margin: 30px 20px;
     }
     .banner-add-review-body{
         display: block !important;
