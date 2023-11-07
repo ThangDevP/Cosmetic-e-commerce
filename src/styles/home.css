@@ -168,6 +168,36 @@ video::-webkit-media-controls {
     padding-top: 20px;
 }
 
+.brands-container{
+    text-align: center;
+}
+.brands-container row{
+    justify-content: center;
+}
+.brands--container .brands--items{
+        display: inline-block;
+        margin: 0 auto;
+        text-align: left;
+}
+.brands--container h3 {
+    font-size: 33px;
+    text-align: center;
+    font-family: 'Vollkorn', serif;}
+.brands--container p {
+    font-size: 19px;
+    color: #76736F;
+    text-align: center;
+    margin: 40px 20px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 300;
+}
+.brands--container img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
 /* swiper slide container */
 .row::after {
     content: "";
@@ -434,6 +464,16 @@ video::-webkit-media-controls {
     .press-btn{
         display: none;
     }
+    .brands--container .brand--row {
+        display: flex;
+        flex-direction: column;
+        margin: none;
+    }
+    .brands--container p {
+        width: 100%;
+        text-align: center;
+        margin: 10px 10px 10px 0px;
+    }
 }
 
 /* Điện thoại di động */
@@ -479,5 +519,15 @@ video::-webkit-media-controls {
     }
     .swiper-navBtn{
         display: none;
+    }
+    .brands--container .brand--row {
+        display: flex;
+        flex-direction: column;
+        margin: none;
+    }
+    .brands--container p {
+        width: 100%;
+        text-align: center;
+        margin: 10px 10px 10px 0px;
     }
 }
