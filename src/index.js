@@ -248,6 +248,9 @@ app.get("/user/:id", function (req, res) {
 app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/home.html'));
 });
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/blog.html'));
+});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
