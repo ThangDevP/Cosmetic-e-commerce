@@ -13,6 +13,7 @@ input {
   width: 100%;
   background-color: var(--white);
   min-height: 100vh;
+  overflow: hidden;
 }
 .forms-container {
   position: absolute;
