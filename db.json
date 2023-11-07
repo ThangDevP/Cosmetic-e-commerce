@@ -97,9 +97,8 @@
       "price": 50,
       "category": "Gears",
       "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 10,
-      "sale": true
+      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
+      "discount": 10
     },
     {
       "id": 2,
@@ -144,93 +143,6 @@
       "description": "Giảm gãy rụng và làm mềm tóc",
       "discount": 40,
       "sale": true
-    },
-    {
-      "id": 5,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
-    }
-  ],
-  "carts": [
-    {
-      "id": 2,
-      "userId": 1699415299354
-    },
-    {
-      "id": 1,
-      "userId": 1699415299355
-    }
-  ],
-  "cartItems": [
-    {
-      "id": 2,
-      "productId": 1,
-      "cartId": 1,
-      "quantity": 10,
-      "createdAt": 1699263173299,
-      "updatedAt": 1699264373895
-    },
-    {
-      "id": 3,
-      "productId": 3,
-      "cartId": 2,
-      "quantity": 12,
-      "createdAt": 1699263173299,
-      "updatedAt": 1700013021027
-    },
-    {
-      "id": 1,
-      "productId": 2,
-      "cartId": 2,
-      "quantity": 17,
-      "createdAt": 1699263173299,
-      "updatedAt": 1700013019762
-    }
-  ],
-  "history": [
-    {
-      "id": 1,
-      "purchaseDate": "2023-11-01",
-      "purchaseDetails": "Item 1",
-      "purchaseAmount": 100
-    },
-    {
-      "id": 2,
-      "purchaseDate": "2023-10-28",
-      "purchaseDetails": "Item 3",
-      "purchaseAmount": 150
-    },
-    {
-      "id": 3,
-      "purchaseDate": "2023-10-25",
-      "purchaseDetails": "Item 5",
-      "purchaseAmount": 50
-    }
-  ],
-  "brands": [
-    {
-      "id": 1,
-      "name": "Leaping Bunny",
-      "description": " Chương trình Leaping Bunny của tổ chức Cruelty Free International được xem là tiêu chuẩn vàng toàn cầu cho các sản phẩm không thử nghiệm trên động vật.",
-      "img": "brand1.svg"
-    },
-    {
-      "id": 2,
-      "name": "The Vegan Society",
-      "description": " The Vegan Society - Hiệp hội thuần chay quốc tế: là một trong những chứng nhận uy tín xác thực cho các sản phẩm không có thành phần từ động vật và không thử nghiệm trên động vật.",
-      "img": "brand2.svg"
-    },
-    {
-      "id": 3,
-      "name": "PETA",
-      "description": " Chương trình Beauty Without Bunny của tổ chức bảo vệ quyền lợi động vật toàn cầu PETA là chương trình bảo vệ sự cam kết không có sự tàn ác đối với động vật uy tín trên thế giới.",
-      "img": "brand3.svg"
     }
   ]
 }

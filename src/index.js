@@ -226,7 +226,7 @@ app.get("/product/:id", function (req, res) {
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 1) {
-        res.sendFile(path.join(__dirname + "/pages/product.html"));
+        res.sendFile(path.join(__dirname + "/pages/product-detail.html"));
       }
     });
 });
