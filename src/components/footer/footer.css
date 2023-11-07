@@ -10,7 +10,7 @@
 }
 .footer {
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     margin-top: 20px;
     margin-bottom: 0;
@@ -183,6 +183,7 @@
     }
     .footer--row {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 100px;
     }
 }
