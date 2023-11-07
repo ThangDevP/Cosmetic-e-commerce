@@ -22,7 +22,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 1) {
-          alert('Login successful');
+          localStorage.setItem('username', username);
           window.location.href = '/'; // Redirect to the home page
         } else {
           alert('Login failed. Check your username and password.');
