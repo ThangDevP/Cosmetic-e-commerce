@@ -1,19 +1,3 @@
-// Example code to listen to button clicks for updating and removing items
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("cart-items").addEventListener("click", (e) => {
-      if (e.target.classList.contains("update-quantity")) {
-          const productId = e.target.dataset.productId;
-          const newQuantity = parseInt(prompt("Enter new quantity:"));
-          if (!isNaN(newQuantity)) {
-              updateCartItemQuantity(productId, newQuantity);
-          }
-      } else if (e.target.classList.contains("remove-item")) {
-          const productId = e.target.dataset.productId;
-          removeFromCart(productId);
-      }
-  });
-});
-
 function loadPage(slug) {
 
     const bodyElement = document.getElementById('body');
