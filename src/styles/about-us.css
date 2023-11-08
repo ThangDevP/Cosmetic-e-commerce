@@ -1,0 +1,36 @@
+@import url("style.css");
+*{
+    padding: 0;
+    margin: 0;
+}
+.main-about-us{
+    background-color: #fbfaf1;
+    padding: 50px;
+}
+.story-title h1{
+    line-height: 3.125rem;
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    font-style: italic;
+}
+.main-story{
+    margin-top: 30px;
+}
+.main-story h4{
+    color: #414548;
+    font-family: Nunito;
+    font-style: italic;
+    font-size: 1rem;
+}
+.main-story h6{
+    color: #414548;
+    font-family: 16px Nunito;
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.main-story p{
+    color: #414548;
+    font-family: 16px Nunito;
+    font-size: 1rem;
+}
