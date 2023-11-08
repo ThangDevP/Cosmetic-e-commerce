@@ -73,7 +73,7 @@ function userName() {
     var logoutButton = document.getElementById('logout');
     logoutButton.addEventListener('click', function (e) {
       e.preventDefault();
-      localStorage.removeItem('username');
+      localStorage.clear();
       userChange.textContent = 'Đăng nhập';
       subMenu.style.display = 'none';
     });
