@@ -132,3 +132,37 @@
     width: 300px;
     display: block;
 }
+/* Initially hide the sub-menu */
+.sub-menu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1; /* Ensure it appears above other content */
+    /* background-color: #fefbf4; Set the background color to white */
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-left: 40px;
+    border-radius: 10px; /* Add a left margin for spacing */
+  }
+  
+  /* Style the individual sub-menu items */
+  .sub-menu li {
+    padding: 4px 0;
+  }
+  
+  /* Style the links inside the sub-menu */
+  .sub-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 4px 16px;
+  }
+  .sub-menu a:hover {
+    background-color: #ccc; /* Set the background color to black */
+    color: #fff; /* Set the text color to white */
+  }
+  /* Show the sub-menu when hovering over user-change */
+  #user-change:hover .sub-menu {
+    display: block;
+  }
