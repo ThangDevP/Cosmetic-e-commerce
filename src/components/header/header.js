@@ -8,58 +8,76 @@ function dropdownFunc() {
     x.style.display = "block";
   }
 }
+function createSubMenu() {
+  var userChange = document.getElementById('user-change');
+  var subMenu = document.createElement('ul');
+  subMenu.classList.add('sub-menu'); // You can add CSS classes for styling
+  subMenu.innerHTML = `
+    <li><a href="/profile">User Profile</a></li>
+    <li><a href="#" id="logout">Logout</a></li>
+  `;
 
-function userName() {
-    var name = localStorage.getItem('username');
-    var userChange = document.getElementById('user-change');
-    var dropdownContent = document.getElementById('dropdown-content');
-    if (name) {
-        userChange.textContent = name;
+  userChange.appendChild(subMenu);
+  
 
-        // Create and populate the dropdown menu
-        var dropdownMenu = document.createElement('div');
-        dropdownMenu.classList.add('dropdown-menu-item');
+  // Add event listener to hide the sub-menu when the cursor leaves "user-change"
+  userChange.addEventListener('mouseleave', function () {
+    subMenu.style.display = 'none';
+  });
 
-        var option1 = document.createElement('a');
-        option1.href = '/profile'; // Set the URL or action for the first option
-        option1.textContent = 'User profile';
-        //style
-        option1.style.padding = '12px 16px';
-        option1.style.textDecoration = 'none';
-        option1.style.display = 'block';
-        option1.style.color = '#333';
-        dropdownMenu.appendChild(option1);
+  // Add event listener to show the sub-menu when hovering over "user-change"
+  userChange.addEventListener('mouseenter', function () {
+    subMenu.style.display = 'block';
+  });
 
-        var option2 = document.createElement('a');
-        option2.href = '#'; // Set the URL or action for the second option
-        option2.textContent = 'Logout';
-        // Apply CSS styles to option2
-        option2.style.padding = '12px 16px';
-        option2.style.textDecoration = 'none';
-        option2.style.display = 'block';
-        option2.style.color = '#333';
-        dropdownMenu.appendChild(option2);
-
-        // Apply CSS styles to the dropdown menu itself
-        dropdownMenu.style.position = 'relative';
-        dropdownMenu.style.display = 'inline-block';
-
-        // Add the dropdown menu to the dropdown content
-        dropdownContent.appendChild(dropdownMenu);
-        option2.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent the link from navigating
-            // Remove the 'username' item from localStorage
-            localStorage.removeItem('username');
-            // Update the userChange text
-            userChange.textContent = "Đăng nhập";
-        });
-    } else {
-        userChange.textContent = "Đăng nhập";
-    }
-    // if (name){
-    //     document.getElementById('user-change').textContent = name;
-    // } else {
-    //     document.getElementById('user-change').textContent = "Đăng nhập";
-    // }
+  // Event listener for the logout button
+  var logoutButton = document.getElementById('logout');
+  logoutButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    localStorage.removeItem('username');
+    userChange.textContent = 'Đăng nhập';
+    subMenu.style.display = 'none';
+  });
 }
 
+function userName() {
+  var name = localStorage.getItem('username');
+  var userChange = document.getElementById('user-change');
+  var subMenu = document.createElement('ul');
+  subMenu.classList.add('sub-menu');
+    subMenu.style.display = 'none'; // Initially hide the submenu
+
+  
+  if (name) {
+    userChange.textContent = name;
+
+    // Create and populate the sub-menu
+    subMenu.innerHTML = `
+      <li><a href="/profile">Hồ sơ người dùng</a></li>
+      <li><a href="#" id="logout">Đăng xuất</a></li>
+    `;
+
+    userChange.appendChild(subMenu);
+
+    // Add event listener to hide the sub-menu when the cursor leaves "user-change"
+    userChange.addEventListener('mouseleave', function () {
+      subMenu.style.display = 'none';
+    });
+
+    // Add event listener to show the sub-menu when hovering over "user-change"
+    userChange.addEventListener('mouseenter', function () {
+      subMenu.style.display = 'block';
+    });
+
+    // Event listener for the logout button
+    var logoutButton = document.getElementById('logout');
+    logoutButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      localStorage.removeItem('username');
+      userChange.textContent = 'Đăng nhập';
+      subMenu.style.display = 'none';
+    });
+  } else {
+    userChange.textContent = 'Đăng nhập';
+  }
+}
