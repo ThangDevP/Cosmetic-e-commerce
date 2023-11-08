@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
+app.use(express.static(path.join(__dirname, "admin")));
 // JSON Server setup
 const server = jsonServer.create();
 // const adapter = new FileSync('db.json');
@@ -250,6 +251,9 @@ app.get('/home', function (req, res) {
 });
 app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/blog.html'));
+});
+app.get('/dashboard', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/dashboard.html'));
 });
 server.use(router);
 // Local host --- Hosting
