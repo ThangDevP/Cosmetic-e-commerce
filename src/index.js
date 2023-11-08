@@ -3,6 +3,7 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
+const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
@@ -67,7 +68,6 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
-
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
@@ -82,6 +82,9 @@ app.get("/product/:id", function (req, res) {
       console.error("Error fetching product data: ", error);
       // You may want to send an error response here
     });
+});
+app.get('/home', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/home.html'));
 });
 
 
