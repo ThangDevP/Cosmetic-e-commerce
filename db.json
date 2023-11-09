@@ -5,9 +5,9 @@
       "username": "Khoa Ngyen",
       "password": "123456",
       "email": "khoa@gmail.com",
-      "phoneNumber": "",
+      "phoneNumber": "0965753213",
       "address": "",
-      "avatar": "",
+      "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
       "role": "admin"
     },
     {
@@ -17,7 +17,7 @@
       "email": "chung241@gmail.com",
       "phoneNumber": "0376281525",
       "address": "Da Nang",
-      "avatar": "",
+      "avatar": "image4.jpg",
       "role": "user"
     },
     {
@@ -25,9 +25,9 @@
       "username": "Thang",
       "password": "123456",
       "email": "thang@gmail.com",
-      "phoneNumber": "",
+      "phoneNumber": "0967856436",
       "address": "",
-      "avatar": "",
+      "avatar": "image3.jpg",
       "role": "user"
     }
   ],

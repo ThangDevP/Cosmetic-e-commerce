@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, "styles")));
 app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
+app.use(express.static(path.join(__dirname, "dashboard")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 // JSON Server setup
 const server = jsonServer.create();
@@ -219,6 +220,9 @@ app.get("/", function (req, res) {
 });
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
+});
+app.get("/manageuser", function (req, res) {
+  res.sendFile(path.join(__dirname + "/dashboard/manageuser.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
