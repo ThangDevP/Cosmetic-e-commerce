@@ -19,8 +19,7 @@ app.use(express.static(path.join(__dirname, "admin")));
 
 // JSON Server setup
 const server = jsonServer.create();
-// const adapter = new FileSync('db.json');
-// const db = low(adapter);
+
 server.use(middlewares);
 server.use(
   jsonServer.rewriter({
