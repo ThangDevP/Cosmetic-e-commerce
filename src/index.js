@@ -7,7 +7,7 @@ const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
-const port = 4000;
+const port = 3000;
 // Set up CORS for your Express app
 app.use(cors());
 // Show request, HTTP logger
@@ -21,8 +21,7 @@ app.use(express.static(path.join(__dirname, "assets/img")));
 
 // JSON Server setup
 const server = jsonServer.create();
-// const adapter = new FileSync('db.json');
-// const db = low(adapter);
+
 server.use(middlewares);
 server.use(
   jsonServer.rewriter({
@@ -69,9 +68,6 @@ app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
 
-app.get("/history", function (req, res) {
-  res.sendFile(path.join(__dirname + "/pages/history.html"));
-});
 
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
