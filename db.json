@@ -5,9 +5,9 @@
       "username": "Khoa Ngyen",
       "password": "123456",
       "email": "khoa@gmail.com",
-      "phoneNumber": "",
+      "phoneNumber": "0965753213",
       "address": "",
-      "avatar": "",
+      "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
       "role": "admin"
     },
     {
@@ -17,18 +17,28 @@
       "email": "chung241@gmail.com",
       "phoneNumber": "0376281525",
       "address": "Da Nang",
-      "avatar": "",
+      "avatar": "image4.jpg",
       "role": "user"
     },
     {
-      "id": 1699417207187,
-      "username": "Thang",
-      "password": "123456",
-      "email": "thang@gmail.com",
-      "phoneNumber": "",
-      "address": "",
-      "avatar": "",
-      "role": "user"
+      "username": "Khoa là đbrr",
+      "email": "khoa@gmail.com",
+      "address": "Viet Nam trong tôi",
+      "phoneNumber": "0965753213",
+      "updatedAt": 1699601808796,
+      "id": 1699415299355,
+      "role": "user",
+      "avatar": "image4.jpg"
+    },
+    {
+      "username": "Khang hãm  quámmm",
+      "email": "khang@gmail.com",
+      "address": "Viet Nam22",
+      "phoneNumber": "0876826511",
+      "avatar": "image4.jpg",
+      "role": "user",
+      "updatedAt": 1699610028874,
+      "id": 1699602024890
     }
   ],
   "products": [
