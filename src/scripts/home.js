@@ -28,10 +28,6 @@ function displayBrands(brands) {
 }
 fetchBrands();
 
-
-
-
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
