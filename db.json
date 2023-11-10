@@ -1,20 +1,34 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "chung@gmail.com",
-      "password": "123456"
+      "id": 1699414627439,
+      "username": "Khoa Ngyen",
+      "password": "123456",
+      "email": "khoa@gmail.com",
+      "phoneNumber": "",
+      "address": "",
+      "avatar": "",
+      "role": "admin"
     },
     {
-      "username": "",
-      "password": "",
-      "updatedAt": 1699240688597,
-      "id": 2
+      "id": 1699415299354,
+      "username": "Chung Nguyen",
+      "password": "123456",
+      "email": "chung241@gmail.com",
+      "phoneNumber": "0376281525",
+      "address": "Da Nang",
+      "avatar": "",
+      "role": "user"
     },
     {
-      "id": 1698834900621,
-      "username": "admin@gmail.com",
-      "password": "123456"
+      "id": 1699417207187,
+      "username": "Thang",
+      "password": "123456",
+      "email": "thang@gmail.com",
+      "phoneNumber": "",
+      "address": "",
+      "avatar": "",
+      "role": "user"
     }
   ],
   "products": [
@@ -56,7 +70,6 @@
       "updatedAt": 1699264096902
     }
   ],
-
   "history": [
     {
       "id": 1,

@@ -193,15 +193,19 @@ app.get("/cart/:id", (req, res) => {
 
 
 server.post("/register", (req, res) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
+    const phoneNumber = "";
+    const address = "";
+    const avatar = "";
+    const role = "user";
   // Check if the user already exists
-  const existingUser = router.db.get("users").find({ username }).value();
+  const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
     return res.status(400).json({ message: "Username already exists." });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
-  const newUser = { id, username, password };
+  const newUser = { id, username, password, email, phoneNumber, address, avatar, role };
   router.db.get("users").push(newUser).write();
   return res.status(200).json({ message: "Registration successful." });
 });
