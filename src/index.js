@@ -221,7 +221,7 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
-app.get("/manageuser", function (req, res) {
+app.get("/manageUser", function (req, res) {
   res.sendFile(path.join(__dirname + "/dashboard/manageuser.html"));
 });
 app.get("/product/:id", function (req, res) {

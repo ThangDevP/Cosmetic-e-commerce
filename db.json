@@ -21,14 +21,24 @@
       "role": "user"
     },
     {
-      "id": 1699417207187,
-      "username": "Thang",
-      "password": "123456",
-      "email": "thang@gmail.com",
-      "phoneNumber": "0967856436",
-      "address": "",
-      "avatar": "image3.jpg",
-      "role": "user"
+      "username": "Khoa là đbrr",
+      "email": "khoa@gmail.com",
+      "address": "Viet Nam trong tôi",
+      "phoneNumber": "0965753213",
+      "updatedAt": 1699601808796,
+      "id": 1699415299355,
+      "role": "user",
+      "avatar": "image4.jpg"
+    },
+    {
+      "username": "Khang hãm  quámmm",
+      "email": "khang@gmail.com",
+      "address": "Viet Nam22",
+      "phoneNumber": "0876826511",
+      "avatar": "image4.jpg",
+      "role": "user",
+      "updatedAt": 1699610028874,
+      "id": 1699602024890
     }
   ],
   "products": [
