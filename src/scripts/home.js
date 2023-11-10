@@ -1,4 +1,3 @@
-
 const brandContainer = document.querySelector('.brands--container');
 
 async function fetchBrands() {
