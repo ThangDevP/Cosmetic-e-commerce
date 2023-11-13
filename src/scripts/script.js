@@ -40,47 +40,47 @@ function loadPage(slug) {
         //     });
 
 
-        function plusSlides(n) {
-            showSlides((slideIndex += n));
-          }
-        
-          function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-        
-            if (n > slides.length) {
-              slideIndex = 1;
-            }
-        
-            if (n < 1) {
-              slideIndex = slides.length;
-            }
-        
-            for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-            }
-            slides[slideIndex - 1].style.display = "block";
-          }
-        
-          fetch(`/home.html`)
-            .then((response) => response.text())
-            .then((data) => {
-              bodyElement.innerHTML = data;
-              let slideIndex = 1;
-        
-              showSlides(slideIndex);
-              userName();
-            })
-            .catch(() => {
-              bodyElement.innerHTML = "Page not found";
-            });
-        }
+function plusSlides(n) {
+    showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+}
+
+fetch(`/home.html`)
+    .then((response) => response.text())
+    .then((data) => {
+        bodyElement.innerHTML = data;
+        let slideIndex = 1;
+
+        showSlides(slideIndex);
+        userName();
+    })
+    .catch(() => {
+        bodyElement.innerHTML = "Page not found";
+    });
+}
 // Function to handle routing based on the URL path
 function handleRouting() {
-  const path = window.location.pathname;
-  const slug = path.replace("/", "");
-  // Load the appropriate content based on the slug
-  loadPage(slug || "home");
+    const path = window.location.pathname;
+    const slug = path.replace("/", "");
+    // Load the appropriate content based on the slug
+    loadPage(slug || "home");
 }
 // Listen for changes in the URL (page navigation)
 window.addEventListener("popstate", handleRouting);

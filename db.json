@@ -99,5 +99,25 @@
       "purchaseDetails": "Item 5",
       "purchaseAmount": 50
     }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Leaping Bunny",
+      "description": " Chương trình Leaping Bunny của tổ chức Cruelty Free International được xem là tiêu chuẩn vàng toàn cầu cho các sản phẩm không thử nghiệm trên động vật.",
+      "img": "brand1.svg"
+    },
+    {
+      "id": 2,
+      "name": "The Vegan Society",
+      "description": " The Vegan Society - Hiệp hội thuần chay quốc tế: là một trong những chứng nhận uy tín xác thực cho các sản phẩm không có thành phần từ động vật và không thử nghiệm trên động vật.",
+      "img": "brand2.svg"
+    },
+    {
+      "id": 3,
+      "name": "PETA",
+      "description": " Chương trình Beauty Without Bunny của tổ chức bảo vệ quyền lợi động vật toàn cầu PETA là chương trình bảo vệ sự cam kết không có sự tàn ác đối với động vật uy tín trên thế giới.",
+      "img": "brand3.svg"
+    }
   ]
 }
