@@ -34,6 +34,7 @@ function userName() {
     userChange.innerHTML = ''; // Clear the existing content
     userChange.appendChild(newA);
     userChange.appendChild(subMenu);
+    userChange.querySelector('a').href = 'profile.html'; // Thay đổi href khi đăng xuất
 
     // Add event listener to hide the sub-menu when the cursor leaves "user-change"
     userChange.addEventListener('mouseleave', function () {
