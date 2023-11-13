@@ -49,7 +49,7 @@
     font-size: 30px;
     font-weight: 400;
     line-height: 23px;
-    font-family: Barlow Condensed;
+    font-family: 'Barlow Condensed', sans-serif;
     padding-top: 150px;
     padding-left: 50px;
 }
@@ -106,6 +106,74 @@ video::-webkit-media-controls {
     font-weight: bold;
     /* font-family: Nunito; */
     padding-top: 15px;
+}
+
+
+/* Show Product */
+.product-container {
+    background: #fefbf4;
+    padding: 10px 0;
+}
+
+
+.product--text {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product--text h1 {
+    font-size: 80px;
+    font-family: 'Vollkorn', sans-serif;
+    padding: 2rem;
+}
+
+.product--image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.product--image img {
+    width: 100%;
+    height: 100%;
+}
+
+.product--detail {
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Vollkorn', sans-serif;
+
+}
+
+.product--detail p {
+ padding: 10px 40px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+
+}
+
+.product--detail a button {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    right: 100px;
+    position: relative;
 }
 
 .marquee {
@@ -428,6 +496,38 @@ video::-webkit-media-controls {
     }
     .slide-container .title h3{
         width: fit-content;
+    }
+
+
+    .product--text,
+    .product--detail {
+      order: 1; /* Swap the order */
+    }
+
+    .product--text h1 {
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product--image img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .product--detail p {
+        padding: 0 25%;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product--detail a button{
+        width: 80px;
+        font-size: 20px;
+        right: 0;
     }
 
     .brand-box {
