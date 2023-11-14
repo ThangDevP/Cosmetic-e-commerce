@@ -69,10 +69,11 @@ document
             break;
           }
         }
-        var image = imageFile;
+        var image = imageFile ? imageFile : user.avatar;
 
         if (password !== user.password && password !== null) {
-          console.error("Wrong password");
+          alert("Wrong password");
+          return;
         } else if (newPassword !== confirmPassword) {
           newPassword = user.password;
           confirmPassword = user.password;
