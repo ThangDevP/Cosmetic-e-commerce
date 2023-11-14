@@ -253,7 +253,16 @@ app.get('/blog', function (req, res) {
   res.sendFile(path.join(__dirname + '/pages/blog.html'));
 });
 app.get('/dashboard', function (req, res) {
-  res.sendFile(path.join(__dirname + '/admin/dashboard.html'));
+  res.sendFile(path.join(__dirname + '/admin/dashboard/dashboard.html'));
+});
+app.get('/manageproduct', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/manageproduct/manageproduct.html'));
+});
+app.get('/manageuser', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/manageuser/manageuser.html'));
+});
+app.get('/managecategory', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/category/managecategory.html'));
 });
 server.use(router);
 // Local host --- Hosting

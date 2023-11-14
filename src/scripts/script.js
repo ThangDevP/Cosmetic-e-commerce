@@ -69,6 +69,7 @@ fetch(`/home.html`)
         let slideIndex = 1;
 
         showSlides(slideIndex);
+        userName();
     })
     .catch(() => {
         bodyElement.innerHTML = "Page not found";
