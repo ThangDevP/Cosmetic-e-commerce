@@ -42,16 +42,30 @@
 .form--input {
     display: flex;
     flex-direction: column;
+    flex: 0.6;
+    width: 100%;
+}
+.form--input input{
+    border: 1px solid #2d2f3028;
+    border-radius: 5px;
+}
+#userID {
+    border: none;
+    /* Nếu bạn muốn xóa cả hiển thị của ô input */
+    outline: none;
 }
 .form--avatar {
     width: 150px;
-    height: 150px;
+    height: 250px;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 8px;
     overflow: hidden;
     position: relative;
     margin-right: 50px;
     margin-top: 15px;
+    flex: 0.4;
+    display: flex;
+    top: 50px;
 }
 .form--avatar .upload{
     position: absolute;
@@ -76,7 +90,7 @@
 }
 
 .form--avatar .upload i{
-    color: #000;
+    color: #fff;
     font-size: 35px;
     font-weight: 300;
 }
@@ -88,4 +102,33 @@
 label, input, button {
     margin: 5px;
 }
-
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+td {
+    text-align: center;
+    justify-content: space-between;
+}
+td:last-child button {
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Add some space between the buttons */
+  td:last-child button + button {
+    margin-left: 5px;
+  }
+  
+.modal-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.option-1{
+    border-left: 5px solid #C6A76E;
+    cursor: pointer;
+}
