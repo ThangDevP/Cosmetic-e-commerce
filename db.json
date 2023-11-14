@@ -1,14 +1,15 @@
 {
   "users": [
     {
+      "avatar": "/Hinh_vuong_4da2ecd3d3.jpg",
       "userName": "Thang",
       "email": "thang123@gmail.com",
       "phone": "096785456",
-      "gender": "female",
+      "gender": "male",
       "birthday": "2002-04-17",
-      "password": "Thang123",
+      "password": "Thang1234",
       "id": 16994172071845,
-      "updatedAt": 1699935750941
+      "updatedAt": 1699936595692
     }
   ]
 }
