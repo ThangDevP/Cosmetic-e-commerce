@@ -161,7 +161,8 @@ async function handleAddOrUpdateUser() {
           avatar: urlImage || oldUserData.avatar,
           role: oldUserData.role,
           gender: oldUserData.gender,
-          dob: oldUserData.dob // Giữ nguyên giá trị cũ của role
+          dob: oldUserData.dob,
+          password: oldUserData.password // Giữ nguyên giá trị cũ của role
       };
 
       // Gửi yêu cầu cập nhật người dùng đến API
