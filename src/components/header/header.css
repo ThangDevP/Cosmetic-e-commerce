@@ -1,168 +1,169 @@
 @import url("header.css");
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.announcement{
-    width: 100%;
-    height: 100%;
-    background-color: #1c1c14;
+.announcement {
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c14;
 }
 .announcement p {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    color: white;
-    margin-top: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: white;
+  margin-top: 10px;
 }
 #navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white; /* Change this to your desired background color */
+  /* Add other styles like padding, box-shadow, etc. */
+}
+.sticky {
+  .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white; /* Change this to your desired background color */
+    background-color: white; /* Change this to match your navbar's style */
     /* Add other styles like padding, box-shadow, etc. */
+  }
 }
-.sticky{
-    .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: white; /* Change this to match your navbar's style */
-        /* Add other styles like padding, box-shadow, etc. */
-    }
+.toggle_btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
-.toggle_btn{
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
+.main-menu {
+  width: 100%;
+  height: 100%;
+  background-color: #fff9f0;
 }
-.main-menu{
-    width: 100%;
-    height: 100%;
-    background-color: #fff9f0;
+.main-menu-left {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
 }
-.main-menu-left{
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
+.main-menu-left li {
+  list-style: none;
+  padding: 10px;
 }
-.main-menu-left li{
-    list-style: none;
-    padding: 10px;
+.main-menu-left li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #2d2f30;
+  transition: 0.3s ease;
 }
-.main-menu-left li a{
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 23px;
-    color: #2D2F30;
-    transition: 0.3s ease;
-}
-.main-menu-left li a:active,a:hover{
-    color: #2d2f303f;
-    transition: .5s;
+.main-menu-left li a:active,
+a:hover {
+  color: #2d2f303f;
+  transition: 0.5s;
 }
 
-.main-menu-center{
-    display: flex;
-    justify-content: center;
+.main-menu-center {
+  display: flex;
+  justify-content: center;
 }
-.main-menu-center img{
-    width: 65%;
-    height: 65%;
-}
-
-.main-menu-right{
-    display: flex;
-    flex-direction: row;
-    margin-top: 15px;
-}
-.main-menu-right li{
-    list-style: none;
-    padding: 10px;
-}
-.main-menu-right li a{
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 23px;
-    color: #2D2F30;
-    transition: 0.3s ease;
-}
-.main-menu-right li a:hover{
-    color: #2D2F30;
+.main-menu-center img {
+  width: 65%;
+  height: 65%;
 }
 
-#dropdown_menu{
-    position: absolute;
-    top: 115px;
-    width: 300px;
-    height: 350px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 0 10px 10px 0;
-    overflow: hidden;
+.main-menu-right {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+.main-menu-right li {
+  list-style: none;
+  padding: 10px 0 10px 10px;
+}
+.main-menu-right li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #2d2f30;
+  transition: 0.3s ease;
+}
+.main-menu-right li a:hover {
+  color: #2d2f30;
+}
 
-    display: none;
-    z-index: 1;
+#dropdown_menu {
+  position: absolute;
+  top: 115px;
+  width: 300px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+
+  display: none;
+  z-index: 1;
 }
-#dropdown_menu li{
-    padding: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    margin-top: 30px;
+#dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-top: 30px;
 }
-#dropdown_menu a{
-    text-decoration: none;
-    color: #1c1c14;
-    font-size: 1.1rem;
-    font-weight: 600;
+#dropdown_menu a {
+  text-decoration: none;
+  color: #1c1c14;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
-#dropdown_menu a:hover{
-    color: #2D2F30;
-    text-decoration: underline;
+#dropdown_menu a:hover {
+  color: #2d2f30;
+  text-decoration: underline;
 }
-#dropdown_menu.open{
-    /* height: 240px; */
-    width: 300px;
-    display: block;
+#dropdown_menu.open {
+  /* height: 240px; */
+  width: 300px;
+  display: block;
 }
 /* Initially hide the sub-menu */
 .sub-menu {
-    display: none;
-    position: absolute;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    z-index: 1; /* Ensure it appears above other content */
-    /* background-color: #fefbf4; Set the background color to white */
-    background-color: rgba(255, 255, 255, 0.6);
-    margin-left: 40px;
-    border-radius: 10px; /* Add a left margin for spacing */
-  }
-  
-  /* Style the individual sub-menu items */
-  .sub-menu li {
-    padding: 4px 0;
-  }
-  
-  /* Style the links inside the sub-menu */
-  .sub-menu a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-    padding: 4px 16px;
-  }
-  .sub-menu a:hover {
-    background-color: #ccc; /* Set the background color to black */
-    color: #fff; /* Set the text color to white */
-  }
-  /* Show the sub-menu when hovering over user-change */
-  #user-change:hover .sub-menu {
-    display: block;
-  }
+  display: none;
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1; /* Ensure it appears above other content */
+  /* background-color: #fefbf4; Set the background color to white */
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-left: 40px;
+  border-radius: 10px; /* Add a left margin for spacing */
+}
+
+/* Style the individual sub-menu items */
+.sub-menu li {
+  padding: 4px 0;
+}
+
+/* Style the links inside the sub-menu */
+.sub-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 4px 16px;
+}
+.sub-menu a:hover {
+  background-color: #ccc; /* Set the background color to black */
+  color: #fff; /* Set the text color to white */
+}
+/* Show the sub-menu when hovering over user-change */
+#user-change:hover .sub-menu {
+  display: block;
+}

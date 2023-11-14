@@ -7,7 +7,7 @@ const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
-const port = 3000;
+const port = 3001;
 const cart = [];
 
 app.use(cors());
@@ -63,16 +63,22 @@ router.post("/api/cart", (req, res) => {
   try {
     const productData = req.body;
     // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex((item) => item.id === productData.id);
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === productData.id
+    );
 
     if (existingProductIndex !== -1) {
       // If the product already exists, update the quantity
       cart[existingProductIndex].quantity += productData.quantity;
-      res.status(200).json({ message: "Product quantity updated in the cart successfully." });
+      res.status(200).json({
+        message: "Product quantity updated in the cart successfully.",
+      });
     } else {
       // If the product doesn't exist, add it to the cart
       cart.push(productData);
-      res.status(200).json({ message: "Product added to the cart successfully." });
+      res
+        .status(200)
+        .json({ message: "Product added to the cart successfully." });
     }
   } catch (error) {
     console.error(error);
@@ -80,47 +86,41 @@ router.post("/api/cart", (req, res) => {
   }
 });
 
+const fs = require("fs");
 
-const fs = require('fs');
-
-const cartDataFile = 'db.json'; 
+const cartDataFile = "db.json";
 
 // API thêm sản phẩm vào giỏ hàng
-router.post('/cart', (req, res) => {
-
+router.post("/cart", (req, res) => {
   // Đọc dữ liệu giỏ hàng hiện tại
   fs.readFile(cartDataFile, (err, data) => {
     if (err) throw err;
-    
+
     let cart = JSON.parse(data);
 
     const newProduct = req.body; // sản phẩm cần thêm mới
-    
+
     // Kiểm tra sản phẩm đã tồn tại chưa
-    const existingProduct = cart.find(p => p.id == newProduct.id);
+    const existingProduct = cart.find((p) => p.id == newProduct.id);
 
     if (existingProduct) {
       // Nếu sp đã có, cộng dồn số lượng
       existingProduct.quantity += newProduct.quantity;
     } else {
       // Nếu sp chưa có, thêm mới vào mảng
-      cart.push(newProduct); 
+      cart.push(newProduct);
     }
 
     // Ghi đè giỏ hàng vào file
-    fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
+    fs.writeFile(cartDataFile, JSON.stringify(cart), (err) => {
       if (err) throw err;
-      res.json({message: 'Thêm sản phẩm thành công!'});
+      res.json({ message: "Thêm sản phẩm thành công!" });
     });
-
   });
-
 });
 
-
 // API cập nhật số lượng sản phẩm trong giỏ
-router.patch('/cart/:productId', (req, res) => {
-  
+router.patch("/cart/:productId", (req, res) => {
   const productId = req.params.productId;
   const newQuantity = req.body.quantity;
 
@@ -130,28 +130,23 @@ router.patch('/cart/:productId', (req, res) => {
     let cart = JSON.parse(data);
 
     // Tìm sản phẩm cần update
-    const product = cart.find(p => p.id == productId);
+    const product = cart.find((p) => p.id == productId);
 
     if (product) {
       product.quantity = newQuantity; // Cập nhật số lượng
-      
-      fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
+
+      fs.writeFile(cartDataFile, JSON.stringify(cart), (err) => {
         if (err) throw err;
-        res.json({message: 'Cập nhật số lượng thành công!'})  
+        res.json({ message: "Cập nhật số lượng thành công!" });
       });
-
     } else {
-      res.status(404).json({message: 'Không tìm thấy sản phẩm!'});
+      res.status(404).json({ message: "Không tìm thấy sản phẩm!" });
     }
-
   });
-
 });
 
-
 // API xóa sản phẩm khỏi giỏ hàng
-router.delete('/cart/:productId', (req, res) => {
-
+router.delete("/cart/:productId", (req, res) => {
   const productId = req.params.productId;
 
   fs.readFile(cartDataFile, (err, data) => {
@@ -160,21 +155,17 @@ router.delete('/cart/:productId', (req, res) => {
     let cart = JSON.parse(data);
 
     // Tìm và xóa sản phẩm khỏi mảng
-    const productIndex = cart.findIndex(p => p.id == productId);
+    const productIndex = cart.findIndex((p) => p.id == productId);
     if (productIndex >= 0) {
-      cart.splice(productIndex, 1); 
+      cart.splice(productIndex, 1);
     }
 
-    fs.writeFile(cartDataFile, JSON.stringify(cart), err => {
-      if (err) throw err;  
-      res.json({message: 'Đã xóa sản phẩm khỏi giỏ hàng!'}) ;
+    fs.writeFile(cartDataFile, JSON.stringify(cart), (err) => {
+      if (err) throw err;
+      res.json({ message: "Đã xóa sản phẩm khỏi giỏ hàng!" });
     });
-
   });
-
-
 });
-
 
 app.get("/cart/:id", (req, res) => {
   const productId = req.params.id;
@@ -185,20 +176,21 @@ app.get("/cart/:id", (req, res) => {
 
   if (productInCart) {
     // Nếu tìm thấy sản phẩm trong giỏ hàng, bạn có thể hiển thị thông tin sản phẩm
-    res.send(`Product Name: ${productInCart.name}, Quantity: ${productInCart.quantity}`);
+    res.send(
+      `Product Name: ${productInCart.name}, Quantity: ${productInCart.quantity}`
+    );
   } else {
     // Nếu không tìm thấy sản phẩm, bạn có thể trả về một trang hoặc thông báo lỗi
     res.send("Product not found in the cart.");
   }
 });
 
-
 server.post("/register", (req, res) => {
   const { username, email, password } = req.body;
-    const phoneNumber = "";
-    const address = "";
-    const avatar = "";
-    const role = "user";
+  const phoneNumber = "";
+  const address = "";
+  const avatar = "";
+  const role = "user";
   // Check if the user already exists
   const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
@@ -206,7 +198,16 @@ server.post("/register", (req, res) => {
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
-  const newUser = { id, username, password, email, phoneNumber, address, avatar, role };
+  const newUser = {
+    id,
+    username,
+    password,
+    email,
+    phoneNumber,
+    address,
+    avatar,
+    role,
+  };
   router.db.get("users").push(newUser).write();
   return res.status(200).json({ message: "Registration successful." });
 });
@@ -235,7 +236,7 @@ app.get("/product/:id", function (req, res) {
         res.sendFile(path.join(__dirname + "/pages/product.html"));
       }
     });
-  });
+});
 app.get("/history", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/history.html"));
 });
@@ -254,14 +255,14 @@ app.get("/user/:id", function (req, res) {
       // You may want to send an error response here
     });
 });
-app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/home.html'));
+app.get("/home", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/home.html"));
 });
-app.get('/blog', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/blog.html'));
+app.get("/blog", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
-app.get('/dashboard', function (req, res) {
-  res.sendFile(path.join(__dirname + '/admin/dashboard.html'));
+app.get("/dashboard", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
 });
 server.use(router);
 // Local host --- Hosting
