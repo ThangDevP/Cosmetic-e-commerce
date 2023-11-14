@@ -105,7 +105,7 @@ app.get("/user/:id", function (req, res) {
     })
     .catch((error) => {
       console.error("Error fetching product data: ", error);
-      // You may want to send an error response here
+      res.status(404).send("User not found");
     });
 });
 app.get("/home", function (req, res) {
