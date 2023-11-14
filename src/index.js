@@ -7,7 +7,7 @@ const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
-const port = 3001;
+const port = 3000;
 const cart = [];
 
 app.use(cors());
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
-app.use(express.static(path.join(__dirname, "users")));
+app.use(express.static(path.join(__dirname, "admin/users")));
 // JSON Server setup
 const server = jsonServer.create();
 // const adapter = new FileSync('db.json');
@@ -217,7 +217,7 @@ app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
 app.get("/manageUser", function (req, res) {
-  res.sendFile(path.join(__dirname + "/users/manageuser.html"));
+  res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
