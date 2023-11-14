@@ -11,34 +11,82 @@
       "role": "admin"
     },
     {
-      "id": 1699415299354,
-      "username": "Chung Nguyen",
-      "password": "123456",
+      "username": "Faker new style!",
       "email": "chung241@gmail.com",
+      "address": "Korea",
       "phoneNumber": "0376281525",
-      "address": "Da Nang",
-      "avatar": "image4.jpg",
-      "role": "user"
-    },
-    {
-      "username": "Khoa là đbrr",
-      "email": "khoa@gmail.com",
-      "address": "Viet Nam trong tôi",
-      "phoneNumber": "0965753213",
-      "updatedAt": 1699601808796,
-      "id": 1699415299355,
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699946487/users/ozfbzrdrec4g5tff6grm.jpg",
       "role": "user",
-      "avatar": "image4.jpg"
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699946488385,
+      "id": 1699415299351
     },
     {
-      "username": "Khang hãm  quámmm",
-      "email": "khang@gmail.com",
-      "address": "Viet Nam22",
+      "username": "Thang Nguyen",
+      "email": "thang@gmail.com",
+      "address": "",
       "phoneNumber": "0876826511",
-      "avatar": "image4.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948184/users/itvqxvxta254fffcsjea.jpg",
       "role": "user",
-      "updatedAt": 1699610028874,
-      "id": 1699602024890
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699948338243,
+      "id": 1699947788049
+    },
+    {
+      "username": "chubb@gmail.com",
+      "email": "chung34421@gmail.com",
+      "address": "VietNam",
+      "phoneNumber": "0914781672",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948369/users/t14wkxmz8zbaeudxvy4e.jpg",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699949341992,
+      "id": 1699948356338
+    },
+    {
+      "username": "Khang là dbrr",
+      "email": "khangdb@gmail.com",
+      "address": "VietNam",
+      "phoneNumber": "0876826511",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948588/users/dhadczipaicz6ygu4yfe.jpg",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699948673681,
+      "id": 1699948574735
+    },
+    {
+      "username": "chung12313@gmail.com",
+      "email": "thang4232@gmail.com",
+      "address": "",
+      "phoneNumber": "",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948733/users/lbf7oews2umnj9ncb3mu.jpg",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699948734773,
+      "id": 1699948714270
+    },
+    {
+      "username": "Thang Nguyen",
+      "email": "thang131231@gmail.com",
+      "address": "",
+      "phoneNumber": "",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699949627/users/uegq3znoxmvdjfdhgu63.jpg",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699949685985,
+      "id": 1699949594972
     }
   ],
   "products": [

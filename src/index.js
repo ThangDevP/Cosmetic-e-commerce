@@ -16,9 +16,9 @@ app.use(express.static(path.join(__dirname, "styles")));
 app.use(express.static(path.join(__dirname, "scripts")));
 app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
-app.use(express.static(path.join(__dirname, "dashboard")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
+app.use(express.static(path.join(__dirname, "users")));
 // JSON Server setup
 const server = jsonServer.create();
 // const adapter = new FileSync('db.json');
@@ -187,29 +187,22 @@ app.get("/cart/:id", (req, res) => {
 
 server.post("/register", (req, res) => {
   const { username, email, password } = req.body;
-  const phoneNumber = "";
-  const address = "";
-  const avatar = "";
-  const role = "user";
+    const phoneNumber = "";
+    const address = "";
+    const avatar = "";
+    const role = "user";
+    const dob = "22/12/2001";
+    const gender = "male";
   // Check if the user already exists
   const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
-    return res.status(400).json({ message: "Username already exists." });
+    return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
-  const newUser = {
-    id,
-    username,
-    password,
-    email,
-    phoneNumber,
-    address,
-    avatar,
-    role,
-  };
+  const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
   router.db.get("users").push(newUser).write();
-  return res.status(200).json({ message: "Registration successful." });
+  return res.status(200).json({ message: "Đăng kí thành công." });
 });
 // Mount the JSON Server on the '/api' path
 app.use("/api", server);
@@ -224,7 +217,7 @@ app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
 app.get("/manageUser", function (req, res) {
-  res.sendFile(path.join(__dirname + "/dashboard/manageuser.html"));
+  res.sendFile(path.join(__dirname + "/users/manageuser.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
@@ -263,6 +256,12 @@ app.get("/blog", function (req, res) {
 });
 app.get("/dashboard", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
+});
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/blog.html'));
+});
+app.get('/dashboard', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/dashboard.html'));
 });
 server.use(router);
 // Local host --- Hosting
