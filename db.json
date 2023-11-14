@@ -1,34 +1,14 @@
 {
   "users": [
     {
-      "id": 1699414627439,
-      "username": "Khoa Ngyen",
-      "password": "123456",
-      "email": "khoa@gmail.com",
-      "phoneNumber": "0965753213",
-      "address": "",
-      "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "role": "admin"
-    },
-    {
-      "id": 1699415299354,
-      "username": "Chung Nguyen",
-      "password": "123456",
-      "email": "chung241@gmail.com",
-      "phoneNumber": "0376281525",
-      "address": "Da Nang",
-      "avatar": "image4.jpg",
-      "role": "user"
-    },
-    {
-      "id": 1699417207187,
-      "username": "Thang",
-      "password": "123456",
-      "email": "thang@gmail.com",
-      "phoneNumber": "0967856436",
-      "address": "",
-      "avatar": "image5.jpg",
-      "role": "user"
+      "userName": "Thang",
+      "email": "thang123@gmail.com",
+      "phone": "096785456",
+      "gender": "female",
+      "birthday": "2002-04-17",
+      "password": "Thang123",
+      "id": 16994172071845,
+      "updatedAt": 1699935750941
     }
   ]
 }

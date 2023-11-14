@@ -75,7 +75,9 @@ app.get("/product/:id", function (req, res) {
     .then((data) => {
       if (data.length === 1) {
         res.sendFile(path.join(__dirname + "/pages/product.html"));
-
+      }
+    });
+});
 
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
@@ -88,13 +90,16 @@ app.get("/user/:id", function (req, res) {
     })
     .catch((error) => {
       console.error("Error fetching product data: ", error);
-      // You may want to send an error response here
+      res.status(404).send("User not found");
     });
 });
-app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/home.html'));
+app.get("/home", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/home.html"));
 });
 
+app.use((req, res) => {
+  res.status(404).send("Not Found");
+});
 
 server.use(router);
 // Local host --- Hosting
