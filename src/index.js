@@ -257,6 +257,12 @@ app.get("/blog", function (req, res) {
 app.get("/dashboard", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
 });
+app.get('/blog', function (req, res) {
+  res.sendFile(path.join(__dirname + '/pages/blog.html'));
+});
+app.get('/dashboard', function (req, res) {
+  res.sendFile(path.join(__dirname + '/admin/dashboard.html'));
+});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
