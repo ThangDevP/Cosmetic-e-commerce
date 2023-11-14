@@ -72,7 +72,6 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
           alert('Đăng kí tài khoản thành công. Giờ bạn có thể đăng nhập.');
           window.location.href = '/login'; // Redirect to the login page
         } else if (data.message === 'Tài khoản này đã được sử dụng.') {
-          // Username already exists
           alert('Đăng kí thất bại. Tài khoản này đã được sử dụng.');
         } else {
           alert('Đăng kí thất bại. Tài khoản này đã được sử dụng.');

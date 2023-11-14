@@ -199,16 +199,18 @@ server.post("/register", (req, res) => {
     const address = "";
     const avatar = "";
     const role = "user";
+    const dob = "22/12/2001";
+    const gender = "male";
   // Check if the user already exists
   const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
-    return res.status(400).json({ message: "Username already exists." });
+    return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
-  const newUser = { id, username, password, email, phoneNumber, address, avatar, role };
+  const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
   router.db.get("users").push(newUser).write();
-  return res.status(200).json({ message: "Registration successful." });
+  return res.status(200).json({ message: "Đăng kí thành công." });
 });
 // Mount the JSON Server on the '/api' path
 app.use("/api", server);
