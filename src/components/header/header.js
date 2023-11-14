@@ -52,4 +52,5 @@ function userName() {
     userChange.textContent = 'Đăng nhập';
     userChange.querySelector('a').href = 'login.html'; // Thay đổi href khi đăng xuất
   }
+  
 }
