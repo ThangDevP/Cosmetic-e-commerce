@@ -1,37 +1,14 @@
 {
   "users": [
     {
-      "image": "1.jpg",
-      "username": "Thangff",
-      "email": "thangfff@gmail.com",
-      "phone": "0967856436",
-      "gender": "male",
-      "birthday": "2002-10-10",
-      "password": "1234ff6234fdfsD@",
-      "updatedAt": 1699864192543,
-      "id": 16994172071845
-    },
-    {
-      "image": {},
-      "username": "Thang",
-      "email": "thang@gmail.com",
-      "phone": "0967856436",
-      "gender": "nam",
-      "birthday": "15-10-2002",
-      "password": "123456234fdfsD@",
-      "updatedAt": 1699848579989,
-      "id": 1699417207182
-    },
-    {
-      "image": {},
-      "username": "Thang",
-      "email": "thang@gmail.com",
-      "phone": "0967856436",
-      "gender": "nam",
-      "birthday": "15-10-2002",
-      "password": "123456234fdfsD@",
-      "updatedAt": 1699848579989,
-      "id": 1699417207187
+      "userName": "Thang",
+      "email": "thang123@gmail.com",
+      "phone": "096785456",
+      "gender": "female",
+      "birthday": "2002-04-17",
+      "password": "Thang123",
+      "id": 16994172071845,
+      "updatedAt": 1699935750941
     }
   ]
 }
