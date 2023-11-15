@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Product details</title>
-    <link rel="stylesheet" href="/product-detail.css" />
-    <!--Fav-icon------------------------------>
-    <link rel="shortcut icon" href="/fav-icon.png" />
-    <!--poppins-font-family------------------->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!--using-Font-Awesome-------------------->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
     <!---Custom CSS File--->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -30,9 +22,11 @@
     <link rel="stylesheet" type="text/css" href="/product-detail.css" />
   </head>
   <body>
+    <div id="header"></div>
     <div class="page">
+      <!-- PRODUCT SECTION -->
       <section class="product-detail">
-        <div class="container">
+        <div class="product-container">
           <div class="product-img">
             <img class="img" src="" alt="" />
           </div>
@@ -67,13 +61,14 @@
         </div>
       </section>
 
+      <!-- REVIEW SECTION -->
       <section id="testimonials">
         <!--Heading--->
         <div class="testimonial-heading">
           <div class="banner-review-section">
             <div class="body-review-section">
-              <span class="header-section">Đánh giá</span>
-              <span class="header-section">Sản phẩm</span>
+              <span class="header-section-top">Đánh giá</span>
+              <span class="header-section-bot">Sản phẩm</span>
               <a
                 class="button-review-section"
                 href="#testimonial-box-container"
@@ -89,11 +84,13 @@
             <div class="box-top">
               <div class="profile">
                 <div class="profile-img">
-                  <img src="/c-1.jpg" />
+                  <img
+                    src="https://ca.slack-edge.com/T03MRCH57HD-U04RK437L9G-aa1b027c651c-512"
+                  />
                 </div>
                 <div class="name-user">
-                  <strong>Touseeq Ijaz</strong>
-                  <span>@touseeqijazweb</span>
+                  <strong>Vo Sy Thanh</strong>
+                  <span>@thanhvo</span>
                 </div>
               </div>
               <div class="reviews">
@@ -118,7 +115,9 @@
             <div class="box-top">
               <div class="profile">
                 <div class="profile-img">
-                  <img src="/c-2.jpg" />
+                  <img
+                    src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1061157246.jpg"
+                  />
                 </div>
                 <div class="name-user">
                   <strong>J.K Rowling</strong>
@@ -147,7 +146,9 @@
             <div class="box-top">
               <div class="profile">
                 <div class="profile-img">
-                  <img src="/c-3.jpg" />
+                  <img
+                    src="https://upload.wikimedia.org/wikibooks/vi/thumb/d/d8/Ch%C3%A2n_dung_Harry_Potter.jpg/350px-Ch%C3%A2n_dung_Harry_Potter.jpg"
+                  />
                 </div>
                 <div class="name-user">
                   <strong>Harry Potter</strong>
@@ -176,11 +177,13 @@
             <div class="box-top">
               <div class="profile">
                 <div class="profile-img">
-                  <img src="/c-4.jpg" />
+                  <img
+                    src="https://static-images.vnncdn.net/files/publish/ca-si-son-tung-m-tp-4aee32b7df234d3c86807cad722a7c4b.jpg"
+                  />
                 </div>
                 <div class="name-user">
-                  <strong>Oliva</strong>
-                  <span>@Olivaadward</span>
+                  <strong>MTP</strong>
+                  <span>@sontung</span>
                 </div>
               </div>
               <div class="reviews">
@@ -206,11 +209,13 @@
             <div class="box-top">
               <div class="profile">
                 <div class="profile-img">
-                  <img src="/c-4.jpg" />
+                  <img
+                    src="https://duyendangvietnam.net.vn/public/uploads/file1s/bt_chau/ttsung_nhi/84.jpg"
+                  />
                 </div>
                 <div class="name-user">
-                  <strong>Coca</strong>
-                  <span>@Cocacola</span>
+                  <strong>Hieuthuhai</strong>
+                  <span>@hieumonday</span>
                 </div>
               </div>
               <div class="reviews">
@@ -246,7 +251,13 @@
         </div>
       </section>
     </div>
-
+    <div id="footer"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="/product-detail.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
   </body>
 </html>

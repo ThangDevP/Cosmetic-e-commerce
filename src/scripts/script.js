@@ -13,7 +13,6 @@ function loadPage(slug) {
     .then((data) => {
       footerElement.innerHTML = data;
     });
-  // fetch('/api/history')
   //     .then(response => response.json())
   //     .then(data => {
   //         const historyElement = document.createElement('div');

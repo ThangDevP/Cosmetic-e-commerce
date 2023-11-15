@@ -19,6 +19,6 @@ fetch(`/api/products/${productId}`)
 
     document.querySelector(".product-description").textContent = product.description;
     document.querySelector(".product-category").textContent = product.category;
-    document.querySelector(".img").src = "/" + product.img;
+    document.querySelector(".img").src = product.img;
   })
   .catch((error) => console.error("Error fetching product data: ", error));
