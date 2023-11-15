@@ -18,9 +18,9 @@ fetch(`http://localhost:3000/api/users/${userId}`)
   .then((user) => {
     document.getElementById("email").value = user.email;
     document.getElementById("profile-pic").src = user.avatar;
-    document.getElementById("fullName").value = user.userName;
-    document.getElementById("dob").value = user.birthday;
-    document.getElementById("phoneNumber").value = user.phone;
+    document.getElementById("fullName").value = user.username;
+    document.getElementById("dob").value = user.dob;
+    document.getElementById("phoneNumber").value = user.phoneNumber;
     const gender = document.getElementById("gender");
     for (let i = 0; i < gender.options.length; i++) {
       if (gender.options[i].value === user.gender) {
@@ -57,7 +57,7 @@ document
           : user.userName;
         var dob = document.getElementById("dob").value
           ? document.getElementById("dob").value
-          : user.birthday;
+          : user.dob;
         var phoneNumber = document.getElementById("phoneNumber").value
           ? document.getElementById("phoneNumber").value
           : user.phone;
@@ -71,6 +71,8 @@ document
         }
         var image = imageFile ? imageFile : user.avatar;
 
+
+
         if (password !== user.password && password !== null) {
           alert("Wrong password");
           return;
@@ -80,12 +82,14 @@ document
         }
 
         const update = {
-          avatar: image,
-          userName: fullName,
+          username: fullName,
           email: email,
-          phone: phoneNumber,
+          address: "Viet Nam",
+          phoneNumber: phoneNumber,
+          avatar: image,
+          role: "user",
           gender: genderSelected,
-          birthday: dob,
+          dob: dob,
           password: newPassword,
           id: userId,
         };
