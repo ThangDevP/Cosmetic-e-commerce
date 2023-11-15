@@ -1,23 +1,21 @@
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-const cors = require('cors');
-const jsonServer = require('json-server');
+const express = require("express");
+const morgan = require("morgan");
+const path = require("path");
+const cors = require("cors");
+const jsonServer = require("json-server");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
 
-// Set up CORS for your Express app
 app.use(cors());
-// Show request, HTTP logger
-app.use(morgan('combined'));
-// Use static file
-app.use(express.static(path.join(__dirname, 'styles')));
-app.use(express.static(path.join(__dirname, 'scripts')));
-app.use(express.static(path.join(__dirname, 'components')));
-app.use(express.static(path.join(__dirname, 'pages')));
-app.use(express.static(path.join(__dirname, 'assets/img')));
+app.use(morgan("combined"));
+app.use(express.static(path.join(__dirname, "styles")));
+app.use(express.static(path.join(__dirname, "scripts")));
+app.use(express.static(path.join(__dirname, "components")));
+app.use(express.static(path.join(__dirname, "pages")));
+app.use(express.static(path.join(__dirname, "assets/img")));
+app.use(express.static(path.join(__dirname, "admin")));
 
 // JSON Server setup
 const server = jsonServer.create();
@@ -31,7 +29,6 @@ server.use(
 );
 server.use(jsonServer.bodyParser);
 
-
 server.use((req, res, next) => {
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
@@ -42,29 +39,46 @@ server.use((req, res, next) => {
   next();
 });
 
-server.post('/register', (req, res) => {
-  const { username, password } = req.body;
+server.post("/register", (req, res) => {
+  const { username, email, password } = req.body;
+  const phoneNumber = "";
+  const address = "";
+  const avatar = "";
+  const role = "user";
+  const dob = "22/12/2001";
+  const gender = "male";
   // Check if the user already exists
-  const existingUser = router.db.get('users').find({ username }).value();
+  const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
-    return res.status(400).json({ message: 'Username already exists.' });
+    return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
-  const newUser = { id, username, password };
-  router.db.get('users').push(newUser).write();
-  return res.status(200).json({ message: 'Registration successful.' });
+  const newUser = {
+    id,
+    username,
+    password,
+    email,
+    phoneNumber,
+    address,
+    avatar,
+    role,
+    dob,
+    gender,
+  };
+  router.db.get("users").push(newUser).write();
+  return res.status(200).json({ message: "Đăng kí thành công." });
 });
 
 // Mount the JSON Server on the '/api' path
-app.use('/api', server);
+app.use("/api", server);
 
 // Serve your routes
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/main.html'));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/main.html"));
 });
-app.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/login.html'));
+app.get("/login", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
@@ -95,11 +109,20 @@ app.get("/user/:id", function (req, res) {
       // You may want to send an error response here
     });
 });
-app.get('/home', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/home.html'));
+app.get("/home", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/home.html"));
+});
+app.get("/blog", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/blog.html"));
+});
+app.get("/payment", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/payment.html"));
+});
+app.get("/dashboard", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
 });
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
-  console.log(`Ecommerce website listening on http://localhost:${port}`)
-})
+  console.log(`Ecommerce website listening on http://localhost:${port}`);
+});
