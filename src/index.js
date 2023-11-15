@@ -7,7 +7,7 @@ const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
-const port = 3001;
+const port = 3000;
 const cart = [];
 
 app.use(cors());
@@ -253,6 +253,9 @@ app.get("/home", function (req, res) {
 });
 app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
+});
+app.get("/payment", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/payment.html"));
 });
 app.get("/dashboard", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/dashboard.html"));

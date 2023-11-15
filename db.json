@@ -92,40 +92,105 @@
   "products": [
     {
       "id": 1,
-      "img": "1.jpg",
-      "name": "PS5 Controller",
+      "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
       "price": 50,
       "category": "Gears",
       "brand-id": 1,
-      "description": "abcabc",
-      "discount": 10
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 10,
+      "sale": true
     },
     {
       "id": 2,
-      "img": "1.jpg",
-      "name": "PS6 Controller",
+      "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
       "price": 100,
       "category": "Gears",
       "brand-id": 1,
-      "description": "xyzxyz",
-      "discount": 40
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 40,
+      "sale": true
+    },
+    {
+      "id": 3,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+      "price": 100,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 40,
+      "sale": true
+    },
+    {
+      "id": 4,
+      "img": "https://image.cocoonvietnam.com/uploads/z3955699182417_fada4ce363d86efe82b7920b75ac83ab_16fb2dc4ac.jpg",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+      "price": 100,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 40,
+      "sale": true
+    },
+    {
+      "id": 5,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+      "price": 100,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 40,
+      "sale": true
+    },
+    {
+      "id": 5,
+      "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
+      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+      "price": 100,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "Giảm gãy rụng và làm mềm tóc",
+      "discount": 40,
+      "sale": true
     }
   ],
-  "cart": [
+  "carts": [
     {
-      "id": "2",
-      "name": "PS6 Controller",
-      "price": 100,
-      "quantity": 444,
+      "id": 2,
+      "userId": 1699415299354
+    },
+    {
+      "id": 1,
+      "userId": 1699415299355
+    }
+  ],
+  "cartItems": [
+    {
+      "id": 2,
+      "productId": 1,
+      "cartId": 1,
+      "quantity": 10,
       "createdAt": 1699263173299,
       "updatedAt": 1699264373895
     },
     {
-      "id": "1",
-      "name": "PS5 Controller",
-      "price": 50,
-      "quantity": 10,
-      "updatedAt": 1699264096902
+      "id": 3,
+      "productId": 3,
+      "cartId": 2,
+      "quantity": 12,
+      "createdAt": 1699263173299,
+      "updatedAt": 1700013021027
+    },
+    {
+      "id": 1,
+      "productId": 2,
+      "cartId": 2,
+      "quantity": 17,
+      "createdAt": 1699263173299,
+      "updatedAt": 1700013019762
     }
   ],
   "history": [

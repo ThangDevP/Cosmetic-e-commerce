@@ -2,7 +2,7 @@ const brandContainer = document.querySelector(".brands--container");
 
 async function fetchBrands() {
   try {
-    const response = await fetch("http://localhost:3001/api/brands");
+    const response = await fetch("http://localhost:3000/api/brands");
     if (!response.ok) {
       throw new Error("Lỗi khi tải dữ liệu");
     }
@@ -28,7 +28,52 @@ function displayBrands(brands) {
 }
 fetchBrands();
 
-$(document).ready(function () {});
+function haha(id) {
+  console.log(id, "adad");
+}
+
+//Slider product
+async function fetchProductSale() {
+  try {
+    const response = await fetch(
+      "http://localhost:3000/api/products?sale=true"
+    );
+    if (!response.ok) {
+      throw new Error("Lỗi khi tải dữ liệu");
+    }
+    const products = await response.json();
+    await displaySlide(products);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function displaySlide(products) {
+  document.querySelector(".your-class").innerHTML = products
+    .map((product) => {
+      return `
+      <div id="slider" class="slider-content">
+        <img
+          src=${product.img}
+          alt=""
+        />
+        <div class="slide-info">
+          <div class="infor-text">
+            <h6>${product.name}</h6>
+            <p>
+            ${product.description}
+            </p>
+            <p class="text-amount">${product.price}</p>
+          </div>
+          <div class="infor-btn">
+            <button class="btn-add-card" onclick="haha(${product.id})" >Add</button>
+          </div>
+        </div>
+      </div>
+`;
+    })
+    .join("");
+}
 
 function updateProgressBar(total, currentSlide) {
   const totalSlider = $(".your-class #slider").length;
@@ -42,10 +87,11 @@ function updateProgressBar(total, currentSlide) {
 
   $(".progress-bar-inner-custom").css(
     "transform",
-    "translateX(" + newPosition + "px)"
+    "translateX(" + (newPosition - 1) + "px)"
   );
 }
 
+//Slider home
 let slideIndex = 1;
 showSlides(slideIndex);
 
