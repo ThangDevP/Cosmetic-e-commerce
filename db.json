@@ -132,17 +132,17 @@
       "id": 3,
       "productId": 3,
       "cartId": 2,
-      "quantity": 13,
+      "quantity": 12,
       "createdAt": 1699263173299,
-      "updatedAt": 1700011511191
+      "updatedAt": 1700013021027
     },
     {
       "id": 1,
       "productId": 2,
       "cartId": 2,
-      "quantity": 16,
+      "quantity": 17,
       "createdAt": 1699263173299,
-      "updatedAt": 1700011499658
+      "updatedAt": 1700013019762
     }
   ],
   "history": [

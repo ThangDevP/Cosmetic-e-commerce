@@ -95,7 +95,7 @@ async function updateQuantityProduct(action, id, price) {
 
   if (action === "increase") {
     newQuantity++;
-  } else if (action === "decrease" && newQuantity > 0) {
+  } else if (action === "decrease" && newQuantity > 1) {
     newQuantity--;
   }
 
@@ -141,22 +141,30 @@ async function updatePaymentDetails(cartId) {
     )
       .then((res) => res.json())
       .then((products) => {
-        const provisionalAmount = products.reduce(
-          (total, product) => total + product.product.price * product.quantity,
-          0
-        );
+        if (products.length === 0) {
+          document.querySelector(
+            ".provisional-card .provisional:nth-child(1) p"
+          ).textContent = `0 đ`;
+          document.querySelector(".order .total span").textContent = `0 Đ`;
+        } else {
+          const provisionalAmount = products.reduce(
+            (total, product) =>
+              total + product.product.price * product.quantity,
+            0
+          );
 
-        document.querySelector(
-          ".provisional-card .provisional:nth-child(1) p"
-        ).textContent = `${provisionalAmount} đ`;
+          document.querySelector(
+            ".provisional-card .provisional:nth-child(1) p"
+          ).textContent = `${provisionalAmount} đ`;
 
-        const discountAmount = 0;
-        const shippingFee = 0;
+          const discountAmount = 0;
+          const shippingFee = 0;
 
-        const totalAmount = provisionalAmount - discountAmount + shippingFee;
-        document.querySelector(
-          ".order .total span"
-        ).textContent = `${totalAmount} Đ`;
+          const totalAmount = provisionalAmount - discountAmount + shippingFee;
+          document.querySelector(
+            ".order .total span"
+          ).textContent = `${totalAmount} Đ`;
+        }
       });
   } catch (error) {
     console.log(error);
