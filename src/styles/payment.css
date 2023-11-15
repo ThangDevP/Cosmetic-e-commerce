@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Nunito&family=Vollkorn:ital@1&display=swap");
+
+body {
+  margin: 0;
+}
+.payment {
+  background-color: #f8f0e5;
+  padding: 60px;
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+}
+
+.products-payment {
+  padding: 20px 30px 15px 20px;
+}
+
+.product-payment {
+  height: 112px;
+  display: flex;
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  margin-bottom: 10px;
+}
+.item-img {
+  width: 20%;
+  padding-right: 10px;
+}
+
+.product-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.infor-payment {
+  background-color: #fefbf4;
+  width: 55%;
+  /* height: 500px; */
+}
+
+.infor-product-payment {
+  width: 45%;
+  background-color: #fefbf4;
+  border-radius: 7px 7px 0 0;
+  height: fit-content;
+}
+
+.infor-product-payment h4 {
+  padding-left: 20px;
+  font-family: "Nunito";
+}
+.quantity {
+  display: flex;
+}
+
+.quantity-text {
+  width: 64px;
+  height: 32px;
+  border-top: 1px solid rgba(237, 224, 204, 1);
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  text-align: center;
+  line-height: 28px;
+}
+
+.btn-quantity {
+  outline: none;
+  border: 1px solid rgba(237, 224, 204, 1);
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+}
+
+.quantity-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove-product {
+  padding-top: 20px;
+}
+
+.provisional {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.provisional-card {
+  padding: 20px 30px 20px 15px;
+}
+
+hr {
+  margin: 0 30px 0 15px !important;
+  color: rgba(237, 224, 204, 1) !important;
+  opacity: 1 !important;
+}
+
+.note {
+  padding: 20px 30px 20px 15px;
+  font-family: "Nunito";
+  font-style: italic;
+}
+
+.order {
+  padding: 20px 30px 20px 15px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 7px 7px;
+}
+
+.total p {
+  font-family: "Nunito";
+  margin-bottom: 0;
+}
+.total span {
+  font-family: "Nunito";
+  font-size: 1.875rem;
+}
+.btn-order {
+  width: 200px;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid #e4d1b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

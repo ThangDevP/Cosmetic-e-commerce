@@ -66,7 +66,6 @@ function loadPage(slug) {
       slidesToScroll: 1,
       dots: false,
       centerMode: true,
-      focusOnSelect: true,
       responsive: [
         {
           breakpoint: 480,
@@ -98,12 +97,15 @@ function loadPage(slug) {
   fetch(`/home.html`)
     .then((response) => response.text())
     .then((data) => {
+      fetchProductSale().then(() => {
+        onLoadSlickSlider();
+      });
+
       bodyElement.innerHTML = data;
+
       let slideIndex = 1;
 
       showSlides(slideIndex);
-
-      onLoadSlickSlider();
 
       userName();
     })
