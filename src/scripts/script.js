@@ -13,28 +13,6 @@ function loadPage(slug) {
     .then((data) => {
       footerElement.innerHTML = data;
     });
-  //     .then(response => response.json())
-  //     .then(data => {
-  //         const historyElement = document.createElement('div');
-  //         historyElement.classList.add('history-container');
-
-  //         data.history.forEach(item => {
-  //             const historyItemElement = document.createElement('div');
-  //             historyItemElement.classList.add('history-item');
-  //             historyItemElement.innerHTML = `
-  //                 <p>Purchase Date: ${item.purchaseDate}</p>
-  //                 <p>Purchase Details: ${item.purchaseDetails}</p>
-  //                 <p>Purchase Amount: ${item.purchaseAmount}</p>
-  //             `;
-  //             historyElement.appendChild(historyItemElement);
-  //         });
-
-  //         bodyElement.innerHTML = '';
-  //         bodyElement.appendChild(historyElement);
-  //     })
-  //     .catch(() => {
-  //         bodyElement.innerHTML = 'No purchase history found.';
-  //     });
 
   function plusSlides(n) {
     showSlides((slideIndex += n));

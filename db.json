@@ -26,15 +26,15 @@
     {
       "username": "Thang Nguyen",
       "email": "thang@gmail.com",
-      "address": "",
+      "address": "Korea",
       "phoneNumber": "0876826511",
       "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948184/users/itvqxvxta254fffcsjea.jpg",
       "role": "user",
       "gender": "male",
-      "dob": "22/12/2001",
+      "dob": "2023-11-14",
       "password": "123456",
-      "updatedAt": 1699948338243,
-      "id": 1699947788049
+      "id": 1699947788049,
+      "updatedAt": 1700031569435
     },
     {
       "username": "chubb@gmail.com",

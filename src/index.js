@@ -19,8 +19,7 @@ app.use(express.static(path.join(__dirname, "admin")));
 
 // JSON Server setup
 const server = jsonServer.create();
-// const adapter = new FileSync('db.json');
-// const db = low(adapter);
+
 server.use(middlewares);
 server.use(
   jsonServer.rewriter({
@@ -106,7 +105,7 @@ app.get("/user/:id", function (req, res) {
     })
     .catch((error) => {
       console.error("Error fetching product data: ", error);
-      // You may want to send an error response here
+      res.status(404).send("User not found");
     });
 });
 app.get("/home", function (req, res) {
