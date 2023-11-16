@@ -941,6 +941,11 @@ div.my-alert {
   .card-image-2{
     padding: 30px 20px 30px 20px;
   }
+
+  .slide-info-1{
+    max-width: 85%;  
+  }
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -970,6 +975,10 @@ div.my-alert {
 
   .card-image-2{
     padding: 30px 20px 30px 20px;
+  }
+
+  .slide-info-1{
+    max-width: 85%;  
   }
 }
 
@@ -1021,6 +1030,6 @@ div.my-alert {
 
   .slider-content-1 img{
     height: 500px;
-    width: 430px;
+    width: 420px;
   }
 }
