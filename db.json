@@ -11,17 +11,20 @@
       "role": "admin"
     },
     {
+      "id": 1699415299351,
       "username": "Faker new style!",
-      "email": "chung241@gmail.com",
-      "address": "Korea",
-      "phoneNumber": "0376281525",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699946487/users/ozfbzrdrec4g5tff6grm.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1699946488385,
-      "id": 1699415299351
+      "email": "chung241@gmail.com",
+      "phoneNumber": "0376281525",
+      "address": "123 Faker Cry",
+      "city": "48",
+      "district": "490",
+      "ward": "20194",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700127254/users/fonvlf0wngzw8yqd4lh7.webp",
+      "role": "user",
+      "dob": "2003-05-07",
+      "gender": "male",
+      "updatedAt": 1700127275156
     },
     {
       "username": "Thang Nguyen",
