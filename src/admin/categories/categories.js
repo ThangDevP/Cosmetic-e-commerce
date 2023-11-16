@@ -99,9 +99,7 @@ function fetchAndPopulateUserData(categoryID) {
       const modal = document.getElementById("myModal");
       const catIDInput = modal.querySelector("#update-cateID");
       const cateNameInput = modal.querySelector("#update-cateName");
-      const cateDescriptionInput = modal.querySelector(
-        "#update-cateDescription"
-      );
+      const cateDescriptionInput = modal.querySelector("#update-cateDescription");
 
       catIDInput.value = cateData.id;
       cateNameInput.value = cateData.cateName;
@@ -115,110 +113,109 @@ function fetchAndPopulateUserData(categoryID) {
     });
 }
 function handleAddCategory() {
-  const addModal = new bootstrap.Modal(document.getElementById("addModal"));
-  const cateNameInput = document.getElementById("cateName");
-  const cateDescriptionInput = document.getElementById("cateDescription");
-
-  // Get the values from the input fields
-  const cateName = cateNameInput.value;
-  const cateDescription = cateDescriptionInput.value;
-
-  // Check if both fields are filled
-  if (!cateName || !cateDescription) {
-    alert("Vui lòng nhập đầy đủ thông tin.");
-    return;
-  }
-
-  // Generate a unique ID using the current timestamp
-  const id = Date.now();
-
-  // Create a new category object
-  const newCategory = {
-    id,
-    cateName,
-    cateDescription,
-  };
-
-  // Send a POST request to the API
-  fetch("http://localhost:3000/api/categories", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newCategory),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(() => {
-      addModal.hide();
-      // Refresh the table to display the new category
-      fetchDataAndPopulateTable();
-      // Hide the add modal
-      addModal.hide();
-      // Clear the input fields in the modal
-      cateNameInput.value = "";
-      cateDescriptionInput.value = "";
-    })
-    .catch((error) => {
-      console.error("Lỗi khi thêm mới category: ", error);
-    });
-}
-
-const addCategoryButton = document.querySelector(".adding");
-addCategoryButton.addEventListener("click", handleAddCategory);
-
-async function handleAddOrUpdateUser() {
-  const cateID = document.getElementById("update-cateID").value; // Updated ID
-  const cateName = document.getElementById("update-cateName").value; // Updated ID
-  const cateDescription = document.getElementById(
-    "update-cateDescription"
-  ).value; // Updated ID
-
-  try {
-    // Lấy giá trị cũ của người dùng
-    const response = await fetch(
-      `http://localhost:3000/api/categories/${cateID}`
-    );
-
-    // Thực hiện kiểm tra xem có đủ thông tin hay không
+    const addModal = new bootstrap.Modal(document.getElementById("addModal"));
+    const cateNameInput = document.getElementById("cateName");
+    const cateDescriptionInput = document.getElementById("cateDescription");
+  
+    // Get the values from the input fields
+    const cateName = cateNameInput.value;
+    const cateDescription = cateDescriptionInput.value;
+  
+    // Check if both fields are filled
     if (!cateName || !cateDescription) {
       alert("Vui lòng nhập đầy đủ thông tin.");
       return;
     }
-
-    // Update user data
-    const updatedCateData = {
+  
+    // Generate a unique ID using the current timestamp
+    const id = Date.now();
+  
+    // Create a new category object
+    const newCategory = {
+      id,
       cateName,
       cateDescription,
     };
-
-    // Gửi yêu cầu cập nhật người dùng đến API
-    const apiUrl = `http://localhost:3000/api/categories/${cateID}`;
-    const apiResponse = await fetch(apiUrl, {
-      method: "PUT",
+  
+    // Send a POST request to the API
+    fetch("http://localhost:3000/api/categories", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updatedCateData),
-    });
-    if (!apiResponse.ok) {
-      throw new Error(`HTTP error! Status: ${apiResponse.status}`);
-    }
-
-    const responseData = await apiResponse.json();
-    console.log("API response:", responseData);
-    // Refresh bảng để hiển thị thông tin mới
-    myModal.hide();
-    fetchDataAndPopulateTable();
-  } catch (error) {
-    console.error("Lỗi khi cập nhật người dùng: ", error);
+      body: JSON.stringify(newCategory),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(() => {
+        addModal.hide();
+        // Refresh the table to display the new category
+        fetchDataAndPopulateTable();
+        // Hide the add modal
+        addModal.hide();
+        // Clear the input fields in the modal
+        cateNameInput.value = "";
+        cateDescriptionInput.value = "";
+      })
+      .catch((error) => {
+        console.error("Lỗi khi thêm mới category: ", error);
+      });
   }
-}
+  
+const addCategoryButton = document.querySelector(".adding");
+addCategoryButton.addEventListener("click", handleAddCategory);
 
+
+async function handleAddOrUpdateUser() {
+    const cateID = document.getElementById("update-cateID").value; // Updated ID
+    const cateName = document.getElementById("update-cateName").value; // Updated ID
+    const cateDescription = document.getElementById("update-cateDescription").value; // Updated ID
+
+    try {
+        // Lấy giá trị cũ của người dùng
+        const response = await fetch(
+            `http://localhost:3000/api/categories/${cateID}`
+        );
+
+        // Thực hiện kiểm tra xem có đủ thông tin hay không
+        if (!cateName || !cateDescription) {
+            alert("Vui lòng nhập đầy đủ thông tin.");
+            return;
+        }
+
+        // Update user data
+        const updatedCateData = {
+            cateName,
+            cateDescription,
+        };
+
+        // Gửi yêu cầu cập nhật người dùng đến API
+        const apiUrl = `http://localhost:3000/api/categories/${cateID}`;
+        const apiResponse = await fetch(apiUrl, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedCateData),
+        });
+        if (!apiResponse.ok) {
+            throw new Error(`HTTP error! Status: ${apiResponse.status}`);
+        }
+
+        const responseData = await apiResponse.json();
+        console.log("API response:", responseData);
+        // Refresh bảng để hiển thị thông tin mới
+        myModal.hide();
+        fetchDataAndPopulateTable();
+    } catch (error) {
+        console.error("Lỗi khi cập nhật người dùng: ", error);
+    }
+}
+  
 const addButton = document.querySelector(".view");
 addButton.addEventListener("click", () => {
   handleAddOrUpdateUser();
