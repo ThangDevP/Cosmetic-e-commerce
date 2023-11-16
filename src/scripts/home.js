@@ -49,17 +49,18 @@ async function fetchProductSale() {
 }
 
 async function displaySlide(products) {
-  document.querySelector(".your-class").innerHTML = products
+  document.querySelector("#your-class-first").innerHTML = products
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <img
-          src=${product.img}
-          alt=""
-        />
+        <a href="/product.html">
+        <img src=${product.img} alt=""/>
+        </a>
         <div class="slide-info">
           <div class="infor-text">
+            <a href="/product.html">
             <h6>${product.name}</h6>
+            </a>
             <p>
             ${product.description}
             </p>
@@ -78,6 +79,8 @@ async function displaySlide(products) {
     })
     .join("");
 }
+
+
 
 function updateProgressBar(total, currentSlide) {
   const totalSlider = $(".your-class #slider").length;

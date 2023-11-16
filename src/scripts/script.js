@@ -68,7 +68,41 @@ function loadPage(slug) {
     $(".your-class").slick();
 
     updateProgressBar();
+
+    $(".your-class-1").slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: true,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+      prevArrow:
+        '<button type="button" class="slick-custom-arrow-prev"> < </button>',
+      nextArrow:
+        '<button type="button" class="slick-custom-arrow-next"> > </button>',
+    });
+
+    $(".your-class-1").on("init", function (event, slick, currentSlide) {
+      updateProgressBar(slick, currentSlide);
+    });
+
+    $(".your-class-1").on("afterChange", function (event, slick, currentSlide) {
+      updateProgressBar(slick.slideCount, currentSlide);
+    });
+
+    $(".your-class-1").slick();
+
+    updateProgressBar();
   }
+
+  
 
   fetch(`/home.html`)
     .then((response) => response.text())
