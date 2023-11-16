@@ -26,22 +26,22 @@ crossorigin="anonymous"></script>
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/dashboard/dashboard.html">
+                            <a class="nav-link" href="/dashboard">
                                 <i class="bi bi-house"></i> Bảng Điều Khiển
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/manageproduct/manageproduct.html">
+                        <li class="option-1 nav-item">
+                            <a class="nav-link" href="/manageProduct">
                                 <i class="bi bi-bookmarks"></i> Quản Lý Sản Phẩm
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/manageuser/manageuser.html">
+                            <a class="nav-link" href="/manageUser">
                                 <i class="bi bi-people"></i> Quản Lý Tài Khoản
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/category/managecategory.html">
+                            <a class="nav-link" href="/manageCategory">
                                 <i class="fa-solid fa-layer-group"></i> Quản Lý Danh Mục
                             </a>
                         </li>
@@ -55,8 +55,8 @@ crossorigin="anonymous"></script>
                     <!-- User (md) -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
-                                <i class="bi bi-box-arrow-left"></i> Logout
+                            <a class="nav-link" onclick="logoutUser()"">
+                                <i class="bi bi-box-arrow-left"></i> Đăng xuất
                             </a>
                         </li>
                     </ul>
@@ -79,7 +79,7 @@ crossorigin="anonymous"></script>
                                 <div class="mx-n1">
                                     <a href="#" class="btn d-inline-flex btn-sm btn-primary mx-1"
                                         data-bs-toggle="modal" 
-                                        data-bs-target="#myModal">
+                                        data-bs-target="#addModal">
                                         <span class=" pe-2 mt-1">
                                             <i class="fa-solid fa-plus"></i>
                                         </span>
@@ -89,38 +89,47 @@ crossorigin="anonymous"></script>
                             </div>
                         </div>
                         
-                        <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
-                            <div class="modal-dialog">
+                        <!-- The update Modal -->
+                        <div class="modal fade" id="updateModal">
+                            <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                             
                                     <!-- Modal Header -->
                                     <div class="modal-header">
-                                    <h4 class="modal-title" style="color: #b8a483;">Thêm Sản Phẩm</h4>
+                                    <h4 class="modal-title" style="color: #b8a483;">Thông Tin Sản Phẩm</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                     </div>
                             
                                     <!-- Modal body -->
                                     <div class="modal-body">
                                         <form id="product-form">
-                                            <label for="product-name">Tiêu Đề:</label>
-                                            <input type="text" id="product-name" name="product-name" required>
-                
-                                            <label for="product-image">Hình Ảnh:</label>
-                                            <input type="file" id="product-image" name="product-image" required>
-                
-                                            <label for="product-name">Nhãn Hàng</label>
-                                            <input type="text" id="product-title" name="product-title" required>
-                                
-                                            <label for="product-price">Giá Tiền:</label>
-                                            <input type="number" id="product-price" name="product-price" required>
-                                
+                                            <div class="form--avatar">
+                                                <label for="img" class="upload">
+                                                    <input type="file" id="img" class="picture" name="img" onchange="handleImageChange()">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                </label>
+                                                <img src="/1.jpg" alt="" width="100px" height="100px" class="img" id="testImage">
+                                            </div>
+                                            <div class="form--input">
+                                                <label for="id">Product ID:</label>
+                                                <input type="text" id="productId" name="productId" required>
+
+                                                <label for="name">Tiêu Đề:</label>
+                                                <input type="text" id="name" name="name" required>
+                    
+                    
+                                                <label for="category">Nhãn Hàng</label>
+                                                <input type="text" id="category" name="category" required>
+                                    
+                                                <label for="price">Giá Tiền:</label>
+                                                <input type="number" id="price" name="price" required>
+                                            </div>
                                         </form>
                                     </div>
                             
                                     <!-- Modal footer -->
                                     <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Chấp nhận</button>
+                                    <button type="submit" class="view btn btn-primary" data-bs-dismiss="modal">Chấp nhận</button>
                                     </div>
                             
                                 </div>
@@ -155,7 +164,8 @@ crossorigin="anonymous"></script>
                                         <th scope="col">Hành Động</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="productTableBody"></tbody>
+                                <!-- <tbody>
                                     <tr>
                                         <td>
                                             <a class="text-heading font-semibold" href="#">
@@ -220,41 +230,46 @@ crossorigin="anonymous"></script>
                                             </a>
                                         </td>
                                     </tr>
-                                </tbody>
+                                </tbody> -->
                             </table>
                         </div>
                     </div>
                 </div>
             </main>
-            <!-- The Update model -->
-            <div class="modal fade" id="updateModal">
+            <!-- The Add model -->
+            <div class="modal fade" id="addModal">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                        <h4 class="modal-title" style="color: #b8a483;">Thông tin khách hàng</h4>
+                        <h4 class="modal-title" style="color: #b8a483;">Thêm Sản Phẩm</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <form id="user-form">
-                                <label for="user-name">Tên tài khoản:</label>
-                                <input type="text" id="user-name" name="user-name" required>
-
-                                <label for="user-email">Email:</label>
-                                <input type="text" id="user-email" name="user-email" required>
-    
-                                <label for="user-image">Hình Ảnh:</label>
-                                <input type="file" id="user-image" name="user-image" required>
-    
-                                <label for="dob">Day of Birth:</label>
-                                <input type="text" id="dob" name="dob" required>
-                    
-                                <label for="phone-number">SĐT:</label>
-                                <input type="number" id="phone-number" name="phone-number" required>
-                    
+                            <form id="add-product-form">
+                                <div class="form--avatar">
+                                    <label for="avatar" class="upload">
+                                        <input type="file" id="avatar" class="picture" name="avatar" onchange="handleImageChange()" >
+                                        <i class="fa-solid fa-plus"></i>
+                                    </label>
+                                    <img src="/1.jpg" alt="" width="100px" height="100px" class="img" id="previewImage">
+                                </div>
+                                <div class="form--input">
+                                    <label for="product-name">Tiêu Đề:</label>
+                                    <input type="text" id="new-product-name" name="product-name" required>
+        
+                                    <label for="product-image">Hình Ảnh:</label>
+                                    <input type="file" id="new-product-image" name="product-image" required>
+        
+                                    <label for="product-name">Nhãn Hàng</label>
+                                    <input type="text" id="new-product-category" name="product-category" required>
+                        
+                                    <label for="product-price">Giá Tiền:</label>
+                                    <input type="number" id="new-product-price" name="product-price" required>
+                                </div>                  
                             </form>
                         </div>
                 
@@ -293,6 +308,5 @@ crossorigin="anonymous"></script>
 
 
         
-    <script src="./index.js"></script>
 </body>
 </html>

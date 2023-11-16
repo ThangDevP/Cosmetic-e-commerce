@@ -24,15 +24,77 @@ td img{
 }
 #product-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 75vh;
 }
 input{
     border: 1px solid rgba(0, 0, 0, 0.348);
+    border-radius: 5px;
+}
+#add-product-form{
+    display: flex;
+    flex-direction: row;
+    width: 75vh;
+}
+.form--input {
+    display: flex;
+    flex-direction: column;
+    flex: 0.6;
+    width: 100%;
+}
+.form--input input{
+    border: 1px solid #2d2f3028;
+    border-radius: 5px;
+}
+.form--avatar {
+    width: 150px;
+    height: 250px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 15px;
+    flex: 0.4;
+    display: flex;
+    top: 50px;
+}
+.form--avatar .upload{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.form--avatar:hover .upload{
+    display: flex;
+}
+
+.form--avatar .upload input{
+    display: none;
+}
+
+.form--avatar .upload i{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.form--avatar .img{
+    width: 100%;
+    height: 100%;
 }
 label, input, button {
     margin: 5px;
 }
-.view {
+/* .view {
     height: 35px;
     width: 90px;
     border-radius: 8px;
@@ -45,7 +107,7 @@ label, input, button {
 }
 .view:hover{
     transform: translateY(-3px);
-}
+} */
 button {
     background-color: #b8a483;
     color: white;
@@ -72,18 +134,37 @@ button:hover {
     clear: both;
     display: table;
 }
-#user-form {
-    display: flex;
-    flex-direction: column;
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
 }
-input{
-    border: 1px solid rgba(0, 0, 0, 0.348);
+td {
+    text-align: center;
+    justify-content: space-between;
 }
-label, input, button {
-    margin: 5px;
+td:last-child button {
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+  /* Add some space between the buttons */
+td:last-child button + button {
+    margin-left: 5px;
 }
 .text-end a{
     height: 35.5px;
+    margin-right: 5px;
+}
+.modal-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.option-1{
+    border-left: 5px solid #C6A76E;
+    cursor: pointer;
 }
   /* Change styles for cancel button and delete button on extra small screens */
 @media screen and (max-width: 300px) {

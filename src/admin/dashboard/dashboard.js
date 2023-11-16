@@ -41,3 +41,20 @@ document.addEventListener("DOMContentLoaded", function () {
         userChange.textContent = "Đăng nhập";
     }
 });
+
+function logoutUser() {
+    // Display a confirmation dialog
+    const confirmLogout = confirm("Are you sure you want to logout?");
+
+    // If the user confirms, proceed with logout
+    if (confirmLogout) {
+      // Clear localStorage
+        localStorage.clear();
+
+      // Redirect the user to the home page ("/" in this case)
+        window.location.href = "/";
+    }
+
+    // If the user cancels, do nothing
+    return false;
+}

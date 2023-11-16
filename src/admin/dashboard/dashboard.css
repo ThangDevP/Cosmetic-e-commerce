@@ -51,3 +51,7 @@ button:hover {
 .text-end a{
     height: 35.5px;
 }
+.option-1{
+    border-left: 5px solid #C6A76E;
+    cursor: pointer;
+}

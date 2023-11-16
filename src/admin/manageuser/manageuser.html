@@ -1,12 +1,10 @@
 <title>Manage User</title>
 <link rel="stylesheet" href="/manageuser/manageuser.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<script src="/manageuser/manageuser.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 crossorigin="anonymous"></script>
-
-    <body>        
+    <body>
             <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
                 <!-- Vertical Navbar -->
                 <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
@@ -16,7 +14,7 @@ crossorigin="anonymous"></script>
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <!-- Brand -->
-                        <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+                        <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
                             <img src="/Cocoon-Logo-PNG-3.png" style="max-width: 25%; height: 25%; display: flex; justify-content: flex-start;"><span class="text-info">
                         </a>
                         <!-- Collapse -->
@@ -24,22 +22,22 @@ crossorigin="anonymous"></script>
                             <!-- Navigation -->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/dashboard/dashboard.html">
+                                    <a class="nav-link" href="/dashboard">
                                         <i class="bi bi-house"></i> Bảng Điều Khiển
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/manageproduct/manageproduct.html">
+                                    <a class="nav-link" href="/manageProduct">
                                         <i class="bi bi-bookmarks"></i> Quản Lý Sản Phẩm
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/manageuser/manageuser.html">
+                                <li class="option-1 nav-item">
+                                    <a class="nav-link" href="/manageUser">
                                         <i class="bi bi-people"></i> Quản Lý Tài Khoản
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/category/managecategory.html">
+                                    <a class="nav-link" href="/manageCategory">
                                         <i class="fa-solid fa-layer-group"></i> Quản Lý Danh Mục
                                     </a>
                                 </li>
@@ -47,14 +45,13 @@ crossorigin="anonymous"></script>
                             <!-- Divider -->
                             <hr class="navbar-divider my-5 opacity-20">
                             <!-- Navigation -->
-                            
                             <!-- Push content down -->
                             <div class="mt-auto"></div>
                             <!-- User (md) -->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" onclick="return confirm('Are you sure you want to logout?')">
-                                        <i class="bi bi-box-arrow-left"></i> Logout
+                                    <a class="nav-link" onclick="logoutUser()"">
+                                        <i class="bi bi-box-arrow-left"></i> Đăng xuất
                                     </a>
                                 </li>
                             </ul>
@@ -94,153 +91,79 @@ crossorigin="anonymous"></script>
                                     <table class="table table-hover table-nowrap">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th scope="col">Ảnh Đại Diện</th>
-                                                <th scope="col">Tên Tài Khoản</th>
-                                                <th scope="col">Email</th>
-                                                <th scope="col">Ngày Sinh</th>
-                                                <th scope="col">SĐT</th>
-                                                <th scope="col">Hành Động</th>
+                                                <th>Ảnh Đại Diện</th>
+                                                <th>Tên Tài Khoản</th>
+                                                <th>Email</th>
+                                                <th>Ngày Sinh</th>
+                                                <th>Số Điện Thoại</th>
+                                                <th>Hành Động</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="cart-item">
-                                                        <img alt="..." src="/image1.jpg">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h6 class="text-heading font-semibold" href="#">
-                                                        Emily Davis
-                                                    </h6>
-                                                </td>
-                                                <td>
-                                                    emilydavis@gmail.com
-                                                </td>
-                                                <td>
-                                                    22/07/2001
-                                                </td>
-                                                <td>
-                                                    0123123123
-                                                </td>
-
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-sm btn-neutral"
-                                                        data-bs-toggle="modal" 
-                                                        data-bs-target="#updateModal">Xem thêm</a>
-                                                    <a href="#" class="btn btn-sm btn-neutral"
-                                                        data-bs-toggle="modal" 
-                                                        data-bs-target="#deleteModal">
-                                                        <span class=" mt-1">
-                                                            <i class="bi bi-trash"></i>
-                                                        </span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="cart-item">
-                                                        <img alt="..." src="/image1.jpg">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <h6 class="text-heading font-semibold" href="#">
-                                                        Emily Davis
-                                                    </h6>
-                                                </td>
-                                                <td>
-                                                    emilydavis@gmail.com
-                                                </td>
-                                                <td>
-                                                    22/07/2001
-                                                </td>
-                                                <td>
-                                                    0123123123
-                                                </td>
-
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-sm btn-neutral"
-                                                        data-bs-toggle="modal" 
-                                                        data-bs-target="#updateModal">
-                                                        Xem thêm</a>
-                                                    <a href="#" class="btn btn-sm btn-neutral"
-                                                        data-bs-toggle="modal" 
-                                                        data-bs-target="#deleteModal">
-                                                        <span class=" mt-1">
-                                                            <i class="bi bi-trash"></i>
-                                                        </span>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        <tbody id="userTableBody">
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </main>
-
-                    <!-- The Update model -->
-                    <div class="modal fade" id="updateModal">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                        
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                <h4 class="modal-title" style="color: #b8a483;">Thông tin khách hàng</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal fade" id="updateModal">
+                    <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <h4 class="modal-title" style="color: #B8A483;">Thông Tin Khách Hàng</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form id="product-form">
+                                <div class="form--avatar">
+                                    <label for="avatar" class="upload">
+                                        <input type="file" id="avatar" class="picture" name="avatar" onchange="handleImageChange()" >
+                                        <i class="fa-solid fa-plus"></i>
+                                    </label>
+                                    <img src="/1.jpg" alt="" width="100px" height="100px" class="img" id="previewImage">
                                 </div>
-                        
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <label for="user-image">Hình Ảnh:</label>
-                                    <input type="file" id="user-image" name="user-image" required>
-                                    <form id="user-form">
-                                        <label for="user-name">Tên tài khoản:</label>
-                                        <input type="text" id="user-name" name="user-name" required>
-
-                                        <label for="user-email">Email:</label>
-                                        <input type="text" id="user-email" name="user-email" required>
-            
-                                        <label for="dob">Day of Birth:</label>
-                                        <input type="text" id="dob" name="dob" required>
-                            
-                                        <label for="phone-number">SĐT:</label>
-                                        <input type="number" id="phone-number" name="phone-number" required>
-                            
-                                    </form>
+                                <div class="form--input">
+                                    <label for="userID">UserId:</label>
+                                    <input type="text" id="userID" name="userID" disabled>
+                                    <label for="username">Tên Khách Hàng:</label>
+                                    <input type="text" id="username" name="username" required>
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="address">Địa Chỉ:</label>
+                                    <input type="text" id="address" name="address" >
+                                    <label for="phoneNumber">Số Điện Thoại:</label>
+                                    <input type="text" id="phoneNumber" name="phoneNumber" >
                                 </div>
-                        
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Chấp nhận</button>
-                                </div>
-                        
-                            </div>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                        <button type="submit" class="view btn btn-primary" data-bs-dismiss="modal">Sửa Đổi</button>
                         </div>
                     </div>
-
-                    <!-- The close Modal -->
-                    <div class="modal fade" id="deleteModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                        
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                <h4 class="modal-title" style="color: #b8a483;">Xoá Tài Khoản</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                </div>
-                        
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <p>Are you sure you want to delete your account?</p>
-                                    <div class="clearfix">
-                                        <button type="button" class="deletebtn btn btn-primary" data-bs-dismiss="modal">Delete</button>
-                                    </div>
-                                </div>                      
+                    </div>
+                </div>
+                <!-- The close Modal -->
+            <div class="modal fade" id="deleteModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <h4 class="modal-title" style="color: #B8A483;">Xoá Tài Khoản</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p>Bạn có muốn xáo tài khoản này không?</p>
+                            <div class="clearfix">
+                                <button type="button" class="deletebtn btn btn-primary" data-bs-dismiss="modal">Xóa bỏ</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-        <script src="./index.js"></script>
-    </body> 
+            </div>
+        <script src="/manageuser/manageuser.js"></script>
+    </body>

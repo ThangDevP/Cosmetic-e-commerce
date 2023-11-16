@@ -11,16 +11,16 @@
       "role": "admin"
     },
     {
-      "username": "Faker new style!",
+      "username": "Faker new style!!!",
       "email": "chung241@gmail.com",
       "address": "Korea",
       "phoneNumber": "0376281525",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699946487/users/ozfbzrdrec4g5tff6grm.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700100841/users/pm67m6adpn4y08frbijj.jpg",
       "role": "user",
       "gender": "male",
       "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1699946488385,
+      "updatedAt": 1700100839890,
       "id": 1699415299351
     },
     {
@@ -80,19 +80,19 @@
       "email": "thang131231@gmail.com",
       "address": "",
       "phoneNumber": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699949627/users/uegq3znoxmvdjfdhgu63.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700109093/users/fx9wkwdh8zgyxukg9uxl.jpg",
       "role": "user",
       "gender": "male",
       "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1699949685985,
+      "updatedAt": 1700109092095,
       "id": 1699949594972
     }
   ],
   "products": [
     {
       "id": 1,
-      "img": "1.jpg",
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699954260/users/kzr2zafyhjigxsynpps0.jpg",
       "name": "PS5 Controller",
       "price": 50,
       "category": "Gears",
@@ -102,7 +102,7 @@
     },
     {
       "id": 2,
-      "img": "1.jpg",
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699954260/users/kzr2zafyhjigxsynpps0.jpg",
       "name": "PS6 Controller",
       "price": 100,
       "category": "Gears",
