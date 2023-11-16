@@ -1,6 +1,4 @@
-const currentURL = window.location.href;
-const segments = currentURL.split("/");
-const userId = segments[segments.length - 1];
+userId = localStorage.getItem('userID');
 
 let profilePic = document.getElementById("profile-pic");
 let inputFile = document.getElementById("image-file");
