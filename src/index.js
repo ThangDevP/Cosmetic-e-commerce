@@ -42,9 +42,12 @@ server.post("/register", (req, res) => {
   const { username, email, password } = req.body;
   const phoneNumber = "";
   const address = "";
+  const city = "";
+  const district = "";
+  const ward = "";
   const avatar = "";
   const role = "user";
-  const dob = "22/12/2001";
+  const dob = "2001-12-21";
   const gender = "male";
   // Check if the user already exists
   const existingUser = router.db.get("users").find({ email }).value();
@@ -60,6 +63,9 @@ server.post("/register", (req, res) => {
     email,
     phoneNumber,
     address,
+    city,
+    district,
+    ward,
     avatar,
     role,
     dob,
