@@ -49,24 +49,25 @@ async function fetchProductSale() {
 }
 
 async function displaySlide(products) {
-  document.querySelector(".your-class").innerHTML = products
+  document.querySelector("#your-class-first").innerHTML = products
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <img
-          src=${product.img}
-          alt=""
-        />
+        <a href="/product.html">
+        <img src=${product.img} alt=""/>
+        </a>
         <div class="slide-info">
           <div class="infor-text">
+            <a href="/product.html">
             <h6>${product.name}</h6>
+            </a>
             <p>
             ${product.description}
             </p>
-            <p class="text-amount">${product.price}</p>
+            <p class="text-amount">${product.price}.000đ</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${product.id})" >Add</button>
+            <button class="btn-add-card" onclick="haha(${product.id})" ><i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
       </div>
@@ -74,6 +75,8 @@ async function displaySlide(products) {
     })
     .join("");
 }
+
+
 
 function updateProgressBar(total, currentSlide) {
   const totalSlider = $(".your-class #slider").length;
