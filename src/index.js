@@ -17,6 +17,7 @@ app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
 app.use(express.static(path.join(__dirname, "/admin/users")));
+app.use(express.static(path.join(__dirname, "/admin/categories")));
 // JSON Server setup
 const server = jsonServer.create();
 
@@ -45,7 +46,7 @@ server.post("/register", (req, res) => {
   const city = "";
   const district = "";
   const ward = "";
-  const avatar = "";
+  const avatar = "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed";
   const role = "user";
   const dob = "2001-12-21";
   const gender = "male";
@@ -87,6 +88,9 @@ app.get("/login", function (req, res) {
 });
 app.get("/manageUser", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
+});
+app.get("/manageCategory", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/categories/categories.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
