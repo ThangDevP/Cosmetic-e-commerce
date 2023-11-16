@@ -79,17 +79,16 @@
       "id": 1699948714270
     },
     {
-      "username": "Thang Nguyen",
-      "email": "thang131231@gmail.com",
-      "address": "",
-      "phoneNumber": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699949627/users/uegq3znoxmvdjfdhgu63.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
+      "id": 1700131311642,
+      "username": "Khang là dbrr2",
       "password": "123456",
-      "updatedAt": 1699949685985,
-      "id": 1699949594972
+      "email": "chung3432342@gmail.com",
+      "phoneNumber": "",
+      "address": "",
+      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
+      "role": "user",
+      "dob": "22/12/2001",
+      "gender": "male"
     }
   ],
   "products": [
@@ -160,42 +159,8 @@
       "sale": true
     }
   ],
-  "carts": [
-    {
-      "id": 2,
-      "userId": 1699415299354
-    },
-    {
-      "id": 1,
-      "userId": 1699415299355
-    }
-  ],
-  "cartItems": [
-    {
-      "id": 2,
-      "productId": 1,
-      "cartId": 1,
-      "quantity": 10,
-      "createdAt": 1699263173299,
-      "updatedAt": 1699264373895
-    },
-    {
-      "id": 3,
-      "productId": 3,
-      "cartId": 2,
-      "quantity": 12,
-      "createdAt": 1699263173299,
-      "updatedAt": 1700013021027
-    },
-    {
-      "id": 1,
-      "productId": 2,
-      "cartId": 2,
-      "quantity": 17,
-      "createdAt": 1699263173299,
-      "updatedAt": 1700013019762
-    }
-  ],
+  "carts": [],
+  "cartItems": [],
   "history": [
     {
       "id": 1,
@@ -234,6 +199,20 @@
       "name": "PETA",
       "description": " Chương trình Beauty Without Bunny của tổ chức bảo vệ quyền lợi động vật toàn cầu PETA là chương trình bảo vệ sự cam kết không có sự tàn ác đối với động vật uy tín trên thế giới.",
       "img": "brand3.svg"
+    }
+  ],
+  "categories": [
+    {
+      "cateName": "Tắm & Dưỡng thể mới",
+      "cateDescription": "Người dùng yêu thích",
+      "updatedAt": 1700127085056,
+      "id": 1700123872593
+    },
+    {
+      "cateName": "Chăm sóc da",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "updatedAt": 1700124952937,
+      "id": 1700123983800
     }
   ]
 }

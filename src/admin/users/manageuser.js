@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+const myModal = new bootstrap.Modal(document.getElementById("myModal"));
+document.querySelector(".btn-close-myModal").addEventListener("click", () => {
+  myModal.hide();
+  document.querySelector(".modal-backdrop").remove();
+});
 
 function fetchDataAndPopulateTable() {
   const role = "user"; // Đặt giá trị role bạn muốn fetch
