@@ -63,10 +63,14 @@ async function displaySlide(products) {
             <p>
             ${product.description}
             </p>
-            <p class="text-amount">${product.price}</p>
+            <p class="text-amount">${product.price
+              .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
+              .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${product.id})" >Add</button>
+            <button class="btn-add-card" onclick="haha(${
+              product.id
+            })" >Add</button>
           </div>
         </div>
       </div>

@@ -11,17 +11,20 @@
       "role": "admin"
     },
     {
+      "id": 1699415299351,
       "username": "Faker new cry!",
-      "email": "chung241@gmail.com",
-      "address": "Korea",
-      "phoneNumber": "0376281525",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700102371/users/pacth7mqt6kftlkh0d5l.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1700102372424,
-      "id": 1699415299351
+      "email": "chung241@gmail.com",
+      "phoneNumber": "0376281525",
+      "address": "123 Faker Cry",
+      "city": "48",
+      "district": "490",
+      "ward": "20194",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700127254/users/fonvlf0wngzw8yqd4lh7.webp",
+      "role": "user",
+      "dob": "2003-05-07",
+      "gender": "male",
+      "updatedAt": 1700127275156
     },
     {
       "username": "Thang Nguyen",
@@ -95,8 +98,8 @@
       "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
       "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
       "price": 245000,
-      "category": "Chăm sóc da",
-      "brand-id": 1,
+      "categoryId": 1700123872593,
+      "brandId": 1,
       "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
       "discount": 10,
       "sale": true
@@ -231,6 +234,40 @@
       "name": "PETA",
       "description": " Chương trình Beauty Without Bunny của tổ chức bảo vệ quyền lợi động vật toàn cầu PETA là chương trình bảo vệ sự cam kết không có sự tàn ác đối với động vật uy tín trên thế giới.",
       "img": "brand3.svg"
+    }
+  ],
+  "categories": [
+    {
+      "cateName": "Tắm & Dưỡng thể mới",
+      "cateDescription": "Người dùng yêu thích",
+      "updatedAt": 1700127085056,
+      "id": 1700123872593
+    },
+    {
+      "cateName": "Chăm sóc da",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "updatedAt": 1700124952937,
+      "id": 1700123983800
+    },
+    {
+      "cateName": "Chăm sóc tóc",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "updatedAt": 1700124907806,
+      "id": 1700123989488
+    },
+    {
+      "id": 1700124999559,
+      "cateName": "Dưỡng môi",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "createdAt": 1700124999572,
+      "updatedAt": 1700124999572
+    },
+    {
+      "id": 1700187605082,
+      "cateName": "Dưỡng Da Siêu Tốc",
+      "cateDescription": "Siêu cấp dưỡng da",
+      "createdAt": 1700187605102,
+      "updatedAt": 1700187605102
     }
   ]
 }

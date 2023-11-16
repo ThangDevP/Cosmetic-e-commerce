@@ -1,9 +1,10 @@
-<title>Manage User</title>
-<link rel="stylesheet" href="/manageuser.css" />
+<title>Manage Category</title>
+<link rel="stylesheet" href="/categories.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 crossorigin="anonymous"></script>
+
     <body>
             <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
                 <!-- Vertical Navbar -->
@@ -31,12 +32,12 @@ crossorigin="anonymous"></script>
                                         <i class="bi bi-bookmarks"></i> Quản Lý Sản Phẩm
                                     </a>
                                 </li>
-                                <li class="option-1 nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="/manageUser">
                                         <i class="bi bi-people"></i> Quản Lý Tài Khoản
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="option-1 nav-item">
                                     <a class="nav-link" href="/manageCategory">
                                         <i class="fa-solid fa-layer-group"></i> Quản Lý Danh Mục
                                     </a>
@@ -50,7 +51,7 @@ crossorigin="anonymous"></script>
                             <!-- User (md) -->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" onclick="logoutUser()"">
+                                    <a class="nav-link" onclick="logoutUser()">
                                         <i class="bi bi-box-arrow-left"></i> Đăng xuất
                                     </a>
                                 </li>
@@ -69,6 +70,19 @@ crossorigin="anonymous"></script>
                                         <!-- Title -->
                                         <h1 class="h2 mb-0 ls-tight">Cocoon Vietnam</h1>
                                     </div>
+                                    <!-- Actions -->
+                            <div class="col-sm-6 col-12 text-sm-end">
+                                <div class="mx-n1">
+                                    <a href="#" class="btn d-inline-flex btn-sm btn-primary mx-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#addModal">
+                                        <span class=" pe-2 mt-1">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </span>
+                                        <span>Thêm danh mục</span>
+                                    </a>
+                                </div>
+                            </div>
                                 </div>
                                 <!-- Nav -->
                                 <ul class="nav nav-tabs mt-4 overflow-x border-0">
@@ -85,21 +99,19 @@ crossorigin="anonymous"></script>
                             <!-- Card stats -->
                             <div class="card shadow border-0 mb-7">
                                 <div class="card-header">
-                                    <h5 class="mb-0">Quản Lý Tài Khoản</h5>
+                                    <h5 class="mb-0">Quản Lý Danh Mục</h5>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover table-nowrap">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th>Ảnh Đại Diện</th>
-                                                <th>Tên Tài Khoản</th>
-                                                <th>Email</th>
-                                                <th>Ngày Sinh</th>
-                                                <th>Số Điện Thoại</th>
+                                                <th>ID Danh Mục</th>
+                                                <th>Tên Danh Mục</th>
+                                                <th>Mô Tả</th>
                                                 <th>Hành Động</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="userTableBody">
+                                        <tbody id="cateTableBody">
                                         </tbody>
                                     </table>
                                 </div>
@@ -107,57 +119,71 @@ crossorigin="anonymous"></script>
                         </div>
                     </main>
                 </div>
-                <div class="modal fade" id="myModal">
+                <!-- Modal adding new category -->
+                <div class="modal fade" id="addModal">
                     <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
-                        <h4 class="modal-title" style="color: #B8A483;">Thông Tin Khách Hàng</h4>
-                        <button type="button" class="btn-close btn-close-myModal" data-bs-dismiss="modal"></button>
-                        </div>
+                        <h4 class="modal-title" style="color: #B8A483;">Thông Tin Danh Mục</h4>
+                        <button type="button" class="btn-close btn-close-addModal" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
                         <!-- Modal body -->
                         <div class="modal-body">
                             <form id="product-form">
-                                <div class="form--avatar">
-                                    <label for="avatar" class="upload">
-                                        <input type="file" id="avatar" class="picture" name="avatar" onchange="handleImageChange()" >
-                                        <i class="fa-solid fa-plus"></i>
-                                    </label>
-                                    <img src="/1.jpg" alt="" width="100px" height="100px" class="img" id="previewImage">
-                                </div>
-                            <div class="form--input">
-                                <label for="userID">UserId:</label>
-                                <input type="text" id="userID" name="userID" disabled>
-                                <label for="username">Tên Khách Hàng:</label>
-                                <input type="text" id="username" name="username" required>
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                                <label for="address">Địa Chỉ:</label>
-                                <input type="text" id="address" name="address" >
-                                <label for="phoneNumber">Số Điện Thoại:</label>
-                                <input type="text" id="phoneNumber" name="phoneNumber" >
-                            </div>
+                                <label for="cateName">Tên Danh Mục:</label>
+                                <input type="text" id="cateName" name="cateName" required>
+                                <label for="cateDescription">Mô Tả:</label>
+                                <input type="text" id="cateDescription" name="cateDescription" required>
                             </form>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                        <button type="submit" class="view" data-bs-dismiss="modal">Sửa Đổi</button>
+                        <button type="submit" class="adding" data-bs-dismiss="modal">Tạo mới</button>
                         </div>
                     </div>
                     </div>
                 </div>
+                <!-- Modal update category -->
+                <!-- Modal update category -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: #B8A483;">Thông Tin Danh Mục</h4>
+                <button type="button" class="btn-close btn-close-myModal" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="update-form"> <!-- Updated ID for the form -->
+                    <label for="update-cateID">CategoryID:</label> <!-- Updated ID and name for the input -->
+                    <input type="text" id="update-cateID" name="update-cateID" disabled>
+                    <label for="update-cateName">Tên Danh Mục:</label>
+                    <input type="text" id="update-cateName" name="update-cateName" required>
+                    <label for="update-cateDescription">Mô Tả:</label>
+                    <input type="text" id="update-cateDescription" name="update-cateDescription" required>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="submit" class="view" data-bs-dismiss="modal">Sửa Đổi</button>
+            </div>
+        </div>
+    </div>
+</div>
                 <!-- The close Modal -->
             <div class="modal fade" id="deleteModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
-                        <h4 class="modal-title" style="color: #B8A483;">Xoá Tài Khoản</h4>
+                        <h4 class="modal-title" style="color: #B8A483;">Xoá Danh Mục</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <!-- Modal body -->
                         <div class="modal-body">
-                            <p>Bạn có muốn xáo tài khoản này không?</p>
+                            <p>Bạn có muốn xóa danh mục này không?</p>
                             <div class="clearfix">
                                 <button type="button" class="deletebtn" data-bs-dismiss="modal">Xóa bỏ</button>
                             </div>
@@ -165,5 +191,5 @@ crossorigin="anonymous"></script>
                     </div>
                 </div>
             </div>
-        <script src="./manageuser.js"></script>
+        <script src="./categories.js"></script>
     </body>
