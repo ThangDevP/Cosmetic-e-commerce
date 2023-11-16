@@ -161,6 +161,8 @@
   ],
   "carts": [],
   "cartItems": [],
+  "carts": [],
+  "cartItems": [],
   "history": [
     {
       "id": 1,
@@ -213,6 +215,19 @@
       "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
       "updatedAt": 1700124952937,
       "id": 1700123983800
+    },
+    {
+      "cateName": "Chăm sóc tóc",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "updatedAt": 1700124907806,
+      "id": 1700123989488
+    },
+    {
+      "id": 1700124999559,
+      "cateName": "Dưỡng môi",
+      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
+      "createdAt": 1700124999572,
+      "updatedAt": 1700124999572
     }
   ]
 }
