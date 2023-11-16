@@ -92,7 +92,7 @@
   "products": [
     {
       "id": 1,
-      "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
+      "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
       "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
       "price": 245000,
       "category": "Chăm sóc da",
@@ -103,60 +103,61 @@
     },
     {
       "id": 2,
-      "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png",
+      "name": "Tinh chất bí đao 70ml - Tặng dung dịch chấm mụn bí đao 5ml",
+      "price": 295,
       "category": "Gears",
       "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
+      "description": "SẠCH MỤN VÀ MỜ VẾT THÂM",
       "discount": 40,
       "sale": true
     },
     {
       "id": 3,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
+      "img": "https://image.cocoonvietnam.com/uploads/z4879406714367_f4a2d5f39cc7e906a95c76a680649e43_eee0619f4d.jpg",
+      "name": "Combo gội xả bưởi không sulfate giảm gãy rụng tóc Cocoon - tặng 1 Serum Sachi phục hồi tóc Cocoon 70ml",
+      "price": 430,
       "category": "Gears",
       "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
+      "description": "GIẢM GÃY RỤNG VÀ LÀM MỀM TÓC",
       "discount": 40,
       "sale": true
     },
     {
       "id": 4,
-      "img": "https://image.cocoonvietnam.com/uploads/z3955699182417_fada4ce363d86efe82b7920b75ac83ab_16fb2dc4ac.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
-    },
-    {
-      "id": 5,
       "img": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
+      "name": "Mặt nạ nghệ Hưng Yên 100ml",
+      "price": 345,
       "category": "Gears",
       "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
+      "description": "DA RẠNG RỠ VÀ MỊN MÀNG",
       "discount": 40,
       "sale": true
     },
     {
       "id": 5,
       "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
+      "name": "Nước tẩy trang bí đao 500ml",
+      "price": 295,
       "category": "Gears",
       "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
+      "description": "LÀM SẠCH VÀ GIẢM DẦU",
+      "discount": 40,
+      "sale": true
+    },
+    {
+      "id": 6,
+      "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
+      "name": "Cà phê Đắk Lắk làm sạch da chết cơ thể 200ml",
+      "price": 125,
+      "category": "Gears",
+      "brand-id": 1,
+      "description": "CHO DA MỀM MỊN VÀ RẠNG RỠ",
       "discount": 40,
       "sale": true
     }
   ],
+  
   "carts": [
     {
       "id": 2,
