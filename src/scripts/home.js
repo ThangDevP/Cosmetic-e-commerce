@@ -49,28 +49,27 @@ async function fetchProductSale() {
 }
 
 async function displaySlide(products) {
-  document.querySelector(".your-class").innerHTML = products
+  document.querySelector("#your-class-first").innerHTML = products
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <img
-          src=${product.img}
-          alt=""
-        />
+        <a href="/product/${product.id}">
+        <img src=${product.img} alt=""/>
+        </a>
         <div class="slide-info">
           <div class="infor-text">
+            <a href="/product/${product.id}">
             <h6>${product.name}</h6>
+            </a>
             <p>
-            ${product.description}
+            ${product.catagory}
             </p>
             <p class="text-amount">${product.price
               .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
               .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${
-              product.id
-            })" >Add</button>
+            <button class="btn-add-card" onclick="haha(${product.id})" ><i class="fa-solid fa-cart-plus"></i></button>
           </div>
         </div>
       </div>
@@ -78,6 +77,8 @@ async function displaySlide(products) {
     })
     .join("");
 }
+
+
 
 function updateProgressBar(total, currentSlide) {
   const totalSlider = $(".your-class #slider").length;

@@ -3,11 +3,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background: #fefbf4;
 }
 
 body {
   font-family: "Nunito", sans-serif;
-  background: #fefbf4;
 }
 
 a {
@@ -140,7 +140,6 @@ a {
   letter-spacing: 1px;
   margin: 0px;
   padding: 0px;
-  background-image: url("/bg_brand_cf39014_2_9e67c4813e.jpg");
   width: 100%;
 }
 
@@ -156,11 +155,13 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Oswald", sans-serif;
+  background-image: url("/bg_brand_cf39014_2_9e67c4813e.jpg");
 }
 
 .body-review-section .header-section-top {
@@ -224,6 +225,7 @@ a {
   padding: 20px;
   margin: 15px;
   cursor: pointer;
+  border: 1px solid #ccb48f;
 }
 .profile-img {
   width: 50px;
@@ -328,11 +330,204 @@ a {
   background-color: #42403c;
 }
 
+
+/* slider */
+.recomemnt {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.my-alert h3 {
+  font-family: "Vollkorn";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 2.5rem;
+  
+}
+
+.my-alert h3 span {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Barlow Condensed";
+}
+
+.my-alert p {
+  color: rgba(118, 115, 111, 1);
+}
+
+div.my-alert {
+  width: 30%;
+  background-color: #fefbf4;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 50px 30px 100px 50px;
+}
+
+.slider-product {
+  position: relative;
+  width: 70%;
+  background-color: #fefbf4;
+}
+
+.slider-content {
+  padding-right: 30px;
+}
+
+.slider-content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.slider-content a img:hover {
+  opacity: 0.8;
+  animation: fadeOut 0.5s ease-out 0.2s forwards;
+}
+@keyframes fadeOut {
+  to {
+      opacity: 1; /* Trở lại giá trị opacity 1 */
+  }
+}
+
+.slick-list {
+  padding: 0 10% 0 0 !important;
+}
+
+.slider-product:hover .slick-custom-arrow-prev {
+  opacity: 1;
+  transform: scaleX(1) translate(0, -50%);
+  width: 50px;
+  border-radius: 5px;
+}
+
+.slider-product:hover .slick-custom-arrow-next {
+  opacity: 1;
+  transform: scaleX(1) translate(0, -50%);
+  width: 50px;
+  border-radius: 5px;
+}
+
+.slick-custom-arrow-prev {
+  position: absolute;
+  top: 40%;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  transform-origin: left center;
+  transform: scaleX(0) translate(0, -50%);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.slick-custom-arrow-next {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: none;
+  border-radius: 5px;
+  transform: translateY(-50%);
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  transform-origin: right center;
+  transform: scaleX(0) translate(0, -50%);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.slide-info {
+  display: flex;
+}
+
+.infor-text {
+  width: 70%;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.infor-text a h6{
+  color: #333;
+}
+
+.infor-text a {
+  text-decoration: none;
+}
+
+.infor-text .text-amount {
+  margin-bottom: 40px;
+}
+
+.infor-btn {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.progress-bar-custom {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(237, 224, 204, 1);
+  position: absolute;
+  bottom: 0;
+}
+
+.progress-bar-inner-custom {
+  height: 100%;
+  width: 0;
+  background-color: rgba(31, 28, 23, 1);
+  transition: transform 0.5s ease;
+}
+
+.btn-add-card{
+  border: none;
+  font-size: 16px;
+  color: #333;
+  background-color: #ede0cc;
+  border-radius: 6px;
+  margin: 14px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 70px;
+  width: 70px;
+}
+
+.btn-add-card:hover{
+  background-color: rgba(39, 37, 37, 0.336);
+  color: white
+}
+
+.btn-add-card i{
+  font-size: 25px;
+}
+
+
 @media (min-width: 1441px) {
   .product-container .content h1,
   .product-container .content h3,
   .product-container .content p {
     font-size: 30px;
+  }
+  .my-alert h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  div.my-alert {
+    width: 35%;
+  }
+
+  .slider-product {
+    width: 65%;
   }
 }
 
@@ -371,6 +566,45 @@ a {
   }
   .banner-add-review-body .button-review-section {
     max-width: 300px;
+  }
+  .my-alert h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .recomemnt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.my-alert {
+    width: 100%;
+  }
+
+  .slider-product {
+    width: 100%;
+  }
+
+  .your-class .slider-content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .infor-text h6 {
+    font-size: 14px;
+  }
+
+  .infor-text p {
+    font-size: 12px;
+  }
+
+  .btn-add-card {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btn-add-card i{
+    font-size: 15px;
   }
 }
 
@@ -447,6 +681,38 @@ a {
   }
   .banner-add-review-body .button-review-section {
     max-width: 374px;
+  }
+  .infor-text h6 {
+    font-size: 15px;
+  }
+
+  .infor-text p {
+    font-size: 14px;
+  }
+
+  .btn-add-card {
+    width: 50px;
+    height: 50px;
+  }
+  .infor-btn {
+    justify-content: center;
+  }
+
+  .slick-list {
+    padding: 0 0 0 0 !important;
+  }
+
+  .your-class .slider-content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .slider-product {
+    padding-left: 0;
+  }
+
+  .btn-add-card i{
+    font-size: 15px;
   }
 }
 
