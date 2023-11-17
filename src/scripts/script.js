@@ -108,8 +108,6 @@ function loadPage(slug) {
     updateProgressBar();
   }
 
-  
-
   fetch(`/home.html`)
     .then((response) => response.text())
     .then((data) => {
