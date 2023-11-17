@@ -7,6 +7,12 @@
     <title>Product details</title>
     <!---Custom CSS File--->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -16,9 +22,11 @@
     <link rel="stylesheet" type="text/css" href="/product-detail.css" />
   </head>
   <body>
+    <div id="header"></div>
     <div class="page">
+      <!-- PRODUCT SECTION -->
       <section class="product-detail">
-        <div class="container">
+        <div class="product-container">
           <div class="product-img">
             <img class="img" src="" alt="" />
           </div>
@@ -52,8 +60,305 @@
           </div>
         </div>
       </section>
-    </div>
 
+      <!-- REVIEW SECTION -->
+      <section id="testimonials">
+        <!--Heading--->
+        <div class="testimonial-heading">
+          <div class="banner-review-section">
+            <div class="body-review-section">
+              <span class="header-section-top">Đánh giá</span>
+              <span class="header-section-bot">Sản phẩm</span>
+              <a
+                class="button-review-section"
+                href="#testimonial-box-container"
+                id="scroll-button"
+                >XEM THÊM</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-box-container" id="testimonial-box-container">
+          <!--BOX-1-------------->
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="profile-img">
+                  <img
+                    src="https://ca.slack-edge.com/T03MRCH57HD-U04RK437L9G-aa1b027c651c-512"
+                  />
+                </div>
+                <div class="name-user">
+                  <strong>Vo Sy Thanh</strong>
+                  <span>@thanhvo</span>
+                </div>
+              </div>
+              <div class="reviews">
+                <i class="fa-solid fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="far fa-star" style="color: #ccb48f"></i>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem, quaerat quis? Provident temporibus architecto
+                asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam
+                tenetur voluptates incidunt blanditiis sed atque cumque.
+              </p>
+            </div>
+          </div>
+          <!--BOX-2-------------->
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="profile-img">
+                  <img
+                    src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1061157246.jpg"
+                  />
+                </div>
+                <div class="name-user">
+                  <strong>J.K Rowling</strong>
+                  <span>@jkrowling</span>
+                </div>
+              </div>
+              <div class="reviews">
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem, quaerat quis? Provident temporibus architecto
+                asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam
+                tenetur voluptates incidunt blanditiis sed atque cumque.
+              </p>
+            </div>
+          </div>
+          <!--BOX-3-------------->
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="profile-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikibooks/vi/thumb/d/d8/Ch%C3%A2n_dung_Harry_Potter.jpg/350px-Ch%C3%A2n_dung_Harry_Potter.jpg"
+                  />
+                </div>
+                <div class="name-user">
+                  <strong>Harry Potter</strong>
+                  <span>@DanielRedclief</span>
+                </div>
+              </div>
+              <div class="reviews">
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="far fa-star" style="color: #ccb48f"></i>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem, quaerat quis? Provident temporibus architecto
+                asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam
+                tenetur voluptates incidunt blanditiis sed atque cumque.
+              </p>
+            </div>
+          </div>
+          <!--BOX-4-------------->
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="profile-img">
+                  <img
+                    src="https://static-images.vnncdn.net/files/publish/ca-si-son-tung-m-tp-4aee32b7df234d3c86807cad722a7c4b.jpg"
+                  />
+                </div>
+                <div class="name-user">
+                  <strong>MTP</strong>
+                  <span>@sontung</span>
+                </div>
+              </div>
+              <div class="reviews">
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="far fa-star" style="color: #ccb48f"></i>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem, quaerat quis? Provident temporibus architecto
+                asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam
+                tenetur voluptates incidunt blanditiis sed atque cumque.
+              </p>
+            </div>
+          </div>
+
+          <!--BOX-5-------------->
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="profile-img">
+                  <img
+                    src="https://duyendangvietnam.net.vn/public/uploads/file1s/bt_chau/ttsung_nhi/84.jpg"
+                  />
+                </div>
+                <div class="name-user">
+                  <strong>Hieuthuhai</strong>
+                  <span>@hieumonday</span>
+                </div>
+              </div>
+              <div class="reviews">
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="fas fa-star" style="color: #ccb48f"></i>
+                <i class="far fa-star" style="color: #ccb48f"></i>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem, quaerat quis? Provident temporibus architecto
+                asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam
+                tenetur voluptates incidunt blanditiis sed atque cumque.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--Banner-Input-------------->
+        <div class="banner-add-review">
+          <h6>Đánh giá từ khách hàng</h6>
+          <div class="banner-add-review-body">
+            <input
+              type="text"
+              class="review-input"
+              placeholder="Hãy tham gia đánh giá sản phẩm của Cocoon nhé!"
+            />
+            <a class="button-review-section" href="">GỬI ĐÁNH GIÁ</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="footer"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="/product-detail.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
   </body>
+  <!-- Trong phần head của trang HTML -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentURL = window.location.href;
+    const segments = currentURL.split("/");
+    const productId = segments[segments.length - 1];
+
+    // Đoạn mã lấy thông tin người dùng đã đăng nhập, bạn có thể thay thế bằng cách khác
+    const userId = localStorage.getItem("userID");
+
+    // Hàm thêm sản phẩm vào giỏ hàng
+    async function addToCart(productId) {
+      try {
+        // Bước 1: Kiểm tra xem người dùng đã đăng nhập chưa
+
+        // Bước 2: Tìm giỏ hàng của người dùng
+        const response = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+        if (!response.ok) {
+          throw new Error(`Lỗi khi tìm giỏ hàng: ${response.status} ${response.statusText}`);
+        }
+        const carts = await response.json();
+
+        if (carts.length === 0) {
+          // Nếu chưa có giỏ hàng, tạo giỏ hàng mới
+          const newCartResponse = await fetch(`http://localhost:3000/api/carts`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ userId }),
+          });
+
+          if (!newCartResponse.ok) {
+            throw new Error(`Lỗi khi tạo giỏ hàng mới: ${newCartResponse.status} ${newCartResponse.statusText}`);
+          }
+        }
+
+        // Bước 3: Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+        const cartIdResponse = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+        const cartData = await cartIdResponse.json();
+
+        const cartId = cartData[0].id;
+
+        const cartItemsResponse = await fetch(`http://localhost:3000/api/cartItems?cartId=${cartId}&productId=${productId}`);
+        const cartItems = await cartItemsResponse.json();
+
+        if (cartItems.length > 0) {
+          // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
+          const cartItemId = cartItems[0].id;
+          const updatedQuantity = cartItems[0].quantity + 1;
+
+          const updateCartItemResponse = await fetch(`http://localhost:3000/api/cartItems/${cartItemId}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ quantity: updatedQuantity }),
+          });
+
+          if (!updateCartItemResponse.ok) {
+            throw new Error(`Lỗi khi cập nhật số lượng: ${updateCartItemResponse.status} ${updateCartItemResponse.statusText}`);
+          }
+        } else {
+          // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
+          const addCartItemResponse = await fetch(`http://localhost:3000/api/cartItems`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              productId,
+              cartId,
+              quantity: 1,
+            }),
+          });
+
+          if (!addCartItemResponse.ok) {
+            throw new Error(`Lỗi khi thêm sản phẩm vào giỏ hàng: ${addCartItemResponse.status} ${addCartItemResponse.statusText}`);
+          }
+        }
+
+        // Bước 4: Cập nhật giỏ hàng
+        // Cập nhật UI hoặc thực hiện các bước khác cần thiết
+        alert("Đã thêm sản phẩm vào giỏ hàng!");
+
+      } catch (error) {
+        console.error(error);
+        // Xử lý lỗi nếu có
+      }
+    }
+
+    // Sử dụng hàm addToCart khi click vào nút thêm vào giỏ hàng
+    const addToCartButton = document.querySelector(".add-to-cart-button");
+    if (addToCartButton) {
+      addToCartButton.addEventListener("click", () => {
+        addToCart(productId);
+      });
+    }
+  });
+</script>
+
 </html>

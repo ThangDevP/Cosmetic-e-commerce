@@ -94,7 +94,7 @@
       "id": 1,
       "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
       "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 50,
+      "price": 150000,
       "category": "Gears",
       "brand-id": 1,
       "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
@@ -104,7 +104,7 @@
       "id": 2,
       "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
       "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
+      "price": 1000000,
       "category": "Gears",
       "brand-id": 1,
       "description": "Giảm gãy rụng và làm mềm tóc",
@@ -143,6 +143,72 @@
       "description": "Giảm gãy rụng và làm mềm tóc",
       "discount": 40,
       "sale": true
+    }
+  ],
+  "carts": [
+    {
+      "id": 2,
+      "userId": 1699947788049
+    },
+    {
+      "id": 1,
+      "userId": 1699415299351
+    },
+    {
+      "userId": "1699948356338",
+      "createdAt": 1700100253815,
+      "updatedAt": 1700100253815,
+      "id": 3
+    }
+  ],
+  "cartItems": [
+    {
+      "productId": "2",
+      "cartId": 2,
+      "quantity": 3,
+      "createdAt": 1700100134644,
+      "updatedAt": 1700100179008,
+      "id": 1
+    },
+    {
+      "productId": "1",
+      "cartId": 2,
+      "quantity": 4,
+      "createdAt": 1700100158831,
+      "updatedAt": 1700100178111,
+      "id": 2
+    },
+    {
+      "productId": "2",
+      "cartId": 3,
+      "quantity": 6,
+      "createdAt": 1700203853703,
+      "updatedAt": 1700205090525,
+      "id": 3
+    },
+    {
+      "productId": "3",
+      "cartId": 3,
+      "quantity": 3,
+      "createdAt": 1700204985125,
+      "updatedAt": 1700205089294,
+      "id": 4
+    },
+    {
+      "productId": "1",
+      "cartId": 3,
+      "quantity": 2,
+      "createdAt": 1700204991803,
+      "updatedAt": 1700205087482,
+      "id": 5
+    },
+    {
+      "productId": "4",
+      "cartId": 3,
+      "quantity": 2,
+      "createdAt": 1700205025360,
+      "updatedAt": 1700205085861,
+      "id": 6
     }
   ]
 }

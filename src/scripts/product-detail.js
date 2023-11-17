@@ -2,7 +2,6 @@ const currentURL = window.location.href;
 
 const segments = currentURL.split("/");
 const productId = segments[segments.length - 1];
-
 fetch(`/api/products/${productId}`)
   .then((response) => response.json())
   .then((product) => {
@@ -19,6 +18,6 @@ fetch(`/api/products/${productId}`)
 
     document.querySelector(".product-description").textContent = product.description;
     document.querySelector(".product-category").textContent = product.category;
-    document.querySelector(".img").src = "/" + product.img;
+    document.querySelector(".img").src = product.img;
   })
   .catch((error) => console.error("Error fetching product data: ", error));
