@@ -38,7 +38,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
   async function fetchProductSale() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/products?sale=true"
+        "http://localhost:3000/api/products?_expand=brand&_expand=category"
       );
       if (!response.ok) {
         throw new Error("Lỗi khi tải dữ liệu");
@@ -51,14 +51,13 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
   }
 
   async function displaySlide(products) {
-    const categoryElement = document.querySelector(".product-category"); // Lấy phần tử có class .product-category
-  
+    const categoryElement = document.querySelector(".product-category"); 
     if (categoryElement) {
       const category = categoryElement.textContent.trim(); // Lấy giá trị của .product-category và loại bỏ khoảng trắng thừa
-  
       document.querySelector("#your-class-first").innerHTML = products
-        .filter((product) => product.category === category) // Lọc sản phẩm dựa trên giá trị của .product-category
+        .filter((product) => product.category.cateName === category) // Lọc sản phẩm dựa trên giá trị của .product-category
         .map((product) => {
+          console.log(product)
           return `
           <div id="slider" class="slider-content">
             <a href="/product/${product.id}">
