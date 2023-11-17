@@ -53,16 +53,16 @@ async function displaySlide(products) {
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <a href="/product/1">
+        <a href="/product/${product.id}">
         <img src=${product.img} alt=""/>
         </a>
         <div class="slide-info">
           <div class="infor-text">
-            <a href="/product/1">
+            <a href="/product/${product.id}">
             <h6>${product.name}</h6>
             </a>
             <p>
-            ${product.description}
+            ${product.catagory}
             </p>
             <p class="text-amount">${product.price
               .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
