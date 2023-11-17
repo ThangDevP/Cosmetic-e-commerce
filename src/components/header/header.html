@@ -9,9 +9,9 @@
 <header>
     <div class="navbar p-md-0">
         <div class="announcement">
-            <p>Tận hưởng giao hàng miễn phí toàn quốc với hoá đơn từ 99.000 đ  +</p>
+            <p>Tận hưởng giao hàng miễn phí toàn quốc với hoá đơn từ 99.000 đ +</p>
         </div>
-        
+
         <div class="main-menu">
             <div class="container-fluid">
                 <div class="row">
@@ -35,19 +35,69 @@
                     <div class="col-5 d-flex align-items-center justify-content-center">
                         <ul class="main-menu-right">
                             <li><a class="active" href="contact.html">Liên Hệ</a></li>
-                            <li><a class="active" href="cart.html">Giỏ Hàng</a></li>
-                            <li id="user-change"></li>
-                        </ul>
+                            <li>
+                            <li>
+                                <type="button" onclick="carticon()">Giỏ Hàng <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-cart3"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                    </svg></button>
+                            </li>
+                            <li><a id="user-change" class="active" href="login.html"></a>
+
+
+                                <!-- html modal -->
+                                <div class="ngoaicung" id="ngoaicung-1">
+                                    <div class="ngoaicung2"></div>
+                                    <div class="ngoaicung3 infor-product-payment">
+                                        <div class="close"><button onclick="carticon()">×</button>
+                                            <div class="tieude">
+                                                <h4>Giỏ Hàng</h4>
+                                            </div>
+                                        </div>
+                                        <div class="products-payment">
+                                            <div class="provisional-card">
+
+                                                <div class="provisional">
+                                                    <span>Tạm Tính</span>
+                                                    <p id="totalOriginal">0 đ</p>
+                                                </div>
+                                                <div class="provisional">
+                                                    <span>Giảm Được</span>
+                                                    <p>0 đ</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="order">
+                                                <div class="total">
+                                                    <p>Tổng cộng</p>
+                                                    <span>0 Đ</span>
+                                                </div>
+                                                <div class="btn-order">ĐẶT HÀNG</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                                    <script src="/header.js"></script>
+                                </div>
                     </div>
+                    <!-- kết thúc html modal -->
+                    </ul>
                 </div>
+                </ul>
             </div>
         </div>
-        <div id="dropdown_menu">
-                <li><a class="active" href="product.html">Sản Phẩm</a></li>
-                <li><a class="active" href="sale.html">Khuyến Mãi</a></li>
-                <li><a class="active" href="about-us.html">Cocoon</a></li>
-                <li><a class="active" href="blog.html">Bài Viết</a></li>
-        </div>
     </div>
-    
+    </li>
+    <div id="dropdown_menu">
+        <li><a class="active" href="product.html">Sản Phẩm</a></li>
+        <li><a class="active" href="sale.html">Khuyến Mãi</a></li>
+        <li><a class="active" href="about-us.html">Cocoon</a></li>
+        <li><a class="active" href="blog.html">Bài Viết</a></li>
+    </div>
+    </div>
+
 </header>
