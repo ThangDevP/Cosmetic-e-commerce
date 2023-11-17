@@ -169,3 +169,259 @@ a:hover {
 #user-change:hover .sub-menu {
   display: block;
 }
+/* css for cart */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Nunito&family=Vollkorn:ital@1&display=swap");
+body {
+  margin: 0;
+}
+
+.products-payment {
+  padding: 20px 30px 15px 20px;
+}
+.product-payment {
+  height: 112px;
+  display: flex;
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  margin-bottom: 10px;
+}
+.item-img {
+  width: 20%;
+  padding-right: 10px;
+}
+.product-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.infor-payment {
+  background-color: #FEFBF4;
+  width: 55%;
+  padding: 25px 25px 25px 25px;
+  height: 500px;
+}
+.infor-product-payment {
+  width: 45%;
+  background-color: #FEFBF4;
+  border-radius: 7px 7px 0 0;
+  height: fit-content;
+}
+.infor-payment h4 {
+  padding-left: 20px;
+  font-family: "Nunito";
+}
+.infor-product-payment h4 {
+  padding-left: 20px;
+  font-family: "Nunito";
+}
+.quantity {
+  display: flex;
+}
+.quantity-text {
+  width: 64px;
+  height: 32px;
+  border-top: 1px solid rgba(237, 224, 204, 1);
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  text-align: center;
+  line-height: 28px;
+}
+.btn-quantity {
+  outline: none;
+  border: 1px solid rgba(237, 224, 204, 1);
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+}
+.quantity-price {
+  display: flex;
+  justify-content: space-between;
+}
+.remove-product {
+  padding-top: 20px;
+}
+
+
+hr {
+  margin: 0 30px 0 15px !important;
+  color: rgba(237, 224, 204, 1) !important;
+  opacity: 1 !important;
+}
+
+.order {
+  padding: 20px 30px 20px 15px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 7px 7px;
+}
+.total p {
+  font-family: "Nunito";
+  margin-bottom: 0;
+}
+.total span {
+  font-family: "Nunito";
+  font-size: 1.875rem;
+}
+.btn-order {
+  width: 200px;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid #E4D1B4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* CSS nền hiển thị Modal */
+.ngoaicung .ngoaicung2 {
+position:fixed;
+top:0px;
+left:0px;
+width:100vw;
+height:100vh;
+background:rgba(0,0,0,0.7);
+z-index:1;
+display:none;
+}
+
+
+/* CSS bảng nội dung Modal */
+.ngoaicung .ngoaicung3 {
+	 padding: 25px 25px 10 25px;
+	 position: fixed;
+	 display: block;
+	 width: 50%;
+	 height: 100%;
+	 z-index: 2;
+	 top: 0;
+   padding:10px;
+   text-align:center;
+   overflow: auto;
+	 right: -50%;
+   border-radius:10px;
+	 box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1);
+	 transition: right 0.5s ease-in-out;
+}
+@media (max-width: 700px) {
+.ngoaicung .ngoaicung3 {width:100%;}
+
+}
+/* CSS bao bọc của nút tắt Modal */
+.ngoaicung .close {
+text-align:right;
+margin-top:-10px;
+margin-bottom:10px;
+}
+
+/* CSS tieu de của Modal */
+.tieude{
+font-weight:bold;
+font-size:20px;
+text-align:center;
+}
+
+.ngoaicung.active body {
+  overflow: hidden;
+}
+.ngoaicung:not(.active) body {
+  overflow: auto;
+}
+
+/* CSS nút tắt modal */
+.close button{
+width:40px;
+height:40px;
+font-size:30px;
+padding:0px;
+border:none;
+}
+
+.ngoaicung.active .ngoaicung2 {
+display:block;
+}
+/* CSS hiệu ứng hiển thị Modal */
+.ngoaicung.active .ngoaicung3 {
+transition:all 400ms ease-in-out;
+transform:translate(-100%) scale(0.92);	
+}
+
+
+
+.message{
+  color:#ccb48f;
+  font-size:
+  18px;
+  grid-area:
+  auto;
+  line-height:
+  28px;
+  margin:
+  30px 0px 0px;
+  text-align:
+  center;
+  font-style: italic;
+  font-weight: normal; 
+}
+.oopss{
+  color:#1d1a15;
+  font-size:
+  18px;
+  grid-area:
+  auto;
+  line-height:
+  28px;
+  margin:
+  30px 0px 0px;
+  text-align:
+  center;
+}
+
+  .button.button-small {
+      height: 3.75rem;
+      width: 140px;
+      padding: 1.375rem 1.0625rem;
+      border-radius: 4px;
+      font-size: 1rem;
+  }
+
+
+  .button.button-small {
+    height: 1px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button.button-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(254, 251, 244, var(--tw-text-opacity));
+}
+
+.button {
+  white-space: nowrap;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+.mt-6 {
+  margin-top: 3.75rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
