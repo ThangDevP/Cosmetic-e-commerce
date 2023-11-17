@@ -14,10 +14,14 @@ function userName() {
   // Check if the user is logged in
   if (name) {
     // Create a new <a> element with the updated content
-    
+
     var newA = document.createElement("a");
     newA.classList.add("active");
-    newA.href = `user/${userId}`;
+    if (userId == 1699414627439) {
+      newA.href = `/dashboard`;
+    } else {
+      newA.href = `user/${userId}`;
+    }
     newA.textContent = name;
 
     // Create and populate the sub-menu
@@ -47,7 +51,11 @@ function userName() {
     var userButton = document.getElementById("user");
     userButton.addEventListener("click", function (e) {
       e.preventDefault();
-      window.location.href = `/user/${userId}`;
+      if (userId == 1699414627439) {
+        window.location.href = `/dashboard`;
+      } else {
+        window.location.href = `user/${userId}`;
+      }
     });
 
     // Event listener for the logout button
@@ -59,8 +67,7 @@ function userName() {
     });
   } else {
     // If the user is not logged in, reset the existing <li> content
-    userChange.innerHTML =
-      '<a class="active" href="/login">Đăng nhập</a>';
+    userChange.innerHTML = '<a class="active" href="/login">Đăng nhập</a>';
   }
 }
 
