@@ -7,8 +7,8 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
+const cart = [];
 
-// Set up CORS for your Express app
 app.use(cors());
 app.use(morgan("combined"));
 app.use(express.static(path.join(__dirname, "styles")));
@@ -29,8 +29,6 @@ server.use(
   })
 );
 server.use(jsonServer.bodyParser);
-
-
 server.use((req, res, next) => {
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
@@ -53,9 +51,9 @@ server.post("/register", (req, res) => {
   const dob = "2001-12-21";
   const gender = "male";
   // Check if the user already exists
-  const existingUser = router.db.get('users').find({ username }).value();
+  const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
-    return res.status(400).json({ message: 'Username already exists.' });
+    return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
   }
   // If the user doesn't exist, add them to the database
   const id = Date.now();
@@ -77,7 +75,6 @@ server.post("/register", (req, res) => {
   router.db.get("users").push(newUser).write();
   return res.status(200).json({ message: "Đăng kí thành công." });
 });
-
 // Mount the JSON Server on the '/api' path
 app.use("/api", server);
 
@@ -91,8 +88,19 @@ app.get("/about-us", function (req, res) {
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/main.html"));
 });
-app.get('/login', function (req, res) {
-  res.sendFile(path.join(__dirname + '/pages/login.html'));
+app.get("/cart", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/cart.html"));
+});
+app.get("/login", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/login.html"));
+});
+
+
+app.get("/manageUser", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
+});
+app.get("/manageCategory", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/categories/categories.html"));
 });
 
 app.get("/manageUser", function (req, res) {
