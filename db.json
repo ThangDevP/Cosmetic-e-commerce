@@ -146,17 +146,6 @@
       "description": "Giảm gãy rụng và làm mềm tóc",
       "discount": 40,
       "sale": true
-    },
-    {
-      "id": 5,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
     }
   ],
   "history": [
