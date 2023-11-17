@@ -3,11 +3,11 @@ const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
+const { error } = require("console");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
-const cart = [];
 
 app.use(cors());
 app.use(morgan("combined"));
