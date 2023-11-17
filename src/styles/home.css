@@ -635,6 +635,7 @@ video::-webkit-media-controls {
   font-weight: 400;
   font-size: 5rem;
   line-height: 2.5rem;
+  
 }
 
 .my-alert h3 span {
@@ -654,7 +655,7 @@ div.my-alert {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 50px 30px 25px 50px;
+  padding: 50px 30px 100px 50px;
 }
 
 .slider-product {
@@ -670,6 +671,16 @@ div.my-alert {
 .slider-content img {
   width: 100%;
   border-radius: 5px;
+}
+
+.slider-content a img:hover {
+  opacity: 0.8;
+  animation: fadeOut 0.5s ease-out 0.2s forwards;
+}
+@keyframes fadeOut {
+  to {
+      opacity: 1; /* Trở lại giá trị opacity 1 */
+  }
 }
 
 .slick-list {
@@ -732,6 +743,14 @@ div.my-alert {
   width: 70%;
   padding-top: 20px;
   padding-left: 10px;
+}
+
+.infor-text a h6{
+  color: #333;
+}
+
+.infor-text a {
+  text-decoration: none;
 }
 
 .infor-text .text-amount {
@@ -814,15 +833,14 @@ div.my-alert {
   object-fit: cover;
 }
 
+
 .slider-content-1 img{
-  height: 664px;
-  width: 542px;
+  /* height: 664px;
+  width: 542px; */
+  height: 100%;
+  width: 90%;
   font-size: 20px;
   border-radius: 6px;
-}
-img{
-  height: 100%;
-  width: 100%;
 }
 
 .infor-text-1 h6{
@@ -831,7 +849,7 @@ img{
 }
 
 .slide-info-1{
-  width: 540px;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
@@ -868,8 +886,11 @@ img{
   }
 
   .slider-content-1 img{
-    height: 400px;
-    width: 300px;
+    width: 90%;
+    height: 100%;
+  }
+  .slider-content-1 .slide-info-1{
+    max-width: 100%;  
   }
 }
 
@@ -920,11 +941,6 @@ img{
   .card-image-2{
     padding: 30px 20px 30px 20px;
   }
-
-  .slide-info-1{
-    max-width: 85%;  
-  }
-  
 }
 
 @media only screen and (max-width: 768px) {
@@ -954,10 +970,6 @@ img{
 
   .card-image-2{
     padding: 30px 20px 30px 20px;
-  }
-
-  .slide-info-1{
-    max-width: 85%;  
   }
 }
 
@@ -1009,6 +1021,6 @@ img{
 
   .slider-content-1 img{
     height: 500px;
-    width: 420px;
+    width: 430px;
   }
 }

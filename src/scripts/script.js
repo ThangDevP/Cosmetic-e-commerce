@@ -36,6 +36,10 @@ function loadPage(slug) {
     slides[slideIndex - 1].style.display = "block";
   }
 
+  function updateProgressBar(totalSlides, currentSlide) {
+    // Đoạn mã xử lý cập nhật thanh tiến trình
+  }
+  
   function onLoadSlickSlider() {
     $(".your-class").slick({
       slidesToShow: 3,
@@ -58,7 +62,7 @@ function loadPage(slug) {
     });
 
     $(".your-class").on("init", function (event, slick, currentSlide) {
-      updateProgressBar(slick, currentSlide);
+      updateProgressBar(slick.slideCount, currentSlide);
     });
 
     $(".your-class").on("afterChange", function (event, slick, currentSlide) {
@@ -69,6 +73,8 @@ function loadPage(slug) {
 
     updateProgressBar();
 
+
+    
     $(".your-class-1").slick({
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -101,8 +107,6 @@ function loadPage(slug) {
 
     updateProgressBar();
   }
-
-  
 
   fetch(`/home.html`)
     .then((response) => response.text())

@@ -53,12 +53,12 @@ async function displaySlide(products) {
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <a href="/product.html">
+        <a href="/product/1">
         <img src=${product.img} alt=""/>
         </a>
         <div class="slide-info">
           <div class="infor-text">
-            <a href="/product.html">
+            <a href="/product/1">
             <h6>${product.name}</h6>
             </a>
             <p>
@@ -69,9 +69,7 @@ async function displaySlide(products) {
               .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${
-              product.id
-            })" >Add</button>
+            <button class="btn-add-card" onclick="haha(${product.id})" ><i class="fa-solid fa-cart-plus"></i></button>
           </div>
         </div>
       </div>
