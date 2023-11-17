@@ -80,6 +80,12 @@ server.post("/register", (req, res) => {
 app.use("/api", server);
 
 // Serve your routes
+app.get("/product", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/all-product.html"));
+});
+app.get("/about-us", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/about-us.html"));
+});
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/main.html"));
 });

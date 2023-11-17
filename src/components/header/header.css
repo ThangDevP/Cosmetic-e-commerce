@@ -1,7 +1,8 @@
 @import url("header.css");
-* {
-  padding: 0;
-  margin: 0;
+*{
+    padding: 0;
+    margin: 0;
+    background-color: #fefbf4;
 }
 
 .announcement {
@@ -10,13 +11,14 @@
   background-color: #1c1c14;
 }
 .announcement p {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: white;
-  margin-top: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: white;
+    margin-top: 10px;
+    background-color: #1c1c14;
 }
 #navbar {
   position: fixed;
