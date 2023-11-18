@@ -1,7 +1,16 @@
 {
   
   "users": [
-    
+    {
+      "id": 1699414627439,
+      "username": "Khoa Ngyen",
+      "password": "123456",
+      "email": "khoa@gmail.com",
+      "phoneNumber": "0965753213",
+      "address": "",
+      "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
+      "role": "admin"
+    }
   ],
 
   "products": [
