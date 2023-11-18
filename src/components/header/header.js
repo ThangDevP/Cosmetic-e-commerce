@@ -93,6 +93,7 @@ function userName() {
 
 // Gọi hàm userName khi trang được tải
 document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOMContentLoaded event fired');
   userName();
 });
 

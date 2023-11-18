@@ -108,17 +108,6 @@
       "sale": "true"
     },
     {
-      "productName": "Kem chống nắng bí đao 50ml",
-      "price": 395000,
-      "categoryId": "1",
-      "brandId": "2",
-      "discount": 0,
-      "sale": false,
-      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700322789/products/j7uum7tqynqfb4vjuwko.jpg",
-      "updatedAt": 1700322789818,
-      "id": 3
-    },
-    {
       "id": 4,
       "img": "https://image.cocoonvietnam.com/uploads/z4372805343245_27ea562aa5cabe55737d80cef8acfcb5_e4d50792fc.jpg",
       "productName": "Nước tẩy trang hoa hồng 310ml",
