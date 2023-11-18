@@ -391,3 +391,4 @@ function carticon() {
 document.addEventListener("DOMContentLoaded", function () {
   showItems();
 });
+
