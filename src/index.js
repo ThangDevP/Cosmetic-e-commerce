@@ -16,8 +16,10 @@ app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
+app.use(express.static(path.join(__dirname, "/admin/dashboard")));
 app.use(express.static(path.join(__dirname, "/admin/users")));
 app.use(express.static(path.join(__dirname, "/admin/categories")));
+app.use(express.static(path.join(__dirname, "/admin/products")));
 // JSON Server setup
 const server = jsonServer.create();
 
@@ -132,11 +134,17 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
+app.get("/dashboard", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/dashboard/dashboard.html"));
+});
 app.get("/manageUser", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
 });
 app.get("/manageCategory", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/categories/categories.html"));
+});
+app.get("/manageProduct", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/products/products.html"));
 });
 app.get("/product/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
@@ -179,9 +187,6 @@ app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
 
-app.get("/dashboard", function (req, res) {
-  res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
-});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {

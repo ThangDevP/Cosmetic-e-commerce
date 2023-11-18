@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1699414627439,
-      "username": "Khoa Ngyen",
+      "username": "admin2221",
       "password": "123456",
       "email": "khoa@gmail.com",
       "phoneNumber": "0965753213",
@@ -12,9 +12,73 @@
       "ward": "Xã Ma Ly Pho",
       "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
       "role": "admin",
-      "dob": "2002-01-14",
+      "gender": "Chọn giới tính",
+      "updatedAt": 1700236243659
+    },
+    {
+      "username": "Thasi ddz",
+      "email": "chung241@gmail.com",
+      "address": "123 Faker Cry",
+      "phoneNumber": "0376281525",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194939/users/tfqdhzdoaemhovu909vp.png",
+      "role": "user",
       "gender": "male",
-      "updatedAt": 1700311819676
+      "dob": "2003-05-07",
+      "password": "123456",
+      "updatedAt": 1700305950319,
+      "id": 1699415299351
+    },
+    {
+      "username": "Khang là dbrr",
+      "email": "thang@gmail.com",
+      "address": "Korea",
+      "phoneNumber": "0876826511",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194956/users/ishrp9iq5fe8fqvxiili.png",
+      "role": "user",
+      "gender": "male",
+      "dob": "2023-11-14",
+      "password": "123456",
+      "updatedAt": 1700194955984,
+      "id": 1699947788049
+    },
+    {
+      "username": "Thái Đinh",
+      "email": "chung34421@gmail.com",
+      "address": "VietNam",
+      "phoneNumber": "0914781672",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194970/users/vcvdsme5ugyby9rvdws7.png",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1700194969840,
+      "id": 1699948356338
+    },
+    {
+      "username": "cháu Thắng",
+      "email": "khangdb@gmail.com",
+      "address": "VietNam",
+      "phoneNumber": "0876826511",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194983/users/p80wace2vg04e4w4zciz.png",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1700194982625,
+      "id": 1699948574735
+    },
+    {
+      "username": "chung12313@gmail.com",
+      "email": "thang4232@gmail.com",
+      "address": "",
+      "phoneNumber": "",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948733/users/lbf7oews2umnj9ncb3mu.jpg",
+      "role": "user",
+      "gender": "male",
+      "dob": "22/12/2001",
+      "password": "123456",
+      "updatedAt": 1699948734773,
+      "id": 1699948714270
     }
   ],
   "products": [
