@@ -76,6 +76,46 @@ server.post("/register", (req, res) => {
   return res.status(200).json({ message: "Đăng kí thành công." });
 });
 
+
+// server.post("/checkout", (req, res) => {
+//   const { username, email, password } = req.body;
+//     const phoneNumber = "";
+//     const address = "";
+//     const avatar = "";
+//     const role = "user";
+//     const dob = "22/12/2001";
+//     const gender = "male";
+//   // Check if the user already exists
+//   const existingUser = router.db.get("users").find({ email }).value();
+//   if (existingUser) {
+//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
+//   }
+//   // If the user doesn't exist, add them to the database
+//   const id = Date.now();
+//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
+//   router.db.get("users").push(newUser).write();
+//   return res.status(200).json({ message: "Đăng kí thành công." });
+// });
+
+// server.post("/checkout", (req, res) => {
+//   const { username, email, password } = req.body;
+//     const phoneNumber = "";
+//     const address = "";
+//     const avatar = "";
+//     const role = "user";
+//     const dob = "22/12/2001";
+//     const gender = "male";
+//   // Check if the user already exists
+//   const existingUser = router.db.get("users").find({ email }).value();
+//   if (existingUser) {
+//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
+//   }
+//   // If the user doesn't exist, add them to the database
+//   const id = Date.now();
+//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
+//   router.db.get("users").push(newUser).write();
+//   return res.status(200).json({ message: "Đăng kí thành công." });
+// });
 // Mount the JSON Server on the '/api' path
 app.use("/api", server);
 
@@ -127,15 +167,18 @@ app.get("/user/:id", function (req, res) {
       res.status(404).send("User not found");
     });
 });
+
+app.get("/checkout", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/checkout.html"));
+});
+
 app.get("/home", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/home.html"));
 });
 app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
-app.get("/payment", function (req, res) {
-  res.sendFile(path.join(__dirname + "/pages/payment.html"));
-});
+
 app.get("/dashboard", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
 });
