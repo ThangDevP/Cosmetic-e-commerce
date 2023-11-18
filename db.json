@@ -398,6 +398,12 @@
     {
       "id": 2,
       "userId": 1699414627439
+    },
+    {
+      "userId": "1699415299351",
+      "createdAt": 1700326354196,
+      "updatedAt": 1700326354196,
+      "id": 3
     }
   ],
   "cartItems": [],
@@ -525,6 +531,31 @@
       "createdAt": 1700323509954,
       "updatedAt": 1700323509954,
       "id": 4
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "chung241@gmail.com",
+        "username": "Nghiêm Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Cry",
+        "city": "Thành phố Cần Thơ",
+        "district": "Quận Ô Môn",
+        "ward": "Phường Thới Long"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 4,
+          "price": 155000,
+          "subtotal": 620000
+        }
+      ],
+      "total": 558000,
+      "createdAt": 1700326389912,
+      "updatedAt": 1700326389912,
+      "id": 5
     }
   ],
   "certificates": [

@@ -17,8 +17,10 @@ app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
 app.use(express.static(path.join(__dirname, "/admin/dashboard")));
+app.use(express.static(path.join(__dirname, "/admin/dashboard")));
 app.use(express.static(path.join(__dirname, "/admin/users")));
 app.use(express.static(path.join(__dirname, "/admin/categories")));
+app.use(express.static(path.join(__dirname, "/admin/products")));
 app.use(express.static(path.join(__dirname, "/admin/products")));
 // JSON Server setup
 const server = jsonServer.create();
