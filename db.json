@@ -1,187 +1,353 @@
 {
+  
   "users": [
-    {
-      "id": 1699414627439,
-      "username": "Khoa Ngyen",
-      "password": "123456",
-      "email": "khoa@gmail.com",
-      "phoneNumber": "0965753213",
-      "address": "",
-      "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "role": "admin"
-    },
-    {
-      "id": 1699415299351,
-      "username": "Faker new cry!",
-      "password": "123456",
-      "email": "chung241@gmail.com",
-      "phoneNumber": "0376281525",
-      "address": "123 Faker Cry",
-      "city": "48",
-      "district": "490",
-      "ward": "20194",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700127254/users/fonvlf0wngzw8yqd4lh7.webp",
-      "role": "user",
-      "dob": "2003-05-07",
-      "gender": "male",
-      "updatedAt": 1700127275156
-    },
-    {
-      "username": "Thang Nguyen",
-      "email": "thang@gmail.com",
-      "address": "Korea",
-      "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948184/users/itvqxvxta254fffcsjea.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "2023-11-14",
-      "password": "123456",
-      "id": 1699947788049,
-      "updatedAt": 1700031569435
-    },
-    {
-      "username": "chubb@gmail.com",
-      "email": "chung34421@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0914781672",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948369/users/t14wkxmz8zbaeudxvy4e.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1699949341992,
-      "id": 1699948356338
-    },
-    {
-      "username": "Khang là dbrr",
-      "email": "khangdb@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948588/users/dhadczipaicz6ygu4yfe.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1699948673681,
-      "id": 1699948574735
-    },
-    {
-      "username": "chung12313@gmail.com",
-      "email": "thang4232@gmail.com",
-      "address": "",
-      "phoneNumber": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948733/users/lbf7oews2umnj9ncb3mu.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1699948734773,
-      "id": 1699948714270
-    },
-    {
-      "id": 1700131311642,
-      "username": "Khang là dbrr2",
-      "password": "123456",
-      "email": "chung3432342@gmail.com",
-      "phoneNumber": "",
-      "address": "",
-      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
-      "role": "user",
-      "dob": "22/12/2001",
-      "gender": "male"
-    }
+    
   ],
+
   "products": [
     {
       "id": 1,
-      "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 245000,
-      "categoryId": 1700123872593,
+      "img": "https://image.cocoonvietnam.com/uploads/Ecom_Skin_BD_Sua_chong_nang_bi_dao_15ml_01_2_777849abe3.png",
+      "productName": "Sữa chống nắng bí đao 15ml",
+      "price": 155000 ,
+      "categoryId": 1,
       "brandId": 1,
-      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
+      "description": "Kết hợp các màng lọc thế hệ mới, chiết xuất bí đao, Synoxyl AZ và Melanin, sữa chống nắng bí đao giúp bảo vệ da trước tia UVA, UVB và ánh sáng năng lượng cao nhìn thấy được. Với kết cấu không trọng lượng, lướt nhẹ và thấm nhanh vào da mà không để lại vệt trắng, sữa chống nắng bí đao mang lại lớp nền trong trẻo, khoẻ khoắn và cảm giác thoải mái khi sử dụng. Sản phẩm phù hợp cho mọi loại da, kể cả da dầu và da nhạy cảm.",
       "discount": 10,
-      "sale": true
+      "sale" : "false"
     },
     {
       "id": 2,
-      "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "img": "https://image.cocoonvietnam.com/uploads/Ecom_Skin_BD_Sua_chong_nang_bi_dao_50ml_01_01_9df155e3a1.png",
+      "productName": "Sữa chống nắng bí đao 50ml",
+      "price": 395000,
+      "categoryId": 1,
+      "brandId": 1,
+      "description": "N",
+      "discount": 10,
+      "sale" : "true"
     },
     {
       "id": 3,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "img": "",
+      "productName": "Kem chống nắng bí đao 50ml",
+      "price": 395000,
+      "categoryId": 1,
+      "brandId": 2,
+      "description": "Với công thức đột phá kết hợp các màng lọc thế hệ mới, chiết xuất bí đao và các thành phần chống oxi hoá, kem chống nắng bí đao mang lại khả năng bảo vệ phổ rộng chống lại bức xạ UVA và UVB là nguyên nhân gây ra tác hại lên da như bỏng rát, cháy nắng, kích ứng, lão hoá và tổn thương tế bào da.",
+      "discount": 10,
+      "sale" : "true"
     },
     {
       "id": 4,
-      "img": "https://image.cocoonvietnam.com/uploads/z3955699182417_fada4ce363d86efe82b7920b75ac83ab_16fb2dc4ac.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "img": "https://image.cocoonvietnam.com/uploads/z4372805343245_27ea562aa5cabe55737d80cef8acfcb5_e4d50792fc.jpg",
+      "productName": "Nước tẩy trang hoa hồng 310ml",
+      "price": 245000,
+      "categoryId": 2,
+      "brandId": 3,
+      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
+      "discount": 10,
+      "sale" : "false"
     },
     {
       "id": 5,
+      "img": "",
+      "productName": "Nước tẩy trang bí đao 140ml",
+      "price": 145000,
+      "categoryId": 2,
+      "brandId": 3,
+      "description": "Làn da dầu và mụn rất nhạy cảm nên cần được thiết kế một loại nước tẩy trang phù hợp. Với công nghệ Micellar, nước tẩy trang bí đao giúp làm sạch hiệu quả lớp trang điểm, bụi bẩn và dầu thừa, mang lại làn da sạch hoàn toàn và dịu nhẹ.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 6,
+      "img": "https://image.cocoonvietnam.com/uploads/z4394607722654_9b6fabd46f3055f422a734cb2893ceea_1_d58f7f9a93.jpg",
+      "productName": "Nước tẩy trang bí đao 500ml",
+      "price": 295000,
+      "categoryId": 2,
+      "brandId": 2,
+      "description": "N",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 7,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_5_57602693f6.jpg",
+      "productName": "Dầu tẩy trang hoa hồng 140ml",
+      "price": 180000,
+      "categoryId": 2,
+      "brandId": 1,
+      "description": "Dầu tẩy trang hoa hồng giúp làm sạch sâu lớp trang điểm, bụi bẩn và dầu thừa, dưỡng ẩm mà không để lại cảm giác nhờn rít khó chịu.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 8,
+      "img": "https://image.cocoonvietnam.com/uploads/z4372805386498_3bd533296846158103cd752a124be5a8_f90a56659b.jpg",
+      "productName": "Nước tẩy trang hoa hồng 140ml",
+      "price": 155000,
+      "categoryId": 2,
+      "brandId": 3,
+      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.N",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 9,
+      "img": "https://image.cocoonvietnam.com/uploads/z4144217404386_2fad2f6b8b47c1047f6e4e0728a96b04_af02e68c7c.jpg",
+      "productName": "Gel rửa mặt cà phê Đắk Lắk 310ml",
+      "price": 295000,
+      "categoryId": 3,
+      "brandId": 1,
+      "description": "Với công thức dịu nhẹ không chứa sulfate, gel rửa mặt cà phê Đắk Lắk có khả năng làm sạch hiệu quả mà không gây khô da, mang lại cảm giác sảng khoái cùng một làn da tươi mới, sạch thoáng và trông tràn đầy sinh lực để bắt đầu một ngày mới.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 10,
+      "img": "https://image.cocoonvietnam.com/uploads/z4064745554320_948e1adc6b3d34513f0e362e5de1d696_0626ba1caf.jpg",
+      "productName": "Gel rửa mặt cà phê Đắk Lắk 140ml",
+      "price": 195000,
+      "categoryId": 3,
+      "brandId": 1,
+      "description": "Với công thức dịu nhẹ không chứa sulfate, gel rửa mặt cà phê Đắk Lắk có khả năng làm sạch hiệu quả mà không gây khô da, mang lại cảm giác sảng khoái cùng một làn da tươi mới, sạch thoáng và trông tràn đầy sinh lực để bắt đầu một ngày mới.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 11,
+      "img": "https://image.cocoonvietnam.com/uploads/z3491780061958_c2ef1011760c3ee0725a1bd163d7f79b_3198e90279.jpg",
+      "productName": "Sữa rửa mặt nghệ Hưng Yên 310ml",
+      "price": 295000,
+      "categoryId": 3,
+      "brandId": 1,
+      "description": "Với công thức dịu nhẹ không Sulfate, sữa rửa mặt từ nghệ Hưng Yên giúp làm sạch hiệu quả mà không gây khô da, đồng thời hỗ trợ làm sạch tế bào chết, mang lại làn da đều màu, mềm mịn và tươi sáng rạng rỡ.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 12,
+      "img": "https://image.cocoonvietnam.com/uploads/z3526709694076_945daa53da7e8d0d674d19b2d92dd792_e41da5dad9.jpg",
+      "productName": "Sữa rửa mặt nghệ Hưng Yên 140ml",
+      "price": 195000,
+      "categoryId": 3,
+      "brandId": 1,
+      "description": "Với công thức dịu nhẹ không Sulfate, sữa rửa mặt từ nghệ Hưng Yên giúp làm sạch hiệu quả mà không gây khô da, đồng thời hỗ trợ làm sạch tế bào chết, mang lại làn da đều màu, mềm mịn và tươi sáng rạng rỡ.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 13,
+      "img": "https://image.cocoonvietnam.com/uploads/z3526709681164_fea7a1510c21c6b18f292e02abb7f1ab_0a71044ada.jpg",
+      "productName": "Gel rửa mặt hoa hồng 140ml",
+      "price": 195000,
+      "categoryId": 3,
+      "brandId": 1,
+      "description": "Với công thức dịu nhẹ không sulfate, đây là sản phẩm rửa mặt lý tưởng hàng ngày giúp làm sạch bụi bẩn và các tạp chất mà không làm mất đi độ ẩm cần thiết của da, giúp bổ sung ẩm và mang lại làn da mềm mịn sau khi sử dụng.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 14,
+      "img": "https://image.cocoonvietnam.com/uploads/z3526520930085_8478409d6ac4058a7b77514ce71bdada_d14a16f231.jpg",
+      "productName": "Gel bí đao rửa mặt 310ml",
+      "price": 295000,
+      "categoryId": 3,
+      "brandId": 2,
+      "description": "Với các thành phần gồm bí đao, rau má, tràm trà, bổ sung thêm Vitamin B3, B5 và Betaine. Gel bí đao có pH 5.5 giúp làm sạch sâu bụi bẩn và dầu thừa, làm giảm việc hình thành mụn mà vẫn giữ được độ ẩm mịn tự nhiên và không gây khô da sau khi sử dụng.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 15,
+      "img": "https://image.cocoonvietnam.com/uploads/z4394607669965_ca1ceaa3a09cb9e3f966f4ac4256dd9a_1_f787014de5.jpg",
+      "productName": "Gel bí đao rửa mặt 140ml",
+      "price": 195000,
+      "categoryId": 3,
+      "brandId": 2,
+      "description": "Với các thành phần gồm bí đao, rau má, tràm trà, bổ sung thêm Vitamin B3, B5 và Betaine. Gel bí đao có pH 5.5 giúp làm sạch sâu bụi bẩn và dầu thừa, làm giảm việc hình thành mụn mà vẫn giữ được độ ẩm mịn tự nhiên và không gây khô da sau khi sử dụng.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 16,
+      "img": "https://image.cocoonvietnam.com/uploads/z4121418281884_8317874b9540c0f394d4450ee941e18c_1ecd94cf9e.jpg",
+      "productName": "Tinh chất bí đao N15 70ml",
+      "price": 495000,
+      "categoryId": 4,
+      "brandId": 1,
+      "description": "Một công thức mạnh mẽ với chiết xuất bí đao, 15% niacinamide tinh khiết, 4% NAG phối hợp cùng dầu lá neem và các chất chống ôxy hoá phổ rộng mang lại khả năng bảo vệ làn da khỏi các gốc tự do phản ứng (ROS, RNS, RCS), giảm bóng nhờn và cải thiện tình trạng mụn.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 17,
+      "img": "https://image.cocoonvietnam.com/uploads/z4389425025003_c3b68e5737569f01eb630fb0c010951c_47aa72d54d.jpg",
+      "productName": "Tinh chất nghệ Hưng Yên C22 30ml",
+      "price": 465000,
+      "categoryId": 4,
+      "brandId": 2,
+      "description": "Chiết xuất nghệ Hưng Yên cùng các thành phần hoạt tính gồm 22% dẫn xuất vitamin C EAA bền vững, 1% hexylresorcinol và 4% vitamin B3 giúp làm sáng da và mờ vết thâm nhanh chóng. Làn da trở nên đều màu và sáng rạng rỡ trông thấy.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 18,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_19_0b76b3aabf.jpg",
+      "productName": "Tinh chất nghệ Hưng Yên C10 30ml",
+      "price": 325000,
+      "categoryId": 4,
+      "brandId": 1,
+      "description": "Dầu nghệ chiết xuất từ củ nghệ Hưng yên rất giàu turmerone, được xé nhỏ và lơ lửng trong một hỗn hợp kết cấu mọng nước chứa Vitamin B3, NAG và Vitamin C (3-o-ethyl ascorbic acid) tạo thành tinh chất nghệ có tác dụng chống oxy hóa mạnh mẽ giúp tăng cường khả năng làm sáng da, cải thiện làn da xỉn màu và làm mờ vết thâm.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 19,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_18_e4234e2f81.jpg",
+      "productName": "Tinh chất hoa hồng 30ml",
+      "price": 265000,
+      "categoryId": 4,
+      "brandId": 1,
+      "description": "Với kết cấu mọng nước, tinh chất hoa hồng sẽ thẩm thấu nhanh và mang các dưỡng chất ngậm nước đi sâu vào các tầng da, giúp dưỡng ẩm sâu, phục hồi những tổn thương do sự mất nước gây ra, đồng thời trả lại sự đầy đặn và tươi mới vốn có của làn da. Đây là cách nhanh nhất để da trở nên căng mọng và ẩm mịn.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 20,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_25_daa9b58b49.jpg",
+      "productName": "Dung dịch chấm mụn bí đao 5ml",
+      "price": 245000,
+      "categoryId": 4,
+      "brandId": 1,
+      "description": "Với chiết xuất bí đao, rau má, tinh dầu tràm trà và 20% Azeclair™- một dẫn xuất hiệu quả của axit azelaic, dung dịch chấm mụn bí đao là giải pháp giúp giảm mụn sưng viêm, làm mờ vết thâm và hạn chế mụn hình thành.",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 21,
       "img": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "productName": "Mặt nạ nghệ Hưng Yên 100ml",
+      "price": 345000,
+      "categoryId": 5,
+      "brandId": 1,
+      "description": "Mặt nạ từ tinh bột nghệ giàu Curcuminoid kết hợp với Vitamin B3 và chiết xuất yến mạch rất phù hợp cho làn da xỉn màu và có nhiều vết thâm. Sau khi rửa đi lớp mặt nạ, bạn sẽ nhìn thấy một làn da tươi mới, sáng rạng rỡ và đều màu.",
+      "discount": 10,
+      "sale" : "true"
     },
     {
-      "id": 5,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "id": 22,
+      "img": "https://image.cocoonvietnam.com/uploads/z3741702902215_49db1948b5dffb7694e872a09681ff7e_2b217c5fb7.jpg",
+      "productName": "Mặt nạ nghệ Hưng Yên 30ml",
+      "price": 145000,
+      "categoryId": 5,
+      "brandId": 1,
+      "description": "N",
+      "discount": 10,
+      "sale" : "false"
+    },
+    {
+      "id": 23,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_38_863e807972.jpg",
+      "productName": "Mặt nạ hoa hồng 100ml",
+      "price": 345000,
+      "categoryId": 5,
+      "brandId": 2,
+      "description": "Cánh hoa hồng hữu cơ được nghiền nhỏ hòa quyện trong lớp gel mượt mà, kết hợp cùng nam châm dưỡng ẩm Pentavitin và HA giúp làm dịu, cấp ẩm và làm mềm tức thì, mang lại làn da đầy đặn, mịn màng và tươi mới.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 24,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_39_cb91c1c0cb.jpg",
+      "productName": "Mặt nạ bí đao 100ml",
+      "price": 345000,
+      "categoryId": 5,
+      "brandId": 2,
+      "description": "Mặt nạ bí đao gồm thành phần chính là bí đao thanh mát, bổ sung thêm rau má và tinh dầu tràm trà giúp giảm nhờn, làm thông thoáng lỗ chân lông, cải thiện nhanh tình trạng mụn, làm dịu vết đỏ, mang lại làn da sạch mụn và mịn màng.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 25,
+      "img": "https://image.cocoonvietnam.com/uploads/z3526709671894_e63be16037a33ab279d1200ca99d1b82_1b5970347c.jpg",
+      "productName": "Nước nghệ Hưng Yên 140ml",
+      "price": 195000,
+      "categoryId": 6,
+      "brandId": 3,
+      "description": "Được chiết xuất từ củ nghệ canh tác tại Hưng Yên, kết hợp với AHA và hoạt chất dưỡng ẩm betaine, nước nghệ cung cấp độ ẩm cần thiết, mang lại làn da sáng mịn và đều màu.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 26,
+      "img": "https://image.cocoonvietnam.com/uploads/z3491780045590_9f9ef20c543913f117fa94cdb8ab11ed_a4435b1ccd.jpg",
+      "productName": "Nước nghệ Hưng Yên 310ml",
+      "price": 295000,
+      "categoryId": 6,
+      "brandId": 3,
+      "description": "Được chiết xuất từ củ nghệ canh tác tại Hưng Yên, kết hợp với AHA và hoạt chất dưỡng ẩm betaine, nước nghệ cung cấp độ ẩm cần thiết, mang lại làn da sáng mịn và đều màu.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 27,
+      "img": "https://image.cocoonvietnam.com/uploads/z3526520919826_f50cccbc71a7fb1b8ea680592d8528d4_e15f2eeefc.jpg",
+      "productName": "Nước bí đao cân bằng da 310ml",
+      "price": 245000,
+      "categoryId": 6,
+      "brandId": 2,
+      "description": "Nhờ các thành phần gồm bí đao, rau má và tràm trà, nước bí đao với công thức không chứa cồn có tác dụng cân bằng pH, giảm dầu, làm sạch lỗ chân lông, cải thiện tình trạng mụn. Sản phẩm còn được bổ sung thêm Vitamin B3, HA và chiết xuất cam thảo giúp cấp ẩm cho làn da luôn mịn màng và giảm thiểu các vết đỏ trên da.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 28,
+      "img": "https://image.cocoonvietnam.com/uploads/Artboard_40_72802554c6.jpg",
+      "productName": "Thạch hoa hồng dưỡng ẩm 100ml",
+      "price": 385000,
+      "categoryId": 7,
+      "brandId": 4,
+      "description": "Với kết cấu mọng nước mang nhiều dưỡng chất từ nước hoa hồng hữu cơ kết hợp với nam châm dưỡng ẩm Pentavitin, các axit amin và HA, thạch hoa hồng sẽ nuôi dưỡng và khóa ẩm suốt 24 giờ, mang lại làn da đầy đặn, mềm mượt và mịn màng.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 29,
+      "img": "https://image.cocoonvietnam.com/uploads/z3741705995135_9891ea4b14c3157d95cdd6a207307e05_1edc3960f6.jpg",
+      "productName": "Thạch hoa hồng dưỡng ẩm 30ml",
+      "price": 195000,
+      "categoryId": 7,
+      "brandId": 4,
+      "description": "NVới kết cấu mọng nước mang nhiều dưỡng chất từ nước hoa hồng hữu cơ kết hợp với nam châm dưỡng ẩm Pentavitin, các axit amin và HA, thạch hoa hồng sẽ nuôi dưỡng và khóa ẩm suốt 24 giờ, mang lại làn da đầy đặn, mềm mượt và mịn màng.",
+      "discount": 10,
+      "sale" : "true"
+    },
+    {
+      "id": 30,
+      "img": "https://image.cocoonvietnam.com/uploads/thach_nghe_nho_0be4383e79.png",
+      "productName": "Thạch nghệ Hưng Yên 30ml",
+      "price": 195000,
+      "categoryId": 7,
+      "brandId": 4,
+      "description": "Với kết cấu mỏng nhẹ, thạch nghệ Hưng Yên mang những dưỡng chất từ củ nghệ, curcuminoid và hexylresorcinol thấm nhanh vào da giúp làm sáng, chống oxi hoá và làm mờ vết thâm. Làn da trở nên mịn màng và đều màu trong thấy.",
+      "discount": 10,
+      "sale" : "true"
     }
   ],
-  "carts": [],
-  "cartItems": [],
-  "history": [
-    {
-      "id": 1,
-      "purchaseDate": "2023-11-01",
-      "purchaseDetails": "Item 1",
-      "purchaseAmount": 100
-    },
-    {
-      "id": 2,
-      "purchaseDate": "2023-10-28",
-      "purchaseDetails": "Item 3",
-      "purchaseAmount": 150
-    },
-    {
-      "id": 3,
-      "purchaseDate": "2023-10-25",
-      "purchaseDetails": "Item 5",
-      "purchaseAmount": 50
-    }
+  
+  "carts": [
+  ]
+  ,
+  "cartItems": [
+
   ],
-  "brands": [
+  
+  "orders": [
+  ],
+
+  "certificates": [
     {
       "id": 1,
       "name": "Leaping Bunny",
@@ -201,38 +367,64 @@
       "img": "brand3.svg"
     }
   ],
+
+  "brands": [
+    {
+      "id": 1,
+      "name": "COCOON",
+      "description": "Cocoon là công ty của những người yêu thiên nhiên, có niềm đam mê mãnh liệt với việc khám phá những thành phần quen thuộc trong cuộc sống hàng ngày của người Việt để kết hợp vào mỹ phẩm. Các sản phẩm của thương hiệu 100% thuần chay và có công thức không chứa các hóa chất độc hại như paraben, formaldehyde, phthalates, hydroquinone, triclosan, v.v."
+    },
+    {
+      "id": 2,
+      "name": "CO MEM",
+      "description": "CO MEM là một trong những thương hiệu mỹ phẩm thiên nhiên Việt Nam được tin dùng nhất. Sản phẩm của thương hiệu 100% không độc hại, an toàn và thân thiện với môi trường. Việc sử dụng chất liệu địa phương và các yếu tố văn hóa mang lại giá trị văn hóa truyền thống cho thương hiệu. Hầu hết khách hàng, đối tác của CO MEM đều khẳng định họ được nhân viên công ty coi như một gia đình."
+    },
+    {
+      "id": 3,
+      "name": "HappySkin",
+      "description": "Được thành lập vào năm 2015, Công ty Cổ phần HappySkin Việt Nam (HappySkin) có mục tiêu cung cấp cho cộng đồng làm đẹp những thông tin và định hướng tiêu dùng mỹ phẩm tại thị trường Việt Nam đầy tiềm năng. Nó đang xây dựng một hoạt động kinh doanh O2O trong ngành làm đẹp của Việt Nam, tập trung vào các sản phẩm chăm sóc da, spa và làm đẹp làm mô hình kinh doanh chính. Hoạt động kinh doanh cốt lõi của công ty là thương hiệu mỹ phẩm DTC mang tên “Emmie By HappySkin”."
+    },
+    {
+      "id": 4,
+      "name": "M.O.I",
+      "description": "MOI Cosmetics được đồng sáng lập vào năm 2018 bởi CEO Lâm Thanh Kim và ca sĩ, biểu tượng sắc đẹp hàng đầu Việt Nam Hồ Ngọc Hà. MOI là thương hiệu mỹ phẩm nội địa chuyên nghiệp đầu tiên của Việt Nam đáp ứng tiêu chuẩn quốc tế và có giá cả hợp lý."
+    }
+  ],
   "categories": [
     {
-      "cateName": "Tắm & Dưỡng thể mới",
-      "cateDescription": "Người dùng yêu thích",
-      "updatedAt": 1700127085056,
-      "id": 1700123872593
+      "id": 1,
+      "cateName": "Chống Nắng",
+      "description": "Bảo vệ da người dùng khỏi ánh nắng mặt trời"
     },
     {
-      "cateName": "Chăm sóc da",
-      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
-      "updatedAt": 1700124952937,
-      "id": 1700123983800
+      "id": 2,
+      "cateName": "Tẩy Trang",
+      "description": "Tẩy đi bụi bẩn và các chất hoá học trên da"
     },
     {
-      "cateName": "Chăm sóc tóc",
-      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
-      "updatedAt": 1700124907806,
-      "id": 1700123989488
+      "id": 3,
+      "cateName": "Sữa Rửa Mặt",
+      "description": "Tẩy đi bụi bẩn và các chất hoá học trên da"
     },
     {
-      "id": 1700124999559,
-      "cateName": "Dưỡng môi",
-      "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
-      "createdAt": 1700124999572,
-      "updatedAt": 1700124999572
+      "id": 4,
+      "cateName": "Tinh Chất",
+      "description": "Bảo vệ da, cải thiện tình trạng da"
     },
     {
-      "id": 1700187605082,
-      "cateName": "Dưỡng Da Siêu Tốc",
-      "cateDescription": "Siêu cấp dưỡng da",
-      "createdAt": 1700187605102,
-      "updatedAt": 1700187605102
+      "id": 5,
+      "cateName": "Mặt Nạ",
+      "description": "Dưỡng ẩm, cung cấp nhiều vitamin và giúp da chắc khoẻ"
+    },
+    {
+      "id": 6,
+      "cateName": "Nước Cân Bằng",
+      "description": "Giúp cân bằng độ ẩm và độ PH trên da"
+    },
+    {
+      "id": 7,
+      "cateName": "Kem Dưỡng",
+      "description": "Cung cấp cho da nhiều vitamin, giúp da chắc khoẻ và sáng mịn"
     }
   ]
 }

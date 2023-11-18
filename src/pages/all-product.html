@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Product</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/all-product.css"/>
+  </head>
+  <body>
+    <main>
+      <div id="header"></div>
+
+      <section id="product-section">
+        <div class="title-product-page">
+          <h3>TẤT CẢ SẢN PHẨM</h3>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()"> <i class="fa-solid fa-magnifying-glass"></i></span>
+        </div>
+
+        <div class="body-product-page">
+          <div id="search-by-filter" class="sidenav col-lg-4 col-md-12 col-xs-12">
+            <form class="search-by-filter">
+              <label class="filter-title">Tìm kiếm</label>
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <div class="item_filter">
+                <div class="search-form">
+                  <input type="text" name="name_filter" id="find">
+                  <i class='fa fa-arrow-right' style='font-size:20px'></i>
+                </div>
+  
+              </div>
+              <label class="filter-title">Bộ lọc</label>
+  
+              <div class="filter-select">
+                <label class="filter-body">Phân loại</label>
+                <select id="category_filter" class="select" name="category_filter">
+                  
+                </select>
+              </div>
+  
+              <div class="filter-select">
+                <label class="filter-body">Thương hiệu</label>
+                <select id="brand_filter" class="select" name="brand_filter">
+                  <option value="">-- Tuỳ chọn --</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+
+              <div class="filter-select">
+                <label class="filter-body">Khoảng giá</label>
+                <div class="filter-input">
+                    <input id="minPrice" class="select" name="minPrice" placeholder="Giá nhỏ nhất" type="number">
+                    <input id="maxPrice" class="select" name="maxPrice" placeholder="Giá lớn nhất" type="number">
+                </div>
+            </div>
+
+            <div class="item_filter">
+              <button class="submitBtn submit">ÁP DỤNG</button>
+              <p id="resetBtn" onclick="">Xoá tất lựa chọn</p>      
+            </div>
+            
+          
+            
+            
+            
+              
+              
+            </form>
+          </div>
+          <div class="col-lg-8 .col-md-12 col-xs-12">
+            <section id="list_product"></section>
+          </div>
+          
+        </div>
+        <div>
+          <ul class="listPage">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </section>
+
+      <div id="footer"></div>
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/all-product.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
