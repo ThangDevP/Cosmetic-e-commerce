@@ -17,13 +17,13 @@ fetch(`http://localhost:3000/api/orders?_expand=user`)
         const totalCell = row.insertCell(4);
 
         idCell.textContent = order.id;
-        customerCell.textContent = order.user.username;
-        inforCell.textContent = order.customerInfo.addr;
-            if (order.itemsDetails && order.itemsDetails.length > 0) {
-                itemsCell.innerHTML = order.itemsDetails.map(item => `${item.quantity} ${item.productName}`).join('<br>');
-            } else {
-                itemsCell.textContent = 'No items';
-            }
+        customerCell.innerHTML = `${order.user.username} <br> (${order.user.email})`;
+        inforCell.innerHTML = `${order.customerInfo.username} (${order.customerInfo.phoneNumber}) <br> ${order.customerInfo.addr} , ${order.customerInfo.ward} , ${order.customerInfo.district} , ${order.customerInfo.city}`;
+        if (order.itemsDetails && order.itemsDetails.length > 0) {
+            itemsCell.innerHTML = order.itemsDetails.map(item => `${item.quantity} ${item.productName}`).join('<br>');
+        } else {
+            itemsCell.textContent = 'No items';
+        }
         totalCell.textContent = order.total;
         totalRevenue += order.total;
 
