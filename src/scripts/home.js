@@ -2,7 +2,7 @@ const brandContainer = document.querySelector(".brands--container");
 
 async function fetchBrands() {
   try {
-    const response = await fetch("http://localhost:3000/api/brands");
+    const response = await fetch("http://localhost:3000/api/certificates");
     if (!response.ok) {
       throw new Error("Lỗi khi tải dữ liệu");
     }
