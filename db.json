@@ -108,15 +108,15 @@
       "sale": "true"
     },
     {
-      "id": 3,
-      "img": "",
       "productName": "Kem chống nắng bí đao 50ml",
       "price": 395000,
-      "categoryId": 1,
-      "brandId": 2,
-      "description": "Với công thức đột phá kết hợp các màng lọc thế hệ mới, chiết xuất bí đao và các thành phần chống oxi hoá, kem chống nắng bí đao mang lại khả năng bảo vệ phổ rộng chống lại bức xạ UVA và UVB là nguyên nhân gây ra tác hại lên da như bỏng rát, cháy nắng, kích ứng, lão hoá và tổn thương tế bào da.",
-      "discount": 10,
-      "sale": "true"
+      "categoryId": "1",
+      "brandId": "2",
+      "discount": 0,
+      "sale": false,
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700322789/products/j7uum7tqynqfb4vjuwko.jpg",
+      "updatedAt": 1700322789818,
+      "id": 3
     },
     {
       "id": 4,
@@ -126,17 +126,6 @@
       "categoryId": 2,
       "brandId": 3,
       "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
-      "discount": 10,
-      "sale": "false"
-    },
-    {
-      "id": 5,
-      "img": "",
-      "productName": "Nước tẩy trang bí đao 140ml",
-      "price": 145000,
-      "categoryId": 2,
-      "brandId": 3,
-      "description": "Làn da dầu và mụn rất nhạy cảm nên cần được thiết kế một loại nước tẩy trang phù hợp. Với công nghệ Micellar, nước tẩy trang bí đao giúp làm sạch hiệu quả lớp trang điểm, bụi bẩn và dầu thừa, mang lại làn da sạch hoàn toàn và dịu nhẹ.",
       "discount": 10,
       "sale": "false"
     },
@@ -425,7 +414,7 @@
   "cartItems": [],
   "orders": [
     {
-      "userId": "1699414627439",
+      "userId": "1699948714270",
       "cartId": 2,
       "customerInfo": {
         "email": "khoa@gmail.com",
@@ -438,13 +427,13 @@
       },
       "itemsDetails": [
         {
-          "productId": 2,
+          "productId": 3,
           "quantity": 1,
           "price": 395000,
           "subtotal": 395000
         },
         {
-          "productId": "1",
+          "productId": 1,
           "quantity": 1,
           "price": 155000,
           "subtotal": 155000
@@ -456,7 +445,7 @@
       "id": 1
     },
     {
-      "userId": "1699414627439",
+      "userId": "1699947788049",
       "cartId": 2,
       "customerInfo": {
         "email": "khoa@gmail.com",
@@ -475,7 +464,7 @@
           "subtotal": 395000
         },
         {
-          "productId": "1",
+          "productId": 4,
           "quantity": 1,
           "price": 155000,
           "subtotal": 155000
@@ -487,7 +476,7 @@
       "id": 2
     },
     {
-      "userId": "1699414627439",
+      "userId": "1699947788049",
       "cartId": 2,
       "customerInfo": {
         "email": "khoa@gmail.com",
