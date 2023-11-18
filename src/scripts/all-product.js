@@ -46,7 +46,7 @@ function showProduct(productFilter) {
           <div class="left">
             <div class="left-top">
               <div class="title-product">
-                <a class="card-title" href="/products/${item.id}">${item.name}</a>
+                <a class="card-title" href="/products/${item.id}">${item.productName}</a>
               </div>
               <div class="category-product">
                 <p>LÀM SẠCH SÂU & CẤP ẨM</p>

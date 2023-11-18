@@ -78,47 +78,6 @@ server.post("/register", (req, res) => {
   return res.status(200).json({ message: "Đăng kí thành công." });
 });
 
-
-// server.post("/checkout", (req, res) => {
-//   const { username, email, password } = req.body;
-//     const phoneNumber = "";
-//     const address = "";
-//     const avatar = "";
-//     const role = "user";
-//     const dob = "22/12/2001";
-//     const gender = "male";
-//   // Check if the user already exists
-//   const existingUser = router.db.get("users").find({ email }).value();
-//   if (existingUser) {
-//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
-//   }
-//   // If the user doesn't exist, add them to the database
-//   const id = Date.now();
-//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
-//   router.db.get("users").push(newUser).write();
-//   return res.status(200).json({ message: "Đăng kí thành công." });
-// });
-
-// server.post("/checkout", (req, res) => {
-//   const { username, email, password } = req.body;
-//     const phoneNumber = "";
-//     const address = "";
-//     const avatar = "";
-//     const role = "user";
-//     const dob = "22/12/2001";
-//     const gender = "male";
-//   // Check if the user already exists
-//   const existingUser = router.db.get("users").find({ email }).value();
-//   if (existingUser) {
-//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
-//   }
-//   // If the user doesn't exist, add them to the database
-//   const id = Date.now();
-//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
-//   router.db.get("users").push(newUser).write();
-//   return res.status(200).json({ message: "Đăng kí thành công." });
-// });
-// Mount the JSON Server on the '/api' path
 app.use("/api", server);
 
 // Serve your routes
@@ -146,7 +105,7 @@ app.get("/manageCategory", function (req, res) {
 app.get("/manageProduct", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/products/products.html"));
 });
-app.get("/product/:id", function (req, res) {
+app.get("/products/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
   fetch(`http://localhost:3000/api/products?id=${productId}`)
