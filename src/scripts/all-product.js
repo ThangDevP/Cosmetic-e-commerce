@@ -3,13 +3,14 @@ let thisPage = 1;
 let limit = 12;
 var listProduct = document.getElementById('list_product');
 var listCategoryFilter = document.getElementById('category_filter');
+var listBrandFilter = document.getElementById('brand_filter');
 let filter = document.querySelector('.search-by-filter')
 
 let allProducts = []; // Biến để lưu trữ tất cả dữ liệu
 let productFilter = []; // Biến để lưu trữ dữ liệu sau khi áp dụng bộ lọc
 
 function fetchAndShowProduct(productFilter){
-  fetch('/api/products', {
+  fetch('/api/products?_expand=brand&_expand=category', {
     method: 'GET',
     headers: {
       'Cache-Control': 'no-cache',
@@ -22,6 +23,7 @@ function fetchAndShowProduct(productFilter){
       allProducts = json;
       productFilter = [...allProducts];
       showCategoryFilter(productFilter);
+      showBrandFilter(productFilter);
       showProduct(productFilter);                                                                                                                                                                                                                                                              
       paginationProduct();
     })
@@ -49,7 +51,7 @@ function showProduct(productFilter) {
                 <a class="card-title" href="/products/${item.id}">${item.productName}</a>
               </div>
               <div class="category-product">
-                <p>LÀM SẠCH SÂU & CẤP ẨM</p>
+                <p>${item.category.cateName}</p>
               </div>
             </div>
             <div class="price-product">
@@ -74,11 +76,11 @@ let selectedCategories = [];
 function showCategoryFilter(productFilter) {
   listCategoryFilter.innerHTML = '<option value="">-- Tuỳ chọn --</option>';
   productFilter.forEach(item => {
-    if (!selectedCategories.includes(item.category)) {
+    if (!selectedCategories.includes(item.category.cateName)) {
       listCategoryFilter.innerHTML += `
-        <option value="${item.category}">${item.category}</option>
+        <option value="${item.category.cateName}">${item.category.cateName}</option>
       `;
-      selectedCategories.push(item.category); // Thêm danh mục vào mảng đã chọn
+      selectedCategories.push(item.category.cateName); // Thêm danh mục vào mảng đã chọn
     }
   });
 
@@ -88,17 +90,15 @@ let selectedBrands = [];
 function showBrandFilter(productFilter) {
   listBrandFilter.innerHTML = '<option value="">-- Tuỳ chọn --</option>';
   productFilter.forEach(item => {
-    if (!selectedBrands.includes(item.brandId)) {
+    if (!selectedBrands.includes(item.brand.name)) {
       listBrandFilter.innerHTML += `
-        <option value="${item.brandId}">${item.brandId}</option>
+        <option value="${item.brand.name}">${item.brand.name}</option>
       `;
-      selectedBrands.push(item.brandId); // Thêm danh mục vào mảng đã chọn
+      selectedBrands.push(item.brand.name); // Thêm danh mục vào mảng đã chọn
     }
   });
 
 }
-
-
 
 
 
@@ -114,9 +114,9 @@ filter.addEventListener('submit', function(event) {
 
   if (nameFilterValue || categoryFilterValue || brandFilterValue || !isNaN(minPriceValue) || !isNaN(maxPriceValue)) {
       productFilter = allProducts.filter(item_filter => {
-          const matchName = !nameFilterValue || item_filter.name.toLowerCase().includes(nameFilterValue.toLowerCase());
-          const matchCategory = !categoryFilterValue || item_filter.category === categoryFilterValue;
-          const matchBrand = !brandFilterValue || item_filter.brandId.toString() === brandFilterValue;
+          const matchName = !nameFilterValue || item_filter.productName.toLowerCase().includes(nameFilterValue.toLowerCase());
+          const matchCategory = !categoryFilterValue || item_filter.category.cateName.toLowerCase() === categoryFilterValue.toLowerCase();
+          const matchBrand = !brandFilterValue || item_filter.brand.name.toLowerCase() === brandFilterValue.toLowerCase();
 
           // Check min price
           if (!isNaN(minPriceValue) && item_filter.price < minPriceValue) {
@@ -144,20 +144,20 @@ filter.addEventListener('submit', function(event) {
 
 const resetButton = document.getElementById('resetBtn');
 
-// Sử dụng sự kiện 'click' để xử lý khi nút reset được click
 resetButton.addEventListener('click', function() {
-  // Xoá giá trị của các trường input
+  
   document.getElementById('find').value = '';
   document.getElementById('category_filter').value = '';
   document.getElementById('brand_filter').value = '';
   document.getElementById('minPrice').value = '';
   document.getElementById('maxPrice').value = '';
 
-  // Gọi lại hàm filter với giá trị trống để trở về trạng thái ban đầu
   showProduct(allProducts);
+  paginationProduct();
   if (window.matchMedia('(max-width: 820px)').matches) {
     closeNav();
   }
+  
 });
 
 // Pagination 

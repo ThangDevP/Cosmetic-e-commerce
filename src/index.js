@@ -4,6 +4,8 @@ const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
 const router = jsonServer.router("db.json");
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
@@ -139,6 +141,38 @@ app.get("/user/:id", function (req, res) {
 
 app.get("/checkout", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/checkout.html"));
+});
+app.get("/forgot-password", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/forgot-password.html"));
+});
+app.use(bodyParser.json());
+
+app.post('/send-email', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password; // Lấy mật khẩu từ request
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'thang.nguyen-ojt07@devplus.edu.vn',
+      pass: 'zugb emfd rpnp fxyn',
+    },
+  });
+
+  async function main() {
+    const info = await transporter.sendMail({
+      from: '"Exactly Company" <thang.nguyen-ojt07@devplus.edu.vn>',
+      to: email, 
+      subject: "Cocoon", 
+      text: "Tìm lại mật khẩu thành công", 
+      html: `<b>Mật khẩu của bạn là: ${password}</b>`, // Sử dụng mật khẩu từ request
+    });
+  
+    console.log("Message sent: %s", info.messageId);
+  }
+  main().catch(console.error);
 });
 
 app.get("/home", function (req, res) {
