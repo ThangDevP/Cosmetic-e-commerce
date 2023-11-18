@@ -68,14 +68,14 @@ a:hover {
   transition: 0.5s;
 }
 
-.main-menu-center {
+/* .main-menu-center {
   display: flex;
   justify-content: center;
 }
 .main-menu-center img {
   width: 65%;
   height: 65%;
-}
+} */
 
 .main-menu-right {
   display: flex;
