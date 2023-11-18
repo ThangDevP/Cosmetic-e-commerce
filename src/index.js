@@ -16,8 +16,12 @@ app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
+app.use(express.static(path.join(__dirname, "/admin/dashboard")));
+app.use(express.static(path.join(__dirname, "/admin/dashboard")));
 app.use(express.static(path.join(__dirname, "/admin/users")));
 app.use(express.static(path.join(__dirname, "/admin/categories")));
+app.use(express.static(path.join(__dirname, "/admin/products")));
+app.use(express.static(path.join(__dirname, "/admin/products")));
 // JSON Server setup
 const server = jsonServer.create();
 
@@ -76,47 +80,6 @@ server.post("/register", (req, res) => {
   return res.status(200).json({ message: "Đăng kí thành công." });
 });
 
-
-// server.post("/checkout", (req, res) => {
-//   const { username, email, password } = req.body;
-//     const phoneNumber = "";
-//     const address = "";
-//     const avatar = "";
-//     const role = "user";
-//     const dob = "22/12/2001";
-//     const gender = "male";
-//   // Check if the user already exists
-//   const existingUser = router.db.get("users").find({ email }).value();
-//   if (existingUser) {
-//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
-//   }
-//   // If the user doesn't exist, add them to the database
-//   const id = Date.now();
-//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
-//   router.db.get("users").push(newUser).write();
-//   return res.status(200).json({ message: "Đăng kí thành công." });
-// });
-
-// server.post("/checkout", (req, res) => {
-//   const { username, email, password } = req.body;
-//     const phoneNumber = "";
-//     const address = "";
-//     const avatar = "";
-//     const role = "user";
-//     const dob = "22/12/2001";
-//     const gender = "male";
-//   // Check if the user already exists
-//   const existingUser = router.db.get("users").find({ email }).value();
-//   if (existingUser) {
-//     return res.status(400).json({ message: "Tài khoản này đã được sử dụng." });
-//   }
-//   // If the user doesn't exist, add them to the database
-//   const id = Date.now();
-//   const newUser = { id, username, password, email, phoneNumber, address, avatar, role, dob, gender };
-//   router.db.get("users").push(newUser).write();
-//   return res.status(200).json({ message: "Đăng kí thành công." });
-// });
-// Mount the JSON Server on the '/api' path
 app.use("/api", server);
 
 // Serve your routes
@@ -132,13 +95,19 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
+app.get("/dashboard", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/dashboard/dashboard.html"));
+});
 app.get("/manageUser", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
 });
 app.get("/manageCategory", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/categories/categories.html"));
 });
-app.get("/product/:id", function (req, res) {
+app.get("/manageProduct", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/products/products.html"));
+});
+app.get("/products/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
   fetch(`http://localhost:3000/api/products?id=${productId}`)
@@ -179,9 +148,6 @@ app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
 
-app.get("/dashboard", function (req, res) {
-  res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
-});
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {

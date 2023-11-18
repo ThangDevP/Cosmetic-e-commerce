@@ -36,7 +36,7 @@ function haha(id) {
 async function fetchProductSale() {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/products?sale=true"
+      "http://localhost:3000/api/products?_expand=category&sale=true"
     );
     if (!response.ok) {
       throw new Error("Lỗi khi tải dữ liệu");
@@ -59,10 +59,10 @@ async function displaySlide(products) {
         <div class="slide-info">
           <div class="infor-text">
             <a href="/product/${product.id}">
-            <h6>${product.name}</h6>
+            <h6>${product.productName}</h6>
             </a>
             <p>
-            ${product.catagory}
+            ${product.category.cateName}
             </p>
             <p class="text-amount">${product.price
               .toLocaleString("vi-VN", { style: "currency", currency: "VND" })

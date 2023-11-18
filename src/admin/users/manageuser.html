@@ -22,7 +22,8 @@ crossorigin="anonymous"></script>
                             <!-- Navigation -->
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/manageOrders">
+                                    <a class="nav-link" href="/dashboard">
+                                    <a class="nav-link" href="/dashboard">
                                         <i class="bi bi-house"></i> Bảng Điều Khiển
                                     </a>
                                 </li>
@@ -73,7 +74,7 @@ crossorigin="anonymous"></script>
                                 <!-- Nav -->
                                 <ul class="nav nav-tabs mt-4 overflow-x border-0">
                                     <li class="nav-item ">
-                                        <a href="#" class="nav-link active">All files</a>
+                                        <a href="#" class="nav-link active">Tất cả tài khoản : <span id="userCount">0</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -141,7 +142,10 @@ crossorigin="anonymous"></script>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                        <button type="submit" class="view" data-bs-dismiss="modal">Sửa Đổi</button>
+                            <button type="submit" class="view btn btn-primary" data-bs-dismiss="modal" id="loadingSpinner">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                <span id="editButtonText">Sửa Đổi</span>
+                            </button>
                         </div>
                     </div>
                     </div>
@@ -159,11 +163,11 @@ crossorigin="anonymous"></script>
                         <div class="modal-body">
                             <p>Bạn có muốn xáo tài khoản này không?</p>
                             <div class="clearfix">
-                                <button type="button" class="deletebtn" data-bs-dismiss="modal">Xóa bỏ</button>
+                                <button type="button" class="deletebtn btn btn-primary" data-bs-dismiss="modal">Xóa bỏ</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <script src="./manageuser.js"></script>
+        <script src="/manageuser.js"></script>
     </body>

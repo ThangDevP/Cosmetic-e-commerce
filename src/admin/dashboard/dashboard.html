@@ -1,0 +1,98 @@
+<title>Manage Orders</title>
+<link rel="stylesheet" href="/dashboard.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+
+    <body>
+            <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+                <!-- Vertical Navbar -->
+                <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="/">
+                            <img src="/Cocoon-Logo-PNG-3.png" style="max-width: 25%; height: 25%; display: flex; justify-content: flex-start;"><span class="text-info">
+                        </a>
+                        <div class="collapse navbar-collapse" id="sidebarCollapse">
+                            <ul class="navbar-nav">
+                                <li class="option-1 nav-item">
+                                    <a class="nav-link" href="/dashboard">
+                                        <i class="bi bi-house"></i> Bảng Điều Khiển
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/manageProduct">
+                                        <i class="bi bi-bookmarks"></i> Quản Lý Sản Phẩm
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/manageUser">
+                                        <i class="bi bi-people"></i> Quản Lý Tài Khoản
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/manageCategory">
+                                        <i class="fa-solid fa-layer-group"></i> Quản Lý Danh Mục
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr class="navbar-divider my-5 opacity-20">
+                            <div class="mt-auto"></div>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="logoutUser()">
+                                        <i class="bi bi-box-arrow-left"></i> Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+                    <header class="bg-surface-primary border-bottom pt-6">
+                        <div class="container-fluid">
+                            <div class="mb-npx">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                                        <!-- Title -->
+                                        <h1 class="h2 mb-0 ls-tight">Cocoon Vietnam</h1>
+                                    </div>
+                                </div>
+                                <ul class="nav nav-tabs mt-4 overflow-x border-0">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Tổng doanh thu : <span id="totalRevenue">0 </span>&nbsp;VNĐ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="py-6 bg-surface-secondary">
+                        <div class="container-fluid">
+                            <div class="card shadow border-0 mb-7">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Quản Lý Đơn Hàng</h5>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-nowrap">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Đơn Hàng</th>
+                                                <th>Người đặt hàng</th>
+                                                <th>Gửi Đến</th>
+                                                <th>Mặt Hàng</th>
+                                                <th>Tổng giá</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ordersTableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+        <script src="./dashboard.js"></script>
+    </body>
