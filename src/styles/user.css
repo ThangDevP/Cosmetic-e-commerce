@@ -168,6 +168,10 @@ select {
   background-color: transparent;
 }
 
+input:focus-visible {
+ outline: none; 
+}
+
 .submit--button {
   display: flex;
   width: 100%;
