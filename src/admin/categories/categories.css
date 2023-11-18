@@ -88,3 +88,10 @@ td:last-child button {
     border-left: 5px solid #C6A76E;
     cursor: pointer;
 }
+.text-end a{
+  height: 35px;
+  margin-left: 5px;
+}
+.clearfix{
+  margin-top: 50px;
+}

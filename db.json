@@ -29,17 +29,20 @@
       "id": 1699415299351
     },
     {
-      "username": "Khang là dbrr",
+      "id": 1699947788049,
+      "username": "Khang là dbrr 123",
+      "password": "123456",
       "email": "thang@gmail.com",
-      "address": "Korea",
       "phoneNumber": "0876826511",
+      "address": "Korea",
+      "city": "",
+      "district": "",
+      "ward": "",
       "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194956/users/ishrp9iq5fe8fqvxiili.png",
       "role": "user",
-      "gender": "male",
       "dob": "2023-11-14",
-      "password": "123456",
-      "updatedAt": 1700194955984,
-      "id": 1699947788049
+      "gender": "male",
+      "updatedAt": 1700314473972
     },
     {
       "username": "Thái Đinh",
@@ -90,7 +93,7 @@
       "discount": 12,
       "sale": true,
       "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191789/products/mlbquiemmtdyhqx0zngj.jpg",
-      "updatedAt": 1700311102059,
+      "updatedAt": 1700314724457,
       "id": 1700191789588
     },
     {

@@ -129,12 +129,23 @@ async function handleUpload(imageInput, folderName) {
   async function handleImageChange() {
     const imageInput = document.getElementById("image");
     const previewImage = document.getElementById("previewImage");
+    const loadingSpinnerModal = document.getElementById("loadingSpinner");
+    const editButtonText = document.getElementById("editButtonText");
+    
     if (imageInput.files.length > 0) {
       try {
+        loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
+        editButtonText.style.display = "none";
+
         const imageUrl = await handleUpload(imageInput, "products");
         previewImage.src = imageUrl;
+
+        loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+        editButtonText.style.display = "inline";
       } catch (error) {
         console.error("Error uploading image:", error);
+        loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+          editButtonText.style.display = "inline";
       }
     }
   }
@@ -161,12 +172,22 @@ async function handleUploadUpdate(imageInput2, folderName) {
 async function handleImageChangeUpdate() {
   const imageInput2 = document.getElementById("update-image");
   const testImage = document.getElementById("testImage");
+  const loadingSpinnerModal = document.getElementById("loadingSpinner");
+  const editButtonText = document.getElementById("editButtonText");
   if (imageInput2.files.length > 0) {
       try {
+          loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
+          editButtonText.style.display = "none";
+
           const imageUrl2 = await handleUploadUpdate(imageInput2, "products");
           testImage.src = imageUrl2;
+
+          loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+          editButtonText.style.display = "inline";
       } catch (error) {
           console.error("Error uploading image:", error);
+          loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+          editButtonText.style.display = "inline";
       }
   }
 }

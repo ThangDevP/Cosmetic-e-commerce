@@ -155,3 +155,10 @@ select {
     background-color: #f8f8f8;
     color: #333;
   }
+.text-end a{
+    height: 35px;
+    margin-left: 5px;
+}
+.clearfix{
+    margin-top: 50px;
+}

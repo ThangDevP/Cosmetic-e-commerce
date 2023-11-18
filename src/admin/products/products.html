@@ -171,7 +171,10 @@ crossorigin="anonymous"></script>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                        <button type="submit" class="view" data-bs-dismiss="modal">Thêm Sản Phẩm</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="loadingSpinner">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                <span id="editButtonText">Thêm Sản Phẩm</span>
+                            </button>
                         </div>
                     </div>
                     </div>
@@ -222,7 +225,10 @@ crossorigin="anonymous"></script>
                             </form>
                         </div>
                         <div class="modal-footer">
-                        <button type="submit" class="update" data-bs-dismiss="modal">Sửa Đổi</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="loadingSpinner">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                <span id="editButtonText">Sửa Đổi</span>
+                            </button>
                         </div>
                     </div>
                     </div>
@@ -240,11 +246,11 @@ crossorigin="anonymous"></script>
                         <div class="modal-body">
                             <p>Bạn có muốn xóa danh mục này không?</p>
                             <div class="clearfix">
-                                <button type="button" class="deletebtn" data-bs-dismiss="modal">Xóa bỏ</button>
+                                <button type="button" class="deletebtn btn btn-primary" data-bs-dismiss="modal">Xóa bỏ</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <script src="./products.js"></script>
+        <script src="/products.js"></script>
     </body>

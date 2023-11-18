@@ -153,10 +153,21 @@ async function handleUpload(avatarInput, folderName) {
 async function handleImageChange() {
   const avatarInput = document.getElementById("avatar");
   const previewImage = document.getElementById("previewImage");
-
-  if (avatarInput.files.length > 0) {
-    const imageUrl = await handleUpload(avatarInput, "users");
-    previewImage.src = imageUrl; // Set the source of the preview image to the uploaded image
+  const loadingSpinnerModal = document.getElementById("loadingSpinner");
+  const editButtonText = document.getElementById("editButtonText");
+  try{
+    if (avatarInput.files.length > 0) {
+      loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
+      editButtonText.style.display = "none";
+      const imageUrl = await handleUpload(avatarInput, "users");
+      previewImage.src = imageUrl; // Set the source of the preview image to the uploaded image
+      loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+      editButtonText.style.display = "inline";
+    }
+  } catch (error){
+    console.error("Error uploading image: ", error);
+    loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+    editButtonText.style.display = "inline";
   }
 }
 async function handleAddOrUpdateUser() {
