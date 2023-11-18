@@ -40,7 +40,7 @@ function fetchDataAndPopulateTable() {
         const discountCell = row.insertCell(6);
 
         imgCell.innerHTML = `<img src="${product.img}" alt="Product Image" style="width: 150px; height: 150px;">`;
-        nameCell.textContent = product.name;
+        nameCell.textContent = product.productName;
         priceCell.textContent = product.price;
         categoryCell.textContent = product.category.cateName;
         brandCell.textContent = product.brand.name;
@@ -126,12 +126,11 @@ async function handleUpload(imageInput, folderName) {
     }
   }
 
-  async function handleImageChange() {
+async function handleImageChange() {
     const imageInput = document.getElementById("image");
     const previewImage = document.getElementById("previewImage");
     const loadingSpinnerModal = document.getElementById("loadingSpinner");
     const editButtonText = document.getElementById("editButtonText");
-    
     if (imageInput.files.length > 0) {
       try {
         loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
@@ -191,9 +190,6 @@ async function handleImageChangeUpdate() {
       }
   }
 }
-
-
-
 function populateCategoriesDropdown() {
   const categoryDropdown = document.getElementById("category");
   fetch("http://localhost:3000/api/categories")
@@ -322,14 +318,14 @@ async function handleAddProduct() {
   const discountOptionRadio = document.querySelector('input[name="discountOption"]:checked');
   const hasDiscount = discountOptionRadio ? discountOptionRadio.value === "yes" : false;
 
-  const name = nameInput.value;
+  const productName = nameInput.value;
   const price = parseFloat(priceInput.value);
   const discount = discountInput.value;
 
 
   const selectedCategoryID = categoryInput.value;
   const selectedBrandID = brandInput.value;
-  if (!name || !price || !selectedBrandID || !selectedCategoryID ) {
+  if (!productName || !price || !selectedBrandID || !selectedCategoryID ) {
     alert("Vui lòng nhập đầy đủ thông tin.");
     return;
   }
@@ -339,7 +335,7 @@ async function handleAddProduct() {
     const id = Date.now();
     const newProduct = {
       id,
-      name,
+      productName,
       price,
       categoryId:selectedCategoryID,
       brandId: selectedBrandID,
@@ -378,9 +374,8 @@ async function handleAddProduct() {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const submitButton = document.querySelector(".view");
+  const submitButton = document.querySelector(".creating");
   submitButton.addEventListener("click", () => {
-    console.log("Submit button clicked");
     handleAddProduct();
   });
 });
@@ -400,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const discountOptionNo = modal.querySelector("#update-discountOptionNo");
         const testImage = modal.querySelector("#testImage");
         productIDInput.value = productData.id;
-        nameInput.value = productData.name;
+        nameInput.value = productData.productName;
         priceInput.value = productData.price;
         discountInput.value = productData.discount;
         testImage.src = productData.img;
@@ -423,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function handleUpdateProduct() {
     const productId = document.getElementById("update-productID").value;
-    const name = document.getElementById("update-name").value;
+    const productName = document.getElementById("update-name").value;
     const price = parseFloat(document.getElementById("update-price").value);
     const categoryId = document.getElementById("update-category").value;
     const brandId = document.getElementById("update-brand").value;
@@ -437,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const oldUserData = await response.json();
 
         // Thực hiện kiểm tra xem có đủ thông tin hay không
-        if (!name || !price) {
+        if (!productName || !price) {
             alert("Vui lòng nhập đầy đủ thông tin.");
             return;
         }
@@ -447,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
         testImage.src = imageUrl2;
         // Update product data
         const updatedProductData = {
-            name,
+            productName,
             price,
             categoryId,
             brandId,
@@ -458,7 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Updated Product Data:", updatedProductData);
 
-        // Send the updated product data to the server
         const apiUrl = `http://localhost:3000/api/products/${productId}`;
         const apiResponse = await fetch(apiUrl, {
             method: "PUT",
@@ -474,8 +468,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const responseData = await apiResponse.json();
         console.log("API response:", responseData);
-
         myModal.hide();
+        document.querySelector('.modal-backdrop').remove();
         fetchDataAndPopulateTable();
         testImage.src = imageUrl2 || oldUserData.img;
     } catch (error) {
