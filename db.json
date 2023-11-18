@@ -16,7 +16,7 @@
       "updatedAt": 1700236243659
     },
     {
-      "username": "Thasi ddz",
+      "username": "Nghiêm Thái",
       "email": "chung241@gmail.com",
       "address": "123 Faker Cry",
       "phoneNumber": "0376281525",
@@ -83,23 +83,22 @@
   ],
   "products": [
     {
-      "id": 1700191789588,
       "name": "New product",
       "price": 240000,
-      "categoryId": "1700123983800",
-      "brandId": "2",
-      "discount": "12",
-      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191789/products/mlbquiemmtdyhqx0zngj.jpg",
+      "categoryId": "1700187605082",
+      "brandId": "3",
+      "discount": 12,
       "sale": true,
-      "createdAt": 1700191789600,
-      "updatedAt": 1700191789600
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191789/products/mlbquiemmtdyhqx0zngj.jpg",
+      "updatedAt": 1700311102059,
+      "id": 1700191789588
     },
     {
       "id": 1700191978544,
       "name": "Sản phẩm mới",
       "price": 240000,
       "categoryId": "1700123983800",
-      "brandId": "2",
+      "brandId": "3",
       "discount": "5",
       "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191978/products/qyogupa3zgn08j5by9fs.jpg",
       "sale": true,
@@ -107,28 +106,26 @@
       "updatedAt": 1700191978555
     },
     {
-      "id": 1700192911110,
       "name": "Sản phẩm cực xịn",
       "price": 2400000,
-      "categoryId": "1700123983800",
+      "categoryId": "1700123872593",
       "brandId": "2",
-      "discount": "15",
+      "discount": 0,
+      "sale": false,
       "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700192911/products/pvxunstzckcmiucr3ld8.jpg",
-      "sale": true,
-      "createdAt": 1700192911122,
-      "updatedAt": 1700192911122
+      "updatedAt": 1700311108448,
+      "id": 1700192911110
     },
     {
-      "id": 1700307910657,
       "name": "Sản phẩm để test",
       "price": 90000,
-      "categoryId": "1700123989488",
-      "brandId": "2",
-      "discount": 5,
+      "categoryId": "1700187605082",
+      "brandId": "4",
+      "discount": 0,
+      "sale": false,
       "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700307910/products/d7mqkrc2vibw91ixblhb.jpg",
-      "sale": true,
-      "createdAt": 1700307910668,
-      "updatedAt": 1700307910668
+      "updatedAt": 1700311159280,
+      "id": 1700307910657
     }
   ],
   "carts": [],
@@ -189,33 +186,38 @@
   ],
   "brands": [
     {
-      "brandName": "Cocoon",
-      "brandDescription": "Người dùng yêu thích",
-      "id": 1
+      "id": 1,
+      "name": "COCOON",
+      "description": "Cocoon là công ty của những người yêu thiên nhiên, có niềm đam mê mãnh liệt với việc khám phá những thành phần quen thuộc trong cuộc sống hàng ngày của người Việt để kết hợp vào mỹ phẩm. Các sản phẩm của thương hiệu 100% thuần chay và có công thức không chứa các hóa chất độc hại như paraben, formaldehyde, phthalates, hydroquinone, triclosan, v.v."
     },
     {
-      "brandName": "Nab Fujitamo",
-      "brandDescription": "Người dùng yêu thích",
-      "id": 2
+      "id": 2,
+      "name": "CO MEM",
+      "description": "CO MEM là một trong những thương hiệu mỹ phẩm thiên nhiên Việt Nam được tin dùng nhất. Sản phẩm của thương hiệu 100% không độc hại, an toàn và thân thiện với môi trường. Việc sử dụng chất liệu địa phương và các yếu tố văn hóa mang lại giá trị văn hóa truyền thống cho thương hiệu. Hầu hết khách hàng, đối tác của CO MEM đều khẳng định họ được nhân viên công ty coi như một gia đình."
     },
     {
-      "brandName": "Ben Ugi",
-      "brandDescription": "Người dùng yêu thích",
-      "id": 3
+      "id": 3,
+      "name": "HappySkin",
+      "description": "Được thành lập vào năm 2015, Công ty Cổ phần HappySkin Việt Nam (HappySkin) có mục tiêu cung cấp cho cộng đồng làm đẹp những thông tin và định hướng tiêu dùng mỹ phẩm tại thị trường Việt Nam đầy tiềm năng. Nó đang xây dựng một hoạt động kinh doanh O2O trong ngành làm đẹp của Việt Nam, tập trung vào các sản phẩm chăm sóc da, spa và làm đẹp làm mô hình kinh doanh chính. Hoạt động kinh doanh cốt lõi của công ty là thương hiệu mỹ phẩm DTC mang tên “Emmie By HappySkin”."
+    },
+    {
+      "id": 4,
+      "name": "M.O.I",
+      "description": "MOI Cosmetics được đồng sáng lập vào năm 2018 bởi CEO Lâm Thanh Kim và ca sĩ, biểu tượng sắc đẹp hàng đầu Việt Nam Hồ Ngọc Hà. MOI là thương hiệu mỹ phẩm nội địa chuyên nghiệp đầu tiên của Việt Nam đáp ứng tiêu chuẩn quốc tế và có giá cả hợp lý."
     }
   ],
-  "orders":[
+  "orders": [
     {
-      "userId": "1699415299351",
+      "userId": "1699948574735",
       "cartId": 1,
       "customerInfo": {
         "email": "chung241@gmail.com",
-        "username": "Faker new cry!",
+        "username": "Hồ Sỹ Quý",
         "phoneNumber": "0376281525",
-        "addr": "Đà Nẵng",
-        "city": "48",
-        "district": "490",
-        "ward": "20194"
+        "addr": "K80/30 Lê Hữu Trác",
+        "city": "Đà Nẵng",
+        "district": "Quận Sơn Trà",
+        "ward": "An Hải Đông"
       },
       "itemsDetails": [
         {
@@ -243,9 +245,9 @@
       "cartId": 1,
       "customerInfo": {
         "email": "chung241@gmail.com",
-        "username": "Faker new cry!",
+        "username": "Thành Đz",
         "phoneNumber": "0376281525",
-        "addr": "Hà Nội",
+        "addr": "K145 Lê Thị Nguyên",
         "city": "48",
         "district": "490",
         "ward": "20194"
@@ -253,17 +255,17 @@
       "itemsDetails": [
         {
           "productId": 1,
-          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-          "quantity": 1,
-          "price": 50,
-          "subtotal": 50
+          "productName": "Tinh dầu bưởi 140ml",
+          "quantity": 3,
+          "price": 150,
+          "subtotal": 150
         },
         {
           "productId": 2,
-          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-          "quantity": 5,
-          "price": 100,
-          "subtotal": 500
+          "productName": "Tinh dầu ổi 540ml",
+          "quantity": 3,
+          "price": 600,
+          "subtotal": 1800
         }
       ],
       "total": 140000,
