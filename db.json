@@ -78,10 +78,22 @@
       "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948733/users/lbf7oews2umnj9ncb3mu.jpg",
       "role": "user",
       "gender": "male",
-      "dob": "22/12/2001",
+      "updatedAt": 1700311819676
+    },
+    {
+      "id": 1700337841671,
+      "username": "thangdeptrai",
       "password": "123456",
-      "updatedAt": 1699948734773,
-      "id": 1699948714270
+      "email": "thangtnsa000@gmail.com",
+      "phoneNumber": "",
+      "address": "",
+      "city": "",
+      "district": "",
+      "ward": "",
+      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
+      "role": "user",
+      "dob": "2001-12-21",
+      "gender": "male"
     }
   ],
   "products": [
@@ -108,6 +120,17 @@
       "sale": "true"
     },
     {
+      "id": 3,
+      "img": "https://image.cocoonvietnam.com/uploads/z4389424986730_1e574bdd58278206885aaafd9cf54665_f04a0b7f9b.jpg",
+      "productName": "Kem chống nắng bí đao 50ml",
+      "price": 395000,
+      "categoryId": 1,
+      "brandId": 2,
+      "description": "Với công thức đột phá kết hợp các màng lọc thế hệ mới, chiết xuất bí đao và các thành phần chống oxi hoá, kem chống nắng bí đao mang lại khả năng bảo vệ phổ rộng chống lại bức xạ UVA và UVB là nguyên nhân gây ra tác hại lên da như bỏng rát, cháy nắng, kích ứng, lão hoá và tổn thương tế bào da.",
+      "discount": 10,
+      "sale": "true"
+    },
+    {
       "id": 4,
       "img": "https://image.cocoonvietnam.com/uploads/z4372805343245_27ea562aa5cabe55737d80cef8acfcb5_e4d50792fc.jpg",
       "productName": "Nước tẩy trang hoa hồng 310ml",
@@ -115,6 +138,17 @@
       "categoryId": 2,
       "brandId": 3,
       "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
+      "discount": 10,
+      "sale": "false"
+    },
+    {
+      "id": 5,
+      "img": "https://image.cocoonvietnam.com/uploads/z4394607722654_9b6fabd46f3055f422a734cb2893ceea_1_d58f7f9a93.jpg",
+      "productName": "Nước tẩy trang bí đao 140ml",
+      "price": 145000,
+      "categoryId": 2,
+      "brandId": 3,
+      "description": "Làn da dầu và mụn rất nhạy cảm nên cần được thiết kế một loại nước tẩy trang phù hợp. Với công nghệ Micellar, nước tẩy trang bí đao giúp làm sạch hiệu quả lớp trang điểm, bụi bẩn và dầu thừa, mang lại làn da sạch hoàn toàn và dịu nhẹ.",
       "discount": 10,
       "sale": "false"
     },
