@@ -449,6 +449,37 @@
       "createdAt": 1700316425965,
       "updatedAt": 1700316425965,
       "id": 3
+    },
+    {
+      "userId": "1699414627439",
+      "cartId": 2,
+      "customerInfo": {
+        "email": "khoa@gmail.com",
+        "username": "Khoa Ngyen",
+        "phoneNumber": "0965753213",
+        "addr": "123 Khoa db",
+        "city": "Tỉnh Lai Châu",
+        "district": "Thành phố Lai Châu",
+        "ward": "Xã Lả Nhì Thàng"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 3,
+          "price": 155000,
+          "subtotal": 465000
+        },
+        {
+          "productId": "2",
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        }
+      ],
+      "total": 774000,
+      "createdAt": 1700323509954,
+      "updatedAt": 1700323509954,
+      "id": 4
     }
   ],
   "certificates": [
