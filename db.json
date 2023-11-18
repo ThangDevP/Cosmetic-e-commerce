@@ -349,9 +349,108 @@
       "sale": "true"
     }
   ],
-  "carts": [],
+  "carts": [
+    {
+      "id": 2,
+      "userId": 1699414627439
+    }
+  ],
   "cartItems": [],
-  "orders": [],
+  "orders": [
+    {
+      "userId": "1699414627439",
+      "cartId": 2,
+      "customerInfo": {
+        "email": "khoa@gmail.com",
+        "username": "Khoa Ngyen",
+        "phoneNumber": "0965753213",
+        "addr": "123 Khoa db",
+        "city": "Tỉnh Lai Châu",
+        "district": "Thành phố Lai Châu",
+        "ward": "Xã Lả Nhì Thàng"
+      },
+      "itemsDetails": [
+        {
+          "productId": 2,
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        },
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        }
+      ],
+      "total": 495000,
+      "createdAt": 1700316243324,
+      "updatedAt": 1700316243324,
+      "id": 1
+    },
+    {
+      "userId": "1699414627439",
+      "cartId": 2,
+      "customerInfo": {
+        "email": "khoa@gmail.com",
+        "username": "Khoa Ngyen",
+        "phoneNumber": "0965753213",
+        "addr": "123 Khoa db",
+        "city": "Tỉnh Lai Châu",
+        "district": "Thành phố Lai Châu",
+        "ward": "Xã Lả Nhì Thàng"
+      },
+      "itemsDetails": [
+        {
+          "productId": 2,
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        },
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        }
+      ],
+      "total": 495000,
+      "createdAt": 1700316326123,
+      "updatedAt": 1700316326123,
+      "id": 2
+    },
+    {
+      "userId": "1699414627439",
+      "cartId": 2,
+      "customerInfo": {
+        "email": "khoa@gmail.com",
+        "username": "Khoa Ngyen",
+        "phoneNumber": "0965753213",
+        "addr": "123 Khoa db",
+        "city": "Tỉnh Lai Châu",
+        "district": "Thành phố Lai Châu",
+        "ward": "Xã Lả Nhì Thàng"
+      },
+      "itemsDetails": [
+        {
+          "productId": 2,
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        },
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        }
+      ],
+      "total": 495000,
+      "createdAt": 1700316425965,
+      "updatedAt": 1700316425965,
+      "id": 3
+    }
+  ],
   "certificates": [
     {
       "id": 1,
