@@ -43,7 +43,7 @@ function fetchDataAndPopulateTable() {
         nameCell.textContent = product.name;
         priceCell.textContent = product.price;
         categoryCell.textContent = product.category.cateName;
-        brandCell.textContent = product.brand.brandName;
+        brandCell.textContent = product.brand.name;
         saleCell.textContent = product.sale;
         discountCell.textContent = product.discount;
 
@@ -240,7 +240,7 @@ function populateBrandsDropdown() {
       brands.forEach((brand) => {
         const option = document.createElement("option");
         option.value = brand.id;
-        option.textContent = brand.brandName;
+        option.textContent = brand.name;
         brandDropdown.appendChild(option);
       });
     })
@@ -262,7 +262,7 @@ function populateBrandsDropdownUpdate() {
       brands.forEach((brand) => {
         const option = document.createElement("option");
         option.value = brand.id;
-        option.textContent = brand.brandName;
+        option.textContent = brand.name;
         brandDropdown.appendChild(option);
       });
     })
