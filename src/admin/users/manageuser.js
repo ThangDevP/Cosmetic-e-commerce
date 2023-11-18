@@ -10,6 +10,8 @@ function fetchDataAndPopulateTable() {
   fetch(`http://localhost:3000/api/users?role=${role}`)
     .then((response) => response.json())
     .then((data) => {
+      const userCount = data.length;
+        document.getElementById("userCount").textContent = userCount;
       const userTableBody = document.getElementById("userTableBody");
       userTableBody.innerHTML = ""; // Xóa dữ liệu cũ trong bảng
 

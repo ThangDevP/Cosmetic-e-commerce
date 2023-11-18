@@ -2,67 +2,69 @@
   "users": [
     {
       "id": 1699414627439,
-      "username": "Khoa Ngyen",
+      "username": "admin2221",
       "password": "123456",
       "email": "khoa@gmail.com",
       "phoneNumber": "0965753213",
       "address": "",
+      "city": "",
+      "district": "",
+      "ward": "",
       "avatar": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "role": "admin"
+      "role": "admin",
+      "gender": "Chọn giới tính",
+      "updatedAt": 1700236243659
     },
     {
-      "id": 1699415299351,
-      "username": "Faker new cry!",
-      "password": "123456",
+      "username": "Thasi ddz",
       "email": "chung241@gmail.com",
-      "phoneNumber": "0376281525",
       "address": "123 Faker Cry",
-      "city": "48",
-      "district": "490",
-      "ward": "20194",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700127254/users/fonvlf0wngzw8yqd4lh7.webp",
+      "phoneNumber": "0376281525",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194939/users/tfqdhzdoaemhovu909vp.png",
       "role": "user",
-      "dob": "2003-05-07",
       "gender": "male",
-      "updatedAt": 1700127275156
+      "dob": "2003-05-07",
+      "password": "123456",
+      "updatedAt": 1700305950319,
+      "id": 1699415299351
     },
     {
-      "username": "Thang Nguyen",
+      "username": "Khang là dbrr",
       "email": "thang@gmail.com",
       "address": "Korea",
       "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948184/users/itvqxvxta254fffcsjea.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194956/users/ishrp9iq5fe8fqvxiili.png",
       "role": "user",
       "gender": "male",
       "dob": "2023-11-14",
       "password": "123456",
-      "id": 1699947788049,
-      "updatedAt": 1700031569435
+      "updatedAt": 1700194955984,
+      "id": 1699947788049
     },
     {
-      "username": "chubb@gmail.com",
+      "username": "Thái Đinh",
       "email": "chung34421@gmail.com",
       "address": "VietNam",
       "phoneNumber": "0914781672",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948369/users/t14wkxmz8zbaeudxvy4e.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194970/users/vcvdsme5ugyby9rvdws7.png",
       "role": "user",
       "gender": "male",
       "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1699949341992,
+      "updatedAt": 1700194969840,
       "id": 1699948356338
     },
     {
-      "username": "Khang là dbrr",
+      "username": "cháu Thắng",
       "email": "khangdb@gmail.com",
       "address": "VietNam",
       "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948588/users/dhadczipaicz6ygu4yfe.jpg",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194983/users/p80wace2vg04e4w4zciz.png",
       "role": "user",
       "gender": "male",
       "dob": "22/12/2001",
       "password": "123456",
-      "updatedAt": 1699948673681,
+      "updatedAt": 1700194982625,
       "id": 1699948574735
     },
     {
@@ -77,111 +79,61 @@
       "password": "123456",
       "updatedAt": 1699948734773,
       "id": 1699948714270
-    },
-    {
-      "id": 1700131311642,
-      "username": "Khang là dbrr2",
-      "password": "123456",
-      "email": "chung3432342@gmail.com",
-      "phoneNumber": "",
-      "address": "",
-      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
-      "role": "user",
-      "dob": "22/12/2001",
-      "gender": "male"
     }
   ],
   "products": [
     {
-      "id": 1,
-      "img": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 245000,
-      "category": "Chăm sóc da",
-      "brand-id": 1,
-      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.",
-      "discount": 10,
-      "sale": true
+      "id": 1700191789588,
+      "name": "New product",
+      "price": 240000,
+      "categoryId": "1700123983800",
+      "brandId": "2",
+      "discount": "12",
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191789/products/mlbquiemmtdyhqx0zngj.jpg",
+      "sale": true,
+      "createdAt": 1700191789600,
+      "updatedAt": 1700191789600
     },
     {
-      "id": 2,
-      "img": "https://image.cocoonvietnam.com/uploads/z4389429065638_b60ed2b6d36dff465ef63a864aad8755_6884fdbae1.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "id": 1700191978544,
+      "name": "Sản phẩm mới",
+      "price": 240000,
+      "categoryId": "1700123983800",
+      "brandId": "2",
+      "discount": "5",
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700191978/products/qyogupa3zgn08j5by9fs.jpg",
+      "sale": true,
+      "createdAt": 1700191978555,
+      "updatedAt": 1700191978555
     },
     {
-      "id": 3,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "id": 1700192911110,
+      "name": "Sản phẩm cực xịn",
+      "price": 2400000,
+      "categoryId": "1700123983800",
+      "brandId": "2",
+      "discount": "15",
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700192911/products/pvxunstzckcmiucr3ld8.jpg",
+      "sale": true,
+      "createdAt": 1700192911122,
+      "updatedAt": 1700192911122
     },
     {
-      "id": 4,
-      "img": "https://image.cocoonvietnam.com/uploads/z3955699182417_fada4ce363d86efe82b7920b75ac83ab_16fb2dc4ac.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
-    },
-    {
-      "id": 5,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
-    },
-    {
-      "id": 5,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607766854_2aca12462b79836bb49c3bf9aeef6bd1_1_fe9bcfe8db.jpg",
-      "name": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
-      "price": 100,
-      "category": "Gears",
-      "brand-id": 1,
-      "description": "Giảm gãy rụng và làm mềm tóc",
-      "discount": 40,
-      "sale": true
+      "id": 1700307910657,
+      "name": "Sản phẩm để test",
+      "price": 90000,
+      "categoryId": "1700123989488",
+      "brandId": "2",
+      "discount": 5,
+      "img": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700307910/products/d7mqkrc2vibw91ixblhb.jpg",
+      "sale": true,
+      "createdAt": 1700307910668,
+      "updatedAt": 1700307910668
     }
   ],
   "carts": [],
   "cartItems": [],
-  "history": [
-    {
-      "id": 1,
-      "purchaseDate": "2023-11-01",
-      "purchaseDetails": "Item 1",
-      "purchaseAmount": 100
-    },
-    {
-      "id": 2,
-      "purchaseDate": "2023-10-28",
-      "purchaseDetails": "Item 3",
-      "purchaseAmount": 150
-    },
-    {
-      "id": 3,
-      "purchaseDate": "2023-10-25",
-      "purchaseDetails": "Item 5",
-      "purchaseAmount": 50
-    }
-  ],
-  "brands": [
+  "certificates": [
     {
       "id": 1,
       "name": "Leaping Bunny",
@@ -205,7 +157,7 @@
     {
       "cateName": "Tắm & Dưỡng thể mới",
       "cateDescription": "Người dùng yêu thích",
-      "updatedAt": 1700127085056,
+      "updatedAt": 1700208848467,
       "id": 1700123872593
     },
     {
@@ -226,6 +178,98 @@
       "cateDescription": "Một công thức có tỉ lệ cân bằng lỗi",
       "createdAt": 1700124999572,
       "updatedAt": 1700124999572
+    },
+    {
+      "id": 1700187605082,
+      "cateName": "Dưỡng Da Siêu Tốc",
+      "cateDescription": "Siêu cấp dưỡng da",
+      "createdAt": 1700187605102,
+      "updatedAt": 1700187605102
+    }
+  ],
+  "brands": [
+    {
+      "brandName": "Cocoon",
+      "brandDescription": "Người dùng yêu thích",
+      "id": 1
+    },
+    {
+      "brandName": "Nab Fujitamo",
+      "brandDescription": "Người dùng yêu thích",
+      "id": 2
+    },
+    {
+      "brandName": "Ben Ugi",
+      "brandDescription": "Người dùng yêu thích",
+      "id": 3
+    }
+  ],
+  "orders":[
+    {
+      "userId": "1699415299351",
+      "cartId": 1,
+      "customerInfo": {
+        "email": "chung241@gmail.com",
+        "username": "Faker new cry!",
+        "phoneNumber": "0376281525",
+        "addr": "Đà Nẵng",
+        "city": "48",
+        "district": "490",
+        "ward": "20194"
+      },
+      "itemsDetails": [
+        {
+          "productId": 1,
+          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+          "quantity": 1,
+          "price": 50,
+          "subtotal": 50
+        },
+        {
+          "productId": 2,
+          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+          "quantity": 5,
+          "price": 100,
+          "subtotal": 500
+        }
+      ],
+      "total": 290000,
+      "createdAt": 1700301511415,
+      "updatedAt": 1700301511415,
+      "id": 1
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 1,
+      "customerInfo": {
+        "email": "chung241@gmail.com",
+        "username": "Faker new cry!",
+        "phoneNumber": "0376281525",
+        "addr": "Hà Nội",
+        "city": "48",
+        "district": "490",
+        "ward": "20194"
+      },
+      "itemsDetails": [
+        {
+          "productId": 1,
+          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+          "quantity": 1,
+          "price": 50,
+          "subtotal": 50
+        },
+        {
+          "productId": 2,
+          "productName": "Nước dưỡng tóc tinh dầu bưởi phiên bản nâng cấp 140ml",
+          "quantity": 5,
+          "price": 100,
+          "subtotal": 500
+        }
+      ],
+      "total": 140000,
+      "createdAt": 1700301511415,
+      "updatedAt": 1700301511415,
+      "id": 2
     }
   ]
 }
