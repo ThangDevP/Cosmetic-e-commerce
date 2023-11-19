@@ -36,7 +36,7 @@ function haha(id) {
 async function fetchProductSale() {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/products?_expand=category&sale=true"
+      "http://localhost:3000/api/products?_expand=brand&_expand=category"
     );
     if (!response.ok) {
       throw new Error("Lỗi khi tải dữ liệu");
@@ -53,12 +53,12 @@ async function displaySlide(products) {
     .map((product) => {
       return `
       <div id="slider" class="slider-content">
-        <a href="/product/${product.id}">
+        <a href="/products/${product.id}">
         <img src=${product.img} alt=""/>
         </a>
         <div class="slide-info">
           <div class="infor-text">
-            <a href="/product/${product.id}">
+            <a href="/products/${product.id}">
             <h6>${product.productName}</h6>
             </a>
             <p>
