@@ -29,6 +29,7 @@
   </head>
 
   <body>
+    <div id="header"></div>
     <div class="profile-container">
       <div class="top-profile">
         <span class="top-name">Tài Khoản</span>
@@ -198,7 +199,16 @@
         <div class="history-content"></div>
       </div>
     </div>
-
+    <div id="footer"></div>
     <script rel="stylesheet" type="text/javascript" src="/user.js"></script>
+
+    <script src="/script.js"></script>
+    <script src="/home.js"></script>
+    <script src="/header/header.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        showSlides(1);
+      });
+    </script>
   </body>
 </html>
