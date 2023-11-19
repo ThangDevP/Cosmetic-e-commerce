@@ -5,6 +5,7 @@ var listProduct = document.getElementById('list_product');
 var listCategoryFilter = document.getElementById('category_filter');
 var listBrandFilter = document.getElementById('brand_filter');
 let filter = document.querySelector('.search-by-filter')
+var userId = localStorage.getItem("userID");
 
 let allProducts = []; // Biến để lưu trữ tất cả dữ liệu
 let productFilter = []; // Biến để lưu trữ dữ liệu sau khi áp dụng bộ lọc
@@ -59,7 +60,7 @@ function showProduct(productFilter) {
             </div>
           </div>
           <div class="add-button">
-            <a href="">
+            <a onclick="addToCart(${item.id})">
               <i class="fa-solid fa-cart-plus"></i>
             </a>
           </div>
