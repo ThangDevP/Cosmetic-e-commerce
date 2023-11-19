@@ -1,5 +1,5 @@
-<title>Manage Category</title>
-<link rel="stylesheet" href="/categories.css" />
+<title>Manage Product</title>
+<link rel="stylesheet" href="/products.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
@@ -27,7 +27,7 @@ crossorigin="anonymous"></script>
                                         <i class="bi bi-house"></i> Bảng Điều Khiển
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="option-1 nav-item">
                                     <a class="nav-link" href="/manageProduct">
                                         <i class="bi bi-bookmarks"></i> Quản Lý Sản Phẩm
                                     </a>
@@ -37,7 +37,7 @@ crossorigin="anonymous"></script>
                                         <i class="bi bi-people"></i> Quản Lý Tài Khoản
                                     </a>
                                 </li>
-                                <li class="option-1 nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link" href="/manageCategory">
                                         <i class="fa-solid fa-layer-group"></i> Quản Lý Danh Mục
                                     </a>
@@ -79,15 +79,15 @@ crossorigin="anonymous"></script>
                                         <span class=" pe-2 mt-1">
                                             <i class="fa-solid fa-plus"></i>
                                         </span>
-                                        <span>Thêm danh mục</span>
+                                        <span>Thêm sản phẩm</span>
                                     </a>
                                 </div>
                             </div>
                                 </div>
                                 <!-- Nav -->
                                 <ul class="nav nav-tabs mt-4 overflow-x border-0">
-                                    <li class="nav-item ">
-                                        <a href="#" class="nav-link active">Tất cả danh mục : <span id="categoryCount">0</span></a>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link active">Tất cả sản phẩm : <span id="productCount">0</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -99,19 +99,23 @@ crossorigin="anonymous"></script>
                             <!-- Card stats -->
                             <div class="card shadow border-0 mb-7">
                                 <div class="card-header">
-                                    <h5 class="mb-0">Quản Lý Danh Mục</h5>
+                                    <h5 class="mb-0">Quản Lý Sản Phẩm</h5>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-hover table-nowrap">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th>ID Danh Mục</th>
-                                                <th>Tên Danh Mục</th>
-                                                <th>Mô Tả</th>
+                                                <th>Hình Ảnh</th>
+                                                <th>Tên Sản Phẩm</th>
+                                                <th>Mức giá</th>
+                                                <th>Danh Mục</th>
+                                                <th>Thương Hiệu</th>
+                                                <th>Sale</th>
+                                                <th>Giảm giá (%)</th>
                                                 <th>Hành Động</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="cateTableBody">
+                                        <tbody id="productTableBody">
                                         </tbody>
                                     </table>
                                 </div>
@@ -125,53 +129,110 @@ crossorigin="anonymous"></script>
                     <div class="modal-content">
                         <!-- Modal Header -->
                         <div class="modal-header">
-                        <h4 class="modal-title" style="color: #B8A483;">Thông Tin Danh Mục</h4>
-                        <button type="button" class="btn-close btn-close-addModal" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+                        <h4 class="modal-title" style="color: #B8A483;">Thêm Sản Phẩm Mới</h4>
+                        <button type="button" class="btn-close btn-close-addModal" data-bs-dismiss="modal"></button>
+                        </div>
                         <!-- Modal body -->
                         <div class="modal-body">
                             <form id="product-form">
-                                <label for="cateName">Tên Danh Mục:</label>
-                                <input type="text" id="cateName" name="cateName" required>
-                                <label for="cateDescription">Mô Tả:</label>
-                                <input type="text" id="cateDescription" name="cateDescription" required>
+                                <div class="form--avatar">
+                                    <label for="image" class="upload">
+                                        <input type="file" id="image" class="picture" name="image" onchange="handleImageChange()" >
+                                        <i class="fa-solid fa-plus"></i>
+                                    </label>
+                                    <img src="" alt="Product Image" width="100px" height="100px" class="img" id="previewImage">
+                                </div>
+                            <div class="form--input">
+                                <label for="name">Tên Sản Phẩm:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="price">Giá Sản Phẩm:</label>
+                                <input type="number" id="price" name="price" required>
+                                <label for="category">Danh Mục:</label>
+                                <select id="category" name="category">
+                                    <!-- Default option -->
+                                </select>
+                                <label for="brand">Thương Hiệu:</label>
+                                <select id="brand" name="brand">
+                                    <!-- Default option -->
+                                </select>
+                                <label for="discount">Sale:</label>
+                                <!-- Add radio buttons for Discount -->
+                                <div class="discount-radio">
+                                    <label>
+                                        <input type="radio" name="discountOption" id="discountOptionYes" value="yes" checked onchange="toggleDiscountInput()"> Có
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="discountOption" id="discountOptionNo" value="no" onchange="toggleDiscountInput()"> Không
+                                    </label>
+                                </div>
+                                <input type="number" id="discount" name="discount" placeholder="Giảm giá (%)">
+                            </div>
                             </form>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                        <button type="submit" class="adding btn btn-primary" data-bs-dismiss="modal">Tạo mới</button>
+                            <button type="submit" class="btn btn-primary creating" data-bs-dismiss="modal" id="loadingSpinner">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                <span id="editButtonText">Thêm Sản Phẩm</span>
+                            </button>
                         </div>
                     </div>
                     </div>
                 </div>
-                <!-- Modal update product -->
+                <!-- Modal update category -->
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title" style="color: #B8A483;">Thông Tin Danh Mục</h4>
-                                <button type="button" class="btn-close btn-close-myModal" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <h4 class="modal-title" style="color: #B8A483;">Thông Tin Sản Phẩm</h4>
+                        <button type="button" class="btn-close btn-close-myModal" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form id="update-form">
+                                <div class="form--avatar">
+                                    <label for="update-image" class="upload">
+                                        <input type="file" id="update-image" class="picture" name="update-image" onchange="handleImageChangeUpdate()">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </label>
+                                    <img src="" alt="Product Update" width="100px" height="100px" class="img" id="testImage">
+                                </div>
+                            <div class="form--input">
+                                <label for="update-productID">ProductID:</label> <!-- Updated ID and name for the input -->
+                                <input type="text" id="update-productID" name="update-productID" disabled>
+                                <label for="update-name">Tên Sản Phẩm:</label>
+                                <input type="text" id="update-name" name="update-name" required>
+                                <label for="update-price">Giá Sản Phẩm:</label>
+                                <input type="number" id="update-price" name="update-price" required>
+                                <label for="update-category">Danh Mục:</label>
+                                <select id="update-category" name="update-category">
+                                </select>
+                                <label for="brand">Thương Hiệu:</label>
+                                <select id="update-brand" name="update-brand">
+                                </select>
+                                <label for="update-discount">Sale:</label>
+                                <div class="discount-radio-update">
+                                    <label>
+                                        <input type="radio" name="discountOptionUpdate" id="update-discountOptionYes" value="yes" checked onchange="toggleDiscountInputUpdate()"> Có
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="discountOptionUpdate" id="update-discountOptionNo" value="no" onchange="toggleDiscountInputUpdate()"> Không
+                                    </label>
+                                </div>
+                                <input type="number" id="update-discount" name="update-discount" placeholder="Giảm giá (%)">
                             </div>
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <form id="update-form"> <!-- Updated ID for the form -->
-                                    <label for="update-cateID">CategoryID:</label> <!-- Updated ID and name for the input -->
-                                    <input type="text" id="update-cateID" name="update-cateID" disabled>
-                                    <label for="update-cateName">Tên Danh Mục:</label>
-                                    <input type="text" id="update-cateName" name="update-cateName" required>
-                                    <label for="update-cateDescription">Mô Tả:</label>
-                                    <input type="text" id="update-cateDescription" name="update-cateDescription" required>
-                                </form>
-                            </div>
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary view" data-bs-dismiss="modal">Sửa Đổi</button>
-                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary update" data-bs-dismiss="modal" id="loadingSpinner">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                <span id="editButtonText">Sửa Đổi</span>
+                            </button>
                         </div>
                     </div>
+                    </div>
                 </div>
-
                 <!-- The close Modal -->
             <div class="modal fade" id="deleteModal">
                 <div class="modal-dialog">
@@ -191,5 +252,5 @@ crossorigin="anonymous"></script>
                     </div>
                 </div>
             </div>
-        <script src="./categories.js"></script>
+        <script src="/products.js"></script>
     </body>

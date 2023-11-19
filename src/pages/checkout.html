@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/checkout.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="payment">
+        <form id="information" onsubmit="return validateFields()">
+          <div class="infor-payment">
+            <div class="infor-contact">
+              <div class="name">
+                <h4>Thông tin liên hệ của bạn</h4>
+                <!-- <label for="name" class="label-default"></label> -->
+                <input type="text" name="email" id="email" placeholder="Địa chỉ email" class="input-default" required="Nhập vào">
+              </div>
+            </div>
+            
+    
+            <div class="input-flex">
+              <div class="address">
+                <!-- <label for="address" class="label-default">Số nha</label> -->
+                <div class="name">
+                  <!-- <label for="name" class="label-default"></label> -->
+                  <input type="text" name="name" id="name" placeholder="Họ và tên" class="input-default" required="Nhập vào">
+                </div>
+        
+                <div class="number">
+                  <!-- <label for="number" class="label-default"></label> -->
+                  <input type="number" name="number" id="number" placeholder="Số điện thoại" class="input-default" required>
+                </div>
+                  <div class="inputflex">
+                      <input type="text" name="address" id="address" placeholder="Số nhà" class="input-default" required>
+                  </div>
+                  <div class="select-flex">
+                    <select id="city" required>
+                    <option value="" selected>Chọn tỉnh thành</option>           
+                    </select>
+                              
+                    <select id="district" required>
+                    <option value="" selected>Chọn quận huyện</option>
+                    </select>
+                    
+                    <select id="ward" required>
+                    <option value="" selected>Chọn phường xã</option>
+                    </select>
+                  </div>  
+              </div>
+            </div>
+          </div>
+        
+
+        <div class="infor-product-payment">
+          <h4>Chi tiết đơn hàng</h4>
+          <div class="products-payment"></div>
+
+          <div class="provisional-card">
+            <div class="provisional">
+              <span>Tạm tính</span>
+              <p>0 đ</p>
+            </div>
+            <div class="provisional">
+              <span>Giảm giá</span>
+              <p>0 đ</p>
+            </div>
+            <div class="provisional">
+              <span>Phí vận chuyển</span>
+              <p>0 đ</p>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="note">
+            <span
+              >* Khi nhấn nút Đặt hàng nghĩa là bạn đã đọc và đồng ý với các điều
+              khoản, chính sách bán hàng và bảo mật của chúng tôi tại
+              Website</span
+            >
+          </div>
+
+          <div class="order">
+            <div class="total">
+              <p>Tổng cộng</p>
+              <span>0 Đ</span>
+            </div>
+            <div type="submit" id="orderBtn" class="btn-order">ĐẶT HÀNG</div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/checkout.js"></script>
+  </body>
+</html>

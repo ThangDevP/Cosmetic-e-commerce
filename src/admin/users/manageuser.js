@@ -10,6 +10,8 @@ function fetchDataAndPopulateTable() {
   fetch(`http://localhost:3000/api/users?role=${role}`)
     .then((response) => response.json())
     .then((data) => {
+      const userCount = data.length;
+        document.getElementById("userCount").textContent = userCount;
       const userTableBody = document.getElementById("userTableBody");
       userTableBody.innerHTML = ""; // Xóa dữ liệu cũ trong bảng
 
@@ -151,10 +153,21 @@ async function handleUpload(avatarInput, folderName) {
 async function handleImageChange() {
   const avatarInput = document.getElementById("avatar");
   const previewImage = document.getElementById("previewImage");
-
-  if (avatarInput.files.length > 0) {
-    const imageUrl = await handleUpload(avatarInput, "users");
-    previewImage.src = imageUrl; // Set the source of the preview image to the uploaded image
+  const loadingSpinnerModal = document.getElementById("loadingSpinner");
+  const editButtonText = document.getElementById("editButtonText");
+  try{
+    if (avatarInput.files.length > 0) {
+      loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
+      editButtonText.style.display = "none";
+      const imageUrl = await handleUpload(avatarInput, "users");
+      previewImage.src = imageUrl; // Set the source of the preview image to the uploaded image
+      loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+      editButtonText.style.display = "inline";
+    }
+  } catch (error){
+    console.error("Error uploading image: ", error);
+    loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
+    editButtonText.style.display = "inline";
   }
 }
 async function handleAddOrUpdateUser() {

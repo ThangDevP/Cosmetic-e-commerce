@@ -92,6 +92,10 @@ form.sign-in-form {
   padding: 0.7rem 0;
   font-size: 1rem;
 }
+.social-text a {
+  text-decoration: none;
+  color: black;
+}
 .social-media {
   display: flex;
   justify-content: center;

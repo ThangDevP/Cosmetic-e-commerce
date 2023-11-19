@@ -1,5 +1,6 @@
 @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);/* Bootstrap Icons */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");.cart-item img{
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+.cart-item img{
     width: 50%;
     height: 50%;
     padding-left: 10px;
@@ -34,13 +35,13 @@
 .delete-button:hover {
   transform: translateY(-3px);
 }
-#product-form {
+#product-form, #update-form {
     display: flex;
     flex-direction: row;
     width: 75vh;
 }
 #product-form input {
-    border: 1px solid #fff;
+    border: 1px solid #ccc;
 }
 .form--input {
     display: flex;
@@ -52,10 +53,48 @@
     border: 1px solid #2d2f3028;
     border-radius: 5px;
 }
-#userID {
+#categoryID {
     border: none;
     /* Nếu bạn muốn xóa cả hiển thị của ô input */
     outline: none;
+}
+label, button {
+    margin: 5px;
+
+}
+input {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+}
+td {
+    text-align: center;
+    justify-content: space-between;
+}
+td:last-child button {
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Add some space between the buttons */
+  td:last-child button + button {
+    margin-left: 5px;
+  }
+  
+.modal-body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.option-1{
+    border-left: 5px solid #C6A76E;
+    cursor: pointer;
 }
 .form--avatar {
     width: 150px;
@@ -102,38 +141,20 @@
     width: 100%;
     height: 100%;
 }
-label, input, button {
-    margin: 5px;
-}
-th {
-    background-color: #f2f2f2;
-    text-align: center;
+select {
+    width: 100%;
     padding: 8px;
-}
-td {
-    text-align: center;
-    justify-content: space-between;
-}
-td:last-child button {
-    padding: 5px 10px;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   
-  /* Add some space between the buttons */
-  td:last-child button + button {
-    margin-left: 5px;
+  /* Optional: Style the options within the dropdown */
+  select option {
+    background-color: #f8f8f8;
+    color: #333;
   }
-  
-.modal-body{
-    display: flex;
-    justify-content: space-evenly;
-}
-.option-1{
-    border-left: 5px solid #C6A76E;
-    cursor: pointer;
-}
 .text-end a{
     height: 35px;
     margin-left: 5px;

@@ -21,13 +21,17 @@
   href="//fonts.googleapis.com/css?family=Nunito"
 />
 <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
 <body>
+  <div id="header"></div>
   <main>
     <div class="slideshow-container">
       <!-- Full-width images with number and caption text -->
@@ -344,7 +348,7 @@
           <div class="progress-bar-inner-custom"></div>
         </div>
       </div>
-      <div class="my-alert">
+      <div class="my-alert-1">
         <h3>
           Câu chuyện <br />
           <span>Nguyên&nbsp;liệu</span>
@@ -357,6 +361,14 @@
         </p>
       </div>
     </div>
-</div>
+    <div id="footer"></div>
+    <script src="/script.js"></script>
+    <script src="/home.js"></script>
+    <script src="/header/header.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        showSlides(1);
+      });
+    </script>
 </body>
 

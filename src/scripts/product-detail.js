@@ -7,7 +7,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
   .then((response) => response.json())
   .then((product) => {
     // Update the HTML elements with the product details
-    document.querySelector(".product-title").textContent = product.name;
+    document.querySelector(".product-title").textContent = product.productName;
     document.querySelector(".product-price-basic").textContent = product.price
       .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
       .replace(/,/g, ".")
@@ -60,7 +60,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
           console.log(product)
           return `
           <div id="slider" class="slider-content">
-            <a href="/product/${product.id}">
+            <a href="/products/${product.id}">
               <img src=${product.img} alt=""/>
             </a>
             <div class="slide-info">
@@ -69,9 +69,11 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
                   <h6>${product.name}</h6>
                 </a>
                 <p>
-                  ${product.category}
+                ${product.category.cateName} 
                 </p>
-                <p class="text-amount">${product.price}.000đ</p>
+                <p class="text-amount">${product.price
+                  .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
+                  .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
               </div>
               <div class="infor-btn">
                 <button class="btn-add-card" onclick="haha(${product.id})" ><i class="fa-solid fa-cart-plus"></i></button>
@@ -83,6 +85,132 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
         .join("");
     }
   }
+
+  function updateProgressBar(totalSlides, currentSlide) {
+    // Đoạn mã xử lý cập nhật thanh tiến trình
+  }
+  
+  function onLoadSlickSlider() {
+    $(".your-class").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: true,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+      prevArrow:
+        '<button type="button" class="slick-custom-arrow-prev"> < </button>',
+      nextArrow:
+        '<button type="button" class="slick-custom-arrow-next"> > </button>',
+    });
+
+    $(".your-class").on("init", function (event, slick, currentSlide) {
+      updateProgressBar(slick.slideCount, currentSlide);
+    });
+
+    $(".your-class").on("afterChange", function (event, slick, currentSlide) {
+      updateProgressBar(slick.slideCount, currentSlide);
+    });
+
+    $(".your-class").slick();
+
+    updateProgressBar();
+  }
   
 
-  
+  userId = localStorage.getItem("userID");
+
+  async function addToCart(productId) {
+    try {
+      // Bước 1: Kiểm tra xem người dùng đã đăng nhập chưa
+
+      // Bước 2: Tìm giỏ hàng của người dùng
+      const response = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+      if (!response.ok) {
+        throw new Error(`Lỗi khi tìm giỏ hàng: ${response.status} ${response.statusText}`);
+      }
+      const carts = await response.json();
+
+      if (carts.length === 0) {
+        // Nếu chưa có giỏ hàng, tạo giỏ hàng mới
+        const newCartResponse = await fetch(`http://localhost:3000/api/carts`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId }),
+        });
+
+        if (!newCartResponse.ok) {
+          throw new Error(`Lỗi khi tạo giỏ hàng mới: ${newCartResponse.status} ${newCartResponse.statusText}`);
+        }
+      }
+
+      // Bước 3: Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+      const cartIdResponse = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+      const cartData = await cartIdResponse.json();
+
+      const cartId = cartData[0].id;
+
+      const cartItemsResponse = await fetch(`http://localhost:3000/api/cartItems?cartId=${cartId}&productId=${productId}`);
+      const cartItems = await cartItemsResponse.json();
+
+      if (cartItems.length > 0) {
+        // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
+        const cartItemId = cartItems[0].id;
+        const updatedQuantity = cartItems[0].quantity + 1;
+
+        const updateCartItemResponse = await fetch(`http://localhost:3000/api/cartItems/${cartItemId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ quantity: updatedQuantity }),
+        });
+
+        if (!updateCartItemResponse.ok) {
+          throw new Error(`Lỗi khi cập nhật số lượng: ${updateCartItemResponse.status} ${updateCartItemResponse.statusText}`);
+        }
+      } else {
+        // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
+        const addCartItemResponse = await fetch(`http://localhost:3000/api/cartItems`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productId,
+            cartId,
+            quantity: 1,
+          }),
+        });
+
+        if (!addCartItemResponse.ok) {
+          throw new Error(`Lỗi khi thêm sản phẩm vào giỏ hàng: ${addCartItemResponse.status} ${addCartItemResponse.statusText}`);
+        }
+      }
+
+      // Bước 4: Cập nhật giỏ hàng
+      // Cập nhật UI hoặc thực hiện các bước khác cần thiết
+      alert("Đã thêm sản phẩm vào giỏ hàng!");
+
+    } catch (error) {
+      console.error(error);
+      // Xử lý lỗi nếu có
+    }
+  }
+
+  // Sử dụng hàm addToCart khi click vào nút thêm vào giỏ hàng
+  const addToCartButton = document.querySelector(".add-to-cart-button");
+  if (addToCartButton) {
+    addToCartButton.addEventListener("click", () => {
+      addToCart(productId);
+    });
+  }

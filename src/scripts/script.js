@@ -36,9 +36,7 @@ function loadPage(slug) {
     slides[slideIndex - 1].style.display = "block";
   }
 
-  function updateProgressBar(totalSlides, currentSlide) {
-    // Đoạn mã xử lý cập nhật thanh tiến trình
-  }
+  
   
   function onLoadSlickSlider() {
     $(".your-class").slick({
@@ -111,6 +109,7 @@ function loadPage(slug) {
   fetch(`/home.html`)
     .then((response) => response.text())
     .then((data) => {
+      userName();
       fetchProductSale().then(() => {
         onLoadSlickSlider();
       });
@@ -120,8 +119,6 @@ function loadPage(slug) {
       let slideIndex = 1;
 
       showSlides(slideIndex);
-
-      userName();
     })
     .catch(() => {
       bodyElement.innerHTML = "Page not found";

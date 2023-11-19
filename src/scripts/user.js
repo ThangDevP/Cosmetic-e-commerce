@@ -70,57 +70,14 @@ fetch(`http://localhost:3000/api/users/${userId}`)
     function renderCity(data) {
       for (const p of data) {
         var opt = document.createElement("option");
-        opt.value = p.Id;
+        opt.value = p.Name;
         opt.text = p.Name;
-        if (p.Id === user.city) {
+        if (p.Name === user.city) {
           opt.selected = true;
         }
         opt.setAttribute("data-id", p.Id);
         cities.options.add(opt);
       }
-      selectedCityId =
-        cities.options[cities.selectedIndex].getAttribute("data-id");
-      function listDistrict(selectedCityId) {
-        districts.length = 1;
-        wards.length = 1;
-        if (selectedCityId !== "") {
-          const result = data.filter((n) => n.Id === selectedCityId);
-
-          for (const d of result[0].Districts) {
-            var opt = document.createElement("option");
-            opt.value = d.Id;
-            opt.text = d.Name;
-            if (d.Id === user.district) {
-              opt.selected = true;
-            }
-            opt.setAttribute("data-id", d.Id);
-            districts.options.add(opt);
-          }
-        }
-      }
-      listDistrict(selectedCityId);
-      dataCity = data.filter((n) => n.Id === selectedCityId);
-      selectedDistrictId =
-        districts.options[districts.selectedIndex].getAttribute("data-id");
-      function listWard(selectedDistrictId) {
-        wards.length = 1;
-        if (selectedDistrictId !== "") {
-          const dataWards = dataCity[0].Districts.filter(
-            (n) => n.Id === selectedDistrictId
-          )[0].Wards;
-          for (const w of dataWards) {
-            var opt = document.createElement("option");
-            opt.value = w.Id;
-            opt.text = w.Name;
-            if (w.Id === user.ward) {
-              opt.selected = true;
-            }
-            opt.setAttribute("data-id", w.Id);
-            wards.options.add(opt);
-          }
-        }
-      }
-      listWard(selectedDistrictId);
 
       cities.onchange = function () {
         districts.length = 1;
@@ -133,7 +90,7 @@ fetch(`http://localhost:3000/api/users/${userId}`)
 
           for (const d of result[0].Districts) {
             var opt = document.createElement("option");
-            opt.value = d.Id;
+            opt.value = d.Name;
             opt.text = d.Name;
             opt.setAttribute("data-id", d.Id);
             districts.options.add(opt);
@@ -157,7 +114,7 @@ fetch(`http://localhost:3000/api/users/${userId}`)
             )[0].Wards;
             for (const w of dataWards) {
               var opt = document.createElement("option");
-              opt.value = w.Id;
+              opt.value = w.Name;
               opt.text = w.Name;
               opt.setAttribute("data-id", w.Id);
               wards.options.add(opt);
@@ -165,6 +122,52 @@ fetch(`http://localhost:3000/api/users/${userId}`)
           }
         }
       };
+      selectedCityId =
+        cities.options[cities.selectedIndex].getAttribute("data-id");
+      function listDistrict(selectedCityId) {
+        districts.length = 1;
+        wards.length = 1;
+        if (selectedCityId !== "") {
+          const result = data.filter(n => n.Id === selectedCityId);
+          for (const d of result[0].Districts) {
+            var opt = document.createElement("option");
+            opt.value = d.Name;
+            opt.text = d.Name;
+            if (d.Name === user.district) {
+              opt.selected = true;
+            }
+            opt.setAttribute("data-id", d.Id);
+            districts.options.add(opt);
+          }
+        }
+      }
+      listDistrict(selectedCityId);
+      if (selectedCityId !== "") {
+        dataCity = data.filter((n) => n.Id === selectedCityId);
+        selectedDistrictId =
+          districts.options[districts.selectedIndex].getAttribute("data-id");
+      }
+      function listWard(selectedDistrictId) {
+        wards.length = 1;
+        if (selectedDistrictId !== "") {
+          const dataWards = dataCity[0].Districts.filter(
+            (n) => n.Id === selectedDistrictId
+          )[0].Wards;
+          for (const w of dataWards) {
+            var opt = document.createElement("option");
+            opt.value = w.Name;
+            opt.text = w.Name;
+            if (w.Name === user.ward) {
+              opt.selected = true;
+            }
+            opt.setAttribute("data-id", w.Id);
+            wards.options.add(opt);
+          }
+        }
+      }
+      listWard(selectedDistrictId);
+
+
     }
   })
   .catch((error) => {
@@ -238,6 +241,8 @@ document
           }
         }
 
+        var role = user.role;
+
         if (password !== user.password && password !== null) {
           alert("Wrong password");
           return;
@@ -257,7 +262,7 @@ document
           district: districtSelected,
           ward: wardSelected,
           avatar: image,
-          role: "user",
+          role: role,
           dob: dob,
           gender: genderSelected,
         };
@@ -280,3 +285,5 @@ document
 
     alert("Update successful");
   });
+
+  

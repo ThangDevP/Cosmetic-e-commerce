@@ -4,6 +4,8 @@ const path = require("path");
 const cors = require("cors");
 const jsonServer = require("json-server");
 const router = jsonServer.router("db.json");
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 const middlewares = jsonServer.defaults();
 const app = express();
 const port = 3000;
@@ -16,8 +18,10 @@ app.use(express.static(path.join(__dirname, "components")));
 app.use(express.static(path.join(__dirname, "pages")));
 app.use(express.static(path.join(__dirname, "assets/img")));
 app.use(express.static(path.join(__dirname, "admin")));
+app.use(express.static(path.join(__dirname, "/admin/dashboard")));
 app.use(express.static(path.join(__dirname, "/admin/users")));
 app.use(express.static(path.join(__dirname, "/admin/categories")));
+app.use(express.static(path.join(__dirname, "/admin/products")));
 // JSON Server setup
 const server = jsonServer.create();
 
@@ -76,7 +80,6 @@ server.post("/register", (req, res) => {
   return res.status(200).json({ message: "Đăng kí thành công." });
 });
 
-// Mount the JSON Server on the '/api' path
 app.use("/api", server);
 
 // Serve your routes
@@ -92,13 +95,19 @@ app.get("/", function (req, res) {
 app.get("/login", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/login.html"));
 });
+app.get("/dashboard", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/dashboard/dashboard.html"));
+});
 app.get("/manageUser", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/users/manageuser.html"));
 });
 app.get("/manageCategory", function (req, res) {
   res.sendFile(path.join(__dirname + "/admin/categories/categories.html"));
 });
-app.get("/product/:id", function (req, res) {
+app.get("/manageProduct", function (req, res) {
+  res.sendFile(path.join(__dirname + "/admin/products/products.html"));
+});
+app.get("/products/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
   fetch(`http://localhost:3000/api/products?id=${productId}`)
@@ -127,18 +136,50 @@ app.get("/user/:id", function (req, res) {
       res.status(404).send("User not found");
     });
 });
+
+app.get("/checkout", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/checkout.html"));
+});
+app.get("/forgot-password", function (req, res) {
+  res.sendFile(path.join(__dirname + "/pages/forgot-password.html"));
+});
+app.use(bodyParser.json());
+
+app.post('/send-email', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password; // Lấy mật khẩu từ request
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'thang.nguyen-ojt07@devplus.edu.vn',
+      pass: 'zugb emfd rpnp fxyn',
+    },
+  });
+
+  async function main() {
+    const info = await transporter.sendMail({
+      from: '"Exactly Company" <thang.nguyen-ojt07@devplus.edu.vn>',
+      to: email, 
+      subject: "Cocoon", 
+      text: "Tìm lại mật khẩu thành công", 
+      html: `<b>Mật khẩu của bạn là: ${password}</b>`, // Sử dụng mật khẩu từ request
+    });
+  
+    console.log("Message sent: %s", info.messageId);
+  }
+  main().catch(console.error);
+});
+
 app.get("/home", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/home.html"));
 });
 app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
-app.get("/payment", function (req, res) {
-  res.sendFile(path.join(__dirname + "/pages/payment.html"));
-});
-app.get("/dashboard", function (req, res) {
-  res.sendFile(path.join(__dirname + "/admin/dashboard.html"));
-});
+
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {
