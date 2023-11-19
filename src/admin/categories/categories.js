@@ -1,15 +1,41 @@
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+document.addEventListener("DOMContentLoaded", function () {
+  isAuthenticated()
+    .then((isUserAuthenticated) => {
+      if (isUserAuthenticated) {
+        console.log('User is not authenticated');
+      }
+    })
+    .catch(error => {
+      console.error('Error checking authentication:', error);
+    });
+});
+
+function isAuthenticated() {
+  const userID = localStorage.getItem('userID');
+
+  if (userID !== null) {
+    fetch(`http://localhost:3000/api/users/${userID}`)
+      .then(response => response.json())
+      .then(user => {
+        if (user && user.role === 'user') {
+          window.location.href = '/';
+        } else {
+          fetchDataAndPopulateTable();
+        }
+      })
+  }
+}
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 document.querySelector(".btn-close-myModal").addEventListener("click", () => {
   myModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 const addModal = new bootstrap.Modal(document.getElementById("addModal"));
 document.querySelector(".btn-close-addModal").addEventListener("click", () => {
   addModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
+
 function fetchDataAndPopulateTable() {
   fetch(`http://localhost:3000/api/categories`)
     .then((response) => response.json())
