@@ -127,6 +127,10 @@ a {
   text-transform: uppercase;
 }
 
+.add-to-cart-button .button-text{
+  background-color: black;
+}
+
 #testimonials {
   position: relative;
   display: flex;
@@ -172,6 +176,7 @@ a {
   text-transform: none;
   font-weight: 400;
   height: 90px;
+  background-color: transparent;
 }
 
 .body-review-section .header-section-bot {
@@ -180,6 +185,11 @@ a {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   height: 90px;
+  background-color: transparent;
+}
+
+div.body-review-section{
+  padding: 100px;
 }
 
 .body-review-section .button-review-section {
@@ -338,28 +348,28 @@ a {
   height: 100%;
 }
 
-.my-alert h3 {
+.my-alert-detail h3 {
   font-family: "Vollkorn";
   font-style: italic;
   font-weight: 400;
   font-size: 5rem;
-  line-height: 2.5rem;
-  
+  line-height: 4.5rem;
 }
 
-.my-alert h3 span {
+.my-alert-detail h3 span {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 600;
   font-family: "Barlow Condensed";
 }
 
-.my-alert p {
+.my-alert-detail p {
+  font-size: 14px;
   color: rgba(118, 115, 111, 1);
 }
 
-div.my-alert {
-  width: 30%;
+div.my-alert-detail {
+  width: 35%;
   background-color: #fefbf4;
   display: flex;
   flex-direction: column;
@@ -502,12 +512,18 @@ div.my-alert {
 }
 
 .btn-add-card:hover{
-  background-color: rgba(39, 37, 37, 0.336);
-  color: white
+  background-color: #1F1C17;
+  color: white;
 }
 
 .btn-add-card i{
   font-size: 25px;
+  background-color: #ede0cc;
+  transition: all 0.3s ease;
+}
+
+.btn-add-card:hover i{
+  background-color: #1F1C17;
 }
 
 
@@ -517,12 +533,13 @@ div.my-alert {
   .product-container .content p {
     font-size: 30px;
   }
-  .my-alert h3 {
+
+  .my-alert-detail{
     font-size: 2.5rem;
     text-align: center;
   }
 
-  div.my-alert {
+  div.my-alert-detail{
     width: 35%;
   }
 
@@ -567,18 +584,18 @@ div.my-alert {
   .banner-add-review-body .button-review-section {
     max-width: 300px;
   }
-  .my-alert h3 {
+  .my-alert-detail{
     font-size: 2.5rem;
     text-align: center;
+  }
+
+  div.my-alert-detail{
+    width: 100%;
   }
 
   .recomemnt {
     display: flex;
     flex-direction: column;
-  }
-
-  div.my-alert {
-    width: 100%;
   }
 
   .slider-product {
@@ -611,6 +628,10 @@ div.my-alert {
 @media (max-width: 1080px) {
   .product-container .product-img {
     padding: 0 1.25rem;
+  }
+  .my-alert-detail{
+    font-size: 2.5rem;
+    text-align: center;
   }
 }
 

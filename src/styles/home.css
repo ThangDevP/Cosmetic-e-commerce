@@ -113,7 +113,8 @@ video::-webkit-media-controls {
 /* Show Product */
 .product-container {
     background: #fefbf4;
-    padding: 10px 0;
+    /* padding: 10px 0; */
+    margin: 5px;
 }
 
 
@@ -634,8 +635,7 @@ video::-webkit-media-controls {
   font-style: italic;
   font-weight: 400;
   font-size: 5rem;
-  line-height: 2.5rem;
-  
+  line-height: 4.5rem;
 }
 
 .my-alert h3 span {
@@ -650,7 +650,35 @@ video::-webkit-media-controls {
 }
 
 div.my-alert {
-  width: 30%;
+  width: 35%;
+  background-color: #fefbf4;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 50px 30px 100px 50px;
+}
+
+.my-alert-1 h3 {
+  font-family: "Vollkorn";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 4.5rem;
+}
+
+.my-alert-1 h3 span {
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Barlow Condensed";
+}
+
+.my-alert-1 p {
+  color: rgba(118, 115, 111, 1);
+}
+
+div.my-alert-1 {
+  width: 35%;
   background-color: #fefbf4;
   display: flex;
   flex-direction: column;
@@ -660,7 +688,7 @@ div.my-alert {
 
 .slider-product {
   position: relative;
-  width: 70%;
+  width: 65%;
   background-color: #fefbf4;
 }
 
@@ -793,12 +821,13 @@ div.my-alert {
 }
 
 .btn-add-card:hover{
-  background-color: rgba(39, 37, 37, 0.336);
+  background-color: #1F1C17;
   color: white
 }
 
 .btn-add-card i{
   font-size: 25px;
+  transition: all 0.3s ease;
 }
 
 .card-image-1{
@@ -869,6 +898,19 @@ div.my-alert {
     width: 35%;
   }
 
+  .my-alert-1 h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  div.my-alert-1 {
+    width: 35%;
+  }
+
+  .recomemnt .my-alert-1{
+    order: 0;
+  }
+
   .slider-product {
     width: 65%;
   }
@@ -881,21 +923,23 @@ div.my-alert {
     padding: 30px 20px 30px 20px;
   }
 
-  .slide-info-1{
+  /* .slide-info-1{
     max-width: 85%;  
-  }
+  } */
 
   .slider-content-1 img{
     width: 90%;
     height: 100%;
   }
-  .slider-content-1 .slide-info-1{
-    max-width: 100%;  
-  }
 }
 
 @media only screen and (max-width: 1024px) {
   .my-alert h3 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .my-alert-1 h3 {
     font-size: 2.5rem;
     text-align: center;
   }
@@ -907,6 +951,14 @@ div.my-alert {
 
   div.my-alert {
     width: 100%;
+  }
+
+  div.my-alert-1 {
+    width: 100%;
+  }
+
+  .recomemnt .my-alert-1{
+    order: 0;
   }
 
   .slider-product {
@@ -956,6 +1008,24 @@ div.my-alert {
     display: none;
     text-align: center;
   }
+
+  .my-alert-1 p {
+    display: none;
+  }
+
+  div.my-alert-1 {
+    padding: 50px;
+  }
+
+  .my-alert-1 h3 br {
+    display: none;
+    text-align: center;
+  }
+
+  .recomemnt .my-alert-1{
+    order: 0;
+  }
+
   .your-class .slider-content {
     padding-right: 10px;
   }
@@ -1015,12 +1085,8 @@ div.my-alert {
     padding: 30px 20px 30px 20px;
   }
 
-  .slide-info-1{
-    max-width: 100%;  
-  }
-
   .slider-content-1 img{
-    height: 500px;
-    width: 430px;
+    height: 100%;
+    width: 100%;
   }
 }

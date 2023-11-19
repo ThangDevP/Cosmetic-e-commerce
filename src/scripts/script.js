@@ -36,9 +36,7 @@ function loadPage(slug) {
     slides[slideIndex - 1].style.display = "block";
   }
 
-  function updateProgressBar(totalSlides, currentSlide) {
-    // Đoạn mã xử lý cập nhật thanh tiến trình
-  }
+  
   
   function onLoadSlickSlider() {
     $(".your-class").slick({

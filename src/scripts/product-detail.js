@@ -60,7 +60,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
           console.log(product)
           return `
           <div id="slider" class="slider-content">
-            <a href="/product/${product.id}">
+            <a href="/products/${product.id}">
               <img src=${product.img} alt=""/>
             </a>
             <div class="slide-info">
@@ -69,9 +69,11 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
                   <h6>${product.name}</h6>
                 </a>
                 <p>
-                  ${product.category}
+                ${product.category.cateName} 
                 </p>
-                <p class="text-amount">${product.price}.000đ</p>
+                <p class="text-amount">${product.price
+                  .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
+                  .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
               </div>
               <div class="infor-btn">
                 <button class="btn-add-card" onclick="haha(${product.id})" ><i class="fa-solid fa-cart-plus"></i></button>
@@ -82,6 +84,44 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
         })
         .join("");
     }
+  }
+
+  function updateProgressBar(totalSlides, currentSlide) {
+    // Đoạn mã xử lý cập nhật thanh tiến trình
+  }
+  
+  function onLoadSlickSlider() {
+    $(".your-class").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: false,
+      centerMode: true,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+      prevArrow:
+        '<button type="button" class="slick-custom-arrow-prev"> < </button>',
+      nextArrow:
+        '<button type="button" class="slick-custom-arrow-next"> > </button>',
+    });
+
+    $(".your-class").on("init", function (event, slick, currentSlide) {
+      updateProgressBar(slick.slideCount, currentSlide);
+    });
+
+    $(".your-class").on("afterChange", function (event, slick, currentSlide) {
+      updateProgressBar(slick.slideCount, currentSlide);
+    });
+
+    $(".your-class").slick();
+
+    updateProgressBar();
   }
   
 
