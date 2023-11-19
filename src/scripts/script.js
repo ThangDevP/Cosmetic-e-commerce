@@ -109,6 +109,7 @@ function loadPage(slug) {
   fetch(`/home.html`)
     .then((response) => response.text())
     .then((data) => {
+      userName();
       fetchProductSale().then(() => {
         onLoadSlickSlider();
       });
@@ -118,8 +119,6 @@ function loadPage(slug) {
       let slideIndex = 1;
 
       showSlides(slideIndex);
-
-      userName();
     })
     .catch(() => {
       bodyElement.innerHTML = "Page not found";

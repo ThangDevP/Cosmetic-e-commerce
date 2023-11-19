@@ -27,7 +27,7 @@ function fetchDataAndPopulateTable() {
 
         idCell.textContent = category.id;
         cateNameCell.textContent = category.cateName;
-        cateDescriptionCell.textContent = category.cateDescription;
+        cateDescriptionCell.textContent = category.description;
 
         const updateButton = document.createElement("a");
         updateButton.textContent = "Xem thêm";
@@ -101,7 +101,7 @@ function fetchAndPopulateUserData(categoryID) {
 
       catIDInput.value = cateData.id;
       cateNameInput.value = cateData.cateName;
-      cateDescriptionInput.value = cateData.cateDescription;
+      cateDescriptionInput.value = cateData.description;
 
       const myModal = new bootstrap.Modal(modal);
       myModal.show();
@@ -114,8 +114,8 @@ function handleAddCategory() {
     const addModal = new bootstrap.Modal(document.getElementById("addModal"));
     const cateNameInput = document.getElementById("cateName");
     const cateDescriptionInput = document.getElementById("cateDescription");
-    const cateName = cateNameInput.value;
-    const cateDescription = cateDescriptionInput.value;
+    const name = cateNameInput.value;
+    const description = cateDescriptionInput.value;
 
     if (!cateName || !cateDescription) {
       alert("Vui lòng nhập đầy đủ thông tin.");
@@ -125,8 +125,8 @@ function handleAddCategory() {
     const id = Date.now();
       const newCategory = {
       id,
-      cateName,
-      cateDescription,
+      name,
+      description,
     };
       fetch("http://localhost:3000/api/categories", {
       method: "POST",
@@ -158,8 +158,8 @@ addCategoryButton.addEventListener("click", handleAddCategory);
 
 async function handleAddOrUpdateUser() {
     const cateID = document.getElementById("update-cateID").value;
-    const cateName = document.getElementById("update-cateName").value;
-    const cateDescription = document.getElementById("update-cateDescription").value;
+    const name = document.getElementById("update-cateName").value;
+    const description = document.getElementById("update-cateDescription").value;
 
     try {
         const response = await fetch(
@@ -172,8 +172,8 @@ async function handleAddOrUpdateUser() {
         }
 
         const updatedCateData = {
-            cateName,
-            cateDescription,
+            name,
+            description,
         };
 
         const apiUrl = `http://localhost:3000/api/categories/${cateID}`;
