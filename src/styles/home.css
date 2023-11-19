@@ -113,8 +113,7 @@ video::-webkit-media-controls {
 /* Show Product */
 .product-container {
     background: #fefbf4;
-    /* padding: 10px 0; */
-    margin: 5px;
+    padding: 10px 0;
 }
 
 
