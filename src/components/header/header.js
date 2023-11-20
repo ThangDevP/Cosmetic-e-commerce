@@ -199,9 +199,9 @@ async function showItems() {
                     giỏ của bạn
                 </div>
                 <div class="button">
-                <div  class="button button-dark button-small mt-6 nuxt-link-exact-active nuxt-link-active">
+                <a href="/"  class="button button-dark button-small mt-6 nuxt-link-exact-active nuxt-link-active">
                     Tiếp tục mua sắm
-                </div>
+                </a>
                 </div>
             </div>
         </div>
