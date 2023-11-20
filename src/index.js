@@ -110,7 +110,7 @@ app.get("/manageProduct", function (req, res) {
 app.get("/products/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
-  fetch(`/api/products?id=${productId}`)
+  fetch(`https://exactly-i7jp.onrender.com/api/products?id=${productId}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 1) {
@@ -124,7 +124,7 @@ app.get("/products/:id", function (req, res) {
 });
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
-  fetch(`/api/users?id=${userId}`)
+  fetch(`https://exactly-i7jp.onrender.com/api/users?id=${userId}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 1) {
