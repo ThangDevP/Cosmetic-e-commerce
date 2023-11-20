@@ -5,6 +5,7 @@
   margin: 0;
 }
 
+
 .announcement {
   width: 100%;
   height: 100%;
@@ -80,6 +81,7 @@ a:hover {
   transition: 0.5s;
 }
 
+
 /* .main-menu-center {
   display: flex;
   justify-content: center;
@@ -88,6 +90,7 @@ a:hover {
   width: 65%;
   height: 65%;
 } */
+
 
 .main-menu-right {
   display: flex;
@@ -113,6 +116,7 @@ a:hover {
   color: #2d2f30;
 }
 
+
 #dropdown_menu {
   position: absolute;
   top: 115px;
@@ -122,6 +126,7 @@ a:hover {
   backdrop-filter: blur(15px);
   border-radius: 0 10px 10px 0;
   overflow: hidden;
+
 
   display: none;
   z-index: 1;
@@ -170,10 +175,12 @@ a:hover {
   /* Add a left margin for spacing */
 }
 
+
 /* Style the individual sub-menu items */
 .sub-menu li {
   padding: 4px 0;
 }
+
 
 /* Style the links inside the sub-menu */
 .sub-menu a {
@@ -196,24 +203,30 @@ a:hover {
 }
 
 
+
+
 .item-img {
   width: 15%;
   padding-right: 10px;
 }
+
 
 .product-info {
   width: 80%;
   text-align: left;
 }
 
+
 .quantity-price {
   display: flex;
   justify-content: space-between;
 }
 
+
 .quantity {
   display: flex;
 }
+
 
 .quantity button {
   outline: none;
@@ -222,6 +235,7 @@ a:hover {
   height: 32px;
   background-color: transparent;
 }
+
 
 .quantity-text {
   width: 64px;
@@ -232,9 +246,11 @@ a:hover {
   line-height: 28px;
 }
 
+
 .price {
   font-weight: bold;
 }
+
 
 .remove-product {
   cursor: pointer;
@@ -258,6 +274,7 @@ a:hover {
   height: 100%;
 }
 
+
 .container {
   max-width: 100%;
   display: flex;
@@ -278,7 +295,7 @@ a:hover {
   text-align:
     center;
   font-style: italic;
-  font-weight: normal; 
+  font-weight: normal;
 }
 
 .oopss {
@@ -295,6 +312,7 @@ a:hover {
     center;
 }
 
+
 .button.button-small {
   height: 3.75rem;
   width: 140px;
@@ -302,6 +320,8 @@ a:hover {
   border-radius: 4px;
   font-size: 1rem;
 }
+
+
 
 
 .button.button-small {
@@ -313,12 +333,15 @@ a:hover {
 }
 
 
+
+
 .button.button-dark {
   --tw-bg-opacity: 1;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgba(254, 251, 244, var(--tw-text-opacity));
 }
+
 
 .button {
   white-space: nowrap;
@@ -334,9 +357,11 @@ a:hover {
   cursor: pointer;
 }
 
+
 .mt-6 {
   margin-top: 3.75rem;
 }
+
 
 a {
   color: inherit;
@@ -360,7 +385,7 @@ a {
 }
 
 .modal-order {
-  border-radius: 0 0 10px 10px; 
+  border-radius: 0 0 10px 10px;
   overflow: hidden;
 }
 
@@ -381,11 +406,13 @@ a {
   border-radius: 15px;
 }
 
+
 .nenmodal .closemodal {
   text-align: left;
   width: 100%;
   height: 30px;
 }
+
 
 /* CSS nút tắt modal */
 .closemodal button {
@@ -396,12 +423,14 @@ a {
   background-color: transparent;
 }
 
+
 /* CSS tieu de của Modal */
 .titlemodal {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
   text-align: center;
+
 
 }
 
@@ -410,6 +439,7 @@ a {
   transition: all 300ms ease-in-out;
   transform: translate(-50%, -55%) scale(0.83);
 }
+
 
 /* CSS cho phần hiển thị giỏ hàng */
 .product-payment {
@@ -421,20 +451,24 @@ a {
   height: 112px;
 }
 
+
 .nenmodal.active .nenmodal2 {
   display: block;
 }
+
 
 /* CSS cho phần giỏ hàng tạm tính */
 .provisional-card {
   padding: 20px 30px 20px 15px;
 }
 
+
 .provisional {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
 }
+
 
 /* CSS cho phần đặt hàng */
 .order {
@@ -458,12 +492,15 @@ a {
   margin-bottom: 0;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 
+
 }
+
 
 .total span {
   font-family: "Nunito";
   font-size: 1.875rem;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
+
 
 }
 
@@ -495,6 +532,7 @@ a {
   /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
 }
 
+
 .btn-order {
   width: 180px;
   height: 75px;
@@ -507,6 +545,8 @@ a {
   background-color: #040404;
   color: #ffffff;
 }
+
+
 
 
 @media (max-width: 870px) {
@@ -526,6 +566,7 @@ a {
   }
 }
 
+
 @media (max-width: 579px) {
 
   .nenmodal .ndmodal {
@@ -541,6 +582,7 @@ a {
     padding: 10px;
   }
 }
+
 
 @media (max-width: 1070px) {
 
@@ -595,25 +637,25 @@ a {
    padding: 20px;
  }
 
-  .product-payment {
-    display: flex;
-    justify-content: nomarl;
-    align-items: normal;
-    height: 70px;
-  }
 
-  .total span {
-    font-size: 1.500rem;
-  }
-
-  .btn-order {
-    width: 80px;
-  }
-
+ .product-payment {
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  height: 70px;
+}
+ .total span {
+  font-size: 1.500rem;
+}
+ .btn-order {
+  width: 80px;
+}
 
   .modal-content {
     padding: 10px;
   }
+
+
 
 
   @media (max-width: 399px) {
