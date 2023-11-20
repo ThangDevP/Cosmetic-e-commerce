@@ -108,7 +108,33 @@
       "sale": "true"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "userId": "1700466859102",
+      "cartId": 1,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangn0000000",
+        "phoneNumber": "0123456789",
+        "addr": "11",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Na Hang",
+        "ward": "Xã Yên Hoa"
+      },
+      "itemsDetails": [
+        {
+          "productId": "5",
+          "quantity": 1,
+          "price": 145000,
+          "subtotal": 145000
+        }
+      ],
+      "total": 130500,
+      "createdAt": 1700499065486,
+      "updatedAt": 1700499065486,
+      "id": 1
+    }
+  ],
   "carts": [
     {
       "userId": "1700466859102",
@@ -124,30 +150,6 @@
     }
   ],
   "cartItems": [
-    {
-      "productId": 1,
-      "cartId": 1,
-      "quantity": 4,
-      "createdAt": 1700492387129,
-      "updatedAt": 1700496448789,
-      "id": 1
-    },
-    {
-      "productId": "14",
-      "cartId": 1,
-      "quantity": 3,
-      "createdAt": 1700492765868,
-      "updatedAt": 1700496451615,
-      "id": 2
-    },
-    {
-      "productId": 10,
-      "cartId": 1,
-      "quantity": 2,
-      "createdAt": 1700492829315,
-      "updatedAt": 1700492951085,
-      "id": 3
-    },
     {
       "productId": 1,
       "cartId": 2,
