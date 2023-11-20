@@ -19,7 +19,7 @@ function isAuthenticated() {
   const userID = localStorage.getItem('userID');
 
   if (userID !== null) {
-    fetch(`http://localhost:3000/api/users/${userID}`)
+    fetch(`/api/users/${userID}`)
       .then(response => response.json())
       .then(user => {
         if (user && user.role === 'user') {
@@ -32,7 +32,7 @@ function isAuthenticated() {
 }
 function fetchDataAndPopulateTable() {
   const role = "user"; // Đặt giá trị role bạn muốn fetch
-  fetch(`http://localhost:3000/api/users?role=${role}`)
+  fetch(`/api/users?role=${role}`)
     .then((response) => response.json())
     .then((data) => {
       const userCount = data.length;
@@ -85,7 +85,7 @@ function fetchDataAndPopulateTable() {
           // Lấy userId từ thuộc tính data
           const userId = deleteModal.dataset.userId;
 
-          fetch(`http://localhost:3000/api/users/${userId}`, {
+          fetch(`/api/users/${userId}`, {
             method: "DELETE",
           })
             .then((response) => {
@@ -120,7 +120,7 @@ function fetchDataAndPopulateTable() {
   }
 
 function fetchAndPopulateUserData(userId) {
-  fetch(`http://localhost:3000/api/users/${userId}`)
+  fetch(`/api/users/${userId}`)
     .then((response) => response.json())
     .then((userData) => {
       const modal = document.getElementById("myModal");
@@ -205,7 +205,7 @@ async function handleAddOrUpdateUser() {
 
   try {
     // Lấy giá trị cũ của người dùng
-    const response = await fetch(`http://localhost:3000/api/users/${userId}`);
+    const response = await fetch(`/api/users/${userId}`);
     const oldUserData = await response.json();
 
     // Thực hiện kiểm tra xem có đủ thông tin hay không
@@ -230,7 +230,7 @@ async function handleAddOrUpdateUser() {
     };
 
     // Gửi yêu cầu cập nhật người dùng đến API
-    const apiUrl = `http://localhost:3000/api/users/${userId}`;
+    const apiUrl = `/api/users/${userId}`;
     const apiResponse = await fetch(apiUrl, {
       method: "PUT",
       headers: {
