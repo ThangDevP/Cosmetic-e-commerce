@@ -69,7 +69,7 @@ async function displaySlide(products) {
               .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${product.id})" >
+            <button class="btn-add-card" onclick="addToCart(${product.id})" >
             <i class="fa-solid fa-cart-plus"></i>
             </button>
           </div>

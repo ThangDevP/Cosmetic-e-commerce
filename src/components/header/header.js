@@ -6,9 +6,13 @@ function dropdownFunc() {
     x.style.display = "block";
   }
 }
-var userId = localStorage.getItem("userID");
+
+// Gọi hàm userName khi trang được tải
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOMContentLoaded event fired');
+  userName();
+});
 function userName() {
-  var name = localStorage.getItem("username");
 
   var userChange = document.getElementById("user-change");
 
@@ -91,11 +95,7 @@ function userName() {
     });
 }
 
-// Gọi hàm userName khi trang được tải
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOMContentLoaded event fired');
-  userName();
-});
+
 
 
 async function fetchCartItems() {

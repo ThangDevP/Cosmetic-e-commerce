@@ -807,6 +807,13 @@ div.my-alert-1 {
   transition: transform 0.5s ease;
 }
 
+.progress-bar-inner-custom-1 {
+  height: 100%;
+  width: 0;
+  background-color: rgba(31, 28, 23, 1);
+  transition: transform 0.5s ease;
+}
+
 .btn-add-card{
   border: none;
   font-size: 16px;

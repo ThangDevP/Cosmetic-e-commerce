@@ -131,7 +131,7 @@ async function fetchCartItems() {
         return undefined;
     }
 }
-async function        showItems() {
+async function showItems() {
     try {
         const products = await fetchCartItems();
         console.log("Products:", products);
@@ -497,30 +497,30 @@ async function handleCheckout() {
       }
       else {
         alert('Tạo đơn hàng thành công');
-        try {
-          const response = await fetch('/send-email-order-success', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              name: customerInfor.username,
-              email: customerInfor.email,
-              phoneNumber: customerInfor.phoneNumber,
-              addr: customerInfor.addr,
-              city: customerInfor.city,
-              district: customerInfor.district,
-              total: totalAmountAfterDiscount
-            }),
-          });
+        // try {
+        //   const response = await fetch('/send-email-order-success', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //       name: customerInfor.username,
+        //       email: customerInfor.email,
+        //       phoneNumber: customerInfor.phoneNumber,
+        //       addr: customerInfor.addr,
+        //       city: customerInfor.city,
+        //       district: customerInfor.district,
+        //       total: totalAmountAfterDiscount
+        //     }),
+        //   });
       
-          // Xử lý kết quả từ server (nếu cần)
-          const result = await response.json();
-          console.log('Kết quả từ server:', result);
+        //   // Xử lý kết quả từ server (nếu cần)
+        //   const result = await response.json();
+        //   console.log('Kết quả từ server:', result);
 
-        } catch (error) {
-          console.error('Lỗi khi gửi yêu cầu:', error);
-        }
+        // } catch (error) {
+        //   console.error('Lỗi khi gửi yêu cầu:', error);
+        // }
         await clearCart(userId); // Xóa giỏ hàng sau khi đặt hàng thành công   
         window.location.href = '/'; // Redirect to the login page
       }
