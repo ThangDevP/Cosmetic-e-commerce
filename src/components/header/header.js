@@ -18,7 +18,7 @@ function userName() {
     return;
   }
 
-  fetch(`http://localhost:3000/api/users/${userId}`)
+  fetch(`/api/users/${userId}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -98,10 +98,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 async function fetchCartItems() {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/carts?userId=${userId}`,
+      `/api/carts?userId=${userId}`,
       {
         method: "GET",
         headers: {
@@ -119,7 +120,7 @@ async function fetchCartItems() {
 
     if (cart && cart.length > 0) {
       const responseCartItems = await fetch(
-        `http://localhost:3000/api/cartItems?cartId=${cart[0].id}&_expand=product`
+        `/api/cartItems?cartId=${cart[0].id}&_expand=product`
       );
       if (!responseCartItems.ok) {
         throw new Error(
@@ -159,38 +160,23 @@ async function showItems() {
                             />
                         </div>
                         <div class="product-info">
-                            <span>${product.product.name}</span>
+                            <span>${product.product.productName}</span>
                             <div class="quantity-price">
                                 <div class="quantity">
-                                    <button class="btn-quantity decrease" onclick="updateQuantityProduct(&quot;decrease&quot;, ${
-                                      product.id
-                                    }, ${
-              product.product.price
-            }, this)">-</button>
-                                    <div class="quantity-text" data-id="${
-                                      product.id
-                                    }">${product.quantity}</div>
-                                    <button class="btn-quantity increase" onclick="updateQuantityProduct(&quot;increase&quot;, ${
-                                      product.id
-                                    }, ${
-              product.product.price
-            }, this)">+</button>
+                                    <button class="btn-quantity decrease" onclick="updateQuantityProduct(&quot;decrease&quot;, ${product.id
+              }, ${product.product.price}, this)">-</button>
+                                    <div class="quantity-text" data-id="${product.id}">${product.quantity
+              }</div>
+                                    <button class="btn-quantity increase" onclick="updateQuantityProduct(&quot;increase&quot;, ${product.id
+              }, ${product.product.price}, this)">+</button>
                                 </div>
                                 <div class="price" data-id="${product.id}">
-                                ${(product.product.price * product.quantity)
-                                  .toLocaleString("vi-VN", {
-                                    style: "currency",
-                                    currency: "VND",
-                                  })
-                                  .replace(/,/g, ".")
-                                  .replace(/₫/, "VNĐ")}</div>
+                                ${(product.product.price * product.quantity).toLocaleString("vi-VN", { style: "currency", currency: "VND" })
+                .replace(/,/g, ".").replace(/₫/, "VNĐ")}</div>
                             </div>
                         </div>
-                        <div class="remove-product" onclick="removeProduct(${
-                          product.id
-                        }, ${product.cartId}, ${product.product.price}, ${
-              product.quantity
-            })">
+                        <div class="remove-product" onclick="removeProduct(${product.id}, ${product.cartId
+              }, ${product.product.price}, ${product.quantity})">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                     </div>
@@ -201,18 +187,23 @@ async function showItems() {
         updatePaymentDetails(cartId);
       } else {
         // Render a message for an empty cart
-        productsContainer.innerHTML = `  <div class="message">
+        productsContainer.innerHTML = `
+        <div class="modal-content">
+         <div class="center-content">
                 <div class="title">OOPSS...</div>
                 <div class="message">
                     Giỏ hàng hiện đang trống <br >
                     Không có sản phẩm nào trong<br >
                     giỏ của bạn
                 </div>
-                <div class="button button-dark button-small mt-6 nuxt-link-exact-active nuxt-link-active">
+                <div class="button">
+                <div  class="button button-dark button-small mt-6 nuxt-link-exact-active nuxt-link-active">
                     Tiếp tục mua sắm
                 </div>
+                </div>
             </div>
-        </div>`;
+        </div>
+       `;
       }
     } else {
       console.error("Không tìm thấy phần tử .products-payment");
@@ -221,11 +212,11 @@ async function showItems() {
     console.error("Lỗi khi hiển thị sản phẩm:", error);
   }
 }
-
+showItems();
 async function updateQuantityProduct(action, id, price) {
   event.preventDefault();
   const cartItem = await fetch(
-    `http://localhost:3000/api/cartItems/${id}`
+    `/api/cartItems/${id}`
   ).then((response) => response.json());
   updatePaymentDetails(cartItem.cartId);
   let newQuantity = cartItem.quantity;
@@ -234,7 +225,7 @@ async function updateQuantityProduct(action, id, price) {
   } else if (action === "decrease" && newQuantity > 1) {
     newQuantity--;
   }
-  const response = await fetch(`http://localhost:3000/api/cartItems/${id}`, {
+  const response = await fetch(`/api/cartItems/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -255,26 +246,27 @@ function updateUI(id, newQuantity, price) {
   const priceElement = document.querySelector(`.price[data-id="${id}"]`);
   if (quantityElement && priceElement) {
     quantityElement.innerHTML = newQuantity;
-    priceElement.innerHTML = (newQuantity * price)
-      .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
-      .replace(/,/g, ".")
-      .replace(/₫/, "VNĐ");
+    priceElement.innerHTML = (newQuantity * price).toLocaleString("vi-VN", { style: "currency", currency: "VND" })
+    .replace(/,/g, ".").replace(/₫/, "VNĐ");
   }
 }
 
 async function calculateTotalOriginal(cartId) {
   try {
     const products = await fetch(
-      `http://localhost:3000/api/cartItems?cartId=${cartId}&_expand=product`
+      `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
 
     if (products.length === 0) {
       return 0;
     } else {
-      const totalOriginal = products.reduce((total, product) => {
-        const productTotal = product.product.price * product.quantity;
-        return total + productTotal;
-      }, 0);
+      const totalOriginal = products.reduce(
+        (total, product) => {
+          const productTotal = product.product.price * product.quantity;
+          return total + productTotal;
+        },
+        0
+      );
       return totalOriginal;
     }
   } catch (error) {
@@ -287,22 +279,17 @@ async function updatePaymentDetails(cartId) {
     const totalOriginal = await calculateTotalOriginal(cartId);
 
     const products = await fetch(
-      `http://localhost:3000/api/cartItems?cartId=${cartId}&_expand=product`
+      `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
 
     if (products.length === 0) {
-      document.querySelector(
-        ".provisional-card .provisional:nth-child(1) p"
-      ).textContent = `0 đ`;
-      document.querySelector(
-        ".provisional-card .provisional:nth-child(2) p"
-      ).textContent = `0 đ`;
+      document.querySelector(".provisional-card .provisional:nth-child(1) p").textContent = `0 đ`;
+      document.querySelector(".provisional-card .provisional:nth-child(2) p").textContent = `0 đ`;
       document.querySelector(".order .total span").textContent = `0 Đ`;
     } else {
       const provisionalAmount = products.reduce(
         (total, product) => {
-          const discountPrice =
-            (product.product.price * product.product.discount) / 100;
+          const discountPrice = (product.product.price * product.product.discount) / 100;
           const discountedPrice = product.product.price - discountPrice;
           const productTotal = discountedPrice * product.quantity;
 
@@ -311,42 +298,29 @@ async function updatePaymentDetails(cartId) {
           return {
             provisionalAmount: total.provisionalAmount + productTotal,
             totalOriginal: total.totalOriginal + originalPrice,
-            totalDiscount:
-              total.totalDiscount + discountPrice * product.quantity,
+            totalDiscount: total.totalDiscount + discountPrice * product.quantity,
           };
         },
         { provisionalAmount: 0, totalOriginal: 0, totalDiscount: 0 }
       );
 
-      document.querySelector(
-        ".provisional-card .provisional:nth-child(1) p"
-      ).textContent = `${totalOriginal
-        .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
-        .replace(/,/g, ".")
-        .replace(/₫/, "VNĐ")}`;
-      document.querySelector(
-        ".provisional-card .provisional:nth-child(2) p"
-      ).textContent = `${provisionalAmount.totalDiscount
-        .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
-        .replace(/,/g, ".")
-        .replace(/₫/, "VNĐ")}`;
+      document.querySelector(".provisional-card .provisional:nth-child(1) p").textContent = `${totalOriginal.toLocaleString("vi-VN", { style: "currency", currency: "VND" }).replace(/,/g, ".").replace(/₫/, "VNĐ")}`;
+      document.querySelector(".provisional-card .provisional:nth-child(2) p").textContent = `${provisionalAmount.totalDiscount.toLocaleString("vi-VN", { style: "currency", currency: "VND" }).replace(/,/g, ".").replace(/₫/, "VNĐ")}`;
 
       const totalAmount = provisionalAmount.provisionalAmount;
 
-      document.querySelector(".order .total span").textContent = `${totalAmount
-        .toLocaleString("vi-VN", { style: "currency", currency: "VND" })
-        .replace(/,/g, ".")
-        .replace(/₫/, "VNĐ")}`;
+      document.querySelector(".order .total span").textContent = `${totalAmount.toLocaleString("vi-VN", { style: "currency", currency: "VND" }).replace(/,/g, ".").replace(/₫/, "VNĐ")}`;
     }
   } catch (error) {
     console.log(error);
   }
 }
 
+
 async function removeProduct(cartItemId, cartId, productPrice, quantity) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/cartItems/${cartItemId}`,
+      `/api/cartItems/${cartItemId}`,
       {
         method: "DELETE",
       }
@@ -369,26 +343,11 @@ async function removeProduct(cartItemId, cartId, productPrice, quantity) {
     console.error(error);
   }
 }
-
-// Các hàm khác ở đây không thay đổi
-function carticon() {
-  var modal = document.getElementById("ngoaicung-1");
-  var body = document.body;
-
-  if (modal.style.display === "block") {
-    modal.style.display = "none";
-    body.style.overflow = "auto"; // Loại bỏ giới hạn thanh trượt khi modal được đóng
-  } else {
-    modal.style.display = "block";
-    body.style.overflow = "hidden"; // Ngăn chặn thanh trượt khi modal được kích hoạt
-  }
-}
-
-function carticon() {
-  document.getElementById("ngoaicung-1").classList.toggle("active");
-}
-
+   function momodal(){
+      document.getElementById("nenmodal-1").classList.toggle("active");
+   }
+                                  
 document.addEventListener("DOMContentLoaded", function () {
   showItems();
 });
-
+showItems();
