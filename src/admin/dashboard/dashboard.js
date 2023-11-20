@@ -35,15 +35,19 @@ async function fetchDataAndPopulateTable() {
     const usersResponse = await fetch("http://localhost:3000/api/users");
     const usersData = await usersResponse.json();
     const filteredUsers = usersData.filter(user => user.role === "user");
+
     const ordersTableBody = document.getElementById("ordersTableBody");
     const totalRevenueElement = document.getElementById("totalRevenue");
     let totalRevenue = 0;
+
     const totalUsers = filteredUsers.length;
     const totalUserElement = document.getElementById("totalUser");
     totalUserElement.textContent = totalUsers;
+
     const totalOrders = data.length;
     const totalOrdersElement = document.getElementById("totalOrders");
     totalOrdersElement.textContent = totalOrders;
+
     for (const order of data) {
       const row = ordersTableBody.insertRow();
       const idCell = row.insertCell(0);
@@ -61,7 +65,9 @@ async function fetchDataAndPopulateTable() {
           `http://localhost:3000/api/products/${item.productId}`
         );
         const productData = await productResponse.json();
+
         const formattedPrice = item.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace(/,/g, '.').replace("₫", 'VNĐ');
+
         itemsDetailsHtml += `${item.quantity} ${productData.productName} <br>`;
       }
       itemsCell.innerHTML = itemsDetailsHtml || "No items";

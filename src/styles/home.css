@@ -115,6 +115,8 @@ video::-webkit-media-controls {
     background: #fefbf4;
     /* padding: 10px 0; */
     margin: 5px;
+    display: flex;
+    flex-direction: row;
 }
 
 
