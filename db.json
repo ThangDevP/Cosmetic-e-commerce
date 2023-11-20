@@ -320,31 +320,6 @@
       "createdAt": 1700323509954,
       "updatedAt": 1700323509954,
       "id": 4
-    },
-    {
-      "userId": "1699415299351",
-      "cartId": 1,
-      "customerInfo": {
-        "email": "chung241@gmail.com",
-        "username": "Nghiêm Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Cry",
-        "city": "Tỉnh Phú Thọ",
-        "district": "Huyện Lâm Thao",
-        "ward": "Xã Vĩnh Lại"
-      },
-      "itemsDetails": [
-        {
-          "productId": "5",
-          "quantity": 1,
-          "price": 145000,
-          "subtotal": 145000
-        }
-      ],
-      "total": 130500,
-      "createdAt": 1700466779251,
-      "updatedAt": 1700466779251,
-      "id": 5
     }
   ],
   "carts": [
