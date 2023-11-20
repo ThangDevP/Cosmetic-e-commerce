@@ -97,10 +97,6 @@ function userName() {
     });
 }
 
-
-
-
-
 async function fetchCartItems() {
   try {
     const response = await fetch(
@@ -113,9 +109,7 @@ async function fetchCartItems() {
       }
     );
     if (!response.ok) {
-      throw new Error(
-        `Lỗi khi tải dữ liệu: ${response.status} ${response.statusText}`
-      );
+      throw new Error(`Lỗi khi tải dữ liệu: ${response.status} ${response.statusText}`);
     }
     const cart = await response.json();
     console.log("Cart data:", cart);
@@ -125,9 +119,7 @@ async function fetchCartItems() {
         `/api/cartItems?cartId=${cart[0].id}&_expand=product`
       );
       if (!responseCartItems.ok) {
-        throw new Error(
-          `Lỗi khi tải dữ liệu: ${responseCartItems.status} ${responseCartItems.statusText}`
-        );
+        throw new Error(`Lỗi khi tải dữ liệu: ${responseCartItems.status} ${responseCartItems.statusText}`);
       }
       const cartItems = await responseCartItems.json();
       console.log("CartItems data:", cartItems);
@@ -217,9 +209,7 @@ async function showItems() {
 showItems();
 async function updateQuantityProduct(action, id, price) {
   event.preventDefault();
-  const cartItem = await fetch(
-    `/api/cartItems/${id}`
-  ).then((response) => response.json());
+  const cartItem = await fetch(`/api/cartItems/${id}`).then((response) => response.json());
   updatePaymentDetails(cartItem.cartId);
   let newQuantity = cartItem.quantity;
   if (action === "increase") {
@@ -235,9 +225,7 @@ async function updateQuantityProduct(action, id, price) {
     body: JSON.stringify({ quantity: newQuantity }),
   });
   if (!response.ok) {
-    throw new Error(
-      `Lỗi khi cập nhật số lượng: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Lỗi khi cập nhật số lượng: ${response.status} ${response.statusText}`);
   }
   updateUI(id, newQuantity, price);
 }
@@ -328,9 +316,7 @@ async function removeProduct(cartItemId, cartId, productPrice, quantity) {
       }
     );
     if (!response.ok) {
-      throw new Error(
-        `Lỗi khi xóa sản phẩm: ${response.status} ${response.statusText}`
-      );
+      throw new Error(`Lỗi khi xóa sản phẩm: ${response.status} ${response.statusText}`);
     }
     showItems();
 

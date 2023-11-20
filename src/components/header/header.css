@@ -1,9 +1,12 @@
 @import url("header.css");
 
+
 * {
   padding: 0;
   margin: 0;
 }
+
+
 
 
 .announcement {
@@ -11,6 +14,7 @@
   height: 100%;
   background-color: #1c1c14;
 }
+
 
 .announcement p {
   display: flex;
@@ -23,6 +27,7 @@
   background-color: #1c1c14;
 }
 
+
 #navbar {
   position: fixed;
   top: 0;
@@ -31,6 +36,7 @@
   /* Change this to your desired background color */
   /* Add other styles like padding, box-shadow, etc. */
 }
+
 
 .sticky {
   .sticky {
@@ -43,11 +49,13 @@
   }
 }
 
+
 .toggle_btn {
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
 }
+
 
 .main-menu {
   width: 100%;
@@ -55,16 +63,19 @@
   background-color: #fff9f0;
 }
 
+
 .main-menu-left {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 }
 
+
 .main-menu-left li {
   list-style: none;
   padding: 10px;
 }
+
 
 .main-menu-left li a {
   text-decoration: none;
@@ -75,11 +86,14 @@
   transition: 0.3s ease;
 }
 
+
 .main-menu-left li a:active,
 a:hover {
   color: #2d2f303f;
   transition: 0.5s;
 }
+
+
 
 
 /* .main-menu-center {
@@ -92,16 +106,20 @@ a:hover {
 } */
 
 
+
+
 .main-menu-right {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 }
 
+
 .main-menu-right li {
   list-style: none;
   padding: 10px 0 10px 10px;
 }
+
 
 .main-menu-right li a {
   text-decoration: none;
@@ -112,9 +130,12 @@ a:hover {
   transition: 0.3s ease;
 }
 
+
 .main-menu-right li a:hover {
   color: #2d2f30;
 }
+
+
 
 
 #dropdown_menu {
@@ -128,9 +149,12 @@ a:hover {
   overflow: hidden;
 
 
+
+
   display: none;
   z-index: 1;
 }
+
 
 #dropdown_menu li {
   padding: 0.7rem;
@@ -141,6 +165,7 @@ a:hover {
   margin-top: 30px;
 }
 
+
 #dropdown_menu a {
   text-decoration: none;
   color: #1c1c14;
@@ -148,16 +173,19 @@ a:hover {
   font-weight: 600;
 }
 
+
 #dropdown_menu a:hover {
   color: #2d2f30;
   text-decoration: underline;
 }
+
 
 #dropdown_menu.open {
   /* height: 240px; */
   width: 300px;
   display: block;
 }
+
 
 /* Initially hide the sub-menu */
 .sub-menu {
@@ -176,10 +204,14 @@ a:hover {
 }
 
 
+
+
 /* Style the individual sub-menu items */
 .sub-menu li {
   padding: 4px 0;
 }
+
+
 
 
 /* Style the links inside the sub-menu */
@@ -190,6 +222,7 @@ a:hover {
   padding: 4px 16px;
 }
 
+
 .sub-menu a:hover {
   background-color: #ccc;
   /* Set the background color to black */
@@ -197,10 +230,15 @@ a:hover {
   /* Set the text color to white */
 }
 
+
 /* Show the sub-menu when hovering over user-change */
 #user-change:hover .sub-menu {
   display: block;
 }
+
+
+
+
 
 
 
@@ -211,10 +249,14 @@ a:hover {
 }
 
 
+
+
 .product-info {
   width: 80%;
   text-align: left;
 }
+
+
 
 
 .quantity-price {
@@ -223,9 +265,13 @@ a:hover {
 }
 
 
+
+
 .quantity {
   display: flex;
 }
+
+
 
 
 .quantity button {
@@ -235,6 +281,8 @@ a:hover {
   height: 32px;
   background-color: transparent;
 }
+
+
 
 
 .quantity-text {
@@ -247,14 +295,21 @@ a:hover {
 }
 
 
+
+
 .price {
   font-weight: bold;
 }
 
 
+
+
 .remove-product {
   cursor: pointer;
+  width: 100px;
+  font-size: 20px;
 }
+
 
 .center-content {
   align-items: center;
@@ -267,6 +322,7 @@ a:hover {
   text-align: right;
 }
 
+
 .modal-content {
   display: flex;
   align-items: center;
@@ -275,12 +331,15 @@ a:hover {
 }
 
 
+
+
 .container {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #F7F0E4;
 }
+
 
 .message {
   color: #ccb48f;
@@ -298,6 +357,7 @@ a:hover {
   font-weight: normal;
 }
 
+
 .oopss {
   color: #1d1a15;
   font-size:
@@ -313,6 +373,8 @@ a:hover {
 }
 
 
+
+
 .button.button-small {
   height: 3.75rem;
   width: 140px;
@@ -320,6 +382,10 @@ a:hover {
   border-radius: 4px;
   font-size: 1rem;
 }
+
+
+
+
 
 
 
@@ -335,12 +401,18 @@ a:hover {
 
 
 
+
+
+
+
 .button.button-dark {
   --tw-bg-opacity: 1;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgba(254, 251, 244, var(--tw-text-opacity));
 }
+
+
 
 
 .button {
@@ -358,9 +430,13 @@ a:hover {
 }
 
 
+
+
 .mt-6 {
   margin-top: 3.75rem;
 }
+
+
 
 
 a {
@@ -368,26 +444,30 @@ a {
   text-decoration: inherit;
 }
 
+
 /* CSS nền hiển thị Modal */
 .nenmodal .nenmodal2 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 150vw;
+  height: 150vh;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
   display: none;
 }
 
+
 .ndmodal {
   overflow: hidden;
 }
+
 
 .modal-order {
   border-radius: 0 0 10px 10px;
   overflow: hidden;
 }
+
 
 /* CSS bảng nội dung Modal */
 .nenmodal .ndmodal {
@@ -407,11 +487,15 @@ a {
 }
 
 
+
+
 .nenmodal .closemodal {
   text-align: left;
   width: 100%;
   height: 30px;
 }
+
+
 
 
 /* CSS nút tắt modal */
@@ -424,6 +508,8 @@ a {
 }
 
 
+
+
 /* CSS tieu de của Modal */
 .titlemodal {
   font-weight: bold;
@@ -432,13 +518,18 @@ a {
   text-align: center;
 
 
+
+
 }
+
 
 /* CSS hiệu ứng hiển thị Modal */
 .nenmodal.active .ndmodal {
   transition: all 300ms ease-in-out;
   transform: translate(-50%, -55%) scale(0.83);
 }
+
+
 
 
 /* CSS cho phần hiển thị giỏ hàng */
@@ -452,9 +543,13 @@ a {
 }
 
 
+
+
 .nenmodal.active .nenmodal2 {
   display: block;
 }
+
+
 
 
 /* CSS cho phần giỏ hàng tạm tính */
@@ -463,11 +558,15 @@ a {
 }
 
 
+
+
 .provisional {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
 }
+
+
 
 
 /* CSS cho phần đặt hàng */
@@ -480,6 +579,7 @@ a {
   border-radius: 0 0 7px 7px;
 }
 
+
 .total {
   width: 200px;
   height: 75px;
@@ -487,13 +587,18 @@ a {
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 }
 
+
 .total p {
   font-family: "Nunito";
   margin-bottom: 0;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 
 
+
+
 }
+
+
 
 
 .total span {
@@ -502,7 +607,10 @@ a {
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 
 
+
+
 }
+
 
 /* CSS cho phần hiển thị giỏ hàng */
 .products-payment {
@@ -519,9 +627,11 @@ a {
   /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
 }
 
+
 .products-payment .product-payment {
   margin-bottom: 10px;
 }
+
 
 /* CSS cho phần giỏ hàng tạm tính */
 .provisional-card {
@@ -531,6 +641,8 @@ a {
   overflow-y: auto;
   /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
 }
+
+
 
 
 .btn-order {
@@ -549,17 +661,102 @@ a {
 
 
 
+
+
+@media (max-width: 1070px) {
+
+
+  .nenmodal .ndmodal {
+
+
+    width: 82%;
+    max-width: -45%;
+    right: -280px;
+  }
+
+
+  .product-payment {
+    display: flex;
+    justify-content: nomarl;
+    align-items: normal;
+    height: 120px;
+  }
+  .remove-product{
+    width: 200px;
+  }
+
+
+  .quantity-price {
+    display:table;
+}
+.item-img {
+  width: 20%;
+}
+.product-info {
+  justify-content: space-between;
+  font-size: 25px;
+}
+  .total span {
+    font-size: 1.500rem;
+  }
+
+
+  .center-content {
+    padding: 20px;
+  }
+
+
+  .btn-order {
+    width: 150px;
+  }
+
+
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+
+/* tablet */
 @media (max-width: 870px) {
+
 
   .nenmodal .ndmodal {
     width: 100%;
     max-width: 100%;
     right: -415px;
   }
+  .products-payment {
+    height: 400px;
+  }
+  .product-payment {
+    display: flex;
+    justify-content: nomarl;
+    align-items: normal;
+    margin-bottom: 10px;
+    height: 120px;
+  }
+.product-info {
+  font-size: 15px;
+}
+
+
+  .quantity-price {
+    display:table;
+}
+.item-img {
+  width: 20%;
+}
+  .product-info {
+    justify-content: space-between;
+    font-size: 15px;
+}
+
 
   .center-content {
     padding: 20px;
   }
+
 
   .modal-content {
     padding: 10px;
@@ -567,62 +764,9 @@ a {
 }
 
 
-@media (max-width: 579px) {
-
-  .nenmodal .ndmodal {
-    width: 82%;
-    max-width: 100%;
-    right: -280px;
-  }
-
-  .center-content {
-    padding: 20px;
-  }
-  .modal-content {
-    padding: 10px;
-  }
-}
 
 
-@media (max-width: 1070px) {
 
-  .nenmodal .ndmodal {
-
-    width: 82%;
-    max-width: -45%;
-    right: -280px;
-  }
-
-  .total span {
-    font-size: 1.500rem;
-  }
-
-  .center-content {
-    padding: 20px;
-  }
-
-  .btn-order {
-    width: 150px;
-  }
-
-  .modal-content {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 600px) {
-  .nenmodal .ndmodal {
-
-    width: 82%;
-    max-width: -45%;
-    right: -280px;
-    transform: translate(-152%, -55%) scale(0.96);
-  }
-  .nenmodal.active .ndmodal {
-    transition: all 300ms ease-in-out;
-    transform: translate(-52%, -55%) scale(0.96);
-  }
-}
 
 @media (max-width: 600px) {
 
@@ -631,19 +775,38 @@ a {
     width: 102%;
     max-width: 100%;
     right: -220px;
+    transform: translate(-37.3%, -185%) scale(0.99);
+
+
   }
+
 
   .center-content {
    padding: 20px;
  }
-
-
  .product-payment {
   display: flex;
-  justify-content: normal;
+  justify-content: nomarl;
   align-items: normal;
-  height: 70px;
+  height: 120px;
 }
+.product-info {
+font-size: 15px;
+}
+
+
+.quantity-price {
+  display:table;
+}
+.item-img {
+width: 20%;
+}
+.product-info {
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+
  .total span {
   font-size: 1.500rem;
 }
@@ -651,18 +814,126 @@ a {
   width: 80px;
 }
 
+
   .modal-content {
     padding: 10px;
   }
 
 
+}
+
+
+
+
+@media (max-width: 600px)
+{
+
+
+  .nenmodal .ndmodal {
+    width: 82%;
+    max-width: -45%;
+    right: -280px;
+  }
+  .nenmodal.active .ndmodal {
+    transition: all 300ms ease-in-out;
+  }
+}
+
+
+@media (max-width: 579px) {
+
+
+  .nenmodal .ndmodal {
+    width: 82%;
+    max-width: 100%;
+    right: -280px;
+  }
+
+
+  .product-payment {
+    display: flex;
+    justify-content: nomarl;
+    align-items: normal;
+    height: 100px;
+  }
+
+
+
+
+  .quantity-price {
+    display:table;
+}
+.item-img {
+  width: 30%;
+}
+.product-info {
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+
+  .center-content {
+    padding: 20px;
+  }
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+
+
+
+@media (max-width: 450px) {
+  .nenmodal .ndmodal {
+    width: 82%;
+    max-width: -45%;
+    right: -200px;
+    transform: translate(-37.3%, -250%) scale(1);
+  }
+  .nenmodal.active .ndmodal {
+    transition: all 300ms ease-in-out;
+  }
+ 
+  .product-payment {
+    display: flex;
+    justify-content: nomarl;
+    align-items: normal;
+    height: 150px;
+  }
+
+
+
+
+  .quantity-price {
+    display:table;
+}
+.item-img {
+  width: 30%;
+}
+  .product-info {
+    justify-content: space-between;
+    padding: 24px 0px 16px 0px;
+    font-size: 15px;
+}
+
+
+  .center-content {
+    padding: 20px;
+  }
+
+
+  .modal-content {
+    padding: 10px;
+  }
+}
 
 
   @media (max-width: 399px) {
     .nenmodal.active .ndmodal {
       transition: all 300ms ease-in-out;
-      transform: translate(-58.7%, -55%) scale(0.98);
+      transform: translate(-58.7%, -55%) scale(0.8);
     }
+
 
     .nenmodal .ndmodal {
       width: 102%;
@@ -670,25 +941,21 @@ a {
       right: -220px;
     }
 
+
     .center-content {
       padding: 20px;
     }
-
-
-    .product-payment {
-      display: flex;
-      justify-content: nomarl;
-      align-items: normal;
-      height: 70px;
-    }
-
     .total span {
       font-size: 1.500rem;
     }
 
+
+ 
     .btn-order {
       width: 80px;
     }
+
+
 
 
     .modal-content {
@@ -697,13 +964,17 @@ a {
   }
 
 
+
+
   @media (max-width: 320px) {
+
+
 
 
     .nenmodal .ndmodal {
       position: fixed;
       top: 55%;
-      transform: translate(50%, 50%) scale(0.5);
+      transform: translate(50%, 50%) scale(0.7);
       width: 100%;
       max-width: 100%;
       z-index: 2;
@@ -716,29 +987,33 @@ a {
       border-radius: 15px;
     }
 
+
     .center-content {
       padding: 20px;
     }
-
-
+ 
     .product-payment {
       display: flex;
       justify-content: nomarl;
       align-items: normal;
-      height: 70px;
+      height: 150px;
     }
-
+    .item-img {
+      width: 35%;
+    }
     .total span {
       font-size: 1.500rem;
     }
+
 
     .btn-order {
       width: 80px;
     }
 
 
+
+
     .modal-content {
       padding: 10px;
     }
   }
-}
