@@ -236,6 +236,103 @@ app.get("/blog", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/blog.html"));
 });
 
+server.post("/payments", (req, res) => {
+  const { amount, data } = req.body;
+
+  const urlParams = new URLSearchParams();
+  urlParams.set("email", data.customerInfor.email);
+  urlParams.set("username", data.customerInfor.username);
+  urlParams.set("phoneNumber", data.customerInfor.phoneNumber);
+  urlParams.set("addr", data.customerInfor.addr);
+  urlParams.set("city", data.customerInfor.city);
+  urlParams.set("district", data.customerInfor.district);
+  urlParams.set("ward", data.customerInfor.ward);
+
+  var partnerCode = "MOMO";
+  var accessKey = "F8BBA842ECF85";
+  var secretkey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
+  var requestId = partnerCode + new Date().getTime() + "id";
+  var orderId = new Date().getTime();
+  var orderInfo = "Thanh toán qua ví MoMo";
+  var redirectUrl =
+    "http://localhost:3000/checkout" + "?" + urlParams.toString();
+  var ipnUrl = "http://localhost:3000/checkout" + "?" + urlParams.toString();
+  var requestType = "captureWallet";
+  var extraData = "";
+
+  var rawSignature =
+    "accessKey=" +
+    accessKey +
+    "&amount=" +
+    amount +
+    "&extraData=" +
+    extraData +
+    "&ipnUrl=" +
+    ipnUrl +
+    "&orderId=" +
+    orderId +
+    "&orderInfo=" +
+    orderInfo +
+    "&partnerCode=" +
+    partnerCode +
+    "&redirectUrl=" +
+    redirectUrl +
+    "&requestId=" +
+    requestId +
+    "&requestType=" +
+    requestType;
+
+  const crypto = require("crypto");
+  var signature = crypto
+    .createHmac("sha256", secretkey)
+    .update(rawSignature)
+    .digest("hex");
+
+  const requestBody = JSON.stringify({
+    partnerCode: partnerCode,
+    accessKey: accessKey,
+    requestId: requestId,
+    amount: amount,
+    orderId: orderId,
+    orderInfo: orderInfo,
+    redirectUrl: redirectUrl,
+    ipnUrl: ipnUrl,
+    extraData: extraData,
+    requestType: requestType,
+    signature: signature,
+    lang: "en",
+  });
+
+  const https = require("https");
+  const options = {
+    hostname: "test-payment.momo.vn",
+    port: 443,
+    path: "/v2/gateway/api/create",
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": Buffer.byteLength(requestBody),
+    },
+  };
+
+  const reqq = https.request(options, (resMomo) => {
+    resMomo.setEncoding("utf8");
+    resMomo.on("data", (body) => {
+      console.log(body);
+      res.json({
+        payUrl: JSON.parse(body).payUrl,
+        statusCode: resMomo.statusCode,
+      });
+    });
+
+    resMomo.on("end", () => {});
+  });
+
+  reqq.on("error", (e) => {});
+  reqq.write(requestBody);
+  reqq.end();
+});
+
 server.use(router);
 // Local host --- Hosting
 app.listen(port, () => {

@@ -40,7 +40,6 @@ const getData = async () => {
   try {
       var promise = await fetch(apiEndpoint);
       const data = await promise.json();
-      console.log(data);
       renderCity(data); // Gọi renderCity sau khi lấy dữ liệu
   } catch (error) {
       console.error('Lỗi khi lấy dữ liệu:', error);
@@ -112,7 +111,6 @@ async function fetchCartItems() {
             );
         }
         const cart = await response.json();
-        console.log("Cart data:", cart);
         if (cart && cart.length > 0) {
             const responseCartItems = await fetch(
                 `/api/cartItems?cartId=${cart[0].id}&_expand=product`
@@ -123,7 +121,6 @@ async function fetchCartItems() {
                 );
             }
             const cartItems = await responseCartItems.json();
-            console.log("CartItems data:", cartItems);
             return cartItems;
         }
     } catch (error) {
@@ -131,10 +128,9 @@ async function fetchCartItems() {
         return undefined;
     }
 }
-async function        showItems() {
+async function showItems() {
     try {
         const products = await fetchCartItems();
-        console.log("Products:", products);
         const productsContainer = document.querySelector(".products-payment");
         if (productsContainer) {
           if (products && products.length > 0) {
@@ -336,7 +332,6 @@ fetch(`/api/users/${userId}`)
     fetch(apiEndpoint).then((response) => response.json())
     .then((address) => {
       for (const c of address) {
-        console.log(c.Id, c.Name);
         if (c.Name == data.city) {
           var citySelect = document.getElementById("city");
           var matchingOption = Array.from(citySelect.options).find(
@@ -449,87 +444,103 @@ async function clearCart(userId) {
 }
 
 // Handle checkout logic
-async function handleCheckout() {
-  const itemsDetails = await fetchCartItems();
-  console.log("item", itemsDetails);
+async function handlePayment() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const messagePayment = urlParams.get("message");
 
-    // Lấy giá trị từ các dropdowns thành phố, quận, và phường
-    const selectedCity = document.getElementById("city").value;
-    const selectedDistrict = document.getElementById("district").value;
-    const selectedWard = document.getElementById("ward").value;
-  
-    // Đẩy vào đối tượng customerInfor
-    customerInfor.city = selectedCity;
-    customerInfor.district = selectedDistrict;
-    customerInfor.ward = selectedWard;
-  // Tính tổng tiền sau khi giảm giá của tất cả sản phẩm
-  const totalAmountAfterDiscount = itemsDetails.reduce((total, product) => {
-    const discountedPrice = product.product.price - (product.product.price * product.product.discount) / 100;
-    return total + discountedPrice * product.quantity;
-  }, 0);
-  
-  fetch("/api/orders", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      userId: userId,
-      cartId: itemsDetails.length > 0 ? itemsDetails[0].cartId : null,
-      customerInfo: customerInfor,
-      email: customerInfor.email,
-      itemsDetails: itemsDetails.map(product => ({
-        productId: product.productId,
-        productName: product.product.name,
-        quantity: product.quantity,
-        price: product.product.price,
-        subtotal: product.product.price * product.quantity,
-      })),
-      total: totalAmountAfterDiscount,
-    }),
-  })
-    .then(async (response) => {
-      console.log('API Response:', response); 
+  const data = {
+    email: urlParams.get("email"),
+    username: urlParams.get("username"),
+    phoneNumber: urlParams.get("phoneNumber"),
+    addr: urlParams.get("addr"),
+    city: urlParams.get("city"),
+    district: urlParams.get("district"),
+    ward: urlParams.get("ward"),
+  };
+  if (messagePayment) {
+    const itemsDetails = await fetchCartItems();
+    const totalAmountAfterDiscount = itemsDetails.reduce((total, product) => {
+      const discountedPrice =
+        product.product.price -
+        (product.product.price * product.product.discount) / 100;
+      return total + discountedPrice * product.quantity;
+    }, 0);
 
-      if (!response.ok) {
-        alert('Tạo đơn hàng thất bại');
-        return;
-      }
-      else {
-        alert('Tạo đơn hàng thành công');
-        try {
-          const response = await fetch('/send-email-order-success', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              name: customerInfor.username,
-              email: customerInfor.email,
-              phoneNumber: customerInfor.phoneNumber,
-              addr: customerInfor.addr,
-              city: customerInfor.city,
-              district: customerInfor.district,
-              total: totalAmountAfterDiscount
-            }),
-          });
-      
-          // Xử lý kết quả từ server (nếu cần)
-          const result = await response.json();
-          console.log('Kết quả từ server:', result);
-
-        } catch (error) {
-          console.error('Lỗi khi gửi yêu cầu:', error);
-        }
-        await clearCart(userId); // Xóa giỏ hàng sau khi đặt hàng thành công   
-        window.location.href = '/'; // Redirect to the login page
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    if (itemsDetails) {
+      fetch("http://localhost:3000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId: userId,
+          cartId: itemsDetails.length > 0 ? itemsDetails[0].cartId : null,
+          customerInfo: data,
+          itemsDetails: itemsDetails.map((product) => ({
+            productId: product.productId,
+            productName: product.product.name,
+            quantity: product.quantity,
+            price: product.product.price,
+            subtotal: product.product.price * product.quantity,
+          })),
+          total: totalAmountAfterDiscount,
+        }),
+      })
+        .then(async (response) => {
+          console.log("API Response:", response); // Log API response for debugging
+          if (!response.ok) {
+            alert("Tạo đơn hàng thất bại");
+            return;
+          }
+          
+          await clearCart(userId); // Xóa giỏ hàng sau khi đặt hàng thành công
+          window.location.href = "/"; // Redirect to the login page
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  }
 }
 
+handlePayment();
 
+// Handle checkout logic
+async function handleCheckout() {
+  const itemsDetails = await fetchCartItems();
 
+  // Lấy giá trị từ các dropdowns thành phố, quận, và phường
+  const selectedCity = document.getElementById("city").value;
+  const selectedDistrict = document.getElementById("district").value;
+  const selectedWard = document.getElementById("ward").value;
+
+  // Đẩy vào đối tượng customerInfor
+  customerInfor.city = selectedCity;
+  customerInfor.district = selectedDistrict;
+  customerInfor.ward = selectedWard;
+  // Tính tổng tiền sau khi giảm giá của tất cả sản phẩm
+  const totalAmountAfterDiscount = itemsDetails.reduce((total, product) => {
+    const discountedPrice =
+      product.product.price -
+      (product.product.price * product.product.discount) / 100;
+    return total + discountedPrice * product.quantity;
+  }, 0);
+
+  fetch("http://localhost:3000/api/payments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      amount: totalAmountAfterDiscount,
+      data: {
+        customerInfor,
+      },
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      window.location.href = data.payUrl;
+    });
+}
 

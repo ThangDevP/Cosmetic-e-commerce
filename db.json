@@ -320,6 +320,31 @@
       "createdAt": 1700323509954,
       "updatedAt": 1700323509954,
       "id": 4
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "chung241@gmail.com",
+        "username": "Nghiêm Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Cry",
+        "city": "Tỉnh Phú Thọ",
+        "district": "Huyện Lâm Thao",
+        "ward": "Xã Vĩnh Lại"
+      },
+      "itemsDetails": [
+        {
+          "productId": "5",
+          "quantity": 1,
+          "price": 145000,
+          "subtotal": 145000
+        }
+      ],
+      "total": 130500,
+      "createdAt": 1700466779251,
+      "updatedAt": 1700466779251,
+      "id": 5
     }
   ],
   "carts": [
@@ -334,157 +359,7 @@
       "id": 3
     }
   ],
-  "cartItems": [
-    {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 10,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 14,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316326123,
-      "updatedAt": 1700316326123,
-      "id": 1
-    },
-    {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 15,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 25,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316326123,
-      "updatedAt": 1700316326123,
-      "id": 2
-    },
-    {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 10,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316425965,
-      "updatedAt": 1700316425965,
-      "id": 3
-    },
-    {
-      "userId": "1699414627439",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": "1",
-          "quantity": 3,
-          "price": 155000,
-          "subtotal": 465000
-        },
-        {
-          "productId": "10",
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        }
-      ],
-      "total": 774000,
-      "createdAt": 1700323509954,
-      "updatedAt": 1700323509954,
-      "id": 4
-    },
-    {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "chung241@gmail.com",
-        "username": "Nghiêm Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Cry",
-        "city": "Thành phố Cần Thơ",
-        "district": "Quận Ô Môn",
-        "ward": "Phường Thới Long"
-      },
-      "itemsDetails": [
-        {
-          "productId": "1",
-          "quantity": 4,
-          "price": 155000,
-          "subtotal": 620000
-        }
-      ],
-      "total": 558000,
-      "createdAt": 1700326389912,
-      "updatedAt": 1700326389912,
-      "id": 5
-    }
-  ],
+  "cartItems": [],
   "certificates": [
     {
       "id": 1,
@@ -542,16 +417,6 @@
       "id": 3,
       "cateName": "Sữa Rửa Mặt",
       "description": "Tẩy đi bụi bẩn và các chất hoá học trên da"
-    },
-    {
-      "id": 4,
-      "cateName": "Tinh Chất",
-      "description": "Bảo vệ da, cải thiện tình trạng da"
-    },
-    {
-      "id": 5,
-      "cateName": "Mặt Nạ",
-      "description": "Dưỡng ẩm, cung cấp nhiều vitamin và giúp da chắc khoẻ"
     },
     {
       "id": 6,
