@@ -47,7 +47,7 @@ function userName() {
         } else {
         var newA = document.createElement("a");
         newA.classList.add("active");
-        newA.href = `user/${userId}`;
+        newA.href = `/user/${userId}`;
         newA.textContent = name;
       }
         // Tạo và điền nội dung của sub-menu

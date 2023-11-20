@@ -8,7 +8,7 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background: #fefbf4;
+  background: #f7f0e4;
 }
 
 input,
@@ -57,7 +57,6 @@ select {
 
 .profile-main,
 .history-main {
-  height: 860px;
   align-items: stretch;
   display: flex;
   flex-direction: column;
@@ -79,8 +78,9 @@ select {
 .history-main .history-tab span {
   background: #f7f0e4;
 }
+
 .profile-main .profile-content,
-.history-main .history-content {
+.history-main #order-history {
   height: 100%;
   position: relative;
   display: flex;
@@ -90,7 +90,7 @@ select {
 }
 
 .profile-content h1,
-.history-content h1 {
+#order-history h1 {
   color: #1f1c17;
   font-weight: 700;
   line-height: 28px;
@@ -169,7 +169,7 @@ select {
 }
 
 input:focus-visible {
- outline: none; 
+  outline: none;
 }
 
 .submit--button {
@@ -189,7 +189,7 @@ input:focus-visible {
   cursor: pointer;
   transition: 0.2s ease-in;
   border: none;
-  font-family: 'Nunito',sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
@@ -258,12 +258,41 @@ input:focus-visible {
   display: none;
 }
 
+.history-table {
+  margin: 0;
+  width: 100%;
+}
+
+table th {
+  font-weight: bold;
+
+}
+
+table td,
+th {
+  font-weight: normal;
+  font-size: 1em;
+  padding: 10px;
+}
+
+table {
+  text-align: left;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+
 @media (max-width: 1024px) {
+
   .top-profile,
   .profile-main,
   .history-main {
     padding: 0 50px;
   }
+
   .submit--button button {
     width: 20%;
   }
@@ -274,6 +303,7 @@ input:focus-visible {
 }
 
 @media (max-width: 870px) {
+
   .top-profile,
   .profile-main,
   .history-main {
@@ -282,12 +312,12 @@ input:focus-visible {
   }
 
   .profile-main .profile-content,
-  .history-main .history-content {
+  .history-main #order-history {
     padding: 15px 20px 30px;
   }
 
   .profile-main .profile-tab .user-profile-tab,
-  .history-main .history-tab .user-history-tab{
+  .history-main .history-tab .user-history-tab {
     padding: 15px;
   }
 
@@ -309,21 +339,21 @@ input:focus-visible {
 }
 
 @media (max-width: 570px) {
-.input--field {
-  flex-direction: column;
-}
+  .input--field {
+    flex-direction: column;
+  }
 
-.submit--button button {
-  width: 50%;
-}
+  .submit--button button {
+    width: 50%;
+  }
 
-.image--field label {
-  width: 80%;
-  height: 120%;
-}
+  .image--field label {
+    width: 80%;
+    height: 120%;
+  }
 
-.image--field label span {
-  display: flex;
-  justify-content: center;
-}
+  .image--field label span {
+    display: flex;
+    justify-content: center;
+  }
 }

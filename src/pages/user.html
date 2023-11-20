@@ -1,214 +1,187 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile</title>
-    <link rel="stylesheet" type="text/css" href="/user.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//fonts.googleapis.com/css?family=Vollkorn"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/barlow-condensed"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//fonts.googleapis.com/css?family=Nunito"
-    />
-  </head>
 
-  <body>
-    <div id="header"></div>
-    <div class="profile-container">
-      <div class="top-profile">
-        <span class="top-name">Tài Khoản</span>
-      </div>
-      <div class="profile-main">
-        <nav class="profile-tab">
-          <span href="" class="user-profile-tab"
-            ><i class="fas fa-user"></i> Thông tin tài khoản
-          </span>
-        </nav>
-        <div class="profile-content">
-          <form id="profile-form" class="user-profile">
-            <div class="info--content">
-              <div class="left--input--field">
-                <!-- Thông tin tài khoản -->
-                <h1>Thông tin tài khoản</h1>
-                <div class="input--field">
-                  <div class="email--input--field">
-                    <div class="--field" id="user-email">
-                      <i class="fas fa-envelope"></i>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value=""
-                        placeholder="Nhập email"
-                      />
-                    </div>
-                  </div>
-                  <div class="password--change">
-                    <div class="--field">
-                      <i class="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        id="oldPassword"
-                        name="oldPassword"
-                        placeholder="Nhập mật khẩu cũ"
-                      />
-                    </div>
-                    <div class="--field">
-                      <i class="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        id="newPassword"
-                        name="newPassword"
-                        placeholder="Nhập mật khẩu mới"
-                      />
-                    </div>
-                    <div class="--field">
-                      <i class="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        placeholder="Nhập lại mật khẩu mới"
-                      />
-                    </div>
-                    <a href="/forgot-password"> <div>Quên mật khẩu?</div></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link rel="stylesheet" type="text/css" href="/user.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn" />
+  <link href="https://fonts.cdnfonts.com/css/barlow-condensed" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+  
+</head>
+
+
+<body>
+  <div id="header"></div>
+  <div class="profile-container">
+    <div class="top-profile">
+      <span class="top-name">Tài Khoản</span>
+    </div>
+    <div class="profile-main">
+      <nav class="profile-tab">
+        <span href="" class="user-profile-tab"><i class="fas fa-user"></i> Thông tin tài khoản
+        </span>
+      </nav>
+      <div class="profile-content">
+        <form id="profile-form" class="user-profile">
+          <div class="info--content">
+            <div class="left--input--field">
+              <!-- Thông tin tài khoản -->
+              <h1>Thông tin tài khoản</h1>
+              <div class="input--field">
+                <div class="email--input--field">
+                  <div class="--field" id="user-email">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" value="" placeholder="Nhập email" />
                   </div>
                 </div>
-                <h1>Thông tin cá nhân</h1>
-                <div class="input--field">
-                  <div class="name--phone--input--field">
-                    <div class="--field user-name">
-                      <i class="fas fa-user"></i>
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        placeholder="Nhập tên"
-                      />
-                    </div>
-                    <div class="--field user-phone">
-                      <i class="fas fa-phone"></i>
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="Nhập SĐT"
-                      />
-                    </div>
+                <div class="password--change">
+                  <div class="--field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="oldPassword" name="oldPassword" placeholder="Nhập mật khẩu cũ" />
                   </div>
-                  <div class="birthday--gender--input--field">
-                    <div class="--field">
-                      <i class="fas fa-calendar"></i>
-                      <input
-                        type="date"
-                        id="dob"
-                        name="dob"
-                        min="1900-01-01"
-                        max="2023-12-31"
-                      />
-                    </div>
-                    <div class="--field user-gender">
-                      <i class="fas fa-venus-mars"></i>
-                      <select id="gender" name="gender">
-                        <option>Chọn giới tính</option>
-                        <option value="male">Nam</option>
-                        <option value="female">Nữ</option>
-                        <option value="other">Khác</option>
-                      </select>
-                    </div>
+                  <div class="--field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Nhập mật khẩu mới" />
                   </div>
-                </div>
-                <h1>Địa chỉ giao hàng</h1>
-                <div class="input--field">
-                  <div class="address--input--field">
-                    <div class="--field user-address">
-                      <i class="fas fa-address-card"></i>
-                      <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        placeholder="Nhập địa chỉ"
-                      />
-                    </div>
+                  <div class="--field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                      placeholder="Nhập lại mật khẩu mới" />
                   </div>
-                  <div class="city--district--wards--field">
-                    <div class="--field city">
-                      <select id="city" name="city">
-                        <option value="" selected>Chọn Tỉnh/Thành</option>
-                      </select>
-                    </div>
-                    <div class="--field district">
-                      <select id="district" name="district">
-                        <option value="" selected>Chọn Quận/Huyện</option>
-                      </select>
-                    </div>
-                    <div class="--field ward">
-                      <select id="ward" name="ward">
-                        <option value="" selected>Chọn Huyện/Xã</option>
-                      </select>
-                    </div>
-                  </div>
-                  
+                  <a href="/forgot-password">
+                    <div>Quên mật khẩu?</div>
+                  </a>
                 </div>
               </div>
-              <div class="right--input--field">
-                <div class="image--field">
-                  <div class="image--box">
-                    <img src="" alt="Image Box" id="profile-pic" />
+              <h1>Thông tin cá nhân</h1>
+              <div class="input--field">
+                <div class="name--phone--input--field">
+                  <div class="--field user-name">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="fullName" name="fullName" placeholder="Nhập tên" />
                   </div>
-                  <label for="image-file"
-                    ><span>Thay đổi ảnh đại điện</span></label
-                  >
-                  <input
-                    type="file"
-                    accept="image/jpeg, image/png, image/jpg"
-                    id="image-file"
-                  />
+                  <div class="--field user-phone">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Nhập SĐT" />
+                  </div>
+                </div>
+                <div class="birthday--gender--input--field">
+                  <div class="--field">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date" id="dob" name="dob" min="1900-01-01" max="2023-12-31" />
+                  </div>
+                  <div class="--field user-gender">
+                    <i class="fas fa-venus-mars"></i>
+                    <select id="gender" name="gender">
+                      <option>Chọn giới tính</option>
+                      <option value="male">Nam</option>
+                      <option value="female">Nữ</option>
+                      <option value="other">Khác</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
+              <h1>Địa chỉ giao hàng</h1>
+              <div class="input--field">
+                <div class="address--input--field">
+                  <div class="--field user-address">
+                    <i class="fas fa-address-card"></i>
+                    <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" />
+                  </div>
+                </div>
+                <div class="city--district--wards--field">
+                  <div class="--field city">
+                    <select id="city" name="city">
+                      <option value="" selected>Chọn Tỉnh/Thành</option>
+                    </select>
+                  </div>
+                  <div class="--field district">
+                    <select id="district" name="district">
+                      <option value="" selected>Chọn Quận/Huyện</option>
+                    </select>
+                  </div>
+                  <div class="--field ward">
+                    <select id="ward" name="ward">
+                      <option value="" selected>Chọn Huyện/Xã</option>
+                    </select>
+                  </div>
+                </div>
 
-            <div class="submit--button">
-              <button type="submit"><span>Thay đổi</span></button>
+              </div>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="history-main">
-        <nav class="history-tab">
-          <span href="" class="user-history-tab"
-            ><i class="fas fa-clock"></i> Lịch sử thanh toán
-          </span>
-        </nav>
-        <div class="history-content"></div>
+            <div class="right--input--field">
+              <div class="image--field">
+                <div class="image--box">
+                  <img src="" alt="Image Box" id="profile-pic" />
+                </div>
+                <label for="image-file"><span>Thay đổi ảnh đại điện</span></label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="image-file" />
+              </div>
+            </div>
+          </div>
+
+          <div class="submit--button">
+            <button type="submit"><span>Thay đổi</span></button>
+          </div>
+        </form>
       </div>
     </div>
-    <div id="footer"></div>
-    <script rel="stylesheet" type="text/javascript" src="/user.js"></script>
+    <div class="history-main">
+      <nav class="history-tab">
+        <span href="" class="user-history-tab"><i class="fas fa-clock"></i> Lịch sử thanh toán
+        </span>
+      </nav>
+      <main class="py-6 bg-surface-secondary">
+        <div class="history-content" id="order-history">
+          <div class="card-history">
+            <div class="table-responsive">
+              <table class="history-table">
+                <thead class="thead">
+                  <tr>
+                    <th>Đơn Hàng</th>
+                    <th>Người đặt hàng</th>
+                    <th>Gửi Đến</th>
+                    <th>Mặt Hàng</th>
+                    <th>Tổng giá</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- <div class="history-content" id="order-history">
+          <table id="history-table">
+            <tr>
+              <th>Mã đơn hàng</th>
+              <th>Ngày đặt hàng</th>
+              <th>Email</th>
+              <th>Tên</th>
+              <th>Số điện thoại</th>
+              <th>Địa chỉ</th>
+            </tr>
+          </table> 
+        </div> -->
+      
+      
+  
+      
+      
+  
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script rel="stylesheet" type="text/javascript" src="/user.js"></script>
+  <script src="/header/header.js"></script>
+<script src="/script.js"></script>
+</body>
 
-    <script src="/script.js"></script>
-    <script src="/home.js"></script>
-    <script src="/header/header.js"></script>
-    <script>
-      window.addEventListener("load", function () {
-        showSlides(1);
-      });
-    </script>
-  </body>
 </html>
