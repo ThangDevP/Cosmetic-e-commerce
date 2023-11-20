@@ -14,7 +14,7 @@ function isAuthenticated() {
   const userID = localStorage.getItem('userID');
 
   if (userID !== null) {
-    fetch(`http://localhost:3000/api/users/${userID}`)
+    fetch(`/api/users/${userID}`)
       .then(response => response.json())
       .then(user => {
         if (user && user.role === 'user') {
@@ -29,10 +29,10 @@ function isAuthenticated() {
 async function fetchDataAndPopulateTable() {
   try {
     const response = await fetch(
-      "http://localhost:3000/api/orders?_expand=user"
+      "/api/orders?_expand=user"
     );
     const data = await response.json();
-    const usersResponse = await fetch("http://localhost:3000/api/users");
+    const usersResponse = await fetch("/api/users");
     const usersData = await usersResponse.json();
     const filteredUsers = usersData.filter(user => user.role === "user");
 
@@ -62,7 +62,7 @@ async function fetchDataAndPopulateTable() {
       for (const item of order.itemsDetails) {
         // Fetch product details for each item
         const productResponse = await fetch(
-          `http://localhost:3000/api/products/${item.productId}`
+          `/api/products/${item.productId}`
         );
         const productData = await productResponse.json();
 

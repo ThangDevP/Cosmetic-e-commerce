@@ -467,7 +467,7 @@ async function handlePayment() {
     }, 0);
 
     if (itemsDetails) {
-      fetch("http://localhost:3000/api/orders", {
+      fetch("/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -526,7 +526,7 @@ async function handleCheckout() {
     return total + discountedPrice * product.quantity;
   }, 0);
 
-  fetch("http://localhost:3000/api/payments", {
+  fetch("/api/payments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

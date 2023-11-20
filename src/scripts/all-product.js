@@ -56,7 +56,7 @@ function showProduct(productFilter) {
             </div>
           </div>
           <div class="add-button">
-            <a href="">
+            <a onclick="addToCart(${item.id})">
               <i class="fa-solid fa-cart-plus"></i>
             </a>
           </div>

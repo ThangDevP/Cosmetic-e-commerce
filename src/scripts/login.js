@@ -20,7 +20,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    fetch(`http://localhost:3000/api/users?email=${email}&password=${password}`)
+    fetch(`/api/users?email=${email}&password=${password}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 1) {
@@ -56,7 +56,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
 
-    fetch('http://localhost:3000/api/register', {
+    fetch('/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
