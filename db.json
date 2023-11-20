@@ -85,15 +85,15 @@
       "username": "thangdeptrai",
       "password": "123456",
       "email": "thangtnsa000@gmail.com",
-      "phoneNumber": "",
       "address": "",
       "city": "",
       "district": "",
       "ward": "",
-      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700379534/users/mpwrpxdi1rbmxvbbpokg.jpg",
       "role": "user",
       "dob": "2001-12-21",
-      "gender": "male"
+      "gender": "female",
+      "updatedAt": 1700379552581
     }
   ],
   "products": [
@@ -565,41 +565,39 @@
     {
       "id": 2,
       "userId": 1699414627439
+    },
+    {
+      "userId": "1699415299351",
+      "createdAt": 1700326354196,
+      "updatedAt": 1700326354196,
+      "id": 3
+    },
+    {
+      "userId": "1700337841671",
+      "createdAt": 1700380641691,
+      "updatedAt": 1700380641691,
+      "id": 4
     }
   ],
-  "cartItems": [],
-  "orders": [
+  "cartItems": [
     {
-      "userId": "1699948714270",
+      "productId": "3",
       "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 3,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316243324,
-      "updatedAt": 1700316243324,
+      "quantity": 1,
+      "createdAt": 1700379849709,
+      "updatedAt": 1700379849709,
       "id": 1
     },
+    {
+      "productId": "4",
+      "cartId": 2,
+      "quantity": 3,
+      "createdAt": 1700380597852,
+      "updatedAt": 1700380609051,
+      "id": 2
+    }
+  ],
+  "orders": [
     {
       "userId": "1699947788049",
       "cartId": 2,
@@ -692,6 +690,701 @@
       "createdAt": 1700323509954,
       "updatedAt": 1700323509954,
       "id": 4
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "chung241@gmail.com",
+        "username": "Nghiêm Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Cry",
+        "city": "Thành phố Cần Thơ",
+        "district": "Quận Ô Môn",
+        "ward": "Phường Thới Long"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 4,
+          "price": 155000,
+          "subtotal": 620000
+        }
+      ],
+      "total": 558000,
+      "createdAt": 1700326389912,
+      "updatedAt": 1700326389912,
+      "id": 5
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "77",
+        "city": "Thành phố Hà Nội",
+        "district": "Quận Ba Đình",
+        "ward": "Phường Vĩnh Phúc"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "30",
+          "quantity": 2,
+          "price": 195000,
+          "subtotal": 390000
+        },
+        {
+          "productId": "3",
+          "quantity": 2,
+          "price": 395000,
+          "subtotal": 790000
+        }
+      ],
+      "total": 1201500,
+      "createdAt": 1700380688123,
+      "updatedAt": 1700380688123,
+      "id": 6
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "city": "Thành phố Hà Nội",
+        "district": "Quận Ba Đình",
+        "ward": "Phường Trúc Bạch",
+        "email": "example@example.com"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "4",
+          "quantity": 2,
+          "price": 245000,
+          "subtotal": 490000
+        }
+      ],
+      "total": 580500,
+      "createdAt": 1700381057289,
+      "updatedAt": 1700381057289,
+      "id": 7
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "77",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Huyện Ba Bể",
+        "ward": "Xã Hà Hiệu"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "30",
+          "quantity": 3,
+          "price": 195000,
+          "subtotal": 585000
+        }
+      ],
+      "total": 666000,
+      "createdAt": 1700405055422,
+      "updatedAt": 1700405055422,
+      "id": 8
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0336331603",
+        "addr": "12",
+        "city": "Tỉnh Bắc Giang",
+        "district": "Huyện Yên Thế",
+        "ward": "Xã Tam Tiến"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 2,
+          "price": 155000,
+          "subtotal": 310000
+        },
+        {
+          "productId": "30",
+          "quantity": 4,
+          "price": 195000,
+          "subtotal": 780000
+        }
+      ],
+      "total": 981000,
+      "createdAt": 1700405148680,
+      "updatedAt": 1700405148680,
+      "id": 9
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0336331603",
+        "addr": "12",
+        "city": "Tỉnh Cao Bằng",
+        "district": "Huyện Bảo Lạc",
+        "ward": "Xã Thượng Hà"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 2,
+          "price": 155000,
+          "subtotal": 310000
+        },
+        {
+          "productId": "30",
+          "quantity": 4,
+          "price": 195000,
+          "subtotal": 780000
+        }
+      ],
+      "total": 981000,
+      "createdAt": 1700405242688,
+      "updatedAt": 1700405242688,
+      "id": 10
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0336331603",
+        "addr": "12",
+        "city": "Thành phố Hồ Chí Minh",
+        "district": "Quận 1",
+        "ward": "Phường Tân Định"
+      },
+      "itemsDetails": [
+        {
+          "productId": "9",
+          "quantity": 1,
+          "price": 295000,
+          "subtotal": 295000
+        },
+        {
+          "productId": "4",
+          "quantity": 2,
+          "price": 245000,
+          "subtotal": 490000
+        }
+      ],
+      "total": 706500,
+      "createdAt": 1700405364340,
+      "updatedAt": 1700405364340,
+      "id": 11
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0336331603",
+        "addr": "12",
+        "city": "Thành phố Hồ Chí Minh",
+        "district": "Quận 9",
+        "ward": "Phường Tân Phú"
+      },
+      "itemsDetails": [
+        {
+          "productId": "9",
+          "quantity": 1,
+          "price": 295000,
+          "subtotal": 295000
+        },
+        {
+          "productId": "4",
+          "quantity": 2,
+          "price": 245000,
+          "subtotal": 490000
+        }
+      ],
+      "total": 706500,
+      "createdAt": 1700405383877,
+      "updatedAt": 1700405383877,
+      "id": 12
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "102",
+        "city": "Thành phố Đà Nẵng",
+        "district": "Quận Hải Châu",
+        "ward": "Phường Hải Châu  I"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        }
+      ],
+      "total": 139500,
+      "createdAt": 1700405712575,
+      "updatedAt": 1700405712575,
+      "id": 13
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "102",
+        "city": "Thành phố Đà Nẵng",
+        "district": "Quận Thanh Khê",
+        "ward": "Phường Thanh Khê Tây"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        }
+      ],
+      "total": 139500,
+      "createdAt": 1700405724798,
+      "updatedAt": 1700405724798,
+      "id": 14
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Na Hang",
+        "ward": "Xã Sinh Long"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 2,
+          "price": 155000,
+          "subtotal": 310000
+        }
+      ],
+      "total": 279000,
+      "createdAt": 1700405947928,
+      "updatedAt": 1700405947928,
+      "id": 15
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Yên Sơn",
+        "ward": "Xã Kiến Thiết"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 2,
+          "price": 155000,
+          "subtotal": 310000
+        }
+      ],
+      "total": 279000,
+      "createdAt": 1700405959161,
+      "updatedAt": 1700405959161,
+      "id": 16
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Hàm Yên",
+        "ward": "Xã Bạch Xa"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "2",
+          "quantity": 2,
+          "price": 395000,
+          "subtotal": 790000
+        }
+      ],
+      "total": 850500,
+      "createdAt": 1700406096665,
+      "updatedAt": 1700406096665,
+      "id": 17
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Hàm Yên",
+        "ward": "Xã Bạch Xa"
+      },
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "2",
+          "quantity": 2,
+          "price": 395000,
+          "subtotal": 790000
+        }
+      ],
+      "total": 850500,
+      "createdAt": 1700406145212,
+      "updatedAt": 1700406145212,
+      "id": 18
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Huyện Hàm Yên",
+        "ward": "Xã Tân Thành"
+      },
+      "itemsDetails": [
+        {
+          "productId": "30",
+          "quantity": 1,
+          "price": 195000,
+          "subtotal": 195000
+        },
+        {
+          "productId": "3",
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        }
+      ],
+      "total": 531000,
+      "createdAt": 1700406252926,
+      "updatedAt": 1700406252926,
+      "id": 19
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "77",
+        "city": "Tỉnh Tuyên Quang",
+        "district": "Thành phố Tuyên Quang",
+        "ward": "Xã Kim Phú"
+      },
+      "itemsDetails": [
+        {
+          "productId": "30",
+          "quantity": 1,
+          "price": 195000,
+          "subtotal": 195000
+        },
+        {
+          "productId": "3",
+          "quantity": 1,
+          "price": 395000,
+          "subtotal": 395000
+        }
+      ],
+      "total": 531000,
+      "createdAt": 1700406326672,
+      "updatedAt": 1700406326672,
+      "id": 20
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "11",
+        "city": "Tỉnh An Giang",
+        "district": "Huyện Châu Thành",
+        "ward": "Xã Bình Thạnh"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "30",
+          "quantity": 1,
+          "price": 195000,
+          "subtotal": 195000
+        }
+      ],
+      "total": 175500,
+      "createdAt": 1700407248590,
+      "updatedAt": 1700407248590,
+      "id": 21
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "11",
+        "city": "Tỉnh An Giang",
+        "district": "Huyện An Phú",
+        "ward": "Thị Trấn Long Bình"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "30",
+          "quantity": 1,
+          "price": 195000,
+          "subtotal": 195000
+        }
+      ],
+      "total": 175500,
+      "createdAt": 1700407254157,
+      "updatedAt": 1700407254157,
+      "id": 22
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "11",
+        "city": "Tỉnh Thái Nguyên",
+        "district": "Huyện Phú Bình",
+        "ward": "Xã Thượng Đình"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 2,
+          "price": 155000,
+          "subtotal": 310000
+        }
+      ],
+      "total": 279000,
+      "createdAt": 1700417649136,
+      "updatedAt": 1700417649136,
+      "id": 23
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "12",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Huyện Ngân Sơn",
+        "ward": "Xã Đức Vân"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "2",
+          "quantity": 2,
+          "price": 395000,
+          "subtotal": 790000
+        }
+      ],
+      "total": 711000,
+      "createdAt": 1700417753222,
+      "updatedAt": 1700417753222,
+      "id": 24
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "12",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Huyện Chợ Đồn",
+        "ward": "Xã Đồng Lạc"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "2",
+          "quantity": 2,
+          "price": 395000,
+          "subtotal": 790000
+        }
+      ],
+      "total": 711000,
+      "createdAt": 1700417759818,
+      "updatedAt": 1700417759818,
+      "id": 25
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0123456789",
+        "addr": "11",
+        "city": "Tỉnh Vĩnh Phúc",
+        "district": "Huyện Yên Lạc",
+        "ward": "Xã Trung Nguyên"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "1",
+          "quantity": 1,
+          "price": 155000,
+          "subtotal": 155000
+        },
+        {
+          "productId": "30",
+          "quantity": 2,
+          "price": 195000,
+          "subtotal": 390000
+        }
+      ],
+      "total": 490500,
+      "createdAt": 1700417958403,
+      "updatedAt": 1700417958403,
+      "id": 26
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0164222111",
+        "addr": "11",
+        "city": "Tỉnh Phú Yên",
+        "district": "Thành phố Tuy Hoà",
+        "ward": "Phường 7"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "4",
+          "quantity": 1,
+          "price": 245000,
+          "subtotal": 245000
+        },
+        {
+          "productId": "9",
+          "quantity": 2,
+          "price": 295000,
+          "subtotal": 590000
+        }
+      ],
+      "total": 751500,
+      "createdAt": 1700419053441,
+      "updatedAt": 1700419053441,
+      "id": 27
+    },
+    {
+      "userId": "1700337841671",
+      "cartId": 4,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangdeptrai",
+        "phoneNumber": "0164222111",
+        "addr": "11",
+        "city": "Tỉnh Phú Yên",
+        "district": "Thành phố Tuy Hoà",
+        "ward": "Phường 7"
+      },
+      "email": "thangtnsa000@gmail.com",
+      "itemsDetails": [
+        {
+          "productId": "4",
+          "quantity": 1,
+          "price": 245000,
+          "subtotal": 245000
+        },
+        {
+          "productId": "9",
+          "quantity": 2,
+          "price": 295000,
+          "subtotal": 590000
+        }
+      ],
+      "total": 751500,
+      "createdAt": 1700419063551,
+      "updatedAt": 1700419063551,
+      "id": 28
     }
   ],
   "certificates": [

@@ -83,7 +83,7 @@ server.post("/register", (req, res) => {
 app.use("/api", server);
 
 // Serve your routes
-app.get("/product", function (req, res) {
+app.get("/products", function (req, res) {
   res.sendFile(path.join(__dirname + "/pages/all-product.html"));
 });
 app.get("/about-us", function (req, res) {
@@ -145,9 +145,10 @@ app.get("/forgot-password", function (req, res) {
 });
 app.use(bodyParser.json());
 
-app.post('/send-email', (req, res) => {
+app.post('/send-email-forgot-password', (req, res) => {
   const email = req.body.email;
-  const password = req.body.password; // Lấy mật khẩu từ request
+  const password = req.body.password;
+  const name = req.body.name;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -160,17 +161,72 @@ app.post('/send-email', (req, res) => {
   });
 
   async function main() {
+    try {
+      const info = await transporter.sendMail({
+        from: '"Exactly Company" <thang.nguyen-ojt07@devplus.edu.vn>',
+        to: email,
+        subject: "Cocoon - Tìm lại mật khẩu",
+        text: "Tìm lại mật khẩu thành công",
+        html: `
+        <p>Chào ${name},</p>
+        <p>Mật khẩu của bạn là: <b>${password}</b></p>
+        <i>Lưu ý: Bạn nên đổi lại mật khẩu mới để đảm bảo an toàn bảo mật!</i>
+        `,
+      });
+
+      console.log("Message sent: %s", info.messageId);
+
+      res.status(200).send({ message: 'Email đã được gửi đi!' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ error: 'Có lỗi xảy ra khi gửi email.' });
+    }
+  }
+
+  main().catch(console.error);
+});
+
+app.post('/send-email-order-success', (req, res) => {
+  const email = req.body.email;
+  const name = req.body.name;
+  const phoneNumber = req.body.phoneNumber;
+  const addr = req.body.addr;
+  const city = req.body.city;
+  const district = req.body.district;
+  const total = req.body.total;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'thang.nguyen-ojt07@devplus.edu.vn',
+      pass: 'zugb emfd rpnp fxyn',
+    },
+  });
+
+  async function sendEmailOrder() {
     const info = await transporter.sendMail({
       from: '"Exactly Company" <thang.nguyen-ojt07@devplus.edu.vn>',
       to: email, 
-      subject: "Cocoon", 
-      text: "Tìm lại mật khẩu thành công", 
-      html: `<b>Mật khẩu của bạn là: ${password}</b>`, // Sử dụng mật khẩu từ request
+      subject: "Cocoon - Đặt hàng thành công", 
+      text: "Đặt hàng thành công", 
+      html: `
+      <p>Chào ${name},</p>
+        <p>Cảm ơn bạn đã tin tưởng và đặt hàng tại Exactly.</p>
+        <p>Dưới đây là thông tin đơn hàng của bạn:</p>
+        <ul>
+          <li><strong>Số điện thoại:</strong> ${phoneNumber}</li>
+          <li><strong>Địa chỉ:</strong> ${addr}, ${district}, ${city}</li>
+          <li><strong>Tổng cộng:</strong> ${total} VNĐ</li>
+        </ul>
+        <p>Xin vui lòng kiểm tra thông tin đơn hàng và thông tin vận chuyển.</p>
+      `,
     });
   
     console.log("Message sent: %s", info.messageId);
   }
-  main().catch(console.error);
+  sendEmailOrder().catch(console.error);
 });
 
 app.get("/home", function (req, res) {

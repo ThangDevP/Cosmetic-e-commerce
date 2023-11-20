@@ -94,13 +94,11 @@ function renderCity(data) {
 }
 
 
-
-
 const userId = localStorage.getItem("userID");
 async function fetchCartItems() {
     try {
         const response = await fetch( 
-            `http://localhost:3000/api/carts?userId=${userId}`,
+            `/api/carts?userId=${userId}`,
             {
                 method: "GET",
                 headers: {
@@ -117,7 +115,7 @@ async function fetchCartItems() {
         console.log("Cart data:", cart);
         if (cart && cart.length > 0) {
             const responseCartItems = await fetch(
-                `http://localhost:3000/api/cartItems?cartId=${cart[0].id}&_expand=product`
+                `/api/cartItems?cartId=${cart[0].id}&_expand=product`
             );
             if (!responseCartItems.ok) {
                 throw new Error(
@@ -133,7 +131,7 @@ async function fetchCartItems() {
         return undefined;
     }
 }
-async function showItems() {
+async function        showItems() {
     try {
         const products = await fetchCartItems();
         console.log("Products:", products);
@@ -207,7 +205,7 @@ showItems();
 async function updateQuantityProduct(action, id, price) {
   event.preventDefault();
   const cartItem = await fetch(
-    `http://localhost:3000/api/cartItems/${id}`
+    `/api/cartItems/${id}`
   ).then((response) => response.json());
   updatePaymentDetails(cartItem.cartId);
   let newQuantity = cartItem.quantity;
@@ -216,7 +214,7 @@ async function updateQuantityProduct(action, id, price) {
   } else if (action === "decrease" && newQuantity > 1) {
     newQuantity--;
   }
-  const response = await fetch(`http://localhost:3000/api/cartItems/${id}`, {
+  const response = await fetch(`/api/cartItems/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -244,7 +242,7 @@ function updateUI(id, newQuantity, price) {
 async function calculateTotalOriginal(cartId) {
   try {
     const products = await fetch(
-      `http://localhost:3000/api/cartItems?cartId=${cartId}&_expand=product`
+      `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
     if (products.length === 0) {
       return 0;
@@ -267,7 +265,7 @@ async function updatePaymentDetails(cartId) {
   try {
     const totalOriginal = await calculateTotalOriginal(cartId);
     const products = await fetch(
-      `http://localhost:3000/api/cartItems?cartId=${cartId}&_expand=product`
+      `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
     if (products.length === 0) {
       document.querySelector(".provisional-card .provisional:nth-child(1) p").textContent = `0 đ`;
@@ -300,7 +298,7 @@ async function updatePaymentDetails(cartId) {
 async function removeProduct(cartItemId, cartId, productPrice, quantity) {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/cartItems/${cartItemId}`,
+      `/api/cartItems/${cartItemId}`,
       {
         method: "DELETE",
       }
@@ -423,18 +421,18 @@ async function clearCart(userId) {
   try {
     // Lấy thông tin giỏ hàng của người dùng
     const cart = await fetch(
-      `http://localhost:3000/api/carts?userId=${userId}`
+      `/api/carts?userId=${userId}`
     ).then((response) => response.json());
 
     if (cart && cart.length > 0) {
       // Lấy tất cả các mục giỏ hàng của người dùng
       const cartItems = await fetch(
-        `http://localhost:3000/api/cartItems?cartId=${cart[0].id}`
+        `/api/cartItems?cartId=${cart[0].id}`
       ).then((response) => response.json());
 
       // Xóa toàn bộ mục giỏ hàng
       const deleteRequests = cartItems.map((item) =>
-        fetch(`http://localhost:3000/api/cartItems/${item.id}`, {
+        fetch(`/api/cartItems/${item.id}`, {
           method: "DELETE",
         })
       );
@@ -470,7 +468,7 @@ async function handleCheckout() {
     return total + discountedPrice * product.quantity;
   }, 0);
   
-  fetch("http://localhost:3000/api/orders", {
+  fetch("/api/orders", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -479,6 +477,7 @@ async function handleCheckout() {
       userId: userId,
       cartId: itemsDetails.length > 0 ? itemsDetails[0].cartId : null,
       customerInfo: customerInfor,
+      email: customerInfor.email,
       itemsDetails: itemsDetails.map(product => ({
         productId: product.productId,
         productName: product.product.name,
@@ -490,21 +489,47 @@ async function handleCheckout() {
     }),
   })
     .then(async (response) => {
-      console.log('API Response:', response); // Log API response for debugging
+      console.log('API Response:', response); 
 
       if (!response.ok) {
         alert('Tạo đơn hàng thất bại');
         return;
       }
+      else {
+        alert('Tạo đơn hàng thành công');
+        try {
+          const response = await fetch('/send-email-order-success', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: customerInfor.username,
+              email: customerInfor.email,
+              phoneNumber: customerInfor.phoneNumber,
+              addr: customerInfor.addr,
+              city: customerInfor.city,
+              district: customerInfor.district,
+              total: totalAmountAfterDiscount
+            }),
+          });
+      
+          // Xử lý kết quả từ server (nếu cần)
+          const result = await response.json();
+          console.log('Kết quả từ server:', result);
 
-      alert('Tạo đơn hàng thành công');
-      await clearCart(userId); // Xóa giỏ hàng sau khi đặt hàng thành công
-      window.location.href = '/'; // Redirect to the login page
+        } catch (error) {
+          console.error('Lỗi khi gửi yêu cầu:', error);
+        }
+        await clearCart(userId); // Xóa giỏ hàng sau khi đặt hàng thành công   
+        window.location.href = '/'; // Redirect to the login page
+      }
     })
     .catch((error) => {
       console.error('Error:', error);
     });
 }
+
 
 
 

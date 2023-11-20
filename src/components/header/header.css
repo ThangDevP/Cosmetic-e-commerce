@@ -182,12 +182,12 @@ a:hover {
   width: 20%;
   padding-right: 10px;
 }
-.product-info {
+/* .product-info {
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
+} */
 .infor-payment {
   background-color: #fefbf4;
   width: 55%;
