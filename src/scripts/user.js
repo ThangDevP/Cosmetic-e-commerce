@@ -41,7 +41,7 @@ fetch(`/api/users/${userId}`)
     document.getElementById("profile-pic").src = user.avatar;
     document.getElementById("fullName").value = user.username;
     document.getElementById("dob").value = user.dob;
-    document.getElementById("phoneNumber").value = user.phoneNumber;
+    document.getElementById("phoneNumber").value = user.phoneNumber===undefined?user.phoneNumber:"";
     const gender = document.getElementById("gender");
     for (let i = 0; i < gender.options.length; i++) {
       if (gender.options[i].value === user.gender) {
