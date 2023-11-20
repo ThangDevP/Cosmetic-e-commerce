@@ -140,7 +140,7 @@ function handleAddCategory() {
     const addModal = new bootstrap.Modal(document.getElementById("addModal"));
     const cateNameInput = document.getElementById("cateName");
     const cateDescriptionInput = document.getElementById("cateDescription");
-    const name = cateNameInput.value;
+    const cateName = cateNameInput.value;
     const description = cateDescriptionInput.value;
 
     if (!cateName || !cateDescription) {
@@ -151,7 +151,7 @@ function handleAddCategory() {
     const id = Date.now();
       const newCategory = {
       id,
-      name,
+      cateName,
       description,
     };
       fetch("http://localhost:3000/api/categories", {
@@ -184,7 +184,7 @@ addCategoryButton.addEventListener("click", handleAddCategory);
 
 async function handleAddOrUpdateUser() {
     const cateID = document.getElementById("update-cateID").value;
-    const name = document.getElementById("update-cateName").value;
+    const cateName = document.getElementById("update-cateName").value;
     const description = document.getElementById("update-cateDescription").value;
 
     try {
@@ -198,7 +198,7 @@ async function handleAddOrUpdateUser() {
         }
 
         const updatedCateData = {
-            name,
+            cateName,
             description,
         };
 
