@@ -130,14 +130,14 @@ function fetchAndPopulateUserData(userId) {
       const addressInput = modal.querySelector("#address");
       const phoneNumberInput = modal.querySelector("#phoneNumber");
       const avatarInput = modal.querySelector("#avatar");
-      const previewImage = modal.querySelector("#previewImage"); // Add this line
+      const previewImage = modal.querySelector("#previewImage"); 
 
       userIDInput.value = userData.id;
       usernameInput.value = userData.username;
       emailInput.value = userData.email;
       addressInput.value = userData.address;
       phoneNumberInput.value = userData.phoneNumber;
-      previewImage.src = userData.avatar || "/1.jpg"; // Change "/1.jpg" to your default image URL
+      previewImage.src = userData.avatar || ""; 
 
       // Update modal for the new avatar input
       // Update modal for the new avatar input

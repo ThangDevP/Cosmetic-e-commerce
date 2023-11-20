@@ -16,90 +16,17 @@
       "updatedAt": 1700236243659
     },
     {
-      "id": 1699415299351,
-      "username": "Thái Dúi",
-      "password": "123456",
-      "email": "chung241@gmail.com",
-      "phoneNumber": "0376281525",
-      "address": "123 Faker Smile",
-      "city": "Tỉnh Bắc Kạn",
-      "district": "Huyện Ngân Sơn",
-      "ward": "Xã Trung Hoà",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700322404/users/chmflcfvbwpioqzoa6ay.jpg",
-      "role": "user",
-      "dob": "2003-05-07",
-      "gender": "male",
-      "updatedAt": 1700466711145
-    },
-    {
-      "id": 1699947788049,
-      "username": "Khang là dbrr 123",
-      "password": "123456",
-      "email": "thang@gmail.com",
-      "phoneNumber": "0876826511",
-      "address": "Korea",
-      "city": "",
-      "district": "",
-      "ward": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194956/users/ishrp9iq5fe8fqvxiili.png",
-      "role": "user",
-      "dob": "2023-11-14",
-      "gender": "male",
-      "updatedAt": 1700314473972
-    },
-    {
-      "username": "Thái xịn xò",
-      "email": "chung34421@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0914781672",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700425147/users/brbpwlqdmot2pe9whbvb.jpg",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1700425148298,
-      "id": 1699948356338
-    },
-    {
-      "username": "cháu Thắng",
-      "email": "khangdb@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194983/users/p80wace2vg04e4w4zciz.png",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1700194982625,
-      "id": 1699948574735
-    },
-    {
-      "username": "Thang Nguyen",
-      "email": "than4124124g@gmail.com",
-      "address": "123 Faker Cry",
-      "phoneNumber": "0376281525",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700465392/users/escgwdjnnvuwiwrzl2wv.png",
-      "role": "user",
-      "gender": "male",
-      "dob": "2001-12-21",
-      "password": "123456",
-      "updatedAt": 1700465392719,
-      "id": 1700425213428
-    },
-    {
-      "id": 1700466859102,
-      "username": "thangn",
-      "password": "123456",
+      "username": "thangn0000000",
       "email": "thangtnsa000@gmail.com",
-      "phoneNumber": "",
       "address": "",
-      "city": "",
-      "district": "",
-      "ward": "",
-      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
+      "phoneNumber": "undefined",
+      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700493379/users/elbaluygbgllf76j3x9d.jpg",
       "role": "user",
+      "gender": "male",
       "dob": "2001-12-21",
-      "gender": "male"
+      "password": "123456",
+      "updatedAt": 1700493378754,
+      "id": 1700466859102
     }
   ],
   "products": [
@@ -124,17 +51,6 @@
       "description": "Làn da dầu và mụn rất nhạy cảm nên cần được thiết kế một loại nước tẩy trang phù hợp. Với công nghệ Micellar, nước tẩy trang bí đao giúp làm sạch hiệu quả lớp trang điểm, bụi bẩn và dầu thừa, mang lại làn da sạch hoàn toàn và dịu nhẹ.",
       "discount": 10,
       "sale": "false"
-    },
-    {
-      "id": 8,
-      "img": "https://image.cocoonvietnam.com/uploads/z4372805386498_3bd533296846158103cd752a124be5a8_f90a56659b.jpg",
-      "productName": "Nước tẩy trang hoa hồng 140ml",
-      "price": 155000,
-      "categoryId": 2,
-      "brandId": 3,
-      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.N",
-      "discount": 10,
-      "sale": "true"
     },
     {
       "id": 10,
@@ -181,28 +97,6 @@
       "sale": "true"
     },
     {
-      "id": 8,
-      "img": "https://image.cocoonvietnam.com/uploads/z4372805386498_3bd533296846158103cd752a124be5a8_f90a56659b.jpg",
-      "productName": "Nước tẩy trang hoa hồng 140ml",
-      "price": 155000,
-      "categoryId": 2,
-      "brandId": 3,
-      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.N",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "productName": "Gel rửa mặt cà phê Đắk Lắk 140ml",
-      "price": 195000,
-      "categoryId": "3",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z4064745554320_948e1adc6b3d34513f0e362e5de1d696_0626ba1caf.jpg",
-      "updatedAt": 1700327335019,
-      "id": 10
-    },
-    {
       "id": 14,
       "img": "https://image.cocoonvietnam.com/uploads/z3526520930085_8478409d6ac4058a7b77514ce71bdada_d14a16f231.jpg",
       "productName": "Gel bí đao rửa mặt 310ml",
@@ -214,181 +108,55 @@
       "sale": "true"
     }
   ],
-  "orders": [
+  "orders": [],
+  "carts": [
     {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "khangtvp-ojt07@devplus.edu.vn",
-        "username": "Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Smile",
-        "city": "Tỉnh Bắc Kạn",
-        "district": "Thành Phố Bắc Kạn",
-        "ward": "Thị trấn Nà Phặc"
-      },
-      "email": "khangtvp-ojt07@devplus.edu.vn",
-      "itemsDetails": [
-        {
-          "productId": 14,
-          "quantity": 2,
-          "price": 295000,
-          "subtotal": 590000
-        },
-        {
-          "productId": 10,
-          "quantity": 2,
-          "price": 195000,
-          "subtotal": 390000
-        }
-      ],
-      "total": 882000,
-      "createdAt": 1700466497366,
-      "updatedAt": 1700466497366,
-      "id": 8
+      "userId": "1700466859102",
+      "createdAt": 1700492386944,
+      "updatedAt": 1700492386944,
+      "id": 1
     },
     {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "khangtvp-ojt07@devplus.edu.vn",
-        "username": "Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Smile",
-        "city": "Tỉnh Bắc Kạn",
-        "district": "Thành Phố Bắc Kạn",
-        "ward": "Thị trấn Nà Phặc"
-      },
-      "email": "khangtvp-ojt07@devplus.edu.vn",
-      "itemsDetails": [
-        {
-          "productId": 14,
-          "quantity": 1,
-          "price": 295000,
-          "subtotal": 295000
-        },
-        {
-          "productId": 10,
-          "quantity": 1,
-          "price": 195000,
-          "subtotal": 195000
-        }
-      ],
-      "total": 441000,
-      "createdAt": 1700466566066,
-      "updatedAt": 1700466566066,
-      "id": 9
+      "userId": "1699414627439",
+      "createdAt": 1700493698760,
+      "updatedAt": 1700493698760,
+      "id": 2
+    }
+  ],
+  "cartItems": [
+    {
+      "productId": 1,
+      "cartId": 1,
+      "quantity": 4,
+      "createdAt": 1700492387129,
+      "updatedAt": 1700496448789,
+      "id": 1
     },
     {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "khangtvp-ojt07@devplus.edu.vn",
-        "username": "Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Smile",
-        "city": "Tỉnh Bắc Kạn",
-        "district": "Thành Phố Bắc Kạn",
-        "ward": "Thị trấn Nà Phặc"
-      },
-      "email": "khangtvp-ojt07@devplus.edu.vn",
-      "itemsDetails": [
-        {
-          "productId": 14,
-          "quantity": 1,
-          "price": 295000,
-          "subtotal": 295000
-        },
-        {
-          "productId": 10,
-          "quantity": 1,
-          "price": 195000,
-          "subtotal": 195000
-        }
-      ],
-      "total": 441000,
-      "createdAt": 1700466571758,
-      "updatedAt": 1700466571758,
-      "id": 10
+      "productId": "14",
+      "cartId": 1,
+      "quantity": 3,
+      "createdAt": 1700492765868,
+      "updatedAt": 1700496451615,
+      "id": 2
     },
     {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "khang.truong-ojt07@devplus.edu.vn",
-        "username": "Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Smile",
-        "city": "Tỉnh Bắc Kạn",
-        "district": "Thành Phố Bắc Kạn",
-        "ward": "Thị trấn Nà Phặc"
-      },
-      "email": "khang.truong-ojt07@devplus.edu.vn",
-      "itemsDetails": [
-        {
-          "productId": 14,
-          "quantity": 2,
-          "price": 295000,
-          "subtotal": 590000
-        },
-        {
-          "productId": 5,
-          "quantity": 1,
-          "price": 145000,
-          "subtotal": 145000
-        }
-      ],
-      "total": 661500,
-      "createdAt": 1700466641980,
-      "updatedAt": 1700466641980,
-      "id": 11
+      "productId": 10,
+      "cartId": 1,
+      "quantity": 2,
+      "createdAt": 1700492829315,
+      "updatedAt": 1700492951085,
+      "id": 3
     },
     {
-      "userId": "1699415299351",
-      "cartId": 3,
-      "customerInfo": {
-        "email": "khang.truong-ojt07@devplus.edu.vn",
-        "username": "Thái Dúi",
-        "phoneNumber": "0376281525",
-        "addr": "123 Faker Smile",
-        "city": "Tỉnh Bắc Kạn",
-        "district": "Thành Phố Bắc Kạn",
-        "ward": "Thị trấn Nà Phặc"
-      },
-      "email": "khang.truong-ojt07@devplus.edu.vn",
-      "itemsDetails": [
-        {
-          "productId": 14,
-          "quantity": 2,
-          "price": 295000,
-          "subtotal": 590000
-        },
-        {
-          "productId": 5,
-          "quantity": 1,
-          "price": 145000,
-          "subtotal": 145000
-        }
-      ],
-      "total": 774000,
-      "createdAt": 1700323509954,
-      "updatedAt": 1700323509954,
+      "productId": 1,
+      "cartId": 2,
+      "quantity": 3,
+      "createdAt": 1700493698929,
+      "updatedAt": 1700494037882,
       "id": 4
     }
   ],
-  "carts": [
-    {
-      "id": 2,
-      "userId": 1699414627439
-    },
-    {
-      "userId": "1699415299351",
-      "createdAt": 1700326354196,
-      "updatedAt": 1700326354196,
-      "id": 3
-    }
-  ],
-  "cartItems": [],
   "certificates": [
     {
       "id": 1,

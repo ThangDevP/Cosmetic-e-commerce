@@ -532,17 +532,10 @@ async function handleCheckout() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      userId: userId,
-      cartId: itemsDetails.length > 0 ? itemsDetails[0].cartId : null,
-      customerInfo: customerInfor,
-      itemsDetails: itemsDetails.map(product => ({
-        productId: product.productId,
-        productName: product.product.productName,
-        quantity: product.quantity,
-        price: product.product.price,
-        subtotal: product.product.price * product.quantity,
-      })),
-      total: totalAmountAfterDiscount,
+      amount: totalAmountAfterDiscount,
+      data: {
+        customerInfor,
+      },
     }),
   })
     .then((res) => res.json())
