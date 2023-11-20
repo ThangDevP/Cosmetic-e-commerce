@@ -28,10 +28,6 @@ function displayBrands(brands) {
 }
 fetchBrands();
 
-function haha(id) {
-  console.log(id, "adad");
-}
-
 //Slider product
 async function fetchProductSale() {
   try {
@@ -69,7 +65,7 @@ async function displaySlide(products) {
               .replace(/,/g, ".").replace(/₫/, "VNĐ")}</p>
           </div>
           <div class="infor-btn">
-            <button class="btn-add-card" onclick="haha(${product.id})" >
+            <button class="btn-add-card" onclick="addToCart(${product.id})" >
             <i class="fa-solid fa-cart-plus"></i>
             </button>
           </div>
