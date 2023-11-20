@@ -200,7 +200,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
       // Bước 4: Cập nhật giỏ hàng
       // Cập nhật UI hoặc thực hiện các bước khác cần thiết
       alert("Đã thêm sản phẩm vào giỏ hàng!");
-
+      showItems();
     } catch (error) {
       console.error(error);
       // Xử lý lỗi nếu có
