@@ -13,7 +13,6 @@ sign_in_btn.addEventListener("click", () => {
 function isAuthenticated() {
   const test =  localStorage.getItem('userID') !== null;
   if(test) {
-    alert('Bạn đã đăng nhập rồi');
         window.location.href = '/';
   }
 }

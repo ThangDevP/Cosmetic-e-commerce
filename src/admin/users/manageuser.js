@@ -1,10 +1,35 @@
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 document.querySelector(".btn-close-myModal").addEventListener("click", () => {
   myModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
+document.addEventListener("DOMContentLoaded", function () {
+  isAuthenticated()
+    .then((isUserAuthenticated) => {
+      if (isUserAuthenticated) {
+        console.log('User is not authenticated');
+      }
+    })
+    .catch(error => {
+      console.error('Error checking authentication:', error);
+    });
+});
 
+function isAuthenticated() {
+  const userID = localStorage.getItem('userID');
+
+  if (userID !== null) {
+    fetch(`http://localhost:3000/api/users/${userID}`)
+      .then(response => response.json())
+      .then(user => {
+        if (user && user.role === 'user') {
+          window.location.href = '/';
+        } else {
+          fetchDataAndPopulateTable();
+        }
+      })
+  }
+}
 function fetchDataAndPopulateTable() {
   const role = "user"; // Đặt giá trị role bạn muốn fetch
   fetch(`http://localhost:3000/api/users?role=${role}`)
@@ -92,7 +117,7 @@ function fetchDataAndPopulateTable() {
     .catch((error) => {
       console.error("Lỗi khi lấy dữ liệu từ API: ", error);
     });
-}
+  }
 
 function fetchAndPopulateUserData(userId) {
   fetch(`http://localhost:3000/api/users/${userId}`)

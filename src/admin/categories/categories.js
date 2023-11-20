@@ -1,15 +1,41 @@
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+document.addEventListener("DOMContentLoaded", function () {
+  isAuthenticated()
+    .then((isUserAuthenticated) => {
+      if (isUserAuthenticated) {
+        console.log('User is not authenticated');
+      }
+    })
+    .catch(error => {
+      console.error('Error checking authentication:', error);
+    });
+});
+
+function isAuthenticated() {
+  const userID = localStorage.getItem('userID');
+
+  if (userID !== null) {
+    fetch(`http://localhost:3000/api/users/${userID}`)
+      .then(response => response.json())
+      .then(user => {
+        if (user && user.role === 'user') {
+          window.location.href = '/';
+        } else {
+          fetchDataAndPopulateTable();
+        }
+      })
+  }
+}
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 document.querySelector(".btn-close-myModal").addEventListener("click", () => {
   myModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 const addModal = new bootstrap.Modal(document.getElementById("addModal"));
 document.querySelector(".btn-close-addModal").addEventListener("click", () => {
   addModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
+
 function fetchDataAndPopulateTable() {
   fetch(`http://localhost:3000/api/categories`)
     .then((response) => response.json())
@@ -114,7 +140,7 @@ function handleAddCategory() {
     const addModal = new bootstrap.Modal(document.getElementById("addModal"));
     const cateNameInput = document.getElementById("cateName");
     const cateDescriptionInput = document.getElementById("cateDescription");
-    const name = cateNameInput.value;
+    const cateName = cateNameInput.value;
     const description = cateDescriptionInput.value;
 
     if (!cateName || !cateDescription) {
@@ -125,7 +151,7 @@ function handleAddCategory() {
     const id = Date.now();
       const newCategory = {
       id,
-      name,
+      cateName,
       description,
     };
       fetch("http://localhost:3000/api/categories", {
@@ -158,7 +184,7 @@ addCategoryButton.addEventListener("click", handleAddCategory);
 
 async function handleAddOrUpdateUser() {
     const cateID = document.getElementById("update-cateID").value;
-    const name = document.getElementById("update-cateName").value;
+    const cateName = document.getElementById("update-cateName").value;
     const description = document.getElementById("update-cateDescription").value;
 
     try {
@@ -172,7 +198,7 @@ async function handleAddOrUpdateUser() {
         }
 
         const updatedCateData = {
-            name,
+            cateName,
             description,
         };
 

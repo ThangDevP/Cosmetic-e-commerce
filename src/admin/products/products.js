@@ -1,23 +1,48 @@
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
+
 const myModal = new bootstrap.Modal(document.getElementById("myModal"));
 document.querySelector(".btn-close-myModal").addEventListener("click", () => {
   myModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
-document.addEventListener("DOMContentLoaded", fetchDataAndPopulateTable);
 const addModal = new bootstrap.Modal(document.getElementById("addModal"));
 document.querySelector(".btn-close-addModal").addEventListener("click", () => {
   addModal.hide();
   document.querySelector(".modal-backdrop").remove();
 });
 document.addEventListener("DOMContentLoaded", () => {
-  fetchDataAndPopulateTable();
   populateCategoriesDropdown(); // Fetch and populate categories when the page loads
   populateBrandsDropdown(); // Fetch and populate categories when the page loads
   populateBrandsDropdownUpdate();
   populateCategoriesDropdownUpdate();
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+  isAuthenticated()
+    .then((isUserAuthenticated) => {
+      if (isUserAuthenticated) {
+        console.log('User is not authenticated');
+      }
+    })
+    .catch(error => {
+      console.error('Error checking authentication:', error);
+    });
+});
+
+function isAuthenticated() {
+  const userID = localStorage.getItem('userID');
+
+  if (userID !== null) {
+    fetch(`http://localhost:3000/api/users/${userID}`)
+      .then(response => response.json())
+      .then(user => {
+        if (user && user.role === 'user') {
+          window.location.href = '/';
+        } else {
+          fetchDataAndPopulateTable();
+        }
+      })
+  }
+}
 
 function fetchDataAndPopulateTable() {
   fetch(`http://localhost:3000/api/products?_expand=brand&_expand=category`)
@@ -171,16 +196,14 @@ async function handleUploadUpdate(imageInput2, folderName) {
 async function handleImageChangeUpdate() {
   const imageInput2 = document.getElementById("update-image");
   const testImage = document.getElementById("testImage");
-  const loadingSpinnerModal = document.getElementById("loadingSpinner");
-  const editButtonText = document.getElementById("editButtonText");
+  const loadingSpinnerModal  = document.getElementById("loadingSpinnerUpdateModal");
+  const editButtonText = document.getElementById("editButtonTextUpdateModal");
   if (imageInput2.files.length > 0) {
       try {
           loadingSpinnerModal.querySelector('.spinner-border').style.display = "inline-block";
           editButtonText.style.display = "none";
-
           const imageUrl2 = await handleUploadUpdate(imageInput2, "products");
           testImage.src = imageUrl2;
-
           loadingSpinnerModal.querySelector('.spinner-border').style.display = "none";
           editButtonText.style.display = "inline";
       } catch (error) {
@@ -311,6 +334,7 @@ async function handleAddProduct() {
   const addModal = new bootstrap.Modal(document.getElementById("addModal"));
   const nameInput = document.getElementById("name");
   const priceInput = document.getElementById("price");
+  const descriptionInput = document.getElementById("description");
   const categoryInput = document.getElementById("category");
   const brandInput = document.getElementById("brand");
   const discountInput = document.getElementById("discount");
@@ -320,12 +344,13 @@ async function handleAddProduct() {
 
   const productName = nameInput.value;
   const price = parseFloat(priceInput.value);
+  const description = descriptionInput.value;
   const discount = discountInput.value;
 
 
   const selectedCategoryID = categoryInput.value;
   const selectedBrandID = brandInput.value;
-  if (!productName || !price || !selectedBrandID || !selectedCategoryID ) {
+  if (!productName || !price || !description || !selectedBrandID || !selectedCategoryID ) {
     alert("Vui lòng nhập đầy đủ thông tin.");
     return;
   }
@@ -337,6 +362,7 @@ async function handleAddProduct() {
       id,
       productName,
       price,
+      description,
       categoryId:selectedCategoryID,
       brandId: selectedBrandID,
       discount: hasDiscount ? parseFloat(discount) : 0,
@@ -361,6 +387,7 @@ async function handleAddProduct() {
     previewImage.src = "";
     categoryInput.value = "";
     brandInput.value = "";
+    description.value ="";
     fetchDataAndPopulateTable();
     addModal.hide();
     nameInput.value = "";
@@ -388,6 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const productIDInput = modal.querySelector("#update-productID");
         const nameInput = modal.querySelector("#update-name");
         const priceInput = modal.querySelector("#update-price");
+        const descriptionInput = modal.querySelector("#update-description");
         const cateInput = modal.querySelector("#update-category");
         const brandInput = modal.querySelector("#update-brand");
         const discountInput = modal.querySelector("#update-discount");
@@ -397,6 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productIDInput.value = productData.id;
         nameInput.value = productData.productName;
         priceInput.value = productData.price;
+        descriptionInput.value = productData.description;
         discountInput.value = productData.discount;
         testImage.src = productData.img;
         cateInput.value = productData.categoryId;
@@ -420,6 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productId = document.getElementById("update-productID").value;
     const productName = document.getElementById("update-name").value;
     const price = parseFloat(document.getElementById("update-price").value);
+    const description = document.getElementById("update-description").value;
     const categoryId = document.getElementById("update-category").value;
     const brandId = document.getElementById("update-brand").value;
     const discount = document.getElementById("update-discount").value;
@@ -444,6 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const updatedProductData = {
             productName,
             price,
+            description,
             categoryId,
             brandId,
             discount: hasDiscount ? parseFloat(discount) : 0,
