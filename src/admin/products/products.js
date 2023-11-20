@@ -32,7 +32,7 @@ function isAuthenticated() {
   const userID = localStorage.getItem('userID');
 
   if (userID !== null) {
-    fetch(`http://localhost:3000/api/users/${userID}`)
+    fetch(`/api/users/${userID}`)
       .then(response => response.json())
       .then(user => {
         if (user && user.role === 'user') {
@@ -45,7 +45,7 @@ function isAuthenticated() {
 }
 
 function fetchDataAndPopulateTable() {
-  fetch(`http://localhost:3000/api/products?_expand=brand&_expand=category`)
+  fetch(`/api/products?_expand=brand&_expand=category`)
     .then((response) => response.json())
     .then((data) => {
         const productCount = data.length;
@@ -98,7 +98,7 @@ function fetchDataAndPopulateTable() {
         const deleteConfirmButton = document.querySelector(".deletebtn");
         deleteConfirmButton.addEventListener("click", () => {
           const productID = deleteModal.dataset.productID;
-          fetch(`http://localhost:3000/api/products/${productID}`, {
+          fetch(`/api/products/${productID}`, {
             method: "DELETE",
           })
             .then((response) => {
@@ -215,7 +215,7 @@ async function handleImageChangeUpdate() {
 }
 function populateCategoriesDropdown() {
   const categoryDropdown = document.getElementById("category");
-  fetch("http://localhost:3000/api/categories")
+  fetch("/api/categories")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -224,7 +224,7 @@ function populateCategoriesDropdown() {
     })
     .then((categories) => {
       categoryDropdown.innerHTML = "";
-      const defaultOption = document.createElement("option");
+      const defaultOption = document.createElement("option")
       defaultOption.value = "";
       defaultOption.textContent = "Hãy lựa chọn danh mục";
       categoryDropdown.appendChild(defaultOption);
@@ -242,7 +242,7 @@ function populateCategoriesDropdown() {
 }
 function populateCategoriesDropdownUpdate() {
   const categoryDropdown = document.getElementById("update-category");
-  fetch("http://localhost:3000/api/categories")
+  fetch("/api/categories")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -263,7 +263,7 @@ function populateCategoriesDropdownUpdate() {
 }
 function populateBrandsDropdown() {
   const brandDropdown = document.getElementById("brand");
-  fetch("http://localhost:3000/api/brands")
+  fetch("/api/brands")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -291,7 +291,7 @@ function populateBrandsDropdown() {
 function populateBrandsDropdownUpdate() {
   const brandDropdown = document.getElementById("update-brand");
 
-  fetch("http://localhost:3000/api/brands")
+  fetch("/api/brands")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -369,7 +369,7 @@ async function handleAddProduct() {
       img,
       sale: hasDiscount,
     };
-    const response = await fetch("http://localhost:3000/api/products", {
+    const response = await fetch("/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
   function fetchAndPopulateUserData(productID) {
-    fetch(`http://localhost:3000/api/products/${productID}?_expand=brand&_expand=category`)
+    fetch(`/api/products/${productID}?_expand=brand&_expand=category`)
       .then((response) => response.json())
       .then((productData) => {
         console.log("Fetched Product Data:", productData);
@@ -458,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageInput2 = document.getElementById("update-image");
     try {
         // Lấy giá trị cũ của sản phẩm
-        const response = await fetch(`http://localhost:3000/api/products/${productId}`);
+        const response = await fetch(`/api/products/${productId}`);
         const oldUserData = await response.json();
 
         // Thực hiện kiểm tra xem có đủ thông tin hay không
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log("Updated Product Data:", updatedProductData);
 
-        const apiUrl = `http://localhost:3000/api/products/${productId}`;
+        const apiUrl = `/api/products/${productId}`;
         const apiResponse = await fetch(apiUrl, {
             method: "PUT",
             headers: {

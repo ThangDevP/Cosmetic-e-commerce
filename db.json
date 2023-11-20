@@ -16,17 +16,20 @@
       "updatedAt": 1700236243659
     },
     {
-      "username": "Nghiêm Thái Dúi",
+      "id": 1699415299351,
+      "username": "Thái Dúi",
+      "password": "123456",
       "email": "chung241@gmail.com",
-      "address": "123 Faker Cry",
       "phoneNumber": "0376281525",
+      "address": "123 Faker Smile",
+      "city": "Tỉnh Bắc Kạn",
+      "district": "Huyện Ngân Sơn",
+      "ward": "Xã Trung Hoà",
       "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700322404/users/chmflcfvbwpioqzoa6ay.jpg",
       "role": "user",
-      "gender": "male",
       "dob": "2003-05-07",
-      "password": "123456",
-      "updatedAt": 1700322404871,
-      "id": 1699415299351
+      "gender": "male",
+      "updatedAt": 1700466711145
     },
     {
       "id": 1699947788049,
@@ -82,6 +85,21 @@
       "password": "123456",
       "updatedAt": 1700465392719,
       "id": 1700425213428
+    },
+    {
+      "id": 1700466859102,
+      "username": "thangn",
+      "password": "123456",
+      "email": "thangtnsa000@gmail.com",
+      "phoneNumber": "",
+      "address": "",
+      "city": "",
+      "district": "",
+      "ward": "",
+      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
+      "role": "user",
+      "dob": "2001-12-21",
+      "gender": "male"
     }
   ],
   "products": [
@@ -198,122 +216,158 @@
   ],
   "orders": [
     {
-      "userId": "1699948574735",
-      "cartId": 2,
+      "userId": "1699415299351",
+      "cartId": 3,
       "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
+        "email": "khangtvp-ojt07@devplus.edu.vn",
+        "username": "Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Smile",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Thành Phố Bắc Kạn",
+        "ward": "Thị trấn Nà Phặc"
       },
+      "email": "khangtvp-ojt07@devplus.edu.vn",
       "itemsDetails": [
         {
           "productId": 14,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316243324,
-      "updatedAt": 1700316243324,
-      "id": 1
-    },
-    {
-      "userId": "1700425213428",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 25,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 14,
-          "quantity": 3,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316326123,
-      "updatedAt": 1700316326123,
-      "id": 2
-    },
-    {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 25,
           "quantity": 2,
-          "price": 395000,
-          "subtotal": 395000
+          "price": 295000,
+          "subtotal": 590000
         },
         {
-          "productId": "1",
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
+          "productId": 10,
+          "quantity": 2,
+          "price": 195000,
+          "subtotal": 390000
         }
       ],
-      "total": 495000,
-      "createdAt": 1700316425965,
-      "updatedAt": 1700316425965,
-      "id": 3
+      "total": 882000,
+      "createdAt": 1700466497366,
+      "updatedAt": 1700466497366,
+      "id": 8
     },
     {
-      "userId": "1699414627439",
-      "cartId": 2,
+      "userId": "1699415299351",
+      "cartId": 3,
       "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
+        "email": "khangtvp-ojt07@devplus.edu.vn",
+        "username": "Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Smile",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Thành Phố Bắc Kạn",
+        "ward": "Thị trấn Nà Phặc"
       },
+      "email": "khangtvp-ojt07@devplus.edu.vn",
       "itemsDetails": [
         {
-          "productId": "1",
-          "quantity": 3,
-          "price": 155000,
-          "subtotal": 465000
+          "productId": 14,
+          "quantity": 1,
+          "price": 295000,
+          "subtotal": 295000
         },
         {
-          "productId": 25,
+          "productId": 10,
           "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
+          "price": 195000,
+          "subtotal": 195000
+        }
+      ],
+      "total": 441000,
+      "createdAt": 1700466566066,
+      "updatedAt": 1700466566066,
+      "id": 9
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "khangtvp-ojt07@devplus.edu.vn",
+        "username": "Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Smile",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Thành Phố Bắc Kạn",
+        "ward": "Thị trấn Nà Phặc"
+      },
+      "email": "khangtvp-ojt07@devplus.edu.vn",
+      "itemsDetails": [
+        {
+          "productId": 14,
+          "quantity": 1,
+          "price": 295000,
+          "subtotal": 295000
+        },
+        {
+          "productId": 10,
+          "quantity": 1,
+          "price": 195000,
+          "subtotal": 195000
+        }
+      ],
+      "total": 441000,
+      "createdAt": 1700466571758,
+      "updatedAt": 1700466571758,
+      "id": 10
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "khang.truong-ojt07@devplus.edu.vn",
+        "username": "Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Smile",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Thành Phố Bắc Kạn",
+        "ward": "Thị trấn Nà Phặc"
+      },
+      "email": "khang.truong-ojt07@devplus.edu.vn",
+      "itemsDetails": [
+        {
+          "productId": 14,
+          "quantity": 2,
+          "price": 295000,
+          "subtotal": 590000
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "price": 145000,
+          "subtotal": 145000
+        }
+      ],
+      "total": 661500,
+      "createdAt": 1700466641980,
+      "updatedAt": 1700466641980,
+      "id": 11
+    },
+    {
+      "userId": "1699415299351",
+      "cartId": 3,
+      "customerInfo": {
+        "email": "khang.truong-ojt07@devplus.edu.vn",
+        "username": "Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Smile",
+        "city": "Tỉnh Bắc Kạn",
+        "district": "Thành Phố Bắc Kạn",
+        "ward": "Thị trấn Nà Phặc"
+      },
+      "email": "khang.truong-ojt07@devplus.edu.vn",
+      "itemsDetails": [
+        {
+          "productId": 14,
+          "quantity": 2,
+          "price": 295000,
+          "subtotal": 590000
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "price": 145000,
+          "subtotal": 145000
         }
       ],
       "total": 774000,
