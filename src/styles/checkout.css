@@ -7,10 +7,10 @@ body {
 .payment {
   background-color: #f8f0e5;
   padding: 60px;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   gap: 20px;
-  
 }
 
 #information {
@@ -355,27 +355,6 @@ input::-webkit-outer-spin-button{
   font-weight: var(--fw-5);
 }
 
-
-/* .cardholder-name,
-.card-number {margin-bottom: 20px;}
-
-.card-number input,
-.cvv input {letter-spacing: 3px;}
-
-.input-flex {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.input-flex .expire-date,
-.input-flex .cvv {width: 50%;}
-
-.expire-date .input-flex {
-  color: var(--spanish-gray);
-  gap: 13px;
-} */
-
 .input-flex .select-flex{
   display: flex;
   align-items: center;
@@ -448,8 +427,6 @@ input::-webkit-outer-spin-button{
 .cart-item-box {
   padding: 40px var(--px);
   margin-bottom: auto;
-  /* margin-left: 20px;
-  background: #FEFBF4; */
 }
 
 .product-card:not(:last-child) {margin-bottom: 20px;}
@@ -468,7 +445,6 @@ input::-webkit-outer-spin-button{
 
 .product-card .img-box {
   width: 50px;
-  /* height: 100px; */
 }
 
 .card .detail .product-name {
@@ -573,9 +549,14 @@ input::-webkit-outer-spin-button{
       border-right: none;
   }
   .btn-primary { width: 100%;}
+  .payment {
+    background-color: #f8f0e5;
+    height: 100%;
+    width: 100%;
+    display: flex;
 
+  }
   /* Cart section responsive */
-
   .cart {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -593,7 +574,7 @@ input::-webkit-outer-spin-button{
   .discount-token {border-top: none;}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {  
   :root { --px : 40px;}
 
   .provisional-card {
@@ -601,6 +582,21 @@ input::-webkit-outer-spin-button{
       
   }
 
+  #information {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .infor-payment{
+    height: 100%;
+    width: 100%;
+  }
+
+  .infor-product-payment {
+    width: 100%;
+    height: 100%;
+  }
   .provisional {border-top: 1px solid var(--gainsboro); }
 
   .wrapper-flex { gap: 20px;}
@@ -609,24 +605,31 @@ input::-webkit-outer-spin-button{
       /* flex-direction: column;  */
       gap: 15px; /* Reduce the gap between select boxes */
   }
-
   .select-flex select {
       max-width: none; /* Remove the maximum width on smaller screens */
   }
 }
 
 @media (max-width: 567px) { 
-  :root { --px : 20px;}
+
+  .payment {
+    padding: 0;
+  }
 
   .payment-method {
       flex-direction: column;
       gap: 20px;
   }
 
+  
   .payment-method .method {width: 100%;}
   .input-flex .select-flex {
-      flex-direction: column; /* Stack the select boxes vertically on smaller screens */
+ /* Stack the select boxes vertically on smaller screens */
       gap: 15px; /* Reduce the gap between select boxes */
+  }
+
+  #information {
+      gap: 0;
   }
 
   .select-flex select {
