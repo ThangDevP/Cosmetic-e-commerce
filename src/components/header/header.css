@@ -1,4 +1,5 @@
 @import url("header.css");
+
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +10,7 @@
   height: 100%;
   background-color: #1c1c14;
 }
+
 .announcement p {
   display: flex;
   text-align: center;
@@ -19,41 +21,50 @@
   margin-top: 10px;
   background-color: #1c1c14;
 }
+
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white; /* Change this to your desired background color */
+  background-color: white;
+  /* Change this to your desired background color */
   /* Add other styles like padding, box-shadow, etc. */
 }
+
 .sticky {
   .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: white; /* Change this to match your navbar's style */
+    background-color: white;
+    /* Change this to match your navbar's style */
     /* Add other styles like padding, box-shadow, etc. */
   }
 }
+
 .toggle_btn {
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
 }
+
 .main-menu {
   width: 100%;
   height: 100%;
   background-color: #fff9f0;
 }
+
 .main-menu-left {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 }
+
 .main-menu-left li {
   list-style: none;
   padding: 10px;
 }
+
 .main-menu-left li a {
   text-decoration: none;
   font-size: 15px;
@@ -62,6 +73,7 @@
   color: #2d2f30;
   transition: 0.3s ease;
 }
+
 .main-menu-left li a:active,
 a:hover {
   color: #2d2f303f;
@@ -82,10 +94,12 @@ a:hover {
   flex-direction: row;
   margin-top: 15px;
 }
+
 .main-menu-right li {
   list-style: none;
   padding: 10px 0 10px 10px;
 }
+
 .main-menu-right li a {
   text-decoration: none;
   font-size: 15px;
@@ -94,6 +108,7 @@ a:hover {
   color: #2d2f30;
   transition: 0.3s ease;
 }
+
 .main-menu-right li a:hover {
   color: #2d2f30;
 }
@@ -111,6 +126,7 @@ a:hover {
   display: none;
   z-index: 1;
 }
+
 #dropdown_menu li {
   padding: 0.7rem;
   display: flex;
@@ -119,21 +135,25 @@ a:hover {
   list-style: none;
   margin-top: 30px;
 }
+
 #dropdown_menu a {
   text-decoration: none;
   color: #1c1c14;
   font-size: 1.1rem;
   font-weight: 600;
 }
+
 #dropdown_menu a:hover {
   color: #2d2f30;
   text-decoration: underline;
 }
+
 #dropdown_menu.open {
   /* height: 240px; */
   width: 300px;
   display: block;
 }
+
 /* Initially hide the sub-menu */
 .sub-menu {
   display: none;
@@ -141,11 +161,13 @@ a:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 1; /* Ensure it appears above other content */
+  z-index: 1;
+  /* Ensure it appears above other content */
   /* background-color: #fefbf4; Set the background color to white */
   background-color: rgba(255, 255, 255, 0.6);
   margin-left: 40px;
-  border-radius: 10px; /* Add a left margin for spacing */
+  border-radius: 10px;
+  /* Add a left margin for spacing */
 }
 
 /* Style the individual sub-menu items */
@@ -160,10 +182,14 @@ a:hover {
   display: block;
   padding: 4px 16px;
 }
+
 .sub-menu a:hover {
-  background-color: #ccc; /* Set the background color to black */
-  color: #fff; /* Set the text color to white */
+  background-color: #ccc;
+  /* Set the background color to black */
+  color: #fff;
+  /* Set the text color to white */
 }
+
 /* Show the sub-menu when hovering over user-change */
 #user-change:hover .sub-menu {
   display: block;
@@ -213,16 +239,18 @@ a:hover {
 .remove-product {
   cursor: pointer;
 }
+
 .center-content {
-align-items: center;
-background-color: #fefbf4;
-color: #212529;
-display: flex;
-flex-direction: column;
-grid-area: auto;
-line-height: 24px;
-text-align: right;
+  align-items: center;
+  background-color: #fefbf4;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  grid-area: auto;
+  line-height: 24px;
+  text-align: right;
 }
+
 .modal-content {
   display: flex;
   align-items: center;
@@ -236,50 +264,52 @@ text-align: right;
   flex-direction: column;
   background-color: #F7F0E4;
 }
-.message{
-  color:#ccb48f;
+
+.message {
+  color: #ccb48f;
   font-size:
-  18px;
+    18px;
   grid-area:
-  auto;
+    auto;
   line-height:
-  28px;
+    28px;
   margin:
-  30px 0px 0px;
+    30px 0px 0px;
   text-align:
-  center;
+    center;
   font-style: italic;
   font-weight: normal; 
 }
-.oopss{
-  color:#1d1a15;
+
+.oopss {
+  color: #1d1a15;
   font-size:
-  18px;
+    18px;
   grid-area:
-  auto;
+    auto;
   line-height:
-  28px;
+    28px;
   margin:
-  30px 0px 0px;
+    30px 0px 0px;
   text-align:
-  center;
+    center;
 }
 
-  .button.button-small {
-      height: 3.75rem;
-      width: 140px;
-      padding: 1.375rem 1.0625rem;
-      border-radius: 4px;
-      font-size: 1rem;
-  }
+.button.button-small {
+  height: 3.75rem;
+  width: 140px;
+  padding: 1.375rem 1.0625rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
 
 
-  .button.button-small {
-    height: 1px;
-    border-radius: 4px;
-    font-size: 10px;
-    margin-left: auto;
-    margin-right: auto;
+.button.button-small {
+  height: 1px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -312,6 +342,7 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+
 /* CSS nền hiển thị Modal */
 .nenmodal .nenmodal2 {
   position: fixed;
@@ -323,13 +354,16 @@ a {
   z-index: 1;
   display: none;
 }
+
 .ndmodal {
   overflow: hidden;
 }
+
 .modal-order {
   border-radius: 0 0 10px 10px; 
   overflow: hidden;
 }
+
 /* CSS bảng nội dung Modal */
 .nenmodal .ndmodal {
   position: fixed;
@@ -355,7 +389,7 @@ a {
 
 /* CSS nút tắt modal */
 .closemodal button {
-  border: 10px ;
+  border: 10px;
   width: 55px;
   height: 12px;
   font-size: 35px;
@@ -370,6 +404,7 @@ a {
   text-align: center;
 
 }
+
 /* CSS hiệu ứng hiển thị Modal */
 .nenmodal.active .ndmodal {
   transition: all 300ms ease-in-out;
@@ -410,12 +445,14 @@ a {
   justify-content: space-between;
   border-radius: 0 0 7px 7px;
 }
+
 .total {
   width: 200px;
   height: 75px;
   border-radius: 5px;
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 }
+
 .total p {
   font-family: "Nunito";
   margin-bottom: 0;
@@ -429,6 +466,7 @@ a {
   background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
 
 }
+
 /* CSS cho phần hiển thị giỏ hàng */
 .products-payment {
   display: flex;
@@ -436,18 +474,25 @@ a {
   border-bottom: 1px solid rgba(237, 224, 204, 1);
   margin-bottom: 10px;
   height: 500px;
-  flex-direction: column; /* Hiển thị sản phẩm theo chiều dọc trên di động */
-  align-items: flex-start; /* Căn trái các sản phẩm */
-  overflow-y: auto; /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
+  flex-direction: column;
+  /* Hiển thị sản phẩm theo chiều dọc trên di động */
+  align-items: flex-start;
+  /* Căn trái các sản phẩm */
+  overflow-y: auto;
+  /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
 }
+
 .products-payment .product-payment {
   margin-bottom: 10px;
 }
+
 /* CSS cho phần giỏ hàng tạm tính */
 .provisional-card {
   padding: 20px 30px 20px 15px;
-  max-height: 450px; /* Đặt chiều cao tối đa để kích thước có thể điều chỉnh */
-  overflow-y: auto; /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
+  max-height: 450px;
+  /* Đặt chiều cao tối đa để kích thước có thể điều chỉnh */
+  overflow-y: auto;
+  /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
 }
 
 .btn-order {
@@ -465,127 +510,193 @@ a {
 
 
 @media (max-width: 870px) {
- 
-   .nenmodal .ndmodal {
+
+  .nenmodal .ndmodal {
     width: 100%;
     max-width: 100%;
     right: -415px;
   }
-   .center-content {
+
+  .center-content {
     padding: 20px;
   }
-  
+
   .modal-content {
     padding: 10px;
   }
 }
 
 @media (max-width: 579px) {
- 
-   .nenmodal .ndmodal {
+
+  .nenmodal .ndmodal {
     width: 82%;
     max-width: 100%;
     right: -280px;
   }
-   .center-content {
+
+  .center-content {
     padding: 20px;
   }
-  
   .modal-content {
     padding: 10px;
   }
 }
 
 @media (max-width: 1070px) {
- 
-   .nenmodal .ndmodal {
-   
+
+  .nenmodal .ndmodal {
+
     width: 82%;
     max-width: -45%;
     right: -280px;
   }
+
   .total span {
     font-size: 1.500rem;
   }
-   .center-content {
+
+  .center-content {
     padding: 20px;
   }
+
   .btn-order {
     width: 150px;
   }
+
   .modal-content {
     padding: 10px;
   }
 }
+
 @media (max-width: 600px) {
   .nenmodal .ndmodal {
-   
+
     width: 82%;
     max-width: -45%;
     right: -280px;
+    transform: translate(-152%, -55%) scale(0.96);
+  }
+  .nenmodal.active .ndmodal {
+    transition: all 300ms ease-in-out;
     transform: translate(-52%, -55%) scale(0.96);
-  }}
+  }
+}
+
 @media (max-width: 600px) {
-  .nenmodal.active .ndmodal {
-    transition: all 300ms ease-in-out;
-    transform: translate(-52%, -55%) scale(0.96);
-}
+
+
   .nenmodal .ndmodal {
-   width: 102%;
-   max-width: 100%;
-   right: -220px;
+    width: 102%;
+    max-width: 100%;
+    right: -220px;
   }
+
   .center-content {
    padding: 20px;
  }
 
- .product-payment {
-  display: flex;
-  justify-content: nomarl;
-  align-items: normal;
-  height: 70px;
-}
- .total span {
-  font-size: 1.500rem;
-}
- .btn-order {
-  width: 80px;
-}
-
- .modal-content {
-   padding: 10px;
- }
-
-
-@media (max-width: 399px) {
-  .nenmodal.active .ndmodal {
-    transition: all 300ms ease-in-out;
-    transform: translate(-55%, -55%) scale(1);
-}
-  .nenmodal .ndmodal {
-   width: 102%;
-   max-width: 100%;
-   right: -220px;
+  .product-payment {
+    display: flex;
+    justify-content: nomarl;
+    align-items: normal;
+    height: 70px;
   }
-  .center-content {
-   padding: 20px;
- }
 
- .product-payment {
-  display: flex;
-  justify-content: nomarl;
-  align-items: normal;
-  height: 70px;
-}
- .total span {
-  font-size: 1.500rem;
-}
- .btn-order {
-  width: 80px;
-}
+  .total span {
+    font-size: 1.500rem;
+  }
 
- .modal-content {
-   padding: 10px;
- }
-}
+  .btn-order {
+    width: 80px;
+  }
+
+
+  .modal-content {
+    padding: 10px;
+  }
+
+
+  @media (max-width: 399px) {
+    .nenmodal.active .ndmodal {
+      transition: all 300ms ease-in-out;
+      transform: translate(-58.7%, -55%) scale(0.98);
+    }
+
+    .nenmodal .ndmodal {
+      width: 102%;
+      max-width: 100%;
+      right: -220px;
+    }
+
+    .center-content {
+      padding: 20px;
+    }
+
+
+    .product-payment {
+      display: flex;
+      justify-content: nomarl;
+      align-items: normal;
+      height: 70px;
+    }
+
+    .total span {
+      font-size: 1.500rem;
+    }
+
+    .btn-order {
+      width: 80px;
+    }
+
+
+    .modal-content {
+      padding: 10px;
+    }
+  }
+
+
+  @media (max-width: 320px) {
+
+
+    .nenmodal .ndmodal {
+      position: fixed;
+      top: 55%;
+      transform: translate(50%, 50%) scale(0.5);
+      width: 100%;
+      max-width: 100%;
+      z-index: 2;
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      display: block;
+      right: -200px;
+      overflow: hidden;
+      background-color: #fefbf4;
+      border-radius: 15px;
+    }
+
+    .center-content {
+      padding: 20px;
+    }
+
+
+    .product-payment {
+      display: flex;
+      justify-content: nomarl;
+      align-items: normal;
+      height: 70px;
+    }
+
+    .total span {
+      font-size: 1.500rem;
+    }
+
+    .btn-order {
+      width: 80px;
+    }
+
+
+    .modal-content {
+      padding: 10px;
+    }
+  }
 }
