@@ -255,8 +255,8 @@ server.post("/payments", (req, res) => {
   var orderId = new Date().getTime();
   var orderInfo = "Thanh toán qua ví MoMo";
   var redirectUrl =
-    "/checkout" + "?" + urlParams.toString();
-  var ipnUrl = "/checkout" + "?" + urlParams.toString();
+    "https://exactly-i7jp.onrender.com/checkout" + "?" + urlParams.toString();
+  var ipnUrl = "https://exactly-i7jp.onrender.com/checkout" + "?" + urlParams.toString();
   var requestType = "captureWallet";
   var extraData = "";
 
