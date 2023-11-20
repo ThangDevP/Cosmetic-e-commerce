@@ -38,7 +38,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
   async function fetchProductSale() {
     try {
       const response = await fetch(
-        "http://localhost:3000/api/products?_expand=brand&_expand=category"
+        "/api/products?_expand=brand&_expand=category"
       );
       if (!response.ok) {
         throw new Error("Lỗi khi tải dữ liệu");
@@ -132,7 +132,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
       // Bước 1: Kiểm tra xem người dùng đã đăng nhập chưa
 
       // Bước 2: Tìm giỏ hàng của người dùng
-      const response = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+      const response = await fetch(`/api/carts?userId=${userId}`);
       if (!response.ok) {
         throw new Error(`Lỗi khi tìm giỏ hàng: ${response.status} ${response.statusText}`);
       }
@@ -154,12 +154,12 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
       }
 
       // Bước 3: Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
-      const cartIdResponse = await fetch(`http://localhost:3000/api/carts?userId=${userId}`);
+      const cartIdResponse = await fetch(`/api/carts?userId=${userId}`);
       const cartData = await cartIdResponse.json();
 
       const cartId = cartData[0].id;
 
-      const cartItemsResponse = await fetch(`http://localhost:3000/api/cartItems?cartId=${cartId}&productId=${productId}`);
+      const cartItemsResponse = await fetch(`/api/cartItems?cartId=${cartId}&productId=${productId}`);
       const cartItems = await cartItemsResponse.json();
 
       if (cartItems.length > 0) {
@@ -180,7 +180,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
         }
       } else {
         // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới
-        const addCartItemResponse = await fetch(`http://localhost:3000/api/cartItems`, {
+        const addCartItemResponse = await fetch(`/api/cartItems`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -200,7 +200,7 @@ fetch(`/api/products/${productId}?_expand=brand&_expand=category`)
       // Bước 4: Cập nhật giỏ hàng
       // Cập nhật UI hoặc thực hiện các bước khác cần thiết
       alert("Đã thêm sản phẩm vào giỏ hàng!");
-
+      showItems();
     } catch (error) {
       console.error(error);
       // Xử lý lỗi nếu có

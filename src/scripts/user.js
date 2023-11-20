@@ -34,7 +34,7 @@ async function handleUpload(avatarInput, folderName) {
   }
 }
 
-fetch(`http://localhost:3000/api/users/${userId}`)
+fetch(`/api/users/${userId}`)
   .then((response) => response.json())
   .then((user) => {
     document.getElementById("email").value = user.email;
@@ -178,7 +178,7 @@ document
   .getElementById("profile-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/api/users/${userId}`)
+    fetch(`/api/users/${userId}`)
       .then((response) => response.json())
       .then((user) => {
         var email = document.getElementById("email").value
@@ -266,7 +266,7 @@ document
           dob: dob,
           gender: genderSelected,
         };
-        fetch(`http://localhost:3000/api/users/${userId}`, {
+        fetch(`/api/users/${userId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -276,6 +276,7 @@ document
           .then((response) => response.json())
           .then((result) => {
             console.log("Success:", result);
+            alert("Update successful");
             location.reload();
           })
           .catch((error) => {
@@ -283,7 +284,7 @@ document
           });
       });
 
-    alert("Update successful");
+    
   });
 
   

@@ -169,48 +169,34 @@ a:hover {
   display: block;
 }
 
-.products-payment {
-  padding: 20px 30px 15px 20px;
-}
-.product-payment {
-  height: 112px;
-  display: flex;
-  border-bottom: 1px solid rgba(237, 224, 204, 1);
-  margin-bottom: 10px;
-}
+
 .item-img {
-  width: 20%;
+  width: 15%;
   padding-right: 10px;
 }
+
 .product-info {
   width: 80%;
+  text-align: left;
+}
+
+.quantity-price {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-.infor-payment {
-  background-color: #fefbf4;
-  width: 55%;
-  padding: 25px 25px 25px 25px;
-  height: 500px;
-}
-.infor-product-payment {
-  width: 45%;
-  background-color: #fefbf4;
-  border-radius: 7px 7px 0 0;
-  height: fit-content;
-}
-.infor-payment h4 {
-  padding-left: 20px;
-  font-family: "Nunito";
-}
-.infor-product-payment h4 {
-  padding-left: 20px;
-  font-family: "Nunito";
-}
+
 .quantity {
   display: flex;
 }
+
+.quantity button {
+  outline: none;
+  border: 1px solid rgba(237, 224, 204, 1);
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+}
+
 .quantity-text {
   width: 64px;
   height: 32px;
@@ -219,171 +205,83 @@ a:hover {
   text-align: center;
   line-height: 28px;
 }
-.btn-quantity {
-  outline: none;
-  border: 1px solid rgba(237, 224, 204, 1);
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
+
+.price {
+  font-weight: bold;
 }
-.quantity-price {
-  display: flex;
-  justify-content: space-between;
-}
+
 .remove-product {
-  padding-top: 20px;
-}
-
-hr {
-  margin: 0 30px 0 15px !important;
-  color: rgba(237, 224, 204, 1) !important;
-  opacity: 1 !important;
-}
-
-.order {
-  padding: 20px 30px 20px 15px;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 0 0 7px 7px;
-}
-.total p {
-  font-family: "Nunito";
-  margin-bottom: 0;
-}
-.total span {
-  font-family: "Nunito";
-  font-size: 1.875rem;
-}
-.btn-order {
-  width: 200px;
-  height: 75px;
-  border-radius: 5px;
-  border: 1px solid #e4d1b4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
-
-/* CSS nền hiển thị Modal */
-.ngoaicung .ngoaicung2 {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  display: none;
+.center-content {
+align-items: center;
+background-color: #fefbf4;
+color: #212529;
+display: flex;
+flex-direction: column;
+grid-area: auto;
+line-height: 24px;
+text-align: right;
 }
-
-/* CSS bảng nội dung Modal */
-.ngoaicung .ngoaicung3 {
-  padding: 25px 25px 10 25px;
-  position: fixed;
-  display: block;
-  width: 50%;
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  z-index: 2;
-  top: 0;
-  padding: 10px;
-  text-align: center;
-  overflow: auto;
-  right: -50%;
-  border-radius: 10px;
-  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1);
-  transition: right 0.5s ease-in-out;
 }
 
-.order {
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F0E4;
 }
-
-.order a {
-  color: white;
-  text-decoration: none;
-}
-
-@media (max-width: 700px) {
-  .ngoaicung .ngoaicung3 {
-    width: 100%;
-  }
-}
-/* CSS bao bọc của nút tắt Modal */
-.ngoaicung .close {
-  text-align: right;
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-/* CSS tieu de của Modal */
-.tieude {
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-
-.ngoaicung.active body {
-  overflow: hidden;
-}
-.ngoaicung:not(.active) body {
-  overflow: auto;
-}
-
-/* CSS nút tắt modal */
-.close button {
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
-  padding: 0px;
-  border: none;
-  background-color: #fefbf4;
-}
-
-.ngoaicung.active .ngoaicung2 {
-  display: block;
-}
-/* CSS hiệu ứng hiển thị Modal */
-.ngoaicung.active .ngoaicung3 {
-  transition: all 400ms ease-in-out;
-  transform: translate(-100%) scale(0.92);
-}
-
-.message {
-  color: #ccb48f;
-  font-size: 18px;
-  grid-area: auto;
-  line-height: 28px;
-  margin: 30px 0px 0px;
-  text-align: center;
+.message{
+  color:#ccb48f;
+  font-size:
+  18px;
+  grid-area:
+  auto;
+  line-height:
+  28px;
+  margin:
+  30px 0px 0px;
+  text-align:
+  center;
   font-style: italic;
-  font-weight: normal;
+  font-weight: normal; 
 }
-.oopss {
-  color: #1d1a15;
-  font-size: 18px;
-  grid-area: auto;
-  line-height: 28px;
-  margin: 30px 0px 0px;
-  text-align: center;
-}
-
-.button.button-small {
-  height: 3.75rem;
-  width: 140px;
-  padding: 1.375rem 1.0625rem;
-  border-radius: 4px;
-  font-size: 1rem;
+.oopss{
+  color:#1d1a15;
+  font-size:
+  18px;
+  grid-area:
+  auto;
+  line-height:
+  28px;
+  margin:
+  30px 0px 0px;
+  text-align:
+  center;
 }
 
-.button.button-small {
-  height: 1px;
-  border-radius: 4px;
-  font-size: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  .button.button-small {
+      height: 3.75rem;
+      width: 140px;
+      padding: 1.375rem 1.0625rem;
+      border-radius: 4px;
+      font-size: 1rem;
+  }
+
+
+  .button.button-small {
+    height: 1px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .button.button-dark {
   --tw-bg-opacity: 1;
@@ -413,4 +311,281 @@ hr {
 a {
   color: inherit;
   text-decoration: inherit;
+}
+/* CSS nền hiển thị Modal */
+.nenmodal .nenmodal2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+.ndmodal {
+  overflow: hidden;
+}
+.modal-order {
+  border-radius: 0 0 10px 10px; 
+  overflow: hidden;
+}
+/* CSS bảng nội dung Modal */
+.nenmodal .ndmodal {
+  position: fixed;
+  top: 55%;
+  transform: translate(50%, 50%) scale(0);
+  width: 42%;
+  max-width: 100%;
+  z-index: 2;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  display: block;
+  right: 10;
+  overflow: hidden;
+  background-color: #fefbf4;
+  border-radius: 15px;
+}
+
+.nenmodal .closemodal {
+  text-align: left;
+  width: 100%;
+  height: 30px;
+}
+
+/* CSS nút tắt modal */
+.closemodal button {
+  border: 10px ;
+  width: 55px;
+  height: 12px;
+  font-size: 35px;
+  background-color: transparent;
+}
+
+/* CSS tieu de của Modal */
+.titlemodal {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+/* CSS hiệu ứng hiển thị Modal */
+.nenmodal.active .ndmodal {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -55%) scale(0.83);
+}
+
+/* CSS cho phần hiển thị giỏ hàng */
+.product-payment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  margin-bottom: 10px;
+  height: 112px;
+}
+
+.nenmodal.active .nenmodal2 {
+  display: block;
+}
+
+/* CSS cho phần giỏ hàng tạm tính */
+.provisional-card {
+  padding: 20px 30px 20px 15px;
+}
+
+.provisional {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+/* CSS cho phần đặt hàng */
+.order {
+  padding: 20px 30px 20px 15px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 7px 7px;
+}
+.total {
+  width: 200px;
+  height: 75px;
+  border-radius: 5px;
+  background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
+}
+.total p {
+  font-family: "Nunito";
+  margin-bottom: 0;
+  background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
+
+}
+
+.total span {
+  font-family: "Nunito";
+  font-size: 1.875rem;
+  background-color: rgba(31, 28, 23, var(--tw-bg-opacity));
+
+}
+/* CSS cho phần hiển thị giỏ hàng */
+.products-payment {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(237, 224, 204, 1);
+  margin-bottom: 10px;
+  height: 500px;
+  flex-direction: column; /* Hiển thị sản phẩm theo chiều dọc trên di động */
+  align-items: flex-start; /* Căn trái các sản phẩm */
+  overflow-y: auto; /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
+}
+.products-payment .product-payment {
+  margin-bottom: 10px;
+}
+/* CSS cho phần giỏ hàng tạm tính */
+.provisional-card {
+  padding: 20px 30px 20px 15px;
+  max-height: 450px; /* Đặt chiều cao tối đa để kích thước có thể điều chỉnh */
+  overflow-y: auto; /* Thêm thanh cuộn khi nội dung vượt quá chiều cao */
+}
+
+.btn-order {
+  width: 180px;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid #e4d1b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #040404;
+  color: #ffffff;
+}
+
+
+@media (max-width: 870px) {
+ 
+   .nenmodal .ndmodal {
+    width: 100%;
+    max-width: 100%;
+    right: -415px;
+  }
+   .center-content {
+    padding: 20px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 579px) {
+ 
+   .nenmodal .ndmodal {
+    width: 82%;
+    max-width: 100%;
+    right: -280px;
+  }
+   .center-content {
+    padding: 20px;
+  }
+  
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1070px) {
+ 
+   .nenmodal .ndmodal {
+   
+    width: 82%;
+    max-width: -45%;
+    right: -280px;
+  }
+  .total span {
+    font-size: 1.500rem;
+  }
+   .center-content {
+    padding: 20px;
+  }
+  .btn-order {
+    width: 150px;
+  }
+  .modal-content {
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .nenmodal .ndmodal {
+   
+    width: 82%;
+    max-width: -45%;
+    right: -280px;
+    transform: translate(-52%, -55%) scale(0.96);
+  }}
+@media (max-width: 600px) {
+  .nenmodal.active .ndmodal {
+    transition: all 300ms ease-in-out;
+    transform: translate(-52%, -55%) scale(0.96);
+}
+  .nenmodal .ndmodal {
+   width: 102%;
+   max-width: 100%;
+   right: -220px;
+  }
+  .center-content {
+   padding: 20px;
+ }
+
+ .product-payment {
+  display: flex;
+  justify-content: nomarl;
+  align-items: normal;
+  height: 70px;
+}
+ .total span {
+  font-size: 1.500rem;
+}
+ .btn-order {
+  width: 80px;
+}
+
+ .modal-content {
+   padding: 10px;
+ }
+
+
+@media (max-width: 399px) {
+  .nenmodal.active .ndmodal {
+    transition: all 300ms ease-in-out;
+    transform: translate(-55%, -55%) scale(1);
+}
+  .nenmodal .ndmodal {
+   width: 102%;
+   max-width: 100%;
+   right: -220px;
+  }
+  .center-content {
+   padding: 20px;
+ }
+
+ .product-payment {
+  display: flex;
+  justify-content: nomarl;
+  align-items: normal;
+  height: 70px;
+}
+ .total span {
+  font-size: 1.500rem;
+}
+ .btn-order {
+  width: 80px;
+}
+
+ .modal-content {
+   padding: 10px;
+ }
+}
 }

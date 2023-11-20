@@ -27,73 +27,6 @@
       "password": "123456",
       "updatedAt": 1700322404871,
       "id": 1699415299351
-    },
-    {
-      "id": 1699947788049,
-      "username": "Khang là dbrr 123",
-      "password": "123456",
-      "email": "thang@gmail.com",
-      "phoneNumber": "0876826511",
-      "address": "Korea",
-      "city": "",
-      "district": "",
-      "ward": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194956/users/ishrp9iq5fe8fqvxiili.png",
-      "role": "user",
-      "dob": "2023-11-14",
-      "gender": "male",
-      "updatedAt": 1700314473972
-    },
-    {
-      "username": "Thái Đinh",
-      "email": "chung34421@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0914781672",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194970/users/vcvdsme5ugyby9rvdws7.png",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1700194969840,
-      "id": 1699948356338
-    },
-    {
-      "username": "cháu Thắng",
-      "email": "khangdb@gmail.com",
-      "address": "VietNam",
-      "phoneNumber": "0876826511",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700194983/users/p80wace2vg04e4w4zciz.png",
-      "role": "user",
-      "gender": "male",
-      "dob": "22/12/2001",
-      "password": "123456",
-      "updatedAt": 1700194982625,
-      "id": 1699948574735
-    },
-    {
-      "username": "chung12313@gmail.com",
-      "email": "thang4232@gmail.com",
-      "address": "",
-      "phoneNumber": "",
-      "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1699948733/users/lbf7oews2umnj9ncb3mu.jpg",
-      "role": "user",
-      "gender": "male",
-      "updatedAt": 1700311819676
-    },
-    {
-      "id": 1700337841671,
-      "username": "thangdeptrai",
-      "password": "123456",
-      "email": "thangtnsa000@gmail.com",
-      "phoneNumber": "",
-      "address": "",
-      "city": "",
-      "district": "",
-      "ward": "",
-      "avatar": "https://res-console.cloudinary.com/darhyd9z6/media_explorer_thumbnails/f07a78203e70fa0d5822a1c1f08172e4/detailed",
-      "role": "user",
-      "dob": "2001-12-21",
-      "gender": "male"
     }
   ],
   "products": [
@@ -382,304 +315,94 @@
       "description": "Làn da dầu và mụn rất nhạy cảm nên cần được thiết kế một loại nước tẩy trang phù hợp. Với công nghệ Micellar, nước tẩy trang bí đao giúp làm sạch hiệu quả lớp trang điểm, bụi bẩn và dầu thừa, mang lại làn da sạch hoàn toàn và dịu nhẹ.",
       "discount": 40,
       "sale": true
-    },
-    {
-      "id": 6,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607722654_9b6fabd46f3055f422a734cb2893ceea_1_d58f7f9a93.jpg",
-      "productName": "Nước tẩy trang bí đao 500ml",
-      "price": 295000,
-      "categoryId": 2,
-      "brandId": 2,
-      "description": "N",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "id": 7,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_5_57602693f6.jpg",
-      "productName": "Dầu tẩy trang hoa hồng 140ml",
-      "price": 180000,
-      "categoryId": 2,
-      "brandId": 1,
-      "description": "Dầu tẩy trang hoa hồng giúp làm sạch sâu lớp trang điểm, bụi bẩn và dầu thừa, dưỡng ẩm mà không để lại cảm giác nhờn rít khó chịu.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "id": 8,
-      "img": "https://image.cocoonvietnam.com/uploads/z4372805386498_3bd533296846158103cd752a124be5a8_f90a56659b.jpg",
-      "productName": "Nước tẩy trang hoa hồng 140ml",
-      "price": 155000,
-      "categoryId": 2,
-      "brandId": 3,
-      "description": "Một công thức có tỉ lệ cân bằng từ nước cất hoa hồng hữu cơ, vitamin B5 và astaxanthin hoà quyện trong hệ nhũ hoá siêu nhỏ giúp tẩy sạch lớp trang điểm lâu trôi chỉ trong một bước, hỗ trợ cấp ẩm, làm mềm và làm dịu, mang lại làn da sạch sẽ và tươi mới.N",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "id": 9,
-      "img": "https://image.cocoonvietnam.com/uploads/z4144217404386_2fad2f6b8b47c1047f6e4e0728a96b04_af02e68c7c.jpg",
-      "productName": "Gel rửa mặt cà phê Đắk Lắk 310ml",
-      "price": 295000,
-      "categoryId": 3,
-      "brandId": 1,
-      "description": "Với công thức dịu nhẹ không chứa sulfate, gel rửa mặt cà phê Đắk Lắk có khả năng làm sạch hiệu quả mà không gây khô da, mang lại cảm giác sảng khoái cùng một làn da tươi mới, sạch thoáng và trông tràn đầy sinh lực để bắt đầu một ngày mới.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "productName": "Gel rửa mặt cà phê Đắk Lắk 140ml",
-      "price": 195000,
-      "categoryId": "3",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z4064745554320_948e1adc6b3d34513f0e362e5de1d696_0626ba1caf.jpg",
-      "updatedAt": 1700327335019,
-      "id": 10
-    },
-    {
-      "productName": "Sữa rửa mặt nghệ Hưng Yên 310ml",
-      "price": 295000,
-      "categoryId": "3",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z3491780061958_c2ef1011760c3ee0725a1bd163d7f79b_3198e90279.jpg",
-      "updatedAt": 1700327339563,
-      "id": 11
-    },
-    {
-      "productName": "Sữa rửa mặt nghệ Hưng Yên 140ml",
-      "price": 195000,
-      "categoryId": "3",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z3526709694076_945daa53da7e8d0d674d19b2d92dd792_e41da5dad9.jpg",
-      "updatedAt": 1700327343222,
-      "id": 12
-    },
-    {
-      "productName": "Gel rửa mặt hoa hồng 140ml",
-      "price": 195000,
-      "categoryId": "3",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z3526709681164_fea7a1510c21c6b18f292e02abb7f1ab_0a71044ada.jpg",
-      "updatedAt": 1700327346436,
-      "id": 13
-    },
-    {
-      "id": 14,
-      "img": "https://image.cocoonvietnam.com/uploads/z3526520930085_8478409d6ac4058a7b77514ce71bdada_d14a16f231.jpg",
-      "productName": "Gel bí đao rửa mặt 310ml",
-      "price": 295000,
-      "categoryId": 3,
-      "brandId": 2,
-      "description": "Với các thành phần gồm bí đao, rau má, tràm trà, bổ sung thêm Vitamin B3, B5 và Betaine. Gel bí đao có pH 5.5 giúp làm sạch sâu bụi bẩn và dầu thừa, làm giảm việc hình thành mụn mà vẫn giữ được độ ẩm mịn tự nhiên và không gây khô da sau khi sử dụng.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "productName": "Gel bí đao rửa mặt 140ml",
-      "price": 195000,
-      "categoryId": "3",
-      "brandId": "2",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z4394607669965_ca1ceaa3a09cb9e3f966f4ac4256dd9a_1_f787014de5.jpg",
-      "updatedAt": 1700327349953,
-      "id": 15
-    },
-    {
-      "id": 16,
-      "img": "https://image.cocoonvietnam.com/uploads/z4121418281884_8317874b9540c0f394d4450ee941e18c_1ecd94cf9e.jpg",
-      "productName": "Tinh chất bí đao N15 70ml",
-      "price": 495000,
-      "categoryId": 4,
-      "brandId": 1,
-      "description": "Một công thức mạnh mẽ với chiết xuất bí đao, 15% niacinamide tinh khiết, 4% NAG phối hợp cùng dầu lá neem và các chất chống ôxy hoá phổ rộng mang lại khả năng bảo vệ làn da khỏi các gốc tự do phản ứng (ROS, RNS, RCS), giảm bóng nhờn và cải thiện tình trạng mụn.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "productName": "Tinh chất nghệ Hưng Yên C22 30ml",
-      "price": 465000,
-      "categoryId": "4",
-      "brandId": "2",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/z4389425025003_c3b68e5737569f01eb630fb0c010951c_47aa72d54d.jpg",
-      "updatedAt": 1700327355259,
-      "id": 17
-    },
-    {
-      "id": 18,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_19_0b76b3aabf.jpg",
-      "productName": "Tinh chất nghệ Hưng Yên C10 30ml",
-      "price": 325000,
-      "categoryId": 4,
-      "brandId": 1,
-      "description": "Dầu nghệ chiết xuất từ củ nghệ Hưng yên rất giàu turmerone, được xé nhỏ và lơ lửng trong một hỗn hợp kết cấu mọng nước chứa Vitamin B3, NAG và Vitamin C (3-o-ethyl ascorbic acid) tạo thành tinh chất nghệ có tác dụng chống oxy hóa mạnh mẽ giúp tăng cường khả năng làm sáng da, cải thiện làn da xỉn màu và làm mờ vết thâm.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "id": 19,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_18_e4234e2f81.jpg",
-      "productName": "Tinh chất hoa hồng 30ml",
-      "price": 265000,
-      "categoryId": 4,
-      "brandId": 1,
-      "description": "Với kết cấu mọng nước, tinh chất hoa hồng sẽ thẩm thấu nhanh và mang các dưỡng chất ngậm nước đi sâu vào các tầng da, giúp dưỡng ẩm sâu, phục hồi những tổn thương do sự mất nước gây ra, đồng thời trả lại sự đầy đặn và tươi mới vốn có của làn da. Đây là cách nhanh nhất để da trở nên căng mọng và ẩm mịn.",
-      "discount": 10,
-      "sale": "true"
-    },
-    {
-      "productName": "Dung dịch chấm mụn bí đao 5ml",
-      "price": 245000,
-      "categoryId": "4",
-      "brandId": "1",
-      "discount": 0,
-      "sale": false,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_25_daa9b58b49.jpg",
-      "updatedAt": 1700327360156,
-      "id": 20
-    },
-    {
-      "id": 21,
-      "img": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg",
-      "productName": "Mặt nạ nghệ Hưng Yên 100ml",
-      "price": 345000,
-      "categoryId": 5,
-      "brandId": 1,
-      "description": "Hạt cà phê nguyên chất từ Đắk Lắk kết hợp với bơ ca cao Tiền Giang giúp làm sạch da chết cơ thể hiệu quả, làm đều màu da, khơi dậy năng lượng giúp da trở nên mềm mịn và rạng rỡ.",
-      "discount": 40,
-      "sale": true
     }
   ],
-  
   "carts": [
     {
-      "id": 2,
-      "userId": 1699414627439
+      "userId": "1699415299351",
+      "createdAt": 1700453342142,
+      "updatedAt": 1700453342142,
+      "id": 1
     }
   ],
-  "cartItems": [],
-  "orders": [
+  "cartItems": [
     {
-      "userId": "1699948714270",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 3,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 1,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316243324,
-      "updatedAt": 1700316243324,
+      "productId": "1",
+      "cartId": 1,
+      "quantity": 2,
+      "createdAt": 1700454424842,
+      "updatedAt": 1700462713122,
       "id": 1
     },
     {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 2,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": 4,
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316326123,
-      "updatedAt": 1700316326123,
+      "productId": "2",
+      "cartId": 1,
+      "quantity": 2,
+      "createdAt": 1700454441014,
+      "updatedAt": 1700462836739,
       "id": 2
     },
     {
-      "userId": "1699947788049",
-      "cartId": 2,
-      "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
-      },
-      "itemsDetails": [
-        {
-          "productId": 2,
-          "quantity": 1,
-          "price": 395000,
-          "subtotal": 395000
-        },
-        {
-          "productId": "1",
-          "quantity": 1,
-          "price": 155000,
-          "subtotal": 155000
-        }
-      ],
-      "total": 495000,
-      "createdAt": 1700316425965,
-      "updatedAt": 1700316425965,
+      "productId": "3",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700462840235,
+      "updatedAt": 1700462840235,
       "id": 3
     },
     {
-      "userId": "1699414627439",
-      "cartId": 2,
+      "productId": "4",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700462843881,
+      "updatedAt": 1700462843881,
+      "id": 4
+    },
+    {
+      "productId": "5",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700462848240,
+      "updatedAt": 1700462848240,
+      "id": 5
+    },
+    {
+      "productId": "6",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700462853496,
+      "updatedAt": 1700462853496,
+      "id": 6
+    },
+    {
+      "productId": "7",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700462858136,
+      "updatedAt": 1700462858136,
+      "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "userId": "1699415299351",
+      "cartId": 1,
       "customerInfo": {
-        "email": "khoa@gmail.com",
-        "username": "Khoa Ngyen",
-        "phoneNumber": "0965753213",
-        "addr": "123 Khoa db",
-        "city": "Tỉnh Lai Châu",
-        "district": "Thành phố Lai Châu",
-        "ward": "Xã Lả Nhì Thàng"
+        "email": "chung241@gmail.com",
+        "username": "Nghiêm Thái Dúi",
+        "phoneNumber": "0376281525",
+        "addr": "123 Faker Cry",
+        "city": "Tỉnh Bắc Giang",
+        "district": "Huyện Lạng Giang",
+        "ward": "Xã Mỹ Thái"
       },
+      "email": "chung241@gmail.com",
       "itemsDetails": [
         {
           "productId": "1",
-          "quantity": 3,
+          "quantity": 2,
           "price": 155000,
-          "subtotal": 465000
+          "subtotal": 310000
         },
         {
           "productId": "2",
@@ -688,10 +411,10 @@
           "subtotal": 395000
         }
       ],
-      "total": 774000,
-      "createdAt": 1700323509954,
-      "updatedAt": 1700323509954,
-      "id": 4
+      "total": 634500,
+      "createdAt": 1700462716755,
+      "updatedAt": 1700462716755,
+      "id": 1
     }
   ],
   "certificates": [

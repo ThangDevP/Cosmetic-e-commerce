@@ -40,7 +40,7 @@
               <i
                 class="fa fa-search d-flex align-items-center justify-content-center mr-4"
               ></i>
-              <li><a class="active" href="/product">Sản Phẩm</a></li>
+              <li><a class="active" href="/products">Sản Phẩm</a></li>
               <li><a class="active" href="/about-us">Cocoon</a></li>
               <li><a class="active" href="/blog">Bài Viết</a></li>
             </ul>
@@ -53,48 +53,55 @@
           </div>
           <div class="col-5 d-flex align-items-center justify-content-center">
             <ul class="main-menu-right">
-              <li><a onclick="carticon()">Giỏ Hàng</a></li>
-              <li id="user-change"></li>
-            </ul>
-
-            <div class="ngoaicung" id="ngoaicung-1">
-              <div class="ngoaicung3 infor-product-payment">
-                <div class="close">
-                  <button onclick="carticon()">×</button>
-                  <div class="tieude">
-                    <h4>Giỏ Hàng</h4>
-                  </div>
+              <li>   
+                <a type="button" onclick="momodal()">Giỏ Hàng<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                </svg> </button>      
+            </li>
+            <li><a id="user-change" class="active" href="login.html"></a>
+                <div class="nenmodal" id="nenmodal-1">
+                    <div class="nenmodal2"></div>
+                    <div class="ndmodal">
+                      <div class="closemodal">
+                        <button onclick="momodal()">×</button>
+                      </div>
+                      <div class="titlemodal">Giỏ Hàng</div>
+                      <!-- Nội dung của modal -->
+                      <div class="products-payment"></div>
+                      <div class="provisional-card">
+                        <div class="provisional">
+                          <span>Tạm Tính</span>
+                          <p id="totalOriginal">0 đ</p>
+                        </div>
+                        <div class="provisional">
+                          <span>Giảm Được</span>
+                          <p>0 đ</p>
+                        </div>
+                      </div>
+                      <div class="modal-order">
+                      <div class="order">
+                        <div class="total">
+                          <p>Tổng Cộng</p>
+                          <span>0 Đ</span>
+                        </div>
+                        <a href="/checkout"><div class="btn-order">ĐẶT HÀNG</div></a>
+                        
+                      </div>
+                     </div>
+                     </div>
+                     </div>
+                     
+                      <!-- Kết thúc nội dung của modal -->
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                    <script src="/header.js"></script>
                 </div>
-                <div class="products-payment"></div>
-                <div class="provisional-card">
-                  <div class="provisional">
-                    <span>Tạm Tính</span>
-                    <p id="totalOriginal">0 đ</p>
-                  </div>
-                  <div class="provisional">
-                    <span>Giảm Được</span>
-                    <p>0 đ</p>
-                  </div>
-                </div>
-
-                <div class="order">
-                  <div class="total">
-                    <p>Tổng cộng</p>
-                    <span>0 Đ</span>
-                  </div>
-                  <a href="/checkout">
-                    <div class="btn-order">ĐẶT HÀNG</div>
-                  </a>
-                </div>
-              </div>
-
-              <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-              <script src="/header.js"></script>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <!-- kết thúc html modal -->
+    </ul>
+</div>
+</div>
+</div>
+</li>
     <div id="dropdown_menu">
       <li><a class="active" href="product.html">Sản Phẩm</a></li>
       <li><a class="active" href="sale.html">Khuyến Mãi</a></li>
