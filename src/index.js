@@ -110,7 +110,7 @@ app.get("/manageProduct", function (req, res) {
 app.get("/products/:id", function (req, res) {
   const productId = Number(req.params.id); // Use req.params.id to access the route parameter
   console.log(productId);
-  fetch(`http://localhost:3000/api/products?id=${productId}`)
+  fetch(`/api/products?id=${productId}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 1) {
@@ -124,7 +124,7 @@ app.get("/products/:id", function (req, res) {
 });
 app.get("/user/:id", function (req, res) {
   const userId = Number(req.params.id);
-  fetch(`http://localhost:3000/api/users?id=${userId}`)
+  fetch(`/api/users?id=${userId}`)
     .then((response) => response.json())
     .then((data) => {
       if (data.length === 1) {
@@ -255,8 +255,8 @@ server.post("/payments", (req, res) => {
   var orderId = new Date().getTime();
   var orderInfo = "Thanh toán qua ví MoMo";
   var redirectUrl =
-    "http://localhost:3000/checkout" + "?" + urlParams.toString();
-  var ipnUrl = "http://localhost:3000/checkout" + "?" + urlParams.toString();
+    "/checkout" + "?" + urlParams.toString();
+  var ipnUrl = "/checkout" + "?" + urlParams.toString();
   var requestType = "captureWallet";
   var extraData = "";
 

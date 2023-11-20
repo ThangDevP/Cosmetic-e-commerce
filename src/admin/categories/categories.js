@@ -14,7 +14,7 @@ function isAuthenticated() {
   const userID = localStorage.getItem('userID');
 
   if (userID !== null) {
-    fetch(`http://localhost:3000/api/users/${userID}`)
+    fetch(`/api/users/${userID}`)
       .then(response => response.json())
       .then(user => {
         if (user && user.role === 'user') {
@@ -37,7 +37,7 @@ document.querySelector(".btn-close-addModal").addEventListener("click", () => {
 });
 
 function fetchDataAndPopulateTable() {
-  fetch(`http://localhost:3000/api/categories`)
+  fetch(`/api/categories`)
     .then((response) => response.json())
     .then((data) => {
         const categoryCount = data.length;
@@ -83,7 +83,7 @@ function fetchDataAndPopulateTable() {
         deleteConfirmButton.addEventListener("click", () => {
           const categoryID = deleteModal.dataset.categoryID;
 
-          fetch(`http://localhost:3000/api/categories/${categoryID}`, {
+          fetch(`/api/categories/${categoryID}`, {
             method: "DELETE",
           })
             .then((response) => {
@@ -117,7 +117,7 @@ function fetchDataAndPopulateTable() {
 }
 
 function fetchAndPopulateUserData(categoryID) {
-  fetch(`http://localhost:3000/api/categories/${categoryID}`)
+  fetch(`/api/categories/${categoryID}`)
     .then((response) => response.json())
     .then((cateData) => {
       const modal = document.getElementById("myModal");
@@ -154,7 +154,7 @@ function handleAddCategory() {
       cateName,
       description,
     };
-      fetch("http://localhost:3000/api/categories", {
+      fetch("/api/categories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -189,7 +189,7 @@ async function handleAddOrUpdateUser() {
 
     try {
         const response = await fetch(
-            `http://localhost:3000/api/categories/${cateID}`
+            `/api/categories/${cateID}`
         );
 
         if (!cateName || !cateDescription) {
@@ -202,7 +202,7 @@ async function handleAddOrUpdateUser() {
             description,
         };
 
-        const apiUrl = `http://localhost:3000/api/categories/${cateID}`;
+        const apiUrl = `/api/categories/${cateID}`;
         const apiResponse = await fetch(apiUrl, {
             method: "PUT",
             headers: {
