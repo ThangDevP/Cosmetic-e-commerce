@@ -238,7 +238,7 @@ function updateUI(id, newQuantity, price) {
 }
 
 async function calculateTotalOriginal(cartId) {
-  try {
+  try { 
     const products = await fetch(
       `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
