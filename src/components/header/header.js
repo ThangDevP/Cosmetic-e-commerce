@@ -243,7 +243,6 @@ function updateUI(id, newQuantity, price) {
 }
 
 async function calculateTotalOriginal(cartId) {
-  try {
     const products = await fetch(
       `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
@@ -260,10 +259,7 @@ async function calculateTotalOriginal(cartId) {
       );
       return totalOriginal;
     }
-  } catch (error) {
-    console.log(error);
-    return 0;
-  }
+
 }
 async function updatePaymentDetails(cartId) {
   try {
