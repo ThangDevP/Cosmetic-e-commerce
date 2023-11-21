@@ -243,27 +243,33 @@ function updateUI(id, newQuantity, price) {
 }
 
 async function calculateTotalOriginal(cartId) {
-    const products = await fetch(
+  let total = 0
+    const products = fetch(
       `/api/cartItems?cartId=${cartId}&_expand=product`
-    ).then((res) => res.json());
+    ).then((res) => res.json().then((rs) => {
+      if (rs.length === 0) {
+        return 0;
+      } else {
+        const totalOriginal = rs.reduce(
+          (total, product) => {
+            const productTotal = product.product.price * product.quantity;
+            return total + productTotal;
+          },
+          0
+        );
 
-    if (products.length === 0) {
-      return 0;
-    } else {
-      const totalOriginal = products.reduce(
-        (total, product) => {
-          const productTotal = product.product.price * product.quantity;
-          return total + productTotal;
-        },
-        0
-      );
-      return totalOriginal;
-    }
+        total = totalOriginal
+      }
+    }));
+
+   return total
 
 }
 async function updatePaymentDetails(cartId) {
   try {
     const totalOriginal = await calculateTotalOriginal(cartId);
+
+    console.log(totalOriginal, 'totalOriginal')
 
     const products = await fetch(
       `/api/cartItems?cartId=${cartId}&_expand=product`
