@@ -22,19 +22,21 @@ function loadPage(slug) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
 
-    if (n > slides.length) {
-      slideIndex = 1;
-    }
-
-    if (n < 1) {
-      slideIndex = slides.length;
-    }
-
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
+    if(slides.length > 0) {
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+  
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+  
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
   }
+}
 
   
   
@@ -110,17 +112,22 @@ function loadPage(slug) {
     .then((response) => response.text())
     .then((data) => {
       userName();
-      fetchProductSale().then(() => {
-        onLoadSlickSlider();
-      });
+   
 
-      bodyElement.innerHTML = data;
+      if(bodyElement) {
+        fetchProductSale().then(() => {
+          onLoadSlickSlider();
+        });
+        bodyElement.innerHTML = data;
+      }
+
 
       let slideIndex = 1;
 
       showSlides(slideIndex);
     })
-    .catch(() => {
+    .catch((err) => {
+      console.log(err)
       bodyElement.innerHTML = "Page not found";
     });
 }

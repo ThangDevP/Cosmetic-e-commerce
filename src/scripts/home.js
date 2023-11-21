@@ -15,16 +15,18 @@ async function fetchBrands() {
 
 function displayBrands(brands) {
   const brandRow = document.querySelector(".brand--row");
-  brands.forEach((brand) => {
-    const brandItem = document.createElement("div");
-    brandItem.classList.add("col-4", "brands--items");
-    brandItem.innerHTML = `
-            <img src="${brand.img}" alt="${brand.name}">
-            <h3>${brand.name}</h3>
-            <p>${brand.description}</p>
-        `;
-    brandRow.appendChild(brandItem);
-  });
+  if(brandRow) {
+    brands.forEach((brand) => {
+      const brandItem = document.createElement("div");
+      brandItem.classList.add("col-4", "brands--items");
+      brandItem.innerHTML = `
+              <img src="${brand.img}" alt="${brand.name}">
+              <h3>${brand.name}</h3>
+              <p>${brand.description}</p>
+          `;
+      brandRow.appendChild(brandItem);
+    });
+  }
 }
 fetchBrands();
 
@@ -105,18 +107,19 @@ function plusSlides(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  console.log(slides);
 
-  if (n > slides.length) {
-    slideIndex = 1;
+  if(slides.length > 0) {
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+  
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+  
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
   }
-
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
 }
