@@ -52,8 +52,8 @@ server.post("/register", (req, res) => {
   const ward = "";
   const avatar = "https://res.cloudinary.com/darhyd9z6/image/upload/v1700494410/wzmvfm72trhfdsk990d8.png";
   const role = "user";
-  const dob = "2001-12-21";
-  const gender = "male";
+  const dob = "";
+  const gender = "";
   // Check if the user already exists
   const existingUser = router.db.get("users").find({ email }).value();
   if (existingUser) {
@@ -255,8 +255,8 @@ server.post("/payments", (req, res) => {
   var orderId = new Date().getTime();
   var orderInfo = "Thanh toán qua ví MoMo";
   var redirectUrl =
-    "https://exactly-i7jp.onrender.com/checkout" + "?" + urlParams.toString();
-  var ipnUrl = "https://exactly-i7jp.onrender.com/checkout" + "?" + urlParams.toString();
+    "http://localhost:3000/checkout" + "?" + urlParams.toString();
+  var ipnUrl = "http://localhost:3000/checkout" + "?" + urlParams.toString();
   var requestType = "captureWallet";
   var extraData = "";
 
