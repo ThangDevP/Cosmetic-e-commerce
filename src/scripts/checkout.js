@@ -468,14 +468,14 @@ async function handlePayment() {
   };
   if (messagePayment) {
     const itemsDetails = await fetchCartItems();
-    const totalAmountAfterDiscount = itemsDetails.reduce((total, product) => {
-      const discountedPrice =
-        product.product.price -
-        (product.product.price * product.product.discount) / 100;
-      return total + discountedPrice * product.quantity;
-    }, 0);
 
     if (itemsDetails) {
+      const totalAmountAfterDiscount = itemsDetails.reduce((total, product) => {
+        const discountedPrice =
+          product.product.price -
+          (product.product.price * product.product.discount) / 100;
+        return total + discountedPrice * product.quantity;
+      }, 0);
       fetch("/api/orders", {
         method: "POST",
         headers: {
