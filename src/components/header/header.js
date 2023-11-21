@@ -113,7 +113,6 @@ async function fetchCartItems() {
       throw new Error(`Lỗi khi tải dữ liệu: ${response.status} ${response.statusText}`);
     }
     const cart = await response.json();
-    console.log("Cart data:", cart);
 
     if (cart && cart.length > 0) {
       const responseCartItems = await fetch(
@@ -123,7 +122,6 @@ async function fetchCartItems() {
         throw new Error(`Lỗi khi tải dữ liệu: ${responseCartItems.status} ${responseCartItems.statusText}`);
       }
       const cartItems = await responseCartItems.json();
-      console.log("CartItems data:", cartItems);
       return cartItems;
     }
   } catch (error) {
@@ -135,8 +133,6 @@ async function fetchCartItems() {
 async function showItems() {
   try {
     const products = await fetchCartItems();
-
-    console.log("Products:", products);
 
     const productsContainer = document.querySelector(".products-payment");
 

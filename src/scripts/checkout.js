@@ -203,7 +203,9 @@ async function updateQuantityProduct(action, id, price) {
   const cartItem = await fetch(
     `/api/cartItems/${id}`
   ).then((response) => response.json());
+
   updatePaymentDetails(cartItem.cartId);
+
   let newQuantity = cartItem.quantity;
   if (action === "increase") {
     newQuantity++;
