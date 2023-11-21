@@ -259,10 +259,17 @@ async function calculateTotalOriginal(cartId) {
 }
 async function updatePaymentDetails(cartId) {
   try {
-    const totalOriginal = await calculateTotalOriginal(cartId);
     const products = await fetch(
       `/api/cartItems?cartId=${cartId}&_expand=product`
     ).then((res) => res.json());
+
+    const totalOriginal = products.reduce(
+      (total, product) => {
+        const productTotal = product.product.price * product.quantity;
+        return total + productTotal;
+      },
+      0
+    );
     if (products.length === 0) {
       document.querySelector(".provisional-card .provisional:nth-child(1) p").textContent = `0 đ`;
       document.querySelector(".provisional-card .provisional:nth-child(2) p").textContent = `0 đ`;
