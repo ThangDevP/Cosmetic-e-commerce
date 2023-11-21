@@ -157,6 +157,14 @@
       "createdAt": 1700493698929,
       "updatedAt": 1700494037882,
       "id": 4
+    },
+    {
+      "productId": "1",
+      "cartId": 1,
+      "quantity": 1,
+      "createdAt": 1700535492204,
+      "updatedAt": 1700535492204,
+      "id": 5
     }
   ],
   "certificates": [
