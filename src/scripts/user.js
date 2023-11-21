@@ -1,4 +1,4 @@
-userId = localStorage.getItem('userID');
+var userId = localStorage.getItem('userID');
 
 let profilePic = document.getElementById("profile-pic");
 let inputFile = document.getElementById("image-file");
@@ -41,7 +41,7 @@ fetch(`/api/users/${userId}`)
     document.getElementById("profile-pic").src = user.avatar;
     document.getElementById("fullName").value = user.username;
     document.getElementById("dob").value = user.dob;
-    document.getElementById("phoneNumber").value = user.phoneNumber===undefined?user.phoneNumber:"";
+    document.getElementById("phoneNumber").value = user.phoneNumber!==undefined?user.phoneNumber:"";
     const gender = document.getElementById("gender");
     for (let i = 0; i < gender.options.length; i++) {
       if (gender.options[i].value === user.gender) {
@@ -184,22 +184,22 @@ document
         var email = document.getElementById("email").value
           ? document.getElementById("email").value
           : user.email;
-        var password = document.getElementById("oldPassword").value
+        var password = document.getElementById("oldPassword").value 
           ? document.getElementById("oldPassword").value
           : user.password;
-        var newPassword = document.getElementById("newPassword").value
+        var newPassword = document.getElementById("newPassword").value 
           ? document.getElementById("newPassword").value
           : "";
-        var confirmPassword = document.getElementById("confirmPassword").value
+        var confirmPassword = document.getElementById("confirmPassword").value 
           ? document.getElementById("confirmPassword").value
           : user.password;
-        var fullName = document.getElementById("fullName").value
+        var fullName = document.getElementById("fullName").value 
           ? document.getElementById("fullName").value
           : user.userName;
-        var dob = document.getElementById("dob").value
+        var dob = document.getElementById("dob").value 
           ? document.getElementById("dob").value
           : user.dob;
-        var phoneNumber = document.getElementById("phoneNumber").value
+        var phoneNumber = document.getElementById("phoneNumber").value 
           ? document.getElementById("phoneNumber").value
           : user.phone;
         var gender = document.getElementById("gender");

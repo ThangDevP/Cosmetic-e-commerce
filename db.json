@@ -16,17 +16,20 @@
       "updatedAt": 1700236243659
     },
     {
+      "id": 1700466859102,
       "username": "thangn0000000",
+      "password": "123456",
       "email": "thangtnsa000@gmail.com",
-      "address": "",
-      "phoneNumber": "undefined",
+      "phoneNumber": "0336331603",
+      "address": "0123456789",
+      "city": "Tỉnh Vĩnh Phúc",
+      "district": "Huyện Bình Xuyên",
+      "ward": "Xã Tam Hợp",
       "avatar": "https://res.cloudinary.com/darhyd9z6/image/upload/v1700493379/users/elbaluygbgllf76j3x9d.jpg",
       "role": "user",
-      "gender": "male",
       "dob": "2001-12-21",
-      "password": "123456",
-      "updatedAt": 1700493378754,
-      "id": 1700466859102
+      "gender": "male",
+      "updatedAt": 1700538657049
     }
   ],
   "products": [
@@ -133,6 +136,37 @@
       "createdAt": 1700499065486,
       "updatedAt": 1700499065486,
       "id": 1
+    },
+    {
+      "userId": "1700466859102",
+      "cartId": 1,
+      "customerInfo": {
+        "email": "thangtnsa000@gmail.com",
+        "username": "thangn0000000",
+        "phoneNumber": "0336331603",
+        "addr": "0123456789",
+        "city": "Tỉnh Vĩnh Phúc",
+        "district": "Thành phố Vĩnh Yên",
+        "ward": "Thị trấn Hương Canh"
+      },
+      "itemsDetails": [
+        {
+          "productId": 14,
+          "quantity": 4,
+          "price": 295000,
+          "subtotal": 1180000
+        },
+        {
+          "productId": 5,
+          "quantity": 1,
+          "price": 145000,
+          "subtotal": 145000
+        }
+      ],
+      "total": 1192500,
+      "createdAt": 1700539072892,
+      "updatedAt": 1700539072892,
+      "id": 2
     }
   ],
   "carts": [
@@ -147,6 +181,12 @@
       "createdAt": 1700493698760,
       "updatedAt": 1700493698760,
       "id": 2
+    },
+    {
+      "userId": null,
+      "createdAt": 1700539678948,
+      "updatedAt": 1700539678948,
+      "id": 3
     }
   ],
   "cartItems": [
@@ -159,12 +199,20 @@
       "id": 4
     },
     {
-      "productId": "1",
+      "productId": 14,
+      "cartId": 1,
+      "quantity": 6,
+      "createdAt": 1700539113107,
+      "updatedAt": 1700539716666,
+      "id": 5
+    },
+    {
+      "productId": 15,
       "cartId": 1,
       "quantity": 1,
-      "createdAt": 1700535492204,
-      "updatedAt": 1700535492204,
-      "id": 5
+      "createdAt": 1700539116825,
+      "updatedAt": 1700539116825,
+      "id": 6
     }
   ],
   "certificates": [
